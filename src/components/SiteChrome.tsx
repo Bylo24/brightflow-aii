@@ -68,7 +68,7 @@ export function Nav() {
               type="button"
               className="btn btn-sm btn-neutral rounded-full font-medium whitespace-nowrap"
             >
-              Book a call <ArrowRight className="size-3.5" />
+              Book a free audit <ArrowRight className="size-3.5" />
             </button>
           </BookCallDialog>
         </div>

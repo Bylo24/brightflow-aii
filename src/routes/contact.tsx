@@ -125,7 +125,7 @@ function ContactPage() {
                       type="submit"
                       className="btn btn-lg btn-neutral rounded-full w-full sm:w-auto"
                     >
-                      Send and book a call <ArrowUpRight className="size-4" />
+                      Send and book a free audit <ArrowUpRight className="size-4" />
                     </button>
                     <p className="text-xs text-muted-foreground">
                       No pitch. No newsletter. Just a clear plan.
