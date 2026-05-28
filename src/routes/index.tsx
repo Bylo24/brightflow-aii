@@ -6,7 +6,6 @@ import {
   ArrowUpRight,
   Building2,
   Check,
-  ChevronDown,
   Clock,
   FileText,
   HeartPulse,
@@ -14,6 +13,7 @@ import {
   Star,
   UserSearch,
 } from "lucide-react";
+
 
 
 export const Route = createFileRoute("/")({
@@ -70,7 +70,7 @@ function Index() {
 function Nav() {
   return (
     <nav className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-4">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-4">
         <Wordmark />
 
         <div className="flex items-center gap-4 sm:gap-8">
@@ -91,13 +91,12 @@ function Nav() {
           >
             Book a call <ArrowRight className="size-3.5" />
           </a>
-
         </div>
       </div>
     </nav>
-
   );
 }
+
 
 /* ---------------- HERO ---------------- */
 function Hero() {
@@ -181,25 +180,25 @@ function Marquee() {
     "E-COMMERCE OPERATIONS",
   ];
   return (
-    <div className="py-8 sm:py-10 border-y border-border/60 overflow-hidden">
-      <div className="text-center text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.22em] text-muted-foreground/70 mb-5 sm:mb-7 px-4">
+    <div className="py-10 sm:py-12 border-y border-border/60 overflow-hidden">
+      <div className="text-center text-[11px] uppercase tracking-[0.18em] text-muted-foreground/70 mb-6 sm:mb-8 px-4">
         Built for service businesses that run on repetitive work
       </div>
-      <div className="flex gap-8 sm:gap-12 whitespace-nowrap animate-marquee w-max">
+      <div className="flex gap-10 sm:gap-14 whitespace-nowrap animate-marquee w-max">
         {[...items, ...items, ...items].map((it, i) => (
           <span
             key={i}
-            className="text-muted-foreground/50 font-medium uppercase tracking-[0.2em] sm:tracking-[0.22em] text-xs sm:text-sm flex items-center gap-8 sm:gap-12"
+            className="text-muted-foreground/40 font-medium uppercase tracking-[0.18em] text-xs flex items-center gap-10 sm:gap-14"
           >
             {it}
-            <span className="size-1 rounded-full bg-accent/40" />
+            <span className="size-1 rounded-full bg-muted-foreground/30" />
           </span>
         ))}
       </div>
     </div>
-
   );
 }
+
 
 /* ---------------- VALUE PROP ---------------- */
 function ValueProp() {
@@ -222,10 +221,10 @@ function ValueProp() {
   ];
 
   return (
-    <section className="py-16 sm:py-20 md:py-28">
+    <section className="py-20 sm:py-28 md:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="max-w-3xl mb-10 sm:mb-16">
-          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-4 sm:mb-5">
+        <div className="max-w-3xl mb-12 sm:mb-16">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4 sm:mb-5">
             Why BrightFlow
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
@@ -242,7 +241,7 @@ function ValueProp() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="bg-background p-6 sm:p-8 md:p-9 hover:bg-secondary/60 transition-colors"
+              className="bg-background p-7 sm:p-9 md:p-10 hover:bg-secondary/60 transition-colors"
             >
               <div className="size-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center mb-5 sm:mb-6">
                 {p.icon}
@@ -254,22 +253,22 @@ function ValueProp() {
         </div>
       </div>
     </section>
-
   );
 }
+
 
 /* ---------------- BENTO ---------------- */
 function Bento() {
   return (
-    <section id="services" className="py-16 sm:py-20 md:py-28 max-w-[1280px] mx-auto px-4 sm:px-6">
-      <div className="mb-10 sm:mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-5 sm:gap-6">
+    <section id="services" className="py-20 sm:py-28 md:py-32 max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="mb-12 sm:mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
         <div className="max-w-2xl">
-          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-4 sm:mb-5">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4 sm:mb-5">
             What we build
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
             Real workflows. Real automation.{" "}
-            <span className="font-serif italic font-normal text-accent">No fluff.</span>
+            <span className="font-serif italic font-normal text-muted-foreground">No fluff.</span>
           </h2>
         </div>
         <p className="text-muted-foreground text-sm sm:text-base max-w-sm leading-relaxed">
@@ -287,7 +286,6 @@ function Bento() {
           body="The system watches for missing receipts and unexplained transactions, then automatically emails and texts clients until everything is provided — without your team lifting a finger."
           large
         />
-
 
         <BentoCard
           className="col-span-12 lg:col-span-4"
@@ -325,9 +323,9 @@ function Bento() {
           body="Handles appointment reminders, intake forms, and follow-up messages so your front desk can focus on people, not admin."
         />
 
-        <div className="col-span-12 bg-foreground p-6 sm:p-8 md:p-9 text-background flex flex-col md:flex-row md:items-center justify-between gap-5 sm:gap-6">
+        <div className="col-span-12 bg-foreground p-7 sm:p-9 md:p-10 text-background flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
-            <div className="text-xs uppercase tracking-[0.22em] mb-3 opacity-60">
+            <div className="text-[11px] uppercase tracking-[0.18em] mb-3 opacity-60">
               Don't see your workflow?
             </div>
             <h4 className="font-semibold tracking-tight text-xl sm:text-2xl md:text-3xl text-balance">
@@ -336,17 +334,16 @@ function Bento() {
           </div>
           <a
             href="#cta"
-            className="btn btn-md bg-base-100 text-neutral border-none hover:bg-base-100/90 rounded-full self-start md:self-auto"
+            className="btn btn-md bg-background text-foreground border-none hover:bg-background/90 rounded-full self-start md:self-auto"
           >
             Tell us about it <ArrowUpRight className="size-4" />
           </a>
-
         </div>
       </div>
     </section>
-
   );
 }
+
 
 function BentoCard({
   className = "",
@@ -371,9 +368,9 @@ function BentoCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6 }}
-      className={`group relative bg-background p-6 sm:p-8 md:p-9 hover:bg-secondary/50 transition-colors flex flex-col justify-between overflow-hidden ${className}`}
+      className={`group relative bg-background p-7 sm:p-9 md:p-10 hover:bg-secondary/50 transition-colors flex flex-col justify-between overflow-hidden ${className}`}
     >
-      <div className="absolute top-4 sm:top-5 right-5 sm:right-6 text-[10px] uppercase tracking-[0.22em] text-accent/70">
+      <div className="absolute top-5 right-6 text-[10px] uppercase tracking-[0.18em] text-muted-foreground/60">
         {tag}
       </div>
       <div className="relative z-10 max-w-md pt-6">
@@ -388,13 +385,12 @@ function BentoCard({
         <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
       </div>
 
-
       {stats && (
         <div className="grid grid-cols-2 gap-4 mt-8 pt-8 border-t border-border">
           {stats.map((s, i) => (
             <div key={i}>
               <div className="text-2xl font-semibold tracking-tight">{s.value}</div>
-              <div className="text-[10px] text-muted-foreground uppercase tracking-[0.22em] mt-1">
+              <div className="text-[10px] text-muted-foreground uppercase tracking-[0.18em] mt-1">
                 {s.label}
               </div>
             </div>
@@ -404,6 +400,7 @@ function BentoCard({
     </motion.div>
   );
 }
+
 
 
 
@@ -433,10 +430,10 @@ function Process() {
   ];
 
   return (
-    <section id="process" className="py-16 sm:py-20 md:py-28 border-y border-border/60 bg-secondary/50">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
-        <div className="mb-10 sm:mb-16 max-w-2xl">
-          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-4 sm:mb-5">
+    <section id="process" className="py-20 sm:py-28 md:py-32 border-y border-border/60 bg-secondary/50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="mb-12 sm:mb-16 max-w-2xl">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4 sm:mb-5">
             How it works
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
@@ -444,6 +441,7 @@ function Process() {
             <span className="font-serif italic font-normal text-muted-foreground">in under a month.</span>
           </h2>
         </div>
+
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px bg-border/70 border border-border/70 rounded-2xl overflow-hidden">
           {steps.map((s, i) => (
@@ -481,8 +479,8 @@ function Metrics() {
     { value: "100%", label: "Managed — we run it so you don't have to" },
   ];
   return (
-    <section className="py-14 sm:py-20">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-10">
+    <section className="py-20 sm:py-24">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
         {items.map((m, i) => (
           <motion.div
             key={i}
@@ -492,17 +490,17 @@ function Metrics() {
             transition={{ duration: 0.5, delay: i * 0.05 }}
             className="flex flex-col"
           >
-            <span className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] text-accent">
+            <span className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.035em] text-foreground">
               {m.value}
             </span>
-            <span className="text-xs sm:text-sm text-muted-foreground mt-2 sm:mt-3 leading-snug">{m.label}</span>
+            <span className="text-xs sm:text-sm text-muted-foreground mt-3 leading-snug">{m.label}</span>
           </motion.div>
         ))}
       </div>
     </section>
-
   );
 }
+
 
 
 /* ---------------- FAQ ---------------- */
@@ -535,15 +533,15 @@ function FAQ() {
   ];
 
   return (
-    <section id="faq" className="py-16 sm:py-20 md:py-28">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 grid md:grid-cols-[1fr_2fr] gap-8 md:gap-12">
+    <section id="faq" className="py-20 sm:py-28 md:py-32">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 grid md:grid-cols-[1fr_2fr] gap-10 md:gap-16">
         <div>
-          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-4 sm:mb-5">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4 sm:mb-5">
             FAQ
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
             Common{" "}
-            <span className="font-serif italic font-normal text-accent">questions.</span>
+            <span className="font-serif italic font-normal text-muted-foreground">questions.</span>
           </h2>
         </div>
         <div className="border-t border-border">
@@ -562,14 +560,13 @@ function FAQItem({ q, a }: { q: string; a: string }) {
     <div className="border-b border-border">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center justify-between gap-4 sm:gap-6 py-5 sm:py-6 text-left group"
+        className="w-full flex items-center justify-between gap-6 py-5 sm:py-6 text-left group"
       >
-
-        <span className="font-medium text-base md:text-lg tracking-tight group-hover:text-accent transition-colors">
+        <span className="font-medium text-base md:text-lg tracking-tight group-hover:text-foreground transition-colors">
           {q}
         </span>
-        <span className="shrink-0 size-7 border border-border rounded-full flex items-center justify-center text-accent">
-          {open ? <ChevronDown className="size-3.5" /> : <Plus className="size-3.5" />}
+        <span className="shrink-0 size-8 border border-border rounded-full flex items-center justify-center text-muted-foreground group-hover:text-foreground group-hover:border-foreground transition-colors">
+          <Plus className={`size-3.5 transition-transform duration-300 ${open ? "rotate-45" : ""}`} />
         </span>
       </button>
       <motion.div
@@ -578,11 +575,12 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
         className="overflow-hidden"
       >
-        <p className="text-sm text-muted-foreground leading-relaxed pb-6 max-w-2xl">{a}</p>
+        <p className="text-sm md:text-base text-muted-foreground leading-relaxed pb-6 max-w-2xl">{a}</p>
       </motion.div>
     </div>
   );
 }
+
 
 /* ---------------- FOOTER + CTA ---------------- */
 function Footer() {
@@ -591,9 +589,9 @@ function Footer() {
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom,hsl(168_72%_32%/0.10),transparent_60%)]" />
       <div className="absolute inset-0 -z-10 grid-bg [mask-image:radial-gradient(ellipse_at_bottom,#000,transparent_70%)]" />
 
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 pt-16 sm:pt-24 md:pt-28 pb-10 sm:pb-14">
-        <div className="text-center mb-16 sm:mb-20 md:mb-24 max-w-3xl mx-auto">
-          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-5 sm:mb-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-24 sm:pt-28 md:pt-32 pb-10 sm:pb-14">
+        <div className="text-center mb-20 sm:mb-24 max-w-3xl mx-auto">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-5 sm:mb-6">
             Ready when you are
           </div>
           <h2 className="text-[34px] sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.035em] leading-[1.05] lg:leading-[1.02] mb-6 sm:mb-8 text-balance">
@@ -638,7 +636,6 @@ function Footer() {
           </div>
         </div>
       </div>
-
     </footer>
   );
 }
@@ -646,9 +643,10 @@ function Footer() {
 function FooterCol({ title, links }: { title: string; links: string[] }) {
   return (
     <div>
-      <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-4">
+      <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4">
         {title}
       </div>
+
       <ul className="space-y-2.5">
         {links.map((l) => (
           <li key={l}>
