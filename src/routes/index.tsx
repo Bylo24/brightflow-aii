@@ -334,7 +334,7 @@ function Bento() {
           body="Handles appointment reminders, intake forms, and follow-up messages so your front desk can focus on people, not admin."
         />
 
-        <div className="col-span-12 md:col-span-6 lg:col-span-8 bg-foreground p-6 sm:p-8 md:p-9 text-background flex flex-col md:flex-row md:items-center justify-between gap-5 sm:gap-6">
+        <div className="col-span-12 bg-foreground p-6 sm:p-8 md:p-9 text-background flex flex-col md:flex-row md:items-center justify-between gap-5 sm:gap-6">
           <div>
             <div className="text-xs uppercase tracking-[0.22em] mb-3 opacity-60">
               Don't see your workflow?
