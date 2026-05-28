@@ -268,18 +268,18 @@ function ValueProp() {
 /* ---------------- BENTO ---------------- */
 function Bento() {
   return (
-    <section id="services" className="py-28 max-w-[1280px] mx-auto px-6">
-      <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+    <section id="services" className="py-16 sm:py-20 md:py-28 max-w-[1280px] mx-auto px-4 sm:px-6">
+      <div className="mb-10 sm:mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-5 sm:gap-6">
         <div className="max-w-2xl">
-          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-5">
+          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-4 sm:mb-5">
             What we build
           </div>
-          <h2 className="text-3xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
             Real workflows. Real automation.{" "}
             <span className="font-serif italic font-normal text-accent">No fluff.</span>
           </h2>
         </div>
-        <p className="text-muted-foreground text-base max-w-sm leading-relaxed">
+        <p className="text-muted-foreground text-sm sm:text-base max-w-sm leading-relaxed">
           A few examples of the systems we've built. Each one removes a repetitive task that used
           to eat hours of staff time every week.
         </p>
@@ -287,7 +287,7 @@ function Bento() {
 
       <div className="grid grid-cols-12 gap-px bg-border/70 border border-border/70 rounded-2xl overflow-hidden">
         <BentoCard
-          className="col-span-12 lg:col-span-8 h-[460px]"
+          className="col-span-12 lg:col-span-8 min-h-[420px] lg:h-[460px]"
           tag="For bookkeepers"
           icon={<FileText className="size-4" />}
           title="Automatic document chasing"
@@ -331,24 +331,25 @@ function Bento() {
           body="Handles appointment reminders, intake forms, and follow-up messages so your front desk can focus on people, not admin."
         />
 
-        <div className="col-span-12 md:col-span-6 lg:col-span-8 bg-foreground p-9 text-background flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className="col-span-12 md:col-span-6 lg:col-span-8 bg-foreground p-6 sm:p-8 md:p-9 text-background flex flex-col md:flex-row md:items-center justify-between gap-5 sm:gap-6">
           <div>
             <div className="text-xs uppercase tracking-[0.22em] mb-3 opacity-60">
               Don't see your workflow?
             </div>
-            <h4 className="font-semibold tracking-tight text-2xl md:text-3xl text-balance">
+            <h4 className="font-semibold tracking-tight text-xl sm:text-2xl md:text-3xl text-balance">
               If it's repetitive, we can probably automate it.
             </h4>
           </div>
           <a
             href="#cta"
-            className="shrink-0 px-5 py-2.5 bg-background text-foreground font-medium rounded-full hover:bg-background/90 transition-colors flex items-center gap-2"
+            className="shrink-0 px-5 py-2.5 bg-background text-foreground font-medium rounded-full hover:bg-background/90 transition-colors inline-flex items-center gap-2 self-start md:self-auto text-sm sm:text-base"
           >
             Tell us about it <ArrowUpRight className="size-4" />
           </a>
         </div>
       </div>
     </section>
+
   );
 }
 
