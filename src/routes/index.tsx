@@ -621,9 +621,6 @@ function Footer() {
             Book your free audit <ArrowUpRight className="size-4" />
           </a>
 
-          >
-            Book your free audit <ArrowUpRight className="size-4" />
-          </a>
           <div className="mt-5 text-sm text-muted-foreground">
             No pitch. No pressure. Just a clear plan.
           </div>
