@@ -112,10 +112,10 @@ function Hero() {
     <section
       id="top"
       ref={ref}
-      className="relative pt-24 pb-28 overflow-hidden border-b border-border"
+      className="relative pt-24 pb-24 overflow-hidden border-b border-border"
     >
       <motion.div style={{ y, opacity }} className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,hsl(165_78%_42%/0.14),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,hsl(165_78%_38%/0.12),transparent_55%)]" />
         <div className="absolute inset-0 grid-bg [mask-image:radial-gradient(ellipse_70%_50%_at_50%_0%,#000_60%,transparent_100%)]" />
       </motion.div>
 
@@ -125,32 +125,28 @@ function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-8 inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-accent/30 bg-accent/5 text-xs font-medium text-accent"
+            className="mb-7 inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-accent/30 bg-accent/5 text-xs font-medium text-accent"
           >
             <span className="size-1.5 rounded-full bg-accent animate-pulse-dot" />
-            AI automation agency · Done-for-you systems
+            AI automation, fully managed
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-[88px] leading-[0.95] font-black tracking-tight mb-7 max-w-5xl"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-[88px] leading-[0.95] font-black tracking-tight mb-6 max-w-4xl"
           >
-            We automate the{" "}
-            <span className="text-accent">repetitive admin work</span>{" "}
-            slowing your business down.
+            Automate the <span className="text-accent">repetitive work</span> killing your week.
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 text-pretty"
+            className="text-lg md:text-xl text-muted-foreground max-w-xl mb-9 text-pretty"
           >
-            BrightFlow AI builds custom AI workflow systems that handle the manual tasks your team
-            wastes hours on every week — chasing documents, screening leads, replying to clients,
-            requesting reviews. We build it, integrate it, and run it for you monthly.
+            We build custom AI systems that handle your manual admin — and we run them for you.
           </motion.p>
 
           <motion.div
@@ -161,9 +157,9 @@ function Hero() {
           >
             <a
               href="#cta"
-              className="w-full sm:w-auto px-7 py-3.5 bg-accent text-accent-foreground font-semibold rounded-md hover:brightness-110 transition-all shadow-[0_0_40px_hsl(165_78%_42%/0.25)] flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-7 py-3.5 bg-accent text-accent-foreground font-semibold rounded-md hover:brightness-110 transition-all shadow-[0_10px_40px_-10px_hsl(165_78%_38%/0.5)] flex items-center justify-center gap-2"
             >
-              Book a free workflow audit <ArrowRight className="size-4" />
+              Book a free audit <ArrowRight className="size-4" />
             </a>
             <a
               href="#services"
@@ -172,23 +168,12 @@ function Hero() {
               See what we build
             </a>
           </motion.div>
-
-          <div className="mt-8 flex items-center gap-6 text-xs text-muted-foreground">
-            <span className="flex items-center gap-1.5">
-              <Check className="size-3.5 text-accent" /> No long-term contracts
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Check className="size-3.5 text-accent" /> Live in 2–4 weeks
-            </span>
-            <span className="hidden sm:flex items-center gap-1.5">
-              <Check className="size-3.5 text-accent" /> Fully managed
-            </span>
-          </div>
         </div>
       </div>
     </section>
   );
 }
+
 
 /* ---------------- MARQUEE ---------------- */
 function Marquee() {
