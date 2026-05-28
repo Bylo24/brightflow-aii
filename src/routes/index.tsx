@@ -119,15 +119,6 @@ function Hero() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col items-center text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-6 sm:mb-8 badge badge-outline badge-lg gap-2 bg-base-100/60 backdrop-blur text-xs text-muted-foreground border-border"
-          >
-            <span className="size-1.5 rounded-full bg-primary animate-pulse-dot" />
-            AI automation, fully managed
-          </motion.div>
 
 
           <motion.h1
