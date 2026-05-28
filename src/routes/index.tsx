@@ -221,10 +221,10 @@ function ValueProp() {
   ];
 
   return (
-    <section className="py-16 sm:py-20 md:py-28">
+    <section className="py-20 sm:py-28 md:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="max-w-3xl mb-10 sm:mb-16">
-          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-4 sm:mb-5">
+        <div className="max-w-3xl mb-12 sm:mb-16">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4 sm:mb-5">
             Why BrightFlow
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
@@ -241,7 +241,7 @@ function ValueProp() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="bg-background p-6 sm:p-8 md:p-9 hover:bg-secondary/60 transition-colors"
+              className="bg-background p-7 sm:p-9 md:p-10 hover:bg-secondary/60 transition-colors"
             >
               <div className="size-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center mb-5 sm:mb-6">
                 {p.icon}
@@ -253,9 +253,9 @@ function ValueProp() {
         </div>
       </div>
     </section>
-
   );
 }
+
 
 /* ---------------- BENTO ---------------- */
 function Bento() {
