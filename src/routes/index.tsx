@@ -616,7 +616,11 @@ function Footer() {
           </p>
           <a
             href="#"
-            className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 bg-foreground text-background font-medium rounded-full hover:bg-foreground/90 transition-all"
+            className="btn btn-lg btn-neutral rounded-full"
+          >
+            Book your free audit <ArrowUpRight className="size-4" />
+          </a>
+
           >
             Book your free audit <ArrowUpRight className="size-4" />
           </a>
