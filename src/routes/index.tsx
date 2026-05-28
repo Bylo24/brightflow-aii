@@ -616,13 +616,13 @@ function FAQ() {
   ];
 
   return (
-    <section id="faq" className="py-28">
-      <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-[1fr_2fr] gap-12">
+    <section id="faq" className="py-16 sm:py-20 md:py-28">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 grid md:grid-cols-[1fr_2fr] gap-8 md:gap-12">
         <div>
-          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-5">
+          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-4 sm:mb-5">
             FAQ
           </div>
-          <h2 className="text-3xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
             Common{" "}
             <span className="font-serif italic font-normal text-accent">questions.</span>
           </h2>
@@ -643,8 +643,9 @@ function FAQItem({ q, a }: { q: string; a: string }) {
     <div className="border-b border-border">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center justify-between gap-6 py-6 text-left group"
+        className="w-full flex items-center justify-between gap-4 sm:gap-6 py-5 sm:py-6 text-left group"
       >
+
         <span className="font-medium text-base md:text-lg tracking-tight group-hover:text-accent transition-colors">
           {q}
         </span>
