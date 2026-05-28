@@ -71,10 +71,10 @@ function Index() {
 function Nav() {
   return (
     <nav className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
-      <div className="max-w-[1280px] mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-4">
         <Wordmark />
 
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-4 sm:gap-8">
           <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
             <a href="#services" className="hover:text-foreground transition-colors">
               What we build
@@ -88,13 +88,14 @@ function Nav() {
           </div>
           <a
             href="#cta"
-            className="px-4 py-2 bg-foreground text-background text-sm font-medium rounded-full hover:bg-foreground/90 transition-all inline-flex items-center gap-1.5"
+            className="px-3.5 sm:px-4 py-2 bg-foreground text-background text-xs sm:text-sm font-medium rounded-full hover:bg-foreground/90 transition-all inline-flex items-center gap-1.5 whitespace-nowrap"
           >
             Book a call <ArrowRight className="size-3.5" />
           </a>
         </div>
       </div>
     </nav>
+
   );
 }
 
@@ -109,20 +110,20 @@ function Hero() {
     <section
       id="top"
       ref={ref}
-      className="relative pt-28 pb-28 overflow-hidden"
+      className="relative pt-16 sm:pt-24 md:pt-28 pb-16 sm:pb-24 md:pb-28 overflow-hidden"
     >
       <motion.div style={{ y, opacity }} className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,hsl(168_72%_32%/0.10),transparent_60%)]" />
         <div className="absolute inset-0 grid-bg [mask-image:radial-gradient(ellipse_60%_45%_at_50%_0%,#000_50%,transparent_100%)]" />
       </motion.div>
 
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-8 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-background/60 backdrop-blur text-xs text-muted-foreground"
+            className="mb-6 sm:mb-8 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-background/60 backdrop-blur text-xs text-muted-foreground"
           >
             <span className="size-1.5 rounded-full bg-accent animate-pulse-dot" />
             AI automation, fully managed
@@ -132,7 +133,7 @@ function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-[84px] leading-[1.02] font-semibold tracking-[-0.035em] mb-7 max-w-4xl text-balance"
+            className="text-[40px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[84px] leading-[1.05] lg:leading-[1.02] font-semibold tracking-[-0.035em] mb-5 sm:mb-7 max-w-4xl text-balance"
           >
             Automate the repetitive work{" "}
             <span className="font-serif italic font-normal text-accent">killing your week.</span>
@@ -142,7 +143,7 @@ function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-xl mb-10 text-pretty leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mb-8 sm:mb-10 text-pretty leading-relaxed"
           >
             We build custom AI systems that handle your manual admin — and we run them for you.
           </motion.p>
@@ -151,7 +152,7 @@ function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="flex flex-col sm:flex-row items-center gap-3"
+            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto"
           >
             <a
               href="#cta"
@@ -161,7 +162,7 @@ function Hero() {
             </a>
             <a
               href="#services"
-              className="w-full sm:w-auto px-6 py-3 bg-transparent border border-border font-medium rounded-full hover:bg-secondary transition-all"
+              className="w-full sm:w-auto px-6 py-3 bg-transparent border border-border font-medium rounded-full hover:bg-secondary transition-all text-center"
             >
               See what we build
             </a>
@@ -169,6 +170,7 @@ function Hero() {
         </div>
       </div>
     </section>
+
   );
 }
 
@@ -186,15 +188,15 @@ function Marquee() {
     "E-COMMERCE OPERATIONS",
   ];
   return (
-    <div className="py-10 border-y border-border/60 overflow-hidden">
-      <div className="text-center text-[11px] uppercase tracking-[0.22em] text-muted-foreground/70 mb-7">
+    <div className="py-8 sm:py-10 border-y border-border/60 overflow-hidden">
+      <div className="text-center text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.22em] text-muted-foreground/70 mb-5 sm:mb-7 px-4">
         Built for service businesses that run on repetitive work
       </div>
-      <div className="flex gap-12 whitespace-nowrap animate-marquee w-max">
+      <div className="flex gap-8 sm:gap-12 whitespace-nowrap animate-marquee w-max">
         {[...items, ...items, ...items].map((it, i) => (
           <span
             key={i}
-            className="text-muted-foreground/50 font-medium uppercase tracking-[0.22em] text-sm flex items-center gap-12"
+            className="text-muted-foreground/50 font-medium uppercase tracking-[0.2em] sm:tracking-[0.22em] text-xs sm:text-sm flex items-center gap-8 sm:gap-12"
           >
             {it}
             <span className="size-1 rounded-full bg-accent/40" />
@@ -202,6 +204,7 @@ function Marquee() {
         ))}
       </div>
     </div>
+
   );
 }
 
@@ -226,13 +229,13 @@ function ValueProp() {
   ];
 
   return (
-    <section className="py-28">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="max-w-3xl mb-16">
-          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-5">
+    <section className="py-16 sm:py-20 md:py-28">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="max-w-3xl mb-10 sm:mb-16">
+          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-4 sm:mb-5">
             Why BrightFlow
           </div>
-          <h2 className="text-3xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
             Most businesses lose money to{" "}
             <span className="font-serif italic font-normal text-muted-foreground">work that should never be done by hand.</span>
           </h2>
@@ -246,9 +249,9 @@ function ValueProp() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="bg-background p-9 hover:bg-secondary/60 transition-colors"
+              className="bg-background p-6 sm:p-8 md:p-9 hover:bg-secondary/60 transition-colors"
             >
-              <div className="size-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center mb-6">
+              <div className="size-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center mb-5 sm:mb-6">
                 {p.icon}
               </div>
               <h3 className="text-lg font-semibold mb-2 tracking-tight">{p.title}</h3>
@@ -258,24 +261,25 @@ function ValueProp() {
         </div>
       </div>
     </section>
+
   );
 }
 
 /* ---------------- BENTO ---------------- */
 function Bento() {
   return (
-    <section id="services" className="py-28 max-w-[1280px] mx-auto px-6">
-      <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+    <section id="services" className="py-16 sm:py-20 md:py-28 max-w-[1280px] mx-auto px-4 sm:px-6">
+      <div className="mb-10 sm:mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-5 sm:gap-6">
         <div className="max-w-2xl">
-          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-5">
+          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-4 sm:mb-5">
             What we build
           </div>
-          <h2 className="text-3xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
             Real workflows. Real automation.{" "}
             <span className="font-serif italic font-normal text-accent">No fluff.</span>
           </h2>
         </div>
-        <p className="text-muted-foreground text-base max-w-sm leading-relaxed">
+        <p className="text-muted-foreground text-sm sm:text-base max-w-sm leading-relaxed">
           A few examples of the systems we've built. Each one removes a repetitive task that used
           to eat hours of staff time every week.
         </p>
@@ -283,7 +287,7 @@ function Bento() {
 
       <div className="grid grid-cols-12 gap-px bg-border/70 border border-border/70 rounded-2xl overflow-hidden">
         <BentoCard
-          className="col-span-12 lg:col-span-8 h-[460px]"
+          className="col-span-12 lg:col-span-8 min-h-[420px] lg:h-[460px]"
           tag="For bookkeepers"
           icon={<FileText className="size-4" />}
           title="Automatic document chasing"
@@ -327,24 +331,25 @@ function Bento() {
           body="Handles appointment reminders, intake forms, and follow-up messages so your front desk can focus on people, not admin."
         />
 
-        <div className="col-span-12 md:col-span-6 lg:col-span-8 bg-foreground p-9 text-background flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className="col-span-12 md:col-span-6 lg:col-span-8 bg-foreground p-6 sm:p-8 md:p-9 text-background flex flex-col md:flex-row md:items-center justify-between gap-5 sm:gap-6">
           <div>
             <div className="text-xs uppercase tracking-[0.22em] mb-3 opacity-60">
               Don't see your workflow?
             </div>
-            <h4 className="font-semibold tracking-tight text-2xl md:text-3xl text-balance">
+            <h4 className="font-semibold tracking-tight text-xl sm:text-2xl md:text-3xl text-balance">
               If it's repetitive, we can probably automate it.
             </h4>
           </div>
           <a
             href="#cta"
-            className="shrink-0 px-5 py-2.5 bg-background text-foreground font-medium rounded-full hover:bg-background/90 transition-colors flex items-center gap-2"
+            className="shrink-0 px-5 py-2.5 bg-background text-foreground font-medium rounded-full hover:bg-background/90 transition-colors inline-flex items-center gap-2 self-start md:self-auto text-sm sm:text-base"
           >
             Tell us about it <ArrowUpRight className="size-4" />
           </a>
         </div>
       </div>
     </section>
+
   );
 }
 
@@ -371,22 +376,23 @@ function BentoCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6 }}
-      className={`group relative bg-background p-9 hover:bg-secondary/50 transition-colors flex flex-col justify-between overflow-hidden ${className}`}
+      className={`group relative bg-background p-6 sm:p-8 md:p-9 hover:bg-secondary/50 transition-colors flex flex-col justify-between overflow-hidden ${className}`}
     >
-      <div className="absolute top-5 right-6 text-[10px] uppercase tracking-[0.22em] text-accent/70">
+      <div className="absolute top-4 sm:top-5 right-5 sm:right-6 text-[10px] uppercase tracking-[0.22em] text-accent/70">
         {tag}
       </div>
-      <div className="relative z-10 max-w-md">
-        <div className="size-9 border border-border rounded-md flex items-center justify-center mb-6 text-accent group-hover:border-accent/60 transition-colors">
+      <div className="relative z-10 max-w-md pt-6">
+        <div className="size-9 border border-border rounded-md flex items-center justify-center mb-5 sm:mb-6 text-accent group-hover:border-accent/60 transition-colors">
           {icon}
         </div>
         <h3
-          className={`${large ? "text-3xl md:text-4xl" : "text-xl"} font-semibold tracking-tight mb-4 text-balance`}
+          className={`${large ? "text-2xl sm:text-3xl md:text-4xl" : "text-lg sm:text-xl"} font-semibold tracking-tight mb-3 sm:mb-4 text-balance`}
         >
           {title}
         </h3>
-        <p className="text-muted-foreground text-sm leading-relaxed">{body}</p>
+        <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
       </div>
+
 
       {large && (
         <div className="relative flex-1 mt-8 rounded-lg overflow-hidden border border-border">
@@ -508,19 +514,19 @@ function Process() {
   ];
 
   return (
-    <section id="process" className="py-28 border-y border-border/60 bg-secondary/50">
-      <div className="max-w-[1280px] mx-auto px-6">
-        <div className="mb-16 max-w-2xl">
-          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-5">
+    <section id="process" className="py-16 sm:py-20 md:py-28 border-y border-border/60 bg-secondary/50">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
+        <div className="mb-10 sm:mb-16 max-w-2xl">
+          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-4 sm:mb-5">
             How it works
           </div>
-          <h2 className="text-3xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
             From first call to running system{" "}
             <span className="font-serif italic font-normal text-muted-foreground">in under a month.</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-px bg-border/70 border border-border/70 rounded-2xl overflow-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px bg-border/70 border border-border/70 rounded-2xl overflow-hidden">
           {steps.map((s, i) => (
             <motion.div
               key={i}
@@ -528,14 +534,14 @@ function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="bg-background p-8 min-h-[240px] flex flex-col justify-between group hover:bg-secondary/50 transition-colors"
+              className="bg-background p-6 sm:p-7 md:p-8 min-h-[200px] sm:min-h-[240px] flex flex-col justify-between gap-8 group hover:bg-secondary/50 transition-colors"
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono text-accent">{s.num}</span>
                 <div className="size-1.5 rounded-full bg-accent group-hover:scale-150 transition-transform" />
               </div>
               <div>
-                <h4 className="text-2xl font-semibold tracking-tight mb-3">{s.title}</h4>
+                <h4 className="text-xl sm:text-2xl font-semibold tracking-tight mb-2 sm:mb-3">{s.title}</h4>
                 <p className="text-sm text-muted-foreground leading-relaxed">{s.body}</p>
               </div>
             </motion.div>
@@ -543,6 +549,7 @@ function Process() {
         </div>
       </div>
     </section>
+
   );
 }
 
@@ -555,8 +562,8 @@ function Metrics() {
     { value: "100%", label: "Managed — we run it so you don't have to" },
   ];
   return (
-    <section className="py-20">
-      <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-10">
+    <section className="py-14 sm:py-20">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-10">
         {items.map((m, i) => (
           <motion.div
             key={i}
@@ -566,14 +573,15 @@ function Metrics() {
             transition={{ duration: 0.5, delay: i * 0.05 }}
             className="flex flex-col"
           >
-            <span className="text-4xl md:text-5xl font-semibold tracking-[-0.03em] text-accent">
+            <span className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] text-accent">
               {m.value}
             </span>
-            <span className="text-sm text-muted-foreground mt-3 leading-snug">{m.label}</span>
+            <span className="text-xs sm:text-sm text-muted-foreground mt-2 sm:mt-3 leading-snug">{m.label}</span>
           </motion.div>
         ))}
       </div>
     </section>
+
   );
 }
 
@@ -608,13 +616,13 @@ function FAQ() {
   ];
 
   return (
-    <section id="faq" className="py-28">
-      <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-[1fr_2fr] gap-12">
+    <section id="faq" className="py-16 sm:py-20 md:py-28">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 grid md:grid-cols-[1fr_2fr] gap-8 md:gap-12">
         <div>
-          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-5">
+          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-4 sm:mb-5">
             FAQ
           </div>
-          <h2 className="text-3xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
             Common{" "}
             <span className="font-serif italic font-normal text-accent">questions.</span>
           </h2>
@@ -635,8 +643,9 @@ function FAQItem({ q, a }: { q: string; a: string }) {
     <div className="border-b border-border">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center justify-between gap-6 py-6 text-left group"
+        className="w-full flex items-center justify-between gap-4 sm:gap-6 py-5 sm:py-6 text-left group"
       >
+
         <span className="font-medium text-base md:text-lg tracking-tight group-hover:text-accent transition-colors">
           {q}
         </span>
@@ -663,22 +672,22 @@ function Footer() {
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom,hsl(168_72%_32%/0.10),transparent_60%)]" />
       <div className="absolute inset-0 -z-10 grid-bg [mask-image:radial-gradient(ellipse_at_bottom,#000,transparent_70%)]" />
 
-      <div className="max-w-[1280px] mx-auto px-6 pt-28 pb-14">
-        <div className="text-center mb-24 max-w-3xl mx-auto">
-          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-6">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 pt-16 sm:pt-24 md:pt-28 pb-10 sm:pb-14">
+        <div className="text-center mb-16 sm:mb-20 md:mb-24 max-w-3xl mx-auto">
+          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-5 sm:mb-6">
             Ready when you are
           </div>
-          <h2 className="text-4xl md:text-7xl font-semibold tracking-[-0.035em] leading-[1.02] mb-8 text-balance">
+          <h2 className="text-[34px] sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.035em] leading-[1.05] lg:leading-[1.02] mb-6 sm:mb-8 text-balance">
             Stop wasting hours on{" "}
             <span className="font-serif italic font-normal text-accent">work AI can do for you.</span>
           </h2>
-          <p className="text-muted-foreground text-lg mb-10 leading-relaxed">
+          <p className="text-muted-foreground text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed">
             Book a free 20-minute workflow audit. We'll look at your business, find the highest-cost
             repetitive task, and tell you honestly whether automating it makes sense.
           </p>
           <a
             href="#"
-            className="inline-flex items-center gap-2 px-7 py-3.5 bg-foreground text-background font-medium rounded-full hover:bg-foreground/90 transition-all"
+            className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 bg-foreground text-background font-medium rounded-full hover:bg-foreground/90 transition-all"
           >
             Book your free audit <ArrowUpRight className="size-4" />
           </a>
@@ -687,9 +696,9 @@ function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border pt-12 grid md:grid-cols-[2fr_1fr_1fr_1fr] gap-12">
-          <div>
-            <div className="mb-5">
+        <div className="border-t border-border pt-10 sm:pt-12 grid grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr] gap-8 sm:gap-12">
+          <div className="col-span-2 md:col-span-1">
+            <div className="mb-4 sm:mb-5">
               <Wordmark />
             </div>
             <p className="text-muted-foreground text-sm max-w-sm leading-relaxed">
@@ -705,7 +714,7 @@ function Footer() {
           <FooterCol title="Legal" links={["Terms", "Privacy", "Security"]} />
         </div>
 
-        <div className="mt-14 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
+        <div className="mt-10 sm:mt-14 pt-6 sm:pt-8 border-t border-border flex flex-col md:flex-row items-start md:items-center justify-between gap-3 md:gap-4 text-xs text-muted-foreground">
           <div>© 2026 BrightFlow AI. All rights reserved.</div>
           <div className="flex items-center gap-2">
             <span className="size-1.5 rounded-full bg-accent animate-pulse-dot" />
@@ -713,6 +722,7 @@ function Footer() {
           </div>
         </div>
       </div>
+
     </footer>
   );
 }
