@@ -40,8 +40,7 @@ export const Route = createFileRoute("/")({
 
 function Wordmark() {
   return (
-    <a href="#top" className="flex items-center gap-2.5 group">
-      <Logo className="size-7" />
+    <a href="#top" className="flex items-center group">
       <span className="text-[17px] font-semibold tracking-tight">
         BrightFlow <span className="text-muted-foreground/70 font-normal">AI</span>
       </span>
