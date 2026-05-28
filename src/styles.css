@@ -3,9 +3,46 @@
 @source "../node_modules/daisyui";
 @import "tw-animate-css";
 @plugin "daisyui" {
-  themes: light --default, dark;
-  prefix: "d-";
+  themes: brightflow --default;
 }
+@plugin "daisyui/theme" {
+  name: "brightflow";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: oklch(98% 0.005 180);
+  --color-base-300: oklch(94% 0.008 180);
+  --color-base-content: oklch(18% 0.02 250);
+
+  --color-primary: oklch(48% 0.12 175);
+  --color-primary-content: oklch(100% 0 0);
+  --color-secondary: oklch(96% 0.01 180);
+  --color-secondary-content: oklch(18% 0.02 250);
+  --color-accent: oklch(48% 0.12 175);
+  --color-accent-content: oklch(100% 0 0);
+  --color-neutral: oklch(18% 0.02 250);
+  --color-neutral-content: oklch(100% 0 0);
+  --color-info: oklch(72% 0.12 230);
+  --color-info-content: oklch(100% 0 0);
+  --color-success: oklch(60% 0.15 160);
+  --color-success-content: oklch(100% 0 0);
+  --color-warning: oklch(75% 0.16 75);
+  --color-warning-content: oklch(18% 0.02 250);
+  --color-error: oklch(60% 0.22 25);
+  --color-error-content: oklch(100% 0 0);
+
+  --radius-selector: 9999px;
+  --radius-field: 9999px;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap");
 
 

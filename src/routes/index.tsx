@@ -88,10 +88,11 @@ function Nav() {
           </div>
           <a
             href="#cta"
-            className="px-3.5 sm:px-4 py-2 bg-foreground text-background text-xs sm:text-sm font-medium rounded-full hover:bg-foreground/90 transition-all inline-flex items-center gap-1.5 whitespace-nowrap"
+            className="btn btn-sm btn-neutral rounded-full font-medium whitespace-nowrap"
           >
             Book a call <ArrowRight className="size-3.5" />
           </a>
+
         </div>
       </div>
     </nav>
@@ -123,11 +124,12 @@ function Hero() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-6 sm:mb-8 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-background/60 backdrop-blur text-xs text-muted-foreground"
+            className="mb-6 sm:mb-8 badge badge-outline badge-lg gap-2 bg-base-100/60 backdrop-blur text-xs text-muted-foreground border-border"
           >
-            <span className="size-1.5 rounded-full bg-accent animate-pulse-dot" />
+            <span className="size-1.5 rounded-full bg-primary animate-pulse-dot" />
             AI automation, fully managed
           </motion.div>
+
 
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
@@ -156,16 +158,17 @@ function Hero() {
           >
             <a
               href="#cta"
-              className="w-full sm:w-auto px-6 py-3 bg-foreground text-background font-medium rounded-full hover:bg-foreground/90 transition-all flex items-center justify-center gap-2"
+              className="btn btn-lg btn-neutral rounded-full w-full sm:w-auto"
             >
               Book a free audit <ArrowRight className="size-4" />
             </a>
             <a
               href="#services"
-              className="w-full sm:w-auto px-6 py-3 bg-transparent border border-border font-medium rounded-full hover:bg-secondary transition-all text-center"
+              className="btn btn-lg btn-outline rounded-full w-full sm:w-auto border-border text-foreground hover:bg-secondary hover:border-border"
             >
               See what we build
             </a>
+
           </motion.div>
         </div>
       </div>
@@ -343,10 +346,11 @@ function Bento() {
           </div>
           <a
             href="#cta"
-            className="shrink-0 px-5 py-2.5 bg-background text-foreground font-medium rounded-full hover:bg-background/90 transition-colors inline-flex items-center gap-2 self-start md:self-auto text-sm sm:text-base"
+            className="btn btn-md bg-base-100 text-neutral border-none hover:bg-base-100/90 rounded-full self-start md:self-auto"
           >
             Tell us about it <ArrowUpRight className="size-4" />
           </a>
+
         </div>
       </div>
     </section>
@@ -612,10 +616,11 @@ function Footer() {
           </p>
           <a
             href="#"
-            className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 bg-foreground text-background font-medium rounded-full hover:bg-foreground/90 transition-all"
+            className="btn btn-lg btn-neutral rounded-full"
           >
             Book your free audit <ArrowUpRight className="size-4" />
           </a>
+
           <div className="mt-5 text-sm text-muted-foreground">
             No pitch. No pressure. Just a clear plan.
           </div>
