@@ -108,12 +108,14 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto"
           >
-            <Link
-              to="/contact"
-              className="btn btn-lg btn-neutral rounded-full w-full sm:w-auto"
-            >
-              Book a free audit <ArrowRight className="size-4" />
-            </Link>
+            <BookCallDialog>
+              <button
+                type="button"
+                className="btn btn-lg btn-neutral rounded-full w-full sm:w-auto"
+              >
+                Book a free audit <ArrowRight className="size-4" />
+              </button>
+            </BookCallDialog>
             <a
               href="#services"
               className="btn btn-lg btn-outline rounded-full w-full sm:w-auto border-border text-foreground hover:bg-secondary hover:border-border"
