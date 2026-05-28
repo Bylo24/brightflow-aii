@@ -514,19 +514,19 @@ function Process() {
   ];
 
   return (
-    <section id="process" className="py-28 border-y border-border/60 bg-secondary/50">
-      <div className="max-w-[1280px] mx-auto px-6">
-        <div className="mb-16 max-w-2xl">
-          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-5">
+    <section id="process" className="py-16 sm:py-20 md:py-28 border-y border-border/60 bg-secondary/50">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
+        <div className="mb-10 sm:mb-16 max-w-2xl">
+          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-4 sm:mb-5">
             How it works
           </div>
-          <h2 className="text-3xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
             From first call to running system{" "}
             <span className="font-serif italic font-normal text-muted-foreground">in under a month.</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-px bg-border/70 border border-border/70 rounded-2xl overflow-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px bg-border/70 border border-border/70 rounded-2xl overflow-hidden">
           {steps.map((s, i) => (
             <motion.div
               key={i}
@@ -534,14 +534,14 @@ function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="bg-background p-8 min-h-[240px] flex flex-col justify-between group hover:bg-secondary/50 transition-colors"
+              className="bg-background p-6 sm:p-7 md:p-8 min-h-[200px] sm:min-h-[240px] flex flex-col justify-between gap-8 group hover:bg-secondary/50 transition-colors"
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono text-accent">{s.num}</span>
                 <div className="size-1.5 rounded-full bg-accent group-hover:scale-150 transition-transform" />
               </div>
               <div>
-                <h4 className="text-2xl font-semibold tracking-tight mb-3">{s.title}</h4>
+                <h4 className="text-xl sm:text-2xl font-semibold tracking-tight mb-2 sm:mb-3">{s.title}</h4>
                 <p className="text-sm text-muted-foreground leading-relaxed">{s.body}</p>
               </div>
             </motion.div>
@@ -549,6 +549,7 @@ function Process() {
         </div>
       </div>
     </section>
+
   );
 }
 
