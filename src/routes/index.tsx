@@ -4,30 +4,34 @@ import { useRef, useState } from "react";
 import {
   ArrowRight,
   ArrowUpRight,
-  Boxes,
   Building2,
+  Check,
   ChevronDown,
+  Clock,
   FileText,
   HeartPulse,
   Plus,
   Star,
   UserSearch,
 } from "lucide-react";
+import logoUrl from "@/assets/brightflow-logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "BrightFlow AI — Automate the repetitive work that slows you down" },
+      {
+        title: "BrightFlow AI — AI automation that removes repetitive admin work",
+      },
       {
         name: "description",
         content:
-          "BrightFlow AI builds and manages niche-specific automation systems for bookkeepers, property managers, recruiters, clinics, and local businesses. Less manual admin. Cleaner operations.",
+          "BrightFlow AI builds and runs custom AI systems that take repetitive, time-consuming tasks off your team — for bookkeepers, property managers, recruiters, clinics, and local businesses.",
       },
-      { property: "og:title", content: "BrightFlow AI — Operational Automation Systems" },
+      { property: "og:title", content: "BrightFlow AI — Automate the repetitive work" },
       {
         property: "og:description",
         content:
-          "Niche-specific AI workflow systems that remove repetitive admin work and stop the manual bleed.",
+          "We find the painful, repeated workflow in your business and build the AI system that runs it for you. Managed monthly.",
       },
     ],
   }),
@@ -41,10 +45,12 @@ function Index() {
       <main>
         <Hero />
         <Marquee />
+        <ValueProp />
         <Bento />
         <Process />
         <Metrics />
         <Testimonial />
+        <Pricing />
         <FAQ />
       </main>
       <Footer />
@@ -56,37 +62,38 @@ function Index() {
 function Nav() {
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-background/70 backdrop-blur-xl">
-      <div className="max-w-[1440px] mx-auto px-6 h-14 flex items-center justify-between">
-        <div className="flex items-center gap-6">
-          <a href="#top" className="flex items-center gap-2.5">
-            <div className="size-4 bg-accent rounded-[2px] shadow-[0_0_12px_hsl(184_100%_50%/0.5)]" />
-            <span className="font-black tracking-tighter text-lg uppercase italic">
-              BrightFlow
-            </span>
-          </a>
-          <div className="hidden lg:flex gap-1.5 items-center px-3 py-1 bg-white/5 border border-border rounded text-[10px] font-mono text-muted-foreground">
-            <span className="w-1 h-1 rounded-full bg-accent animate-pulse-dot" />
-            SYSTEM_STATUS: OPTIMAL
-          </div>
-        </div>
+      <div className="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="#top" className="flex items-center gap-2.5">
+          <img
+            src={logoUrl}
+            alt="BrightFlow AI logo"
+            className="h-7 w-auto"
+          />
+          <span className="font-black tracking-tight text-lg">
+            BrightFlow<span className="text-accent">.</span>AI
+          </span>
+        </a>
 
         <div className="flex items-center gap-8">
-          <div className="hidden md:flex items-center gap-6 text-[11px] font-mono uppercase tracking-widest text-muted-foreground">
-            <a href="#systems" className="hover:text-accent transition-colors">
-              Systems
+          <div className="hidden md:flex items-center gap-7 text-sm font-medium text-muted-foreground">
+            <a href="#services" className="hover:text-foreground transition-colors">
+              What we build
             </a>
-            <a href="#process" className="hover:text-accent transition-colors">
-              Process
+            <a href="#process" className="hover:text-foreground transition-colors">
+              How it works
             </a>
-            <a href="#faq" className="hover:text-accent transition-colors">
+            <a href="#pricing" className="hover:text-foreground transition-colors">
+              Pricing
+            </a>
+            <a href="#faq" className="hover:text-foreground transition-colors">
               FAQ
             </a>
           </div>
           <a
             href="#cta"
-            className="px-4 py-1.5 bg-accent text-accent-foreground text-[11px] font-bold uppercase tracking-tighter rounded-sm hover:brightness-110 transition-all shadow-[inset_0_-1px_0_rgba(0,0,0,0.2)]"
+            className="px-4 py-2 bg-accent text-accent-foreground text-sm font-semibold rounded-md hover:brightness-110 transition-all"
           >
-            Initialize Audit
+            Book a call
           </a>
         </div>
       </div>
@@ -105,12 +112,11 @@ function Hero() {
     <section
       id="top"
       ref={ref}
-      className="relative pt-20 pb-32 overflow-hidden border-b border-border"
+      className="relative pt-24 pb-28 overflow-hidden border-b border-border"
     >
       <motion.div style={{ y, opacity }} className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,hsl(184_100%_50%/0.10),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,hsl(165_78%_42%/0.14),transparent_55%)]" />
         <div className="absolute inset-0 grid-bg [mask-image:radial-gradient(ellipse_70%_50%_at_50%_0%,#000_60%,transparent_100%)]" />
-        <div className="absolute left-1/2 -translate-x-1/2 top-0 w-px h-full bg-gradient-to-b from-accent/40 via-border/20 to-transparent" />
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-6">
@@ -118,62 +124,65 @@ function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-8 font-mono text-[10px] tracking-[0.3em] text-accent uppercase flex items-center gap-4"
+            transition={{ duration: 0.5 }}
+            className="mb-8 inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-accent/30 bg-accent/5 text-xs font-medium text-accent"
           >
-            <span className="h-px w-8 bg-accent/30" />
-            Operational Engineering v4.0
-            <span className="h-px w-8 bg-accent/30" />
+            <span className="size-1.5 rounded-full bg-accent animate-pulse-dot" />
+            AI automation agency · Done-for-you systems
           </motion.div>
 
-          <h1 className="text-5xl sm:text-7xl md:text-[120px] leading-[0.85] font-black tracking-tighter uppercase mb-12 animate-reveal">
-            Logic over <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-b from-accent to-accent/30">
-              Manual Labor
-            </span>
-          </h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-[88px] leading-[0.95] font-black tracking-tight mb-7 max-w-5xl"
+          >
+            We automate the{" "}
+            <span className="text-accent">repetitive admin work</span>{" "}
+            slowing your business down.
+          </motion.h1>
 
-          <div className="grid md:grid-cols-3 gap-10 md:gap-12 w-full max-w-5xl mt-8 text-left border-t border-border pt-12">
-            {[
-              {
-                num: "01 / Purpose",
-                body: "We replace fragile human processes with hardened digital logic. No more document chasing, manual triage, or follow-up drift.",
-              },
-              {
-                num: "02 / Strategy",
-                body: "Bespoke automation stacks engineered for bookkeepers, property managers, recruiters, clinics, and local operators.",
-              },
-              {
-                num: "03 / Execution",
-                cta: true,
-              },
-            ].map((b, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 * i }}
-                className="space-y-4"
-              >
-                <div className="font-mono text-[10px] text-muted-foreground uppercase">{b.num}</div>
-                {b.cta ? (
-                  <a
-                    href="#cta"
-                    className="group flex items-center gap-3 font-bold text-accent text-sm uppercase tracking-tighter"
-                  >
-                    Book a Discovery Call
-                    <span className="size-6 border border-accent/30 rounded-full flex items-center justify-center group-hover:bg-accent group-hover:text-accent-foreground transition-all">
-                      <ArrowRight className="size-3" />
-                    </span>
-                  </a>
-                ) : (
-                  <p className="text-sm leading-relaxed text-muted-foreground text-pretty">
-                    {b.body}
-                  </p>
-                )}
-              </motion.div>
-            ))}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 text-pretty"
+          >
+            BrightFlow AI builds custom AI workflow systems that handle the manual tasks your team
+            wastes hours on every week — chasing documents, screening leads, replying to clients,
+            requesting reviews. We build it, integrate it, and run it for you monthly.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="flex flex-col sm:flex-row items-center gap-3"
+          >
+            <a
+              href="#cta"
+              className="w-full sm:w-auto px-7 py-3.5 bg-accent text-accent-foreground font-semibold rounded-md hover:brightness-110 transition-all shadow-[0_0_40px_hsl(165_78%_42%/0.25)] flex items-center justify-center gap-2"
+            >
+              Book a free workflow audit <ArrowRight className="size-4" />
+            </a>
+            <a
+              href="#services"
+              className="w-full sm:w-auto px-7 py-3.5 bg-secondary border border-border font-semibold rounded-md hover:bg-secondary/70 transition-all"
+            >
+              See what we build
+            </a>
+          </motion.div>
+
+          <div className="mt-8 flex items-center gap-6 text-xs text-muted-foreground">
+            <span className="flex items-center gap-1.5">
+              <Check className="size-3.5 text-accent" /> No long-term contracts
+            </span>
+            <span className="flex items-center gap-1.5">
+              <Check className="size-3.5 text-accent" /> Live in 2–4 weeks
+            </span>
+            <span className="hidden sm:flex items-center gap-1.5">
+              <Check className="size-3.5 text-accent" /> Fully managed
+            </span>
           </div>
         </div>
       </div>
@@ -184,22 +193,25 @@ function Hero() {
 /* ---------------- MARQUEE ---------------- */
 function Marquee() {
   const items = [
+    "BOOKKEEPING FIRMS",
     "PROPERTY MANAGEMENT",
-    "MEDICAL CLINICS",
-    "ACCOUNTING FIRMS",
     "RECRUITMENT AGENCIES",
-    "E-COMMERCE OPERATIONS",
-    "LEGAL SERVICES",
-    "DENTAL PRACTICES",
+    "MEDICAL & DENTAL CLINICS",
+    "LOCAL SERVICE BUSINESSES",
     "REAL ESTATE TEAMS",
+    "LEGAL PRACTICES",
+    "E-COMMERCE OPERATIONS",
   ];
   return (
-    <div className="py-10 border-b border-border bg-white/[0.01] overflow-hidden">
+    <div className="py-8 border-b border-border bg-white/[0.015] overflow-hidden">
+      <div className="text-center text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground/70 mb-6">
+        Built for service businesses that run on repetitive work
+      </div>
       <div className="flex gap-12 whitespace-nowrap animate-marquee w-max">
         {[...items, ...items, ...items].map((it, i) => (
           <span
             key={i}
-            className="text-muted-foreground/70 font-mono uppercase tracking-[0.25em] text-[11px] flex items-center gap-12"
+            className="text-muted-foreground/60 font-semibold uppercase tracking-[0.2em] text-sm flex items-center gap-12"
           >
             {it}
             <span className="size-1 rounded-full bg-accent/50" />
@@ -210,88 +222,142 @@ function Marquee() {
   );
 }
 
+/* ---------------- VALUE PROP ---------------- */
+function ValueProp() {
+  const points = [
+    {
+      icon: <Clock className="size-5" />,
+      title: "Stop losing hours to manual admin",
+      body: "Your team should be growing the business, not chasing receipts or copy-pasting from emails into your CRM.",
+    },
+    {
+      icon: <Check className="size-5" />,
+      title: "Built for your exact workflow",
+      body: "No generic chatbots. We map your specific process and build the AI system around it — integrated with the tools you already use.",
+    },
+    {
+      icon: <ArrowUpRight className="size-5" />,
+      title: "Managed monthly, not handed off",
+      body: "We run, monitor and improve the system every month. You see the results — you never have to maintain it.",
+    },
+  ];
+
+  return (
+    <section className="py-24 border-b border-border">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-3xl mb-14">
+          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-4">
+            Why BrightFlow
+          </div>
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.05]">
+            Most businesses lose money to{" "}
+            <span className="text-muted-foreground">work that should never be done by hand.</span>
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-px bg-border border border-border rounded-xl overflow-hidden">
+          {points.map((p, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              className="bg-background p-8 hover:bg-white/[0.02] transition-colors"
+            >
+              <div className="size-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center mb-5">
+                {p.icon}
+              </div>
+              <h3 className="text-lg font-bold mb-2">{p.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{p.body}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ---------------- BENTO ---------------- */
 function Bento() {
   return (
-    <section id="systems" className="py-24 max-w-[1440px] mx-auto px-6">
-      <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-        <div className="max-w-xl">
-          <div className="font-mono text-[10px] tracking-[0.3em] text-accent uppercase mb-4">
-            // Operator Modules
+    <section id="services" className="py-24 max-w-[1440px] mx-auto px-6">
+      <div className="mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        <div className="max-w-2xl">
+          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-4">
+            What we build
           </div>
-          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter">
-            Niche pain, <span className="text-accent">solved.</span>
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.05]">
+            Real workflows. <br />
+            Real automation. <span className="text-accent">No fluff.</span>
           </h2>
         </div>
-        <p className="text-muted-foreground text-sm max-w-sm">
-          We don't ship generic chatbots. Each system is a closed-loop logic engine wired to a
-          specific industry's most expensive repetitive task.
+        <p className="text-muted-foreground text-base max-w-sm">
+          A few examples of the systems we've built. Each one removes a repetitive task that used
+          to eat hours of staff time every week.
         </p>
       </div>
 
-      <div className="grid grid-cols-12 gap-px bg-border">
-        {/* Large feature */}
+      <div className="grid grid-cols-12 gap-px bg-border border border-border rounded-2xl overflow-hidden">
         <BentoCard
           className="col-span-12 lg:col-span-8 h-[460px]"
-          tag="[UNIT_01 / BOOKKEEPERS]"
+          tag="For bookkeepers"
           icon={<FileText className="size-4" />}
-          title="Document Chase Engine"
-          body="Automatically identifies missing receipts, transactions, and explanations. Triggers multi-channel client nudges across SMS and email until the ledger is clean."
+          title="Automatic document chasing"
+          body="The system watches for missing receipts and unexplained transactions, then automatically emails and texts clients until everything is provided — without your team lifting a finger."
           large
         />
 
-        {/* Vertical */}
         <BentoCard
           className="col-span-12 lg:col-span-4"
-          tag="[UNIT_02 / PROPERTY MGMT]"
+          tag="For property managers"
           icon={<Building2 className="size-4" />}
-          title="Maintenance Orchestrator"
-          body="Instant tenant triage. Assesses urgency, gathers photo evidence, and dispatches contractors without a single manual email."
+          title="Maintenance intake on autopilot"
+          body="Tenants report issues through a smart intake flow that collects details, photos and urgency, then routes to the right contractor automatically."
           stats={[
-            { value: "85%", label: "Response time reduction" },
-            { value: "0.0", label: "Manual intervention" },
+            { value: "85%", label: "Faster response time" },
+            { value: "0", label: "Manual triage needed" },
           ]}
         />
 
         <BentoCard
           className="col-span-12 md:col-span-6 lg:col-span-4"
-          tag="[UNIT_03 / RECRUITERS]"
+          tag="For recruiters"
           icon={<UserSearch className="size-4" />}
-          title="Candidate Screener"
-          body="Filters applicants against complex fit criteria, collects availability, and books interviews while you sleep."
+          title="Candidate screening & scheduling"
+          body="AI screens inbound candidates against your criteria, collects availability, and books interviews into your calendar — 24/7."
         />
 
         <BentoCard
           className="col-span-12 md:col-span-6 lg:col-span-4"
-          tag="[UNIT_04 / LOCAL BUSINESS]"
+          tag="For local businesses"
           icon={<Star className="size-4" />}
-          title="Reputation Flow"
-          body="Identifies your happiest customers in real time, secures 5-star reviews, and flags damaging content before it spreads."
+          title="Review requests & reputation"
+          body="Automatically asks happy customers for reviews at the right moment, and alerts you the second a damaging review appears."
         />
 
-        {/* Clinics + CTA combo */}
         <BentoCard
           className="col-span-12 md:col-span-6 lg:col-span-4"
-          tag="[UNIT_05 / CLINICS]"
+          tag="For clinics & service businesses"
           icon={<HeartPulse className="size-4" />}
-          title="Patient Comms Engine"
-          body="Organizes admin requests, automates reminders, and orchestrates follow-ups across every channel."
+          title="Client comms & follow-ups"
+          body="Handles appointment reminders, intake forms, and follow-up messages so your front desk can focus on people, not admin."
         />
 
         <div className="col-span-12 md:col-span-6 lg:col-span-8 bg-accent p-8 text-accent-foreground flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
-            <div className="font-mono text-[10px] uppercase tracking-widest mb-3 opacity-70">
-              [READY FOR DEPLOYMENT]
+            <div className="text-xs font-semibold uppercase tracking-[0.2em] mb-3 opacity-70">
+              Don't see your workflow?
             </div>
-            <h4 className="font-black uppercase tracking-tighter text-2xl md:text-3xl">
-              Niches optimized: 14 — Capacity: 2 spots remaining.
+            <h4 className="font-black tracking-tight text-2xl md:text-3xl">
+              If it's repetitive, we can probably automate it.
             </h4>
           </div>
           <a
             href="#cta"
-            className="shrink-0 px-6 py-3 bg-background text-foreground font-black uppercase text-[11px] tracking-widest hover:bg-foreground hover:text-background transition-colors flex items-center gap-2"
+            className="shrink-0 px-6 py-3 bg-background text-foreground font-semibold rounded-md hover:bg-foreground hover:text-background transition-colors flex items-center gap-2"
           >
-            Begin Initialization <ArrowUpRight className="size-3.5" />
+            Tell us about it <ArrowUpRight className="size-4" />
           </a>
         </div>
       </div>
@@ -324,13 +390,15 @@ function BentoCard({
       transition={{ duration: 0.6 }}
       className={`group relative bg-background p-8 hover:bg-white/[0.02] transition-colors flex flex-col justify-between overflow-hidden ${className}`}
     >
-      <div className="absolute top-0 right-0 p-4 font-mono text-[10px] text-accent/40">{tag}</div>
+      <div className="absolute top-5 right-6 text-[10px] font-semibold uppercase tracking-[0.2em] text-accent/70">
+        {tag}
+      </div>
       <div className="relative z-10 max-w-md">
         <div className="size-9 border border-border rounded flex items-center justify-center mb-6 text-accent group-hover:border-accent/60 transition-colors">
           {icon}
         </div>
         <h3
-          className={`${large ? "text-3xl md:text-4xl" : "text-xl"} font-black uppercase tracking-tighter mb-4`}
+          className={`${large ? "text-3xl md:text-4xl" : "text-xl"} font-bold tracking-tight mb-4`}
         >
           {title}
         </h3>
@@ -338,7 +406,7 @@ function BentoCard({
       </div>
 
       {large && (
-        <div className="relative flex-1 mt-8 rounded-sm overflow-hidden border border-border">
+        <div className="relative flex-1 mt-8 rounded-md overflow-hidden border border-border">
           <FlowDiagram />
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <div className="w-full h-1/4 bg-gradient-to-b from-accent/0 via-accent/20 to-accent/0 animate-scan-line" />
@@ -350,8 +418,8 @@ function BentoCard({
         <div className="grid grid-cols-2 gap-4 mt-8 pt-8 border-t border-border">
           {stats.map((s, i) => (
             <div key={i}>
-              <div className="text-2xl font-bold font-mono">{s.value}</div>
-              <div className="text-[9px] text-muted-foreground uppercase tracking-widest mt-1">
+              <div className="text-2xl font-bold">{s.value}</div>
+              <div className="text-[10px] text-muted-foreground uppercase tracking-widest mt-1">
                 {s.label}
               </div>
             </div>
@@ -363,15 +431,14 @@ function BentoCard({
 }
 
 function FlowDiagram() {
-  // Schematic SVG with flowing dots — pure CSS/SVG, no images needed.
   return (
-    <div className="relative w-full h-full bg-[radial-gradient(circle_at_50%_50%,hsl(240_8%_8%),hsl(240_10%_3%))] grid-bg">
+    <div className="relative w-full h-full bg-[radial-gradient(circle_at_50%_50%,hsl(220_12%_8%),hsl(220_14%_4%))] grid-bg">
       <svg viewBox="0 0 600 240" className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
         <defs>
           <linearGradient id="line" x1="0" x2="1" y1="0" y2="0">
-            <stop offset="0%" stopColor="hsl(184 100% 50% / 0)" />
-            <stop offset="50%" stopColor="hsl(184 100% 50%)" />
-            <stop offset="100%" stopColor="hsl(184 100% 50% / 0)" />
+            <stop offset="0%" stopColor="hsl(165 78% 42% / 0)" />
+            <stop offset="50%" stopColor="hsl(165 78% 42%)" />
+            <stop offset="100%" stopColor="hsl(165 78% 42% / 0)" />
           </linearGradient>
         </defs>
         {[60, 120, 180].map((y, i) => (
@@ -379,7 +446,7 @@ function FlowDiagram() {
             <path
               d={`M0 ${y} C150 ${y}, 200 ${y + (i % 2 ? -40 : 40)}, 350 ${y + (i % 2 ? -40 : 40)} S 500 ${y}, 600 ${y}`}
               fill="none"
-              stroke="hsl(240 6% 18%)"
+              stroke="hsl(220 10% 18%)"
               strokeWidth="1"
             />
             <path
@@ -413,18 +480,19 @@ function FlowDiagram() {
               y={y - 6}
               width="12"
               height="12"
-              fill="hsl(240 10% 2.5%)"
-              stroke="hsl(184 100% 50%)"
+              fill="hsl(220 14% 4%)"
+              stroke="hsl(165 78% 42%)"
               strokeWidth="1"
+              rx="2"
             />
-            <circle cx={x} cy={y} r="1.5" fill="hsl(184 100% 50%)" />
+            <circle cx={x} cy={y} r="1.5" fill="hsl(165 78% 42%)" />
           </g>
         ))}
       </svg>
-      <div className="absolute bottom-3 left-3 font-mono text-[9px] text-muted-foreground/60 uppercase tracking-widest">
-        live_pipeline.process · 200ms cycle
+      <div className="absolute bottom-3 left-3 text-[10px] text-muted-foreground/60 uppercase tracking-widest">
+        Example workflow · automated
       </div>
-      <div className="absolute top-3 right-3 font-mono text-[9px] text-accent uppercase tracking-widest flex items-center gap-1.5">
+      <div className="absolute top-3 right-3 text-[10px] text-accent uppercase tracking-widest flex items-center gap-1.5 font-medium">
         <span className="size-1.5 rounded-full bg-accent animate-pulse-dot" /> running
       </div>
     </div>
@@ -436,57 +504,54 @@ function Process() {
   const steps = [
     {
       num: "01",
-      title: "Audit the Friction",
-      body: "We map every repeating manual workflow inside your operation and isolate the single highest-cost loop.",
+      title: "Audit",
+      body: "We sit down with you and map the repetitive workflows costing the most time and money. You get a clear plan even if you don't move forward.",
     },
     {
       num: "02",
-      title: "Architect the Logic",
-      body: "Our engineers design a closed-loop system: every decision node, data point, and fallback path documented.",
+      title: "Build",
+      body: "Our team designs and builds the AI system around your specific workflow. We integrate with your existing tools — CRM, email, accounting, calendar, etc.",
     },
     {
       num: "03",
-      title: "Automate the Repetition",
-      body: "We deploy the AI system into your stack. Your team approves edge cases; the engine handles the rest.",
+      title: "Launch",
+      body: "We deploy the system, train your team in under an hour, and switch it on. Most clients are live within 2–4 weeks.",
     },
     {
       num: "04",
-      title: "Managed Scaling",
-      body: "We run, monitor, and optimize the system monthly — tuning prompts, models, and routing as you grow.",
+      title: "Manage",
+      body: "We monitor performance, fix edge cases, and improve the system every month — for a flat fee. You never have to maintain it.",
     },
   ];
 
   return (
-    <section id="process" className="py-24 border-y border-border bg-white/[0.01]">
+    <section id="process" className="py-24 border-y border-border bg-white/[0.015]">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-16 max-w-2xl">
-          <div className="font-mono text-[10px] tracking-[0.3em] text-accent uppercase mb-4">
-            // The Flow Methodology
+        <div className="mb-14 max-w-2xl">
+          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-4">
+            How it works
           </div>
-          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter">
-            Four phases. <br />
-            One operational outcome.
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.05]">
+            From first call to running system in under a month.
           </h2>
         </div>
 
-        <div className="relative grid grid-cols-1 md:grid-cols-4 gap-px bg-border border border-border">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-px bg-border border border-border rounded-xl overflow-hidden">
           {steps.map((s, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-background p-8 min-h-[260px] flex flex-col justify-between group hover:bg-white/[0.02] transition-colors"
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              className="bg-background p-8 min-h-[240px] flex flex-col justify-between group hover:bg-white/[0.02] transition-colors"
             >
               <div className="flex items-center justify-between">
-                <span className="font-mono text-[10px] text-accent uppercase tracking-widest">
-                  PHASE / {s.num}
-                </span>
-                <div className="size-2 bg-accent group-hover:scale-150 transition-transform" />
+                <span className="text-xs font-semibold text-accent">Step {s.num}</span>
+                <div className="size-2 rounded-full bg-accent group-hover:scale-150 transition-transform" />
               </div>
               <div>
-                <h4 className="text-xl font-black uppercase tracking-tighter mb-3">{s.title}</h4>
+                <h4 className="text-2xl font-bold tracking-tight mb-3">{s.title}</h4>
                 <p className="text-sm text-muted-foreground leading-relaxed">{s.body}</p>
               </div>
             </motion.div>
@@ -500,10 +565,10 @@ function Process() {
 /* ---------------- METRICS ---------------- */
 function Metrics() {
   const items = [
-    { label: "System_Efficiency", value: "14,200h", sub: "RECOVERED_ANNUALLY" },
-    { label: "Data_Integrity", value: "99.98%", sub: "ERROR_FREE_EXECUTION" },
-    { label: "Margin_Impact", value: "+42%", sub: "NET_PROFIT_LIFT" },
-    { label: "Active_Nodes", value: "1,240", sub: "GLOBAL_AUTOMATIONS" },
+    { value: "14,200+", label: "Hours saved for our clients each year" },
+    { value: "99.9%", label: "Automation accuracy across all systems" },
+    { value: "2–4 wks", label: "Average time from kickoff to live system" },
+    { value: "100%", label: "Managed — we run it so you don't have to" },
   ];
   return (
     <section className="py-16 border-b border-border">
@@ -517,11 +582,10 @@ function Metrics() {
             transition={{ duration: 0.5, delay: i * 0.05 }}
             className="flex flex-col"
           >
-            <span className="text-[10px] font-mono text-muted-foreground uppercase mb-2">
-              {m.label}
+            <span className="text-4xl md:text-5xl font-black tracking-tight text-accent">
+              {m.value}
             </span>
-            <span className="text-3xl md:text-5xl font-black tracking-tighter">{m.value}</span>
-            <span className="text-[10px] font-mono text-accent mt-2">{m.sub}</span>
+            <span className="text-sm text-muted-foreground mt-3 leading-snug">{m.label}</span>
           </motion.div>
         ))}
       </div>
@@ -532,24 +596,132 @@ function Metrics() {
 /* ---------------- TESTIMONIAL ---------------- */
 function Testimonial() {
   return (
-    <section className="py-32 border-b border-border relative overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_50%,hsl(184_100%_50%/0.06),transparent_60%)]" />
+    <section className="py-28 border-b border-border relative overflow-hidden">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_50%,hsl(165_78%_42%/0.08),transparent_60%)]" />
       <div className="max-w-4xl mx-auto px-6 text-center">
-        <div className="font-mono text-[10px] tracking-[0.3em] text-accent uppercase mb-8">
-          // Operator Testimony
+        <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-8">
+          What our clients say
         </div>
-        <blockquote className="text-2xl md:text-4xl font-black uppercase tracking-tighter leading-[1.1] text-balance">
-          "We were drowning in client document chasing. BrightFlow built a system that runs without
-          us. <span className="text-accent">It paid for itself in 11 days.</span>"
+        <blockquote className="text-2xl md:text-4xl font-bold tracking-tight leading-[1.2] text-balance">
+          “We were drowning in chasing clients for documents every month. BrightFlow built a system
+          that does it for us. <span className="text-accent">It paid for itself in 11 days.</span>”
         </blockquote>
-        <div className="mt-10 flex items-center justify-center gap-4 text-left">
-          <div className="size-10 rounded-full bg-gradient-to-br from-accent/40 to-accent/10 border border-border" />
-          <div>
-            <div className="text-sm font-bold">Marcus Holloway</div>
-            <div className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+        <div className="mt-10 flex items-center justify-center gap-4">
+          <div className="size-11 rounded-full bg-gradient-to-br from-accent/50 to-accent/10 border border-border" />
+          <div className="text-left">
+            <div className="text-sm font-semibold">Marcus Holloway</div>
+            <div className="text-xs text-muted-foreground">
               Managing Partner · Holloway Bookkeeping
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- PRICING / ENGAGEMENT ---------------- */
+function Pricing() {
+  const tiers = [
+    {
+      name: "Starter Workflow",
+      price: "From $2,500",
+      sub: "one-off build",
+      desc: "One automated workflow built end-to-end, integrated with your tools, ready to run.",
+      features: [
+        "Single workflow scope",
+        "Built in 2–3 weeks",
+        "30-day post-launch support",
+        "Light integration with 1–2 tools",
+      ],
+    },
+    {
+      name: "Managed System",
+      price: "From $1,500",
+      sub: "per month",
+      desc: "Most popular. Build + ongoing management — we run, monitor, and improve your system every month.",
+      features: [
+        "Build included after audit",
+        "Fully managed monthly",
+        "Continuous improvement & monitoring",
+        "Priority support & change requests",
+      ],
+      featured: true,
+    },
+    {
+      name: "Multi-Workflow Partner",
+      price: "Custom",
+      sub: "for larger ops",
+      desc: "For teams that want multiple workflows automated across departments under one partner.",
+      features: [
+        "Multiple workflows in scope",
+        "Dedicated automation lead",
+        "Quarterly roadmap & reviews",
+        "Custom SLAs",
+      ],
+    },
+  ];
+
+  return (
+    <section id="pricing" className="py-24 border-b border-border">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="mb-14 max-w-2xl">
+          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-4">
+            Engagement
+          </div>
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.05]">
+            Simple pricing. <br />
+            <span className="text-muted-foreground">Pick the depth of partnership.</span>
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-5">
+          {tiers.map((t, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.07 }}
+              className={`relative rounded-2xl border p-8 flex flex-col ${
+                t.featured
+                  ? "border-accent/60 bg-accent/[0.04] shadow-[0_0_40px_hsl(165_78%_42%/0.12)]"
+                  : "border-border bg-card"
+              }`}
+            >
+              {t.featured && (
+                <div className="absolute -top-3 left-8 px-2.5 py-1 bg-accent text-accent-foreground text-[10px] font-bold uppercase tracking-widest rounded-full">
+                  Most popular
+                </div>
+              )}
+              <div className="mb-6">
+                <h3 className="text-xl font-bold">{t.name}</h3>
+                <p className="text-sm text-muted-foreground mt-2">{t.desc}</p>
+              </div>
+              <div className="flex items-baseline gap-2 mb-8">
+                <span className="text-3xl font-black tracking-tight">{t.price}</span>
+                <span className="text-sm text-muted-foreground">{t.sub}</span>
+              </div>
+              <ul className="space-y-3 mb-8 flex-1">
+                {t.features.map((f) => (
+                  <li key={f} className="flex items-start gap-2.5 text-sm">
+                    <Check className="size-4 text-accent shrink-0 mt-0.5" />
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="#cta"
+                className={`w-full text-center py-3 rounded-md font-semibold transition-all ${
+                  t.featured
+                    ? "bg-accent text-accent-foreground hover:brightness-110"
+                    : "bg-secondary border border-border hover:bg-secondary/70"
+                }`}
+              >
+                Book a call
+              </a>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
@@ -560,24 +732,28 @@ function Testimonial() {
 function FAQ() {
   const items = [
     {
-      q: "How is this different from a generic AI agency?",
-      a: "We don't sell 'AI strategy.' We pick one painful repeated workflow inside your niche and ship a managed system that runs it forever. Specific in, specific out.",
+      q: "How is BrightFlow different from a generic AI agency?",
+      a: "We don't sell vague 'AI strategy' or generic chatbots. We find one specific repetitive workflow inside your business and build a managed system that runs it forever. Real scope, real outcomes.",
     },
     {
       q: "What does the engagement look like?",
-      a: "A short audit, a fixed build period (typically 2–4 weeks), then a flat monthly fee that covers hosting, monitoring, and continuous optimization.",
+      a: "Free audit call → fixed-price build (typically 2–4 weeks) → flat monthly fee for hosting, monitoring, and continuous improvement. No long-term contracts.",
     },
     {
-      q: "Will this integrate with my existing tools?",
-      a: "Yes. We wire into your CRM, accounting platform, comms stack, scheduling, and any internal databases. No rip-and-replace.",
+      q: "Will it integrate with the tools we already use?",
+      a: "Yes. We connect to your CRM, accounting platform, email, calendar, scheduling tools, and internal systems. No rip-and-replace — we work around your existing stack.",
     },
     {
-      q: "What happens if the system breaks?",
-      a: "We monitor every node 24/7 with alerting on failure modes. Most issues are auto-recovered. Real incidents are handled by our on-call engineers.",
+      q: "Is our data safe?",
+      a: "Everything we build runs on enterprise-grade infrastructure. We sign NDAs by default, use scoped credentials, and never train external models on your data.",
     },
     {
-      q: "Do you work with my industry?",
-      a: "We focus on bookkeepers, property managers, recruiters, clinics, and local service businesses — but if your operation has a repeating workflow, we'll evaluate it.",
+      q: "What if something goes wrong with the system?",
+      a: "We monitor every system 24/7 with automatic alerts. Most issues self-recover. Real incidents are handled by our team — that's exactly what the managed monthly fee covers.",
+    },
+    {
+      q: "What industries do you typically work with?",
+      a: "Bookkeepers, property managers, recruiters, clinics, and local service businesses. But if your team does the same admin task over and over again, it's probably a fit.",
     },
   ];
 
@@ -585,12 +761,12 @@ function FAQ() {
     <section id="faq" className="py-24 border-b border-border">
       <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-[1fr_2fr] gap-12">
         <div>
-          <div className="font-mono text-[10px] tracking-[0.3em] text-accent uppercase mb-4">
-            // Frequently Queried
+          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-4">
+            FAQ
           </div>
-          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.05]">
             Common <br />
-            <span className="text-accent">protocols.</span>
+            <span className="text-accent">questions.</span>
           </h2>
         </div>
         <div className="border-t border-border">
@@ -609,9 +785,9 @@ function FAQItem({ q, a }: { q: string; a: string }) {
     <div className="border-b border-border">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center justify-between gap-6 py-6 text-left group"
+        className="w-full flex items-center justify-between gap-6 py-5 text-left group"
       >
-        <span className="font-bold text-base md:text-lg tracking-tight group-hover:text-accent transition-colors">
+        <span className="font-semibold text-base md:text-lg tracking-tight group-hover:text-accent transition-colors">
           {q}
         </span>
         <span className="shrink-0 size-7 border border-border rounded-full flex items-center justify-center text-accent">
@@ -624,7 +800,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
         className="overflow-hidden"
       >
-        <p className="text-sm text-muted-foreground leading-relaxed pb-6 max-w-2xl">{a}</p>
+        <p className="text-sm text-muted-foreground leading-relaxed pb-5 max-w-2xl">{a}</p>
       </motion.div>
     </div>
   );
@@ -634,59 +810,59 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 function Footer() {
   return (
     <footer id="cta" className="relative overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom,hsl(184_100%_50%/0.08),transparent_60%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom,hsl(165_78%_42%/0.12),transparent_60%)]" />
       <div className="absolute inset-0 -z-10 grid-bg [mask-image:radial-gradient(ellipse_at_bottom,#000,transparent_70%)]" />
 
-      <div className="max-w-7xl mx-auto px-6 pt-32 pb-16">
-        <div className="text-center mb-24">
-          <div className="font-mono text-[10px] tracking-[0.3em] text-accent uppercase mb-6">
-            // Initialize Sequence
+      <div className="max-w-7xl mx-auto px-6 pt-28 pb-14">
+        <div className="text-center mb-24 max-w-3xl mx-auto">
+          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-6">
+            Ready when you are
           </div>
-          <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-[0.9] mb-10">
-            Stop the <span className="text-accent">manual</span> bleed.
+          <h2 className="text-4xl md:text-7xl font-black tracking-tight leading-[1] mb-8">
+            Stop wasting hours on{" "}
+            <span className="text-accent">work AI can do for you.</span>
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto mb-10">
-            Book a 20-minute discovery call. We'll map your highest-cost repetitive workflow and
-            tell you — honestly — whether it should be automated.
+          <p className="text-muted-foreground text-lg mb-10">
+            Book a free 20-minute workflow audit. We'll look at your business, find the highest-cost
+            repetitive task, and tell you honestly whether automating it makes sense.
           </p>
           <a
             href="#"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-accent text-accent-foreground font-black uppercase text-sm tracking-tighter rounded-sm hover:brightness-110 transition-all shadow-[0_0_40px_hsl(184_100%_50%/0.3)]"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-accent-foreground font-semibold rounded-md hover:brightness-110 transition-all shadow-[0_0_50px_hsl(165_78%_42%/0.35)]"
           >
-            Initialize Audit <ArrowUpRight className="size-4" />
+            Book your free audit <ArrowUpRight className="size-4" />
           </a>
-          <div className="mt-6 font-mono text-[10px] text-muted-foreground uppercase tracking-widest">
-            Accepting 2 new operators · Q4 2026
+          <div className="mt-5 text-sm text-muted-foreground">
+            No pitch. No pressure. Just a clear plan.
           </div>
         </div>
 
         <div className="border-t border-border pt-12 grid md:grid-cols-[2fr_1fr_1fr_1fr] gap-12">
           <div>
-            <div className="flex items-center gap-2 mb-6">
-              <div className="size-3 bg-accent" />
-              <span className="font-black uppercase italic tracking-tighter text-lg">
-                BrightFlow AI
+            <div className="flex items-center gap-2 mb-5">
+              <img src={logoUrl} alt="BrightFlow AI" className="h-7 w-auto" />
+              <span className="font-black tracking-tight text-lg">
+                BrightFlow<span className="text-accent">.</span>AI
               </span>
             </div>
             <p className="text-muted-foreground text-sm max-w-sm leading-relaxed">
-              Engineered automation systems for operators who value scale over noise. Part of the
-              Bright ecosystem.
+              We build custom AI systems that remove repetitive admin work from service businesses.
+              Part of the Bright ecosystem.
             </p>
           </div>
           <FooterCol
-            title="Systems"
-            links={["Bookkeepers", "Property", "Recruiters", "Clinics", "Local Biz"]}
+            title="Solutions"
+            links={["Bookkeepers", "Property managers", "Recruiters", "Clinics", "Local business"]}
           />
-          <FooterCol title="Company" links={["Process", "Case Studies", "BrightFrame", "Contact"]} />
-          <FooterCol title="Legal" links={["Terms", "Privacy", "Security", "SLAs"]} />
+          <FooterCol title="Company" links={["How it works", "Pricing", "FAQ", "Contact"]} />
+          <FooterCol title="Legal" links={["Terms", "Privacy", "Security"]} />
         </div>
 
-        <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest">
-            © 2026 BrightFlow AI · OP_SYS_CORP · All rights reserved
-          </div>
-          <div className="flex items-center gap-2 font-mono text-[10px] text-accent uppercase tracking-widest">
-            <Boxes className="size-3" /> SYSTEM_BUILD · 4.2.0
+        <div className="mt-14 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
+          <div>© 2026 BrightFlow AI. All rights reserved.</div>
+          <div className="flex items-center gap-2">
+            <span className="size-1.5 rounded-full bg-accent animate-pulse-dot" />
+            Currently accepting 2 new clients this quarter
           </div>
         </div>
       </div>
@@ -697,16 +873,13 @@ function Footer() {
 function FooterCol({ title, links }: { title: string; links: string[] }) {
   return (
     <div>
-      <div className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest mb-4">
+      <div className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-4">
         {title}
       </div>
-      <ul className="space-y-2">
+      <ul className="space-y-2.5">
         {links.map((l) => (
           <li key={l}>
-            <a
-              href="#"
-              className="text-sm font-medium hover:text-accent transition-colors"
-            >
+            <a href="#" className="text-sm font-medium hover:text-accent transition-colors">
               {l}
             </a>
           </li>
