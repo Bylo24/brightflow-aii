@@ -287,13 +287,14 @@ function Bento() {
 
       <div className="grid grid-cols-12 gap-px bg-border/70 border border-border/70 rounded-2xl overflow-hidden">
         <BentoCard
-          className="col-span-12 lg:col-span-8 min-h-[420px] lg:h-[460px]"
+          className="col-span-12 lg:col-span-8"
           tag="For bookkeepers"
           icon={<FileText className="size-4" />}
           title="Automatic document chasing"
           body="The system watches for missing receipts and unexplained transactions, then automatically emails and texts clients until everything is provided — without your team lifting a finger."
           large
         />
+
 
         <BentoCard
           className="col-span-12 lg:col-span-4"
