@@ -625,7 +625,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border pt-10 sm:pt-12 grid grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr] gap-8 sm:gap-12">
+        <div className="border-t border-border pt-10 sm:pt-12 grid grid-cols-2 md:grid-cols-[2fr_1fr_1fr] gap-8 sm:gap-12">
           <div className="col-span-2 md:col-span-1">
             <div className="mb-4 sm:mb-5">
               <Wordmark />
@@ -635,10 +635,6 @@ function Footer() {
               Part of the Bright ecosystem.
             </p>
           </div>
-          <FooterCol
-            title="Solutions"
-            links={["Bookkeepers", "Property managers", "Recruiters", "Clinics", "Local business"]}
-          />
           <FooterCol title="Company" links={["How it works", "FAQ", "Contact"]} />
           <FooterCol title="Legal" links={["Terms", "Privacy", "Security"]} />
         </div>
