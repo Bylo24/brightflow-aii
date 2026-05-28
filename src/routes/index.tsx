@@ -110,20 +110,20 @@ function Hero() {
     <section
       id="top"
       ref={ref}
-      className="relative pt-28 pb-28 overflow-hidden"
+      className="relative pt-16 sm:pt-24 md:pt-28 pb-16 sm:pb-24 md:pb-28 overflow-hidden"
     >
       <motion.div style={{ y, opacity }} className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,hsl(168_72%_32%/0.10),transparent_60%)]" />
         <div className="absolute inset-0 grid-bg [mask-image:radial-gradient(ellipse_60%_45%_at_50%_0%,#000_50%,transparent_100%)]" />
       </motion.div>
 
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-8 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-background/60 backdrop-blur text-xs text-muted-foreground"
+            className="mb-6 sm:mb-8 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-background/60 backdrop-blur text-xs text-muted-foreground"
           >
             <span className="size-1.5 rounded-full bg-accent animate-pulse-dot" />
             AI automation, fully managed
@@ -133,7 +133,7 @@ function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-[84px] leading-[1.02] font-semibold tracking-[-0.035em] mb-7 max-w-4xl text-balance"
+            className="text-[40px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[84px] leading-[1.05] lg:leading-[1.02] font-semibold tracking-[-0.035em] mb-5 sm:mb-7 max-w-4xl text-balance"
           >
             Automate the repetitive work{" "}
             <span className="font-serif italic font-normal text-accent">killing your week.</span>
@@ -143,7 +143,7 @@ function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-xl mb-10 text-pretty leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mb-8 sm:mb-10 text-pretty leading-relaxed"
           >
             We build custom AI systems that handle your manual admin — and we run them for you.
           </motion.p>
@@ -152,7 +152,7 @@ function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="flex flex-col sm:flex-row items-center gap-3"
+            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto"
           >
             <a
               href="#cta"
@@ -162,7 +162,7 @@ function Hero() {
             </a>
             <a
               href="#services"
-              className="w-full sm:w-auto px-6 py-3 bg-transparent border border-border font-medium rounded-full hover:bg-secondary transition-all"
+              className="w-full sm:w-auto px-6 py-3 bg-transparent border border-border font-medium rounded-full hover:bg-secondary transition-all text-center"
             >
               See what we build
             </a>
@@ -170,6 +170,7 @@ function Hero() {
         </div>
       </div>
     </section>
+
   );
 }
 
