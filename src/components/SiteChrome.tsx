@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { BookCallDialog } from "./BookCallDialog";
 
 export function Wordmark() {
   return (
