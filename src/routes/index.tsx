@@ -387,7 +387,7 @@ function Process() {
     {
       num: "03",
       title: "Launch",
-      body: "We deploy the system, train your team in under an hour, and switch it on. Most clients are live within 2 to 4 weeks.",
+      body: "We deploy the system, train your team in under an hour, and switch it on. Most clients are live in under a week.",
     },
     {
       num: "04",
@@ -405,7 +405,7 @@ function Process() {
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
             From first call to running system{" "}
-            <span className="font-serif italic font-normal text-muted-foreground">in under a month.</span>
+            <span className="font-serif italic font-normal text-muted-foreground">in under a week.</span>
           </h2>
         </div>
 
@@ -477,7 +477,7 @@ function FAQ() {
     },
     {
       q: "What does the engagement look like?",
-      a: "Free audit call, fixed-price build (typically 2 to 4 weeks), flat monthly fee for hosting, monitoring, and continuous improvement. No long-term contracts.",
+      a: "Free audit call, fixed-price build (typically under a week), flat monthly fee for hosting, monitoring, and continuous improvement. No long-term contracts.",
     },
     {
       q: "Will it integrate with the tools we already use?",
