@@ -158,16 +158,17 @@ function Hero() {
           >
             <a
               href="#cta"
-              className="w-full sm:w-auto px-6 py-3 bg-foreground text-background font-medium rounded-full hover:bg-foreground/90 transition-all flex items-center justify-center gap-2"
+              className="btn btn-lg btn-neutral rounded-full w-full sm:w-auto"
             >
               Book a free audit <ArrowRight className="size-4" />
             </a>
             <a
               href="#services"
-              className="w-full sm:w-auto px-6 py-3 bg-transparent border border-border font-medium rounded-full hover:bg-secondary transition-all text-center"
+              className="btn btn-lg btn-outline rounded-full w-full sm:w-auto border-border text-foreground hover:bg-secondary hover:border-border"
             >
               See what we build
             </a>
+
           </motion.div>
         </div>
       </div>
