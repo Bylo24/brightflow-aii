@@ -346,10 +346,11 @@ function Bento() {
           </div>
           <a
             href="#cta"
-            className="shrink-0 px-5 py-2.5 bg-background text-foreground font-medium rounded-full hover:bg-background/90 transition-colors inline-flex items-center gap-2 self-start md:self-auto text-sm sm:text-base"
+            className="btn btn-md bg-base-100 text-neutral border-none hover:bg-base-100/90 rounded-full self-start md:self-auto"
           >
             Tell us about it <ArrowUpRight className="size-4" />
           </a>
+
         </div>
       </div>
     </section>
