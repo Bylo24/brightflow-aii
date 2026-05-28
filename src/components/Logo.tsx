@@ -14,12 +14,28 @@ export function Logo({ className = "size-7" }: { className?: string }) {
         </linearGradient>
       </defs>
       <rect x="1" y="1" width="38" height="38" rx="10" fill="url(#bf-grad)" />
+      {/* Flow arrow: two stacked streams converging into a forward arrow */}
       <path
-        d="M13 11 H22 a5 5 0 0 1 0 10 H13 Z M13 19 H24 a5 5 0 0 1 0 10 H13 Z"
-        fill="white"
-        fillOpacity="0.96"
+        d="M9 14 H20 a3 3 0 0 1 2.4 1.2 L25 18.5"
+        stroke="white"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
-      <circle cx="29.5" cy="14.5" r="1.6" fill="white" />
+      <path
+        d="M9 26 H20 a3 3 0 0 0 2.4 -1.2 L25 21.5"
+        stroke="white"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M22 20 H31 M27 16 L31 20 L27 24"
+        stroke="white"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }
