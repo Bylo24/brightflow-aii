@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "BrightFlow AI" },
+      { name: "description", content: "BrightFlow AI automates repetitive business tasks with custom AI workflow systems." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "BrightFlow AI" },
+      { property: "og:description", content: "BrightFlow AI automates repetitive business tasks with custom AI workflow systems." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "BrightFlow AI" },
+      { name: "twitter:description", content: "BrightFlow AI automates repetitive business tasks with custom AI workflow systems." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9a57ff0f-abf1-46cf-b845-176c24be6db5/id-preview-2a0619bd--d697301b-8e05-46d2-81e6-42b1cf639b4d.lovable.app-1779948829194.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9a57ff0f-abf1-46cf-b845-176c24be6db5/id-preview-2a0619bd--d697301b-8e05-46d2-81e6-42b1cf639b4d.lovable.app-1779948829194.png" },
     ],
     links: [
       {
