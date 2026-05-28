@@ -562,8 +562,8 @@ function Metrics() {
     { value: "100%", label: "Managed — we run it so you don't have to" },
   ];
   return (
-    <section className="py-20">
-      <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-10">
+    <section className="py-14 sm:py-20">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-10">
         {items.map((m, i) => (
           <motion.div
             key={i}
@@ -573,14 +573,15 @@ function Metrics() {
             transition={{ duration: 0.5, delay: i * 0.05 }}
             className="flex flex-col"
           >
-            <span className="text-4xl md:text-5xl font-semibold tracking-[-0.03em] text-accent">
+            <span className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] text-accent">
               {m.value}
             </span>
-            <span className="text-sm text-muted-foreground mt-3 leading-snug">{m.label}</span>
+            <span className="text-xs sm:text-sm text-muted-foreground mt-2 sm:mt-3 leading-snug">{m.label}</span>
           </motion.div>
         ))}
       </div>
     </section>
+
   );
 }
 
