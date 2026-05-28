@@ -415,16 +415,14 @@ function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="bg-background p-6 sm:p-7 md:p-8 min-h-[200px] sm:min-h-[240px] flex flex-col justify-between gap-8 group hover:bg-secondary/50 transition-colors"
+              className="bg-background p-6 sm:p-7 md:p-8 min-h-[200px] sm:min-h-[240px] grid grid-rows-[auto_auto_1fr] gap-y-6 group hover:bg-secondary/50 transition-colors"
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono text-accent">{s.num}</span>
                 <div className="size-1.5 rounded-full bg-accent group-hover:scale-150 transition-transform" />
               </div>
-              <div>
-                <h4 className="text-xl sm:text-2xl font-semibold tracking-tight mb-2 sm:mb-3">{s.title}</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">{s.body}</p>
-              </div>
+              <h4 className="text-xl sm:text-2xl font-semibold tracking-tight">{s.title}</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">{s.body}</p>
             </motion.div>
           ))}
         </div>
