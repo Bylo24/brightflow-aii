@@ -589,9 +589,9 @@ function Footer() {
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom,hsl(168_72%_32%/0.10),transparent_60%)]" />
       <div className="absolute inset-0 -z-10 grid-bg [mask-image:radial-gradient(ellipse_at_bottom,#000,transparent_70%)]" />
 
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 pt-16 sm:pt-24 md:pt-28 pb-10 sm:pb-14">
-        <div className="text-center mb-16 sm:mb-20 md:mb-24 max-w-3xl mx-auto">
-          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-5 sm:mb-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-24 sm:pt-28 md:pt-32 pb-10 sm:pb-14">
+        <div className="text-center mb-20 sm:mb-24 max-w-3xl mx-auto">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-5 sm:mb-6">
             Ready when you are
           </div>
           <h2 className="text-[34px] sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.035em] leading-[1.05] lg:leading-[1.02] mb-6 sm:mb-8 text-balance">
@@ -636,7 +636,6 @@ function Footer() {
           </div>
         </div>
       </div>
-
     </footer>
   );
 }
@@ -644,9 +643,10 @@ function Footer() {
 function FooterCol({ title, links }: { title: string; links: string[] }) {
   return (
     <div>
-      <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-4">
+      <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4">
         {title}
       </div>
+
       <ul className="space-y-2.5">
         {links.map((l) => (
           <li key={l}>
