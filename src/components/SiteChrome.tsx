@@ -23,7 +23,7 @@ function LogoMark() {
       aria-hidden="true"
       className="shrink-0"
     >
-      {/* Back arrow — dark, offset up-left */}
+      {/* Back arrow, dark, offset up-left */}
       <path
         d="M10 22 L22 10 M14 10 H22 V18"
         stroke="hsl(220 20% 8%)"
@@ -31,7 +31,7 @@ function LogoMark() {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      {/* Front arrow — teal accent, offset down-right */}
+      {/* Front arrow, teal accent, offset down-right */}
       <path
         d="M14 30 L30 14 M18 14 H30 V26"
         stroke="hsl(168 72% 32%)"

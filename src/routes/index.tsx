@@ -267,7 +267,7 @@ function Bento() {
           tag="For recruiters"
           icon={<UserSearch className="size-4" />}
           title="Candidate screening & scheduling"
-          body="AI screens inbound candidates against your criteria, collects availability, and books interviews into your calendar — 24/7."
+          body="AI screens inbound candidates against your criteria, collects availability, and books interviews into your calendar, 24/7."
         />
 
         <BentoCard
@@ -488,7 +488,7 @@ function FAQ() {
     },
     {
       q: "What if something goes wrong with the system?",
-      a: "We monitor every system 24/7 with automatic alerts. Most issues self-recover. Real incidents are handled by our team — that's exactly what the managed monthly fee covers.",
+      a: "We monitor every system 24/7 with automatic alerts. Most issues self-recover. Real incidents are handled by our team. That's exactly what the managed monthly fee covers.",
     },
     {
       q: "What industries do you typically work with?",
