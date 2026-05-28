@@ -60,7 +60,6 @@ function Index() {
         <Bento />
         <Process />
         <Metrics />
-        <Testimonial />
         <FAQ />
       </main>
       <Footer />
@@ -578,32 +577,6 @@ function Metrics() {
   );
 }
 
-/* ---------------- TESTIMONIAL ---------------- */
-function Testimonial() {
-  return (
-    <section className="py-28 border-y border-border/60 relative overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_50%,hsl(168_72%_32%/0.06),transparent_60%)]" />
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <div className="text-xs uppercase tracking-[0.22em] text-accent mb-8">
-          What our clients say
-        </div>
-        <blockquote className="text-2xl md:text-4xl font-serif font-normal tracking-tight leading-[1.25] text-balance">
-          "We were drowning in chasing clients for documents every month. BrightFlow built a system
-          that does it for us. <span className="italic text-accent">It paid for itself in 11 days.</span>"
-        </blockquote>
-        <div className="mt-10 flex items-center justify-center gap-4">
-          <div className="size-11 rounded-full bg-gradient-to-br from-accent/50 to-accent/10 border border-border" />
-          <div className="text-left">
-            <div className="text-sm font-semibold">Marcus Holloway</div>
-            <div className="text-xs text-muted-foreground">
-              Managing Partner · Holloway Bookkeeping
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ---------------- FAQ ---------------- */
 function FAQ() {
