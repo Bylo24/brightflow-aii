@@ -635,10 +635,6 @@ function Footer() {
               Part of the Bright ecosystem.
             </p>
           </div>
-          <FooterCol
-            title="Solutions"
-            links={["Bookkeepers", "Property managers", "Recruiters", "Clinics", "Local business"]}
-          />
           <FooterCol title="Company" links={["How it works", "FAQ", "Contact"]} />
           <FooterCol title="Legal" links={["Terms", "Privacy", "Security"]} />
         </div>
