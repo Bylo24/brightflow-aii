@@ -188,7 +188,7 @@ function Marquee() {
     "E-COMMERCE OPERATIONS",
   ];
   return (
-    <div className="py-8 border-b border-border bg-white/[0.015] overflow-hidden">
+    <div className="py-8 border-b border-border bg-secondary/40 overflow-hidden">
       <div className="text-center text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground/70 mb-6">
         Built for service businesses that run on repetitive work
       </div>
@@ -248,7 +248,7 @@ function ValueProp() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="bg-background p-8 hover:bg-white/[0.02] transition-colors"
+              className="bg-background p-8 hover:bg-secondary/40 transition-colors"
             >
               <div className="size-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center mb-5">
                 {p.icon}
@@ -373,7 +373,7 @@ function BentoCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6 }}
-      className={`group relative bg-background p-8 hover:bg-white/[0.02] transition-colors flex flex-col justify-between overflow-hidden ${className}`}
+      className={`group relative bg-background p-8 hover:bg-secondary/40 transition-colors flex flex-col justify-between overflow-hidden ${className}`}
     >
       <div className="absolute top-5 right-6 text-[10px] font-semibold uppercase tracking-[0.2em] text-accent/70">
         {tag}
@@ -510,7 +510,7 @@ function Process() {
   ];
 
   return (
-    <section id="process" className="py-24 border-y border-border bg-white/[0.015]">
+    <section id="process" className="py-24 border-y border-border bg-secondary/40">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-14 max-w-2xl">
           <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-4">
@@ -529,7 +529,7 @@ function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="bg-background p-8 min-h-[240px] flex flex-col justify-between group hover:bg-white/[0.02] transition-colors"
+              className="bg-background p-8 min-h-[240px] flex flex-col justify-between group hover:bg-secondary/40 transition-colors"
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold text-accent">Step {s.num}</span>
