@@ -368,9 +368,9 @@ function BentoCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6 }}
-      className={`group relative bg-background p-6 sm:p-8 md:p-9 hover:bg-secondary/50 transition-colors flex flex-col justify-between overflow-hidden ${className}`}
+      className={`group relative bg-background p-7 sm:p-9 md:p-10 hover:bg-secondary/50 transition-colors flex flex-col justify-between overflow-hidden ${className}`}
     >
-      <div className="absolute top-4 sm:top-5 right-5 sm:right-6 text-[10px] uppercase tracking-[0.22em] text-accent/70">
+      <div className="absolute top-5 right-6 text-[10px] uppercase tracking-[0.18em] text-muted-foreground/60">
         {tag}
       </div>
       <div className="relative z-10 max-w-md pt-6">
@@ -385,13 +385,12 @@ function BentoCard({
         <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
       </div>
 
-
       {stats && (
         <div className="grid grid-cols-2 gap-4 mt-8 pt-8 border-t border-border">
           {stats.map((s, i) => (
             <div key={i}>
               <div className="text-2xl font-semibold tracking-tight">{s.value}</div>
-              <div className="text-[10px] text-muted-foreground uppercase tracking-[0.22em] mt-1">
+              <div className="text-[10px] text-muted-foreground uppercase tracking-[0.18em] mt-1">
                 {s.label}
               </div>
             </div>
@@ -401,6 +400,7 @@ function BentoCard({
     </motion.div>
   );
 }
+
 
 
 
