@@ -376,22 +376,23 @@ function BentoCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6 }}
-      className={`group relative bg-background p-9 hover:bg-secondary/50 transition-colors flex flex-col justify-between overflow-hidden ${className}`}
+      className={`group relative bg-background p-6 sm:p-8 md:p-9 hover:bg-secondary/50 transition-colors flex flex-col justify-between overflow-hidden ${className}`}
     >
-      <div className="absolute top-5 right-6 text-[10px] uppercase tracking-[0.22em] text-accent/70">
+      <div className="absolute top-4 sm:top-5 right-5 sm:right-6 text-[10px] uppercase tracking-[0.22em] text-accent/70">
         {tag}
       </div>
-      <div className="relative z-10 max-w-md">
-        <div className="size-9 border border-border rounded-md flex items-center justify-center mb-6 text-accent group-hover:border-accent/60 transition-colors">
+      <div className="relative z-10 max-w-md pt-6">
+        <div className="size-9 border border-border rounded-md flex items-center justify-center mb-5 sm:mb-6 text-accent group-hover:border-accent/60 transition-colors">
           {icon}
         </div>
         <h3
-          className={`${large ? "text-3xl md:text-4xl" : "text-xl"} font-semibold tracking-tight mb-4 text-balance`}
+          className={`${large ? "text-2xl sm:text-3xl md:text-4xl" : "text-lg sm:text-xl"} font-semibold tracking-tight mb-3 sm:mb-4 text-balance`}
         >
           {title}
         </h3>
-        <p className="text-muted-foreground text-sm leading-relaxed">{body}</p>
+        <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
       </div>
+
 
       {large && (
         <div className="relative flex-1 mt-8 rounded-lg overflow-hidden border border-border">
