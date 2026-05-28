@@ -533,15 +533,15 @@ function FAQ() {
   ];
 
   return (
-    <section id="faq" className="py-16 sm:py-20 md:py-28">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 grid md:grid-cols-[1fr_2fr] gap-8 md:gap-12">
+    <section id="faq" className="py-20 sm:py-28 md:py-32">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 grid md:grid-cols-[1fr_2fr] gap-10 md:gap-16">
         <div>
-          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-4 sm:mb-5">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4 sm:mb-5">
             FAQ
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
             Common{" "}
-            <span className="font-serif italic font-normal text-accent">questions.</span>
+            <span className="font-serif italic font-normal text-muted-foreground">questions.</span>
           </h2>
         </div>
         <div className="border-t border-border">
@@ -560,14 +560,13 @@ function FAQItem({ q, a }: { q: string; a: string }) {
     <div className="border-b border-border">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center justify-between gap-4 sm:gap-6 py-5 sm:py-6 text-left group"
+        className="w-full flex items-center justify-between gap-6 py-5 sm:py-6 text-left group"
       >
-
-        <span className="font-medium text-base md:text-lg tracking-tight group-hover:text-accent transition-colors">
+        <span className="font-medium text-base md:text-lg tracking-tight group-hover:text-foreground transition-colors">
           {q}
         </span>
-        <span className="shrink-0 size-7 border border-border rounded-full flex items-center justify-center text-accent">
-          {open ? <ChevronDown className="size-3.5" /> : <Plus className="size-3.5" />}
+        <span className="shrink-0 size-8 border border-border rounded-full flex items-center justify-center text-muted-foreground group-hover:text-foreground group-hover:border-foreground transition-colors">
+          <Plus className={`size-3.5 transition-transform duration-300 ${open ? "rotate-45" : ""}`} />
         </span>
       </button>
       <motion.div
@@ -576,11 +575,12 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
         className="overflow-hidden"
       >
-        <p className="text-sm text-muted-foreground leading-relaxed pb-6 max-w-2xl">{a}</p>
+        <p className="text-sm md:text-base text-muted-foreground leading-relaxed pb-6 max-w-2xl">{a}</p>
       </motion.div>
     </div>
   );
 }
+
 
 /* ---------------- FOOTER + CTA ---------------- */
 function Footer() {
