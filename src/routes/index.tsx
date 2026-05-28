@@ -417,7 +417,7 @@ function BentoCard({
 
 function FlowDiagram() {
   return (
-    <div className="relative w-full h-full bg-[radial-gradient(circle_at_50%_50%,hsl(220_12%_8%),hsl(220_14%_4%))] grid-bg">
+    <div className="relative w-full h-full bg-[radial-gradient(circle_at_50%_50%,hsl(165_30%_97%),hsl(0_0%_100%))] grid-bg">
       <svg viewBox="0 0 600 240" className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
         <defs>
           <linearGradient id="line" x1="0" x2="1" y1="0" y2="0">
@@ -431,7 +431,7 @@ function FlowDiagram() {
             <path
               d={`M0 ${y} C150 ${y}, 200 ${y + (i % 2 ? -40 : 40)}, 350 ${y + (i % 2 ? -40 : 40)} S 500 ${y}, 600 ${y}`}
               fill="none"
-              stroke="hsl(220 10% 18%)"
+              stroke="hsl(220 14% 86%)"
               strokeWidth="1"
             />
             <path
@@ -465,7 +465,7 @@ function FlowDiagram() {
               y={y - 6}
               width="12"
               height="12"
-              fill="hsl(220 14% 4%)"
+              fill="hsl(0 0% 100%)"
               stroke="hsl(165 78% 42%)"
               strokeWidth="1"
               rx="2"
