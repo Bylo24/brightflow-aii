@@ -295,12 +295,13 @@ function Bento() {
               If it's repetitive, we can probably automate it.
             </h4>
           </div>
-          <a
-            href="#cta"
+          <Link
+            to="/contact"
             className="btn btn-md bg-background text-foreground border-none hover:bg-background/90 rounded-full self-start md:self-auto"
           >
             Tell us about it <ArrowUpRight className="size-4" />
-          </a>
+          </Link>
+
         </div>
       </div>
     </section>
