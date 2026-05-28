@@ -260,15 +260,15 @@ function ValueProp() {
 /* ---------------- BENTO ---------------- */
 function Bento() {
   return (
-    <section id="services" className="py-16 sm:py-20 md:py-28 max-w-[1280px] mx-auto px-4 sm:px-6">
-      <div className="mb-10 sm:mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-5 sm:gap-6">
+    <section id="services" className="py-20 sm:py-28 md:py-32 max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="mb-12 sm:mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
         <div className="max-w-2xl">
-          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-4 sm:mb-5">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4 sm:mb-5">
             What we build
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
             Real workflows. Real automation.{" "}
-            <span className="font-serif italic font-normal text-accent">No fluff.</span>
+            <span className="font-serif italic font-normal text-muted-foreground">No fluff.</span>
           </h2>
         </div>
         <p className="text-muted-foreground text-sm sm:text-base max-w-sm leading-relaxed">
@@ -286,7 +286,6 @@ function Bento() {
           body="The system watches for missing receipts and unexplained transactions, then automatically emails and texts clients until everything is provided — without your team lifting a finger."
           large
         />
-
 
         <BentoCard
           className="col-span-12 lg:col-span-4"
@@ -324,9 +323,9 @@ function Bento() {
           body="Handles appointment reminders, intake forms, and follow-up messages so your front desk can focus on people, not admin."
         />
 
-        <div className="col-span-12 bg-foreground p-6 sm:p-8 md:p-9 text-background flex flex-col md:flex-row md:items-center justify-between gap-5 sm:gap-6">
+        <div className="col-span-12 bg-foreground p-7 sm:p-9 md:p-10 text-background flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
-            <div className="text-xs uppercase tracking-[0.22em] mb-3 opacity-60">
+            <div className="text-[11px] uppercase tracking-[0.18em] mb-3 opacity-60">
               Don't see your workflow?
             </div>
             <h4 className="font-semibold tracking-tight text-xl sm:text-2xl md:text-3xl text-balance">
@@ -335,17 +334,16 @@ function Bento() {
           </div>
           <a
             href="#cta"
-            className="btn btn-md bg-base-100 text-neutral border-none hover:bg-base-100/90 rounded-full self-start md:self-auto"
+            className="btn btn-md bg-background text-foreground border-none hover:bg-background/90 rounded-full self-start md:self-auto"
           >
             Tell us about it <ArrowUpRight className="size-4" />
           </a>
-
         </div>
       </div>
     </section>
-
   );
 }
+
 
 function BentoCard({
   className = "",
