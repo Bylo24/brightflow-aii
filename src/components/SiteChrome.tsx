@@ -4,7 +4,7 @@ import { BookCallDialog } from "./BookCallDialog";
 
 export function Wordmark() {
   return (
-    <Link to="/" className="flex items-center gap-2.5 group">
+    <Link to="/" className="flex items-center gap-2 group">
       <LogoMark />
       <span className="text-[17px] font-semibold tracking-tight">
         BrightFlow <span className="text-muted-foreground/70 font-normal">AI</span>
@@ -15,25 +15,32 @@ export function Wordmark() {
 
 function LogoMark() {
   return (
-    <span className="relative inline-flex size-9 items-center justify-center rounded-[10px] bg-foreground text-background shadow-sm">
-      <svg
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
-      >
-        <path
-          d="M6 18 L18 6 M10 6 H18 V14"
-          stroke="currentColor"
-          strokeWidth="2.25"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-      <span className="absolute -bottom-0.5 -right-0.5 size-2 rounded-full bg-accent ring-2 ring-background" />
-    </span>
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      className="shrink-0"
+    >
+      {/* Back arrow, dark, offset up-left */}
+      <path
+        d="M10 22 L22 10 M14 10 H22 V18"
+        stroke="hsl(220 20% 8%)"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      {/* Front arrow, teal accent, offset down-right */}
+      <path
+        d="M14 30 L30 14 M18 14 H30 V26"
+        stroke="hsl(168 72% 32%)"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   );
 }
 
