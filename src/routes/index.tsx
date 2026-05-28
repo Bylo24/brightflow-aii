@@ -112,10 +112,10 @@ function Hero() {
     <section
       id="top"
       ref={ref}
-      className="relative pt-24 pb-28 overflow-hidden border-b border-border"
+      className="relative pt-24 pb-24 overflow-hidden border-b border-border"
     >
       <motion.div style={{ y, opacity }} className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,hsl(165_78%_42%/0.14),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,hsl(165_78%_38%/0.12),transparent_55%)]" />
         <div className="absolute inset-0 grid-bg [mask-image:radial-gradient(ellipse_70%_50%_at_50%_0%,#000_60%,transparent_100%)]" />
       </motion.div>
 
@@ -125,32 +125,28 @@ function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-8 inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-accent/30 bg-accent/5 text-xs font-medium text-accent"
+            className="mb-7 inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-accent/30 bg-accent/5 text-xs font-medium text-accent"
           >
             <span className="size-1.5 rounded-full bg-accent animate-pulse-dot" />
-            AI automation agency · Done-for-you systems
+            AI automation, fully managed
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-[88px] leading-[0.95] font-black tracking-tight mb-7 max-w-5xl"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-[88px] leading-[0.95] font-black tracking-tight mb-6 max-w-4xl"
           >
-            We automate the{" "}
-            <span className="text-accent">repetitive admin work</span>{" "}
-            slowing your business down.
+            Automate the <span className="text-accent">repetitive work</span> killing your week.
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 text-pretty"
+            className="text-lg md:text-xl text-muted-foreground max-w-xl mb-9 text-pretty"
           >
-            BrightFlow AI builds custom AI workflow systems that handle the manual tasks your team
-            wastes hours on every week — chasing documents, screening leads, replying to clients,
-            requesting reviews. We build it, integrate it, and run it for you monthly.
+            We build custom AI systems that handle your manual admin — and we run them for you.
           </motion.p>
 
           <motion.div
@@ -161,9 +157,9 @@ function Hero() {
           >
             <a
               href="#cta"
-              className="w-full sm:w-auto px-7 py-3.5 bg-accent text-accent-foreground font-semibold rounded-md hover:brightness-110 transition-all shadow-[0_0_40px_hsl(165_78%_42%/0.25)] flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-7 py-3.5 bg-accent text-accent-foreground font-semibold rounded-md hover:brightness-110 transition-all shadow-[0_10px_40px_-10px_hsl(165_78%_38%/0.5)] flex items-center justify-center gap-2"
             >
-              Book a free workflow audit <ArrowRight className="size-4" />
+              Book a free audit <ArrowRight className="size-4" />
             </a>
             <a
               href="#services"
@@ -172,23 +168,12 @@ function Hero() {
               See what we build
             </a>
           </motion.div>
-
-          <div className="mt-8 flex items-center gap-6 text-xs text-muted-foreground">
-            <span className="flex items-center gap-1.5">
-              <Check className="size-3.5 text-accent" /> No long-term contracts
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Check className="size-3.5 text-accent" /> Live in 2–4 weeks
-            </span>
-            <span className="hidden sm:flex items-center gap-1.5">
-              <Check className="size-3.5 text-accent" /> Fully managed
-            </span>
-          </div>
         </div>
       </div>
     </section>
   );
 }
+
 
 /* ---------------- MARQUEE ---------------- */
 function Marquee() {
@@ -203,7 +188,7 @@ function Marquee() {
     "E-COMMERCE OPERATIONS",
   ];
   return (
-    <div className="py-8 border-b border-border bg-white/[0.015] overflow-hidden">
+    <div className="py-8 border-b border-border bg-secondary/40 overflow-hidden">
       <div className="text-center text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground/70 mb-6">
         Built for service businesses that run on repetitive work
       </div>
@@ -263,7 +248,7 @@ function ValueProp() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="bg-background p-8 hover:bg-white/[0.02] transition-colors"
+              className="bg-background p-8 hover:bg-secondary/40 transition-colors"
             >
               <div className="size-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center mb-5">
                 {p.icon}
@@ -388,7 +373,7 @@ function BentoCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6 }}
-      className={`group relative bg-background p-8 hover:bg-white/[0.02] transition-colors flex flex-col justify-between overflow-hidden ${className}`}
+      className={`group relative bg-background p-8 hover:bg-secondary/40 transition-colors flex flex-col justify-between overflow-hidden ${className}`}
     >
       <div className="absolute top-5 right-6 text-[10px] font-semibold uppercase tracking-[0.2em] text-accent/70">
         {tag}
@@ -432,7 +417,7 @@ function BentoCard({
 
 function FlowDiagram() {
   return (
-    <div className="relative w-full h-full bg-[radial-gradient(circle_at_50%_50%,hsl(220_12%_8%),hsl(220_14%_4%))] grid-bg">
+    <div className="relative w-full h-full bg-[radial-gradient(circle_at_50%_50%,hsl(165_30%_97%),hsl(0_0%_100%))] grid-bg">
       <svg viewBox="0 0 600 240" className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
         <defs>
           <linearGradient id="line" x1="0" x2="1" y1="0" y2="0">
@@ -446,7 +431,7 @@ function FlowDiagram() {
             <path
               d={`M0 ${y} C150 ${y}, 200 ${y + (i % 2 ? -40 : 40)}, 350 ${y + (i % 2 ? -40 : 40)} S 500 ${y}, 600 ${y}`}
               fill="none"
-              stroke="hsl(220 10% 18%)"
+              stroke="hsl(220 14% 86%)"
               strokeWidth="1"
             />
             <path
@@ -480,7 +465,7 @@ function FlowDiagram() {
               y={y - 6}
               width="12"
               height="12"
-              fill="hsl(220 14% 4%)"
+              fill="hsl(0 0% 100%)"
               stroke="hsl(165 78% 42%)"
               strokeWidth="1"
               rx="2"
@@ -525,7 +510,7 @@ function Process() {
   ];
 
   return (
-    <section id="process" className="py-24 border-y border-border bg-white/[0.015]">
+    <section id="process" className="py-24 border-y border-border bg-secondary/40">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-14 max-w-2xl">
           <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-4">
@@ -544,7 +529,7 @@ function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="bg-background p-8 min-h-[240px] flex flex-col justify-between group hover:bg-white/[0.02] transition-colors"
+              className="bg-background p-8 min-h-[240px] flex flex-col justify-between group hover:bg-secondary/40 transition-colors"
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold text-accent">Step {s.num}</span>
