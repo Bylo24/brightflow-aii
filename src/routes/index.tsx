@@ -287,13 +287,14 @@ function Bento() {
 
       <div className="grid grid-cols-12 gap-px bg-border/70 border border-border/70 rounded-2xl overflow-hidden">
         <BentoCard
-          className="col-span-12 lg:col-span-8 min-h-[420px] lg:h-[460px]"
+          className="col-span-12 lg:col-span-8"
           tag="For bookkeepers"
           icon={<FileText className="size-4" />}
           title="Automatic document chasing"
           body="The system watches for missing receipts and unexplained transactions, then automatically emails and texts clients until everything is provided — without your team lifting a finger."
           large
         />
+
 
         <BentoCard
           className="col-span-12 lg:col-span-4"
@@ -394,15 +395,6 @@ function BentoCard({
       </div>
 
 
-      {large && (
-        <div className="relative flex-1 mt-8 rounded-lg overflow-hidden border border-border">
-          <FlowDiagram />
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <div className="w-full h-1/4 bg-gradient-to-b from-accent/0 via-accent/15 to-accent/0 animate-scan-line" />
-          </div>
-        </div>
-      )}
-
       {stats && (
         <div className="grid grid-cols-2 gap-4 mt-8 pt-8 border-t border-border">
           {stats.map((s, i) => (
@@ -419,74 +411,7 @@ function BentoCard({
   );
 }
 
-function FlowDiagram() {
-  return (
-    <div className="relative w-full h-full bg-[radial-gradient(circle_at_50%_50%,hsl(168_30%_98%),hsl(0_0%_100%))] grid-bg">
-      <svg viewBox="0 0 600 240" className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
-        <defs>
-          <linearGradient id="line" x1="0" x2="1" y1="0" y2="0">
-            <stop offset="0%" stopColor="hsl(168 72% 32% / 0)" />
-            <stop offset="50%" stopColor="hsl(168 72% 32%)" />
-            <stop offset="100%" stopColor="hsl(168 72% 32% / 0)" />
-          </linearGradient>
-        </defs>
-        {[60, 120, 180].map((y, i) => (
-          <g key={i}>
-            <path
-              d={`M0 ${y} C150 ${y}, 200 ${y + (i % 2 ? -40 : 40)}, 350 ${y + (i % 2 ? -40 : 40)} S 500 ${y}, 600 ${y}`}
-              fill="none"
-              stroke="hsl(220 14% 88%)"
-              strokeWidth="1"
-            />
-            <path
-              d={`M0 ${y} C150 ${y}, 200 ${y + (i % 2 ? -40 : 40)}, 350 ${y + (i % 2 ? -40 : 40)} S 500 ${y}, 600 ${y}`}
-              fill="none"
-              stroke="url(#line)"
-              strokeWidth="1.5"
-              strokeDasharray="6 200"
-            >
-              <animate
-                attributeName="stroke-dashoffset"
-                from="0"
-                to="-200"
-                dur={`${3 + i}s`}
-                repeatCount="indefinite"
-              />
-            </path>
-          </g>
-        ))}
-        {[
-          [80, 60],
-          [240, 100],
-          [360, 140],
-          [500, 60],
-          [180, 180],
-          [440, 180],
-        ].map(([x, y], i) => (
-          <g key={i}>
-            <rect
-              x={x - 6}
-              y={y - 6}
-              width="12"
-              height="12"
-              fill="hsl(0 0% 100%)"
-              stroke="hsl(168 72% 32%)"
-              strokeWidth="1"
-              rx="2"
-            />
-            <circle cx={x} cy={y} r="1.5" fill="hsl(168 72% 32%)" />
-          </g>
-        ))}
-      </svg>
-      <div className="absolute bottom-3 left-3 text-[10px] text-muted-foreground/60 uppercase tracking-[0.22em]">
-        Example workflow · automated
-      </div>
-      <div className="absolute top-3 right-3 text-[10px] text-accent uppercase tracking-[0.22em] flex items-center gap-1.5">
-        <span className="size-1.5 rounded-full bg-accent animate-pulse-dot" /> running
-      </div>
-    </div>
-  );
-}
+
 
 /* ---------------- PROCESS ---------------- */
 function Process() {
