@@ -124,11 +124,12 @@ function Hero() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-6 sm:mb-8 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-background/60 backdrop-blur text-xs text-muted-foreground"
+            className="mb-6 sm:mb-8 badge badge-outline badge-lg gap-2 bg-base-100/60 backdrop-blur text-xs text-muted-foreground border-border"
           >
-            <span className="size-1.5 rounded-full bg-accent animate-pulse-dot" />
+            <span className="size-1.5 rounded-full bg-primary animate-pulse-dot" />
             AI automation, fully managed
           </motion.div>
+
 
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
