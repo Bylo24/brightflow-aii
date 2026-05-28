@@ -4,13 +4,13 @@ import { LegalPage, Section } from "@/components/LegalPage";
 export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: [
-      { title: "Terms of Service — BrightFlow AI" },
+      { title: "Terms of Service, BrightFlow AI" },
       {
         name: "description",
         content:
           "The terms that govern your use of BrightFlow AI's website and managed automation services.",
       },
-      { property: "og:title", content: "Terms of Service — BrightFlow AI" },
+      { property: "og:title", content: "Terms of Service, BrightFlow AI" },
       { property: "og:description", content: "Terms that govern use of BrightFlow AI services." },
     ],
   }),
