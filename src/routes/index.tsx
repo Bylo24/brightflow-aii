@@ -40,16 +40,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-function Wordmark() {
-  return (
-    <a href="#top" className="flex items-center group">
-      <span className="text-[17px] font-semibold tracking-tight">
-        BrightFlow <span className="text-muted-foreground/70 font-normal">AI</span>
-      </span>
-    </a>
-  );
-}
-
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground font-display selection:bg-accent/20">
@@ -68,36 +58,6 @@ function Index() {
   );
 }
 
-/* ---------------- NAV ---------------- */
-function Nav() {
-  return (
-    <nav className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-4">
-        <Wordmark />
-
-        <div className="flex items-center gap-4 sm:gap-8">
-          <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-            <a href="#services" className="hover:text-foreground transition-colors">
-              What we build
-            </a>
-            <a href="#process" className="hover:text-foreground transition-colors">
-              How it works
-            </a>
-            <a href="#faq" className="hover:text-foreground transition-colors">
-              FAQ
-            </a>
-          </div>
-          <a
-            href="#cta"
-            className="btn btn-sm btn-neutral rounded-full font-medium whitespace-nowrap"
-          >
-            Book a call <ArrowRight className="size-3.5" />
-          </a>
-        </div>
-      </div>
-    </nav>
-  );
-}
 
 
 /* ---------------- HERO ---------------- */
