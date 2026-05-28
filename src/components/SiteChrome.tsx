@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { BookCallDialog } from "./BookCallDialog";
 
 export function Wordmark() {
   return (
@@ -62,12 +63,14 @@ export function Nav() {
               FAQ
             </a>
           </div>
-          <Link
-            to="/contact"
-            className="btn btn-sm btn-neutral rounded-full font-medium whitespace-nowrap"
-          >
-            Book a call <ArrowRight className="size-3.5" />
-          </Link>
+          <BookCallDialog>
+            <button
+              type="button"
+              className="btn btn-sm btn-neutral rounded-full font-medium whitespace-nowrap"
+            >
+              Book a call <ArrowRight className="size-3.5" />
+            </button>
+          </BookCallDialog>
         </div>
       </div>
     </nav>
@@ -93,9 +96,11 @@ export function Footer() {
             Book a free 20-minute workflow audit. We'll look at your business, find the highest-cost
             repetitive task, and tell you honestly whether automating it makes sense.
           </p>
-          <Link to="/contact" className="btn btn-lg btn-neutral rounded-full">
-            Book your free audit <ArrowUpRight className="size-4" />
-          </Link>
+          <BookCallDialog>
+            <button type="button" className="btn btn-lg btn-neutral rounded-full">
+              Book your free audit <ArrowUpRight className="size-4" />
+            </button>
+          </BookCallDialog>
 
           <div className="mt-5 text-sm text-muted-foreground">
             No pitch. No pressure. Just a clear plan.
