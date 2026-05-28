@@ -71,10 +71,10 @@ function Index() {
 function Nav() {
   return (
     <nav className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
-      <div className="max-w-[1280px] mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-4">
         <Wordmark />
 
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-4 sm:gap-8">
           <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
             <a href="#services" className="hover:text-foreground transition-colors">
               What we build
@@ -88,13 +88,14 @@ function Nav() {
           </div>
           <a
             href="#cta"
-            className="px-4 py-2 bg-foreground text-background text-sm font-medium rounded-full hover:bg-foreground/90 transition-all inline-flex items-center gap-1.5"
+            className="px-3.5 sm:px-4 py-2 bg-foreground text-background text-xs sm:text-sm font-medium rounded-full hover:bg-foreground/90 transition-all inline-flex items-center gap-1.5 whitespace-nowrap"
           >
             Book a call <ArrowRight className="size-3.5" />
           </a>
         </div>
       </div>
     </nav>
+
   );
 }
 
