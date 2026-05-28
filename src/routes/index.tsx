@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef, useState } from "react";
 import {
@@ -13,6 +13,8 @@ import {
   Star,
   UserSearch,
 } from "lucide-react";
+import { Nav, Footer } from "@/components/SiteChrome";
+
 
 
 
