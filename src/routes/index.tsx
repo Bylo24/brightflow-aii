@@ -440,7 +440,7 @@ function Metrics() {
   const items = [
     { value: "14,200+", label: "Hours saved for our clients each year" },
     { value: "99.9%", label: "Automation accuracy across all systems" },
-    { value: "2 to 4 wks", label: "Average time from kickoff to live system" },
+    { value: "1-7 days", label: "Average time from kickoff to live system" },
     { value: "100%", label: "Managed, we run it so you don't have to" },
   ];
   return (
