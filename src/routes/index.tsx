@@ -672,22 +672,22 @@ function Footer() {
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom,hsl(168_72%_32%/0.10),transparent_60%)]" />
       <div className="absolute inset-0 -z-10 grid-bg [mask-image:radial-gradient(ellipse_at_bottom,#000,transparent_70%)]" />
 
-      <div className="max-w-[1280px] mx-auto px-6 pt-28 pb-14">
-        <div className="text-center mb-24 max-w-3xl mx-auto">
-          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-6">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 pt-16 sm:pt-24 md:pt-28 pb-10 sm:pb-14">
+        <div className="text-center mb-16 sm:mb-20 md:mb-24 max-w-3xl mx-auto">
+          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-5 sm:mb-6">
             Ready when you are
           </div>
-          <h2 className="text-4xl md:text-7xl font-semibold tracking-[-0.035em] leading-[1.02] mb-8 text-balance">
+          <h2 className="text-[34px] sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.035em] leading-[1.05] lg:leading-[1.02] mb-6 sm:mb-8 text-balance">
             Stop wasting hours on{" "}
             <span className="font-serif italic font-normal text-accent">work AI can do for you.</span>
           </h2>
-          <p className="text-muted-foreground text-lg mb-10 leading-relaxed">
+          <p className="text-muted-foreground text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed">
             Book a free 20-minute workflow audit. We'll look at your business, find the highest-cost
             repetitive task, and tell you honestly whether automating it makes sense.
           </p>
           <a
             href="#"
-            className="inline-flex items-center gap-2 px-7 py-3.5 bg-foreground text-background font-medium rounded-full hover:bg-foreground/90 transition-all"
+            className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 bg-foreground text-background font-medium rounded-full hover:bg-foreground/90 transition-all"
           >
             Book your free audit <ArrowUpRight className="size-4" />
           </a>
@@ -696,9 +696,9 @@ function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border pt-12 grid md:grid-cols-[2fr_1fr_1fr_1fr] gap-12">
-          <div>
-            <div className="mb-5">
+        <div className="border-t border-border pt-10 sm:pt-12 grid grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr] gap-8 sm:gap-12">
+          <div className="col-span-2 md:col-span-1">
+            <div className="mb-4 sm:mb-5">
               <Wordmark />
             </div>
             <p className="text-muted-foreground text-sm max-w-sm leading-relaxed">
@@ -714,7 +714,7 @@ function Footer() {
           <FooterCol title="Legal" links={["Terms", "Privacy", "Security"]} />
         </div>
 
-        <div className="mt-14 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
+        <div className="mt-10 sm:mt-14 pt-6 sm:pt-8 border-t border-border flex flex-col md:flex-row items-start md:items-center justify-between gap-3 md:gap-4 text-xs text-muted-foreground">
           <div>© 2026 BrightFlow AI. All rights reserved.</div>
           <div className="flex items-center gap-2">
             <span className="size-1.5 rounded-full bg-accent animate-pulse-dot" />
@@ -722,6 +722,7 @@ function Footer() {
           </div>
         </div>
       </div>
+
     </footer>
   );
 }
