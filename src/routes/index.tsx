@@ -6,7 +6,6 @@ import {
   ArrowUpRight,
   Building2,
   Check,
-  ChevronDown,
   Clock,
   FileText,
   HeartPulse,
@@ -14,6 +13,7 @@ import {
   Star,
   UserSearch,
 } from "lucide-react";
+
 
 
 export const Route = createFileRoute("/")({
