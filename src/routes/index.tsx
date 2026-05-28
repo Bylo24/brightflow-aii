@@ -14,7 +14,7 @@ import {
   Star,
   UserSearch,
 } from "lucide-react";
-import logoUrl from "@/assets/brightflow-logo.png";
+import { Logo } from "@/components/Logo";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -38,9 +38,20 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+function Wordmark() {
+  return (
+    <a href="#top" className="flex items-center gap-2.5 group">
+      <Logo className="size-7" />
+      <span className="text-[17px] font-semibold tracking-tight">
+        BrightFlow <span className="text-muted-foreground/70 font-normal">AI</span>
+      </span>
+    </a>
+  );
+}
+
 function Index() {
   return (
-    <div className="min-h-screen bg-background text-foreground font-display selection:bg-accent/30">
+    <div className="min-h-screen bg-background text-foreground font-display selection:bg-accent/20">
       <Nav />
       <main>
         <Hero />
@@ -50,7 +61,6 @@ function Index() {
         <Process />
         <Metrics />
         <Testimonial />
-        <Pricing />
         <FAQ />
       </main>
       <Footer />
@@ -61,29 +71,17 @@ function Index() {
 /* ---------------- NAV ---------------- */
 function Nav() {
   return (
-    <nav className="sticky top-0 z-50 border-b border-border bg-background/70 backdrop-blur-xl">
-      <div className="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2.5">
-          <img
-            src={logoUrl}
-            alt="BrightFlow AI logo"
-            className="h-7 w-auto"
-          />
-          <span className="font-black tracking-tight text-lg">
-            BrightFlow<span className="text-accent">.</span>AI
-          </span>
-        </a>
+    <nav className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
+      <div className="max-w-[1280px] mx-auto px-6 h-16 flex items-center justify-between">
+        <Wordmark />
 
         <div className="flex items-center gap-8">
-          <div className="hidden md:flex items-center gap-7 text-sm font-medium text-muted-foreground">
+          <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
             <a href="#services" className="hover:text-foreground transition-colors">
               What we build
             </a>
             <a href="#process" className="hover:text-foreground transition-colors">
               How it works
-            </a>
-            <a href="#pricing" className="hover:text-foreground transition-colors">
-              Pricing
             </a>
             <a href="#faq" className="hover:text-foreground transition-colors">
               FAQ
@@ -91,9 +89,9 @@ function Nav() {
           </div>
           <a
             href="#cta"
-            className="px-4 py-2 bg-accent text-accent-foreground text-sm font-semibold rounded-md hover:brightness-110 transition-all"
+            className="px-4 py-2 bg-foreground text-background text-sm font-medium rounded-full hover:bg-foreground/90 transition-all inline-flex items-center gap-1.5"
           >
-            Book a call
+            Book a call <ArrowRight className="size-3.5" />
           </a>
         </div>
       </div>
@@ -105,65 +103,66 @@ function Nav() {
 function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, 160]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
     <section
       id="top"
       ref={ref}
-      className="relative pt-24 pb-24 overflow-hidden border-b border-border"
+      className="relative pt-28 pb-28 overflow-hidden"
     >
       <motion.div style={{ y, opacity }} className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,hsl(165_78%_38%/0.12),transparent_55%)]" />
-        <div className="absolute inset-0 grid-bg [mask-image:radial-gradient(ellipse_70%_50%_at_50%_0%,#000_60%,transparent_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,hsl(168_72%_32%/0.10),transparent_60%)]" />
+        <div className="absolute inset-0 grid-bg [mask-image:radial-gradient(ellipse_60%_45%_at_50%_0%,#000_50%,transparent_100%)]" />
       </motion.div>
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col items-center text-center">
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-7 inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-accent/30 bg-accent/5 text-xs font-medium text-accent"
+            className="mb-8 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-background/60 backdrop-blur text-xs text-muted-foreground"
           >
             <span className="size-1.5 rounded-full bg-accent animate-pulse-dot" />
             AI automation, fully managed
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-[88px] leading-[0.95] font-black tracking-tight mb-6 max-w-4xl"
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-[84px] leading-[1.02] font-semibold tracking-[-0.035em] mb-7 max-w-4xl text-balance"
           >
-            Automate the <span className="text-accent">repetitive work</span> killing your week.
+            Automate the repetitive work{" "}
+            <span className="font-serif italic font-normal text-accent">killing your week.</span>
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-xl mb-9 text-pretty"
+            className="text-lg md:text-xl text-muted-foreground max-w-xl mb-10 text-pretty leading-relaxed"
           >
             We build custom AI systems that handle your manual admin — and we run them for you.
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
             className="flex flex-col sm:flex-row items-center gap-3"
           >
             <a
               href="#cta"
-              className="w-full sm:w-auto px-7 py-3.5 bg-accent text-accent-foreground font-semibold rounded-md hover:brightness-110 transition-all shadow-[0_10px_40px_-10px_hsl(165_78%_38%/0.5)] flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-6 py-3 bg-foreground text-background font-medium rounded-full hover:bg-foreground/90 transition-all flex items-center justify-center gap-2"
             >
               Book a free audit <ArrowRight className="size-4" />
             </a>
             <a
               href="#services"
-              className="w-full sm:w-auto px-7 py-3.5 bg-secondary border border-border font-semibold rounded-md hover:bg-secondary/70 transition-all"
+              className="w-full sm:w-auto px-6 py-3 bg-transparent border border-border font-medium rounded-full hover:bg-secondary transition-all"
             >
               See what we build
             </a>
@@ -188,18 +187,18 @@ function Marquee() {
     "E-COMMERCE OPERATIONS",
   ];
   return (
-    <div className="py-8 border-b border-border bg-secondary/40 overflow-hidden">
-      <div className="text-center text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground/70 mb-6">
+    <div className="py-10 border-y border-border/60 overflow-hidden">
+      <div className="text-center text-[11px] uppercase tracking-[0.22em] text-muted-foreground/70 mb-7">
         Built for service businesses that run on repetitive work
       </div>
       <div className="flex gap-12 whitespace-nowrap animate-marquee w-max">
         {[...items, ...items, ...items].map((it, i) => (
           <span
             key={i}
-            className="text-muted-foreground/60 font-semibold uppercase tracking-[0.2em] text-sm flex items-center gap-12"
+            className="text-muted-foreground/50 font-medium uppercase tracking-[0.22em] text-sm flex items-center gap-12"
           >
             {it}
-            <span className="size-1 rounded-full bg-accent/50" />
+            <span className="size-1 rounded-full bg-accent/40" />
           </span>
         ))}
       </div>
@@ -228,19 +227,19 @@ function ValueProp() {
   ];
 
   return (
-    <section className="py-24 border-b border-border">
+    <section className="py-28">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="max-w-3xl mb-14">
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-4">
+        <div className="max-w-3xl mb-16">
+          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-5">
             Why BrightFlow
           </div>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.05]">
+          <h2 className="text-3xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
             Most businesses lose money to{" "}
-            <span className="text-muted-foreground">work that should never be done by hand.</span>
+            <span className="font-serif italic font-normal text-muted-foreground">work that should never be done by hand.</span>
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-px bg-border border border-border rounded-xl overflow-hidden">
+        <div className="grid md:grid-cols-3 gap-px bg-border/70 border border-border/70 rounded-2xl overflow-hidden">
           {points.map((p, i) => (
             <motion.div
               key={i}
@@ -248,12 +247,12 @@ function ValueProp() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="bg-background p-8 hover:bg-secondary/40 transition-colors"
+              className="bg-background p-9 hover:bg-secondary/60 transition-colors"
             >
-              <div className="size-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center mb-5">
+              <div className="size-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center mb-6">
                 {p.icon}
               </div>
-              <h3 className="text-lg font-bold mb-2">{p.title}</h3>
+              <h3 className="text-lg font-semibold mb-2 tracking-tight">{p.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{p.body}</p>
             </motion.div>
           ))}
@@ -266,24 +265,24 @@ function ValueProp() {
 /* ---------------- BENTO ---------------- */
 function Bento() {
   return (
-    <section id="services" className="py-24 max-w-[1440px] mx-auto px-6">
-      <div className="mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+    <section id="services" className="py-28 max-w-[1280px] mx-auto px-6">
+      <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
         <div className="max-w-2xl">
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-4">
+          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-5">
             What we build
           </div>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.05]">
-            Real workflows. <br />
-            Real automation. <span className="text-accent">No fluff.</span>
+          <h2 className="text-3xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
+            Real workflows. Real automation.{" "}
+            <span className="font-serif italic font-normal text-accent">No fluff.</span>
           </h2>
         </div>
-        <p className="text-muted-foreground text-base max-w-sm">
+        <p className="text-muted-foreground text-base max-w-sm leading-relaxed">
           A few examples of the systems we've built. Each one removes a repetitive task that used
           to eat hours of staff time every week.
         </p>
       </div>
 
-      <div className="grid grid-cols-12 gap-px bg-border border border-border rounded-2xl overflow-hidden">
+      <div className="grid grid-cols-12 gap-px bg-border/70 border border-border/70 rounded-2xl overflow-hidden">
         <BentoCard
           className="col-span-12 lg:col-span-8 h-[460px]"
           tag="For bookkeepers"
@@ -329,18 +328,18 @@ function Bento() {
           body="Handles appointment reminders, intake forms, and follow-up messages so your front desk can focus on people, not admin."
         />
 
-        <div className="col-span-12 md:col-span-6 lg:col-span-8 bg-accent p-8 text-accent-foreground flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className="col-span-12 md:col-span-6 lg:col-span-8 bg-foreground p-9 text-background flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
-            <div className="text-xs font-semibold uppercase tracking-[0.2em] mb-3 opacity-70">
+            <div className="text-xs uppercase tracking-[0.22em] mb-3 opacity-60">
               Don't see your workflow?
             </div>
-            <h4 className="font-black tracking-tight text-2xl md:text-3xl">
+            <h4 className="font-semibold tracking-tight text-2xl md:text-3xl text-balance">
               If it's repetitive, we can probably automate it.
             </h4>
           </div>
           <a
             href="#cta"
-            className="shrink-0 px-6 py-3 bg-background text-foreground font-semibold rounded-md hover:bg-foreground hover:text-background transition-colors flex items-center gap-2"
+            className="shrink-0 px-5 py-2.5 bg-background text-foreground font-medium rounded-full hover:bg-background/90 transition-colors flex items-center gap-2"
           >
             Tell us about it <ArrowUpRight className="size-4" />
           </a>
@@ -373,17 +372,17 @@ function BentoCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6 }}
-      className={`group relative bg-background p-8 hover:bg-secondary/40 transition-colors flex flex-col justify-between overflow-hidden ${className}`}
+      className={`group relative bg-background p-9 hover:bg-secondary/50 transition-colors flex flex-col justify-between overflow-hidden ${className}`}
     >
-      <div className="absolute top-5 right-6 text-[10px] font-semibold uppercase tracking-[0.2em] text-accent/70">
+      <div className="absolute top-5 right-6 text-[10px] uppercase tracking-[0.22em] text-accent/70">
         {tag}
       </div>
       <div className="relative z-10 max-w-md">
-        <div className="size-9 border border-border rounded flex items-center justify-center mb-6 text-accent group-hover:border-accent/60 transition-colors">
+        <div className="size-9 border border-border rounded-md flex items-center justify-center mb-6 text-accent group-hover:border-accent/60 transition-colors">
           {icon}
         </div>
         <h3
-          className={`${large ? "text-3xl md:text-4xl" : "text-xl"} font-bold tracking-tight mb-4`}
+          className={`${large ? "text-3xl md:text-4xl" : "text-xl"} font-semibold tracking-tight mb-4 text-balance`}
         >
           {title}
         </h3>
@@ -391,10 +390,10 @@ function BentoCard({
       </div>
 
       {large && (
-        <div className="relative flex-1 mt-8 rounded-md overflow-hidden border border-border">
+        <div className="relative flex-1 mt-8 rounded-lg overflow-hidden border border-border">
           <FlowDiagram />
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <div className="w-full h-1/4 bg-gradient-to-b from-accent/0 via-accent/20 to-accent/0 animate-scan-line" />
+            <div className="w-full h-1/4 bg-gradient-to-b from-accent/0 via-accent/15 to-accent/0 animate-scan-line" />
           </div>
         </div>
       )}
@@ -403,8 +402,8 @@ function BentoCard({
         <div className="grid grid-cols-2 gap-4 mt-8 pt-8 border-t border-border">
           {stats.map((s, i) => (
             <div key={i}>
-              <div className="text-2xl font-bold">{s.value}</div>
-              <div className="text-[10px] text-muted-foreground uppercase tracking-widest mt-1">
+              <div className="text-2xl font-semibold tracking-tight">{s.value}</div>
+              <div className="text-[10px] text-muted-foreground uppercase tracking-[0.22em] mt-1">
                 {s.label}
               </div>
             </div>
@@ -417,13 +416,13 @@ function BentoCard({
 
 function FlowDiagram() {
   return (
-    <div className="relative w-full h-full bg-[radial-gradient(circle_at_50%_50%,hsl(165_30%_97%),hsl(0_0%_100%))] grid-bg">
+    <div className="relative w-full h-full bg-[radial-gradient(circle_at_50%_50%,hsl(168_30%_98%),hsl(0_0%_100%))] grid-bg">
       <svg viewBox="0 0 600 240" className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
         <defs>
           <linearGradient id="line" x1="0" x2="1" y1="0" y2="0">
-            <stop offset="0%" stopColor="hsl(165 78% 42% / 0)" />
-            <stop offset="50%" stopColor="hsl(165 78% 42%)" />
-            <stop offset="100%" stopColor="hsl(165 78% 42% / 0)" />
+            <stop offset="0%" stopColor="hsl(168 72% 32% / 0)" />
+            <stop offset="50%" stopColor="hsl(168 72% 32%)" />
+            <stop offset="100%" stopColor="hsl(168 72% 32% / 0)" />
           </linearGradient>
         </defs>
         {[60, 120, 180].map((y, i) => (
@@ -431,7 +430,7 @@ function FlowDiagram() {
             <path
               d={`M0 ${y} C150 ${y}, 200 ${y + (i % 2 ? -40 : 40)}, 350 ${y + (i % 2 ? -40 : 40)} S 500 ${y}, 600 ${y}`}
               fill="none"
-              stroke="hsl(220 14% 86%)"
+              stroke="hsl(220 14% 88%)"
               strokeWidth="1"
             />
             <path
@@ -466,18 +465,18 @@ function FlowDiagram() {
               width="12"
               height="12"
               fill="hsl(0 0% 100%)"
-              stroke="hsl(165 78% 42%)"
+              stroke="hsl(168 72% 32%)"
               strokeWidth="1"
               rx="2"
             />
-            <circle cx={x} cy={y} r="1.5" fill="hsl(165 78% 42%)" />
+            <circle cx={x} cy={y} r="1.5" fill="hsl(168 72% 32%)" />
           </g>
         ))}
       </svg>
-      <div className="absolute bottom-3 left-3 text-[10px] text-muted-foreground/60 uppercase tracking-widest">
+      <div className="absolute bottom-3 left-3 text-[10px] text-muted-foreground/60 uppercase tracking-[0.22em]">
         Example workflow · automated
       </div>
-      <div className="absolute top-3 right-3 text-[10px] text-accent uppercase tracking-widest flex items-center gap-1.5 font-medium">
+      <div className="absolute top-3 right-3 text-[10px] text-accent uppercase tracking-[0.22em] flex items-center gap-1.5">
         <span className="size-1.5 rounded-full bg-accent animate-pulse-dot" /> running
       </div>
     </div>
@@ -510,18 +509,19 @@ function Process() {
   ];
 
   return (
-    <section id="process" className="py-24 border-y border-border bg-secondary/40">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-14 max-w-2xl">
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-4">
+    <section id="process" className="py-28 border-y border-border/60 bg-secondary/50">
+      <div className="max-w-[1280px] mx-auto px-6">
+        <div className="mb-16 max-w-2xl">
+          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-5">
             How it works
           </div>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.05]">
-            From first call to running system in under a month.
+          <h2 className="text-3xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
+            From first call to running system{" "}
+            <span className="font-serif italic font-normal text-muted-foreground">in under a month.</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-px bg-border border border-border rounded-xl overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-px bg-border/70 border border-border/70 rounded-2xl overflow-hidden">
           {steps.map((s, i) => (
             <motion.div
               key={i}
@@ -529,14 +529,14 @@ function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="bg-background p-8 min-h-[240px] flex flex-col justify-between group hover:bg-secondary/40 transition-colors"
+              className="bg-background p-8 min-h-[240px] flex flex-col justify-between group hover:bg-secondary/50 transition-colors"
             >
               <div className="flex items-center justify-between">
-                <span className="text-xs font-semibold text-accent">Step {s.num}</span>
-                <div className="size-2 rounded-full bg-accent group-hover:scale-150 transition-transform" />
+                <span className="text-xs font-mono text-accent">{s.num}</span>
+                <div className="size-1.5 rounded-full bg-accent group-hover:scale-150 transition-transform" />
               </div>
               <div>
-                <h4 className="text-2xl font-bold tracking-tight mb-3">{s.title}</h4>
+                <h4 className="text-2xl font-semibold tracking-tight mb-3">{s.title}</h4>
                 <p className="text-sm text-muted-foreground leading-relaxed">{s.body}</p>
               </div>
             </motion.div>
@@ -556,8 +556,8 @@ function Metrics() {
     { value: "100%", label: "Managed — we run it so you don't have to" },
   ];
   return (
-    <section className="py-16 border-b border-border">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-10">
+    <section className="py-20">
+      <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-10">
         {items.map((m, i) => (
           <motion.div
             key={i}
@@ -567,7 +567,7 @@ function Metrics() {
             transition={{ duration: 0.5, delay: i * 0.05 }}
             className="flex flex-col"
           >
-            <span className="text-4xl md:text-5xl font-black tracking-tight text-accent">
+            <span className="text-4xl md:text-5xl font-semibold tracking-[-0.03em] text-accent">
               {m.value}
             </span>
             <span className="text-sm text-muted-foreground mt-3 leading-snug">{m.label}</span>
@@ -581,15 +581,15 @@ function Metrics() {
 /* ---------------- TESTIMONIAL ---------------- */
 function Testimonial() {
   return (
-    <section className="py-28 border-b border-border relative overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_50%,hsl(165_78%_42%/0.08),transparent_60%)]" />
+    <section className="py-28 border-y border-border/60 relative overflow-hidden">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_50%,hsl(168_72%_32%/0.06),transparent_60%)]" />
       <div className="max-w-4xl mx-auto px-6 text-center">
-        <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-8">
+        <div className="text-xs uppercase tracking-[0.22em] text-accent mb-8">
           What our clients say
         </div>
-        <blockquote className="text-2xl md:text-4xl font-bold tracking-tight leading-[1.2] text-balance">
-          “We were drowning in chasing clients for documents every month. BrightFlow built a system
-          that does it for us. <span className="text-accent">It paid for itself in 11 days.</span>”
+        <blockquote className="text-2xl md:text-4xl font-serif font-normal tracking-tight leading-[1.25] text-balance">
+          "We were drowning in chasing clients for documents every month. BrightFlow built a system
+          that does it for us. <span className="italic text-accent">It paid for itself in 11 days.</span>"
         </blockquote>
         <div className="mt-10 flex items-center justify-center gap-4">
           <div className="size-11 rounded-full bg-gradient-to-br from-accent/50 to-accent/10 border border-border" />
@@ -599,114 +599,6 @@ function Testimonial() {
               Managing Partner · Holloway Bookkeeping
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ---------------- PRICING / ENGAGEMENT ---------------- */
-function Pricing() {
-  const tiers = [
-    {
-      name: "Starter Workflow",
-      price: "From $2,500",
-      sub: "one-off build",
-      desc: "One automated workflow built end-to-end, integrated with your tools, ready to run.",
-      features: [
-        "Single workflow scope",
-        "Built in 2–3 weeks",
-        "30-day post-launch support",
-        "Light integration with 1–2 tools",
-      ],
-    },
-    {
-      name: "Managed System",
-      price: "From $1,500",
-      sub: "per month",
-      desc: "Most popular. Build + ongoing management — we run, monitor, and improve your system every month.",
-      features: [
-        "Build included after audit",
-        "Fully managed monthly",
-        "Continuous improvement & monitoring",
-        "Priority support & change requests",
-      ],
-      featured: true,
-    },
-    {
-      name: "Multi-Workflow Partner",
-      price: "Custom",
-      sub: "for larger ops",
-      desc: "For teams that want multiple workflows automated across departments under one partner.",
-      features: [
-        "Multiple workflows in scope",
-        "Dedicated automation lead",
-        "Quarterly roadmap & reviews",
-        "Custom SLAs",
-      ],
-    },
-  ];
-
-  return (
-    <section id="pricing" className="py-24 border-b border-border">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-14 max-w-2xl">
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-4">
-            Engagement
-          </div>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.05]">
-            Simple pricing. <br />
-            <span className="text-muted-foreground">Pick the depth of partnership.</span>
-          </h2>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-5">
-          {tiers.map((t, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.07 }}
-              className={`relative rounded-2xl border p-8 flex flex-col ${
-                t.featured
-                  ? "border-accent/60 bg-accent/[0.04] shadow-[0_0_40px_hsl(165_78%_42%/0.12)]"
-                  : "border-border bg-card"
-              }`}
-            >
-              {t.featured && (
-                <div className="absolute -top-3 left-8 px-2.5 py-1 bg-accent text-accent-foreground text-[10px] font-bold uppercase tracking-widest rounded-full">
-                  Most popular
-                </div>
-              )}
-              <div className="mb-6">
-                <h3 className="text-xl font-bold">{t.name}</h3>
-                <p className="text-sm text-muted-foreground mt-2">{t.desc}</p>
-              </div>
-              <div className="flex items-baseline gap-2 mb-8">
-                <span className="text-3xl font-black tracking-tight">{t.price}</span>
-                <span className="text-sm text-muted-foreground">{t.sub}</span>
-              </div>
-              <ul className="space-y-3 mb-8 flex-1">
-                {t.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2.5 text-sm">
-                    <Check className="size-4 text-accent shrink-0 mt-0.5" />
-                    <span>{f}</span>
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="#cta"
-                className={`w-full text-center py-3 rounded-md font-semibold transition-all ${
-                  t.featured
-                    ? "bg-accent text-accent-foreground hover:brightness-110"
-                    : "bg-secondary border border-border hover:bg-secondary/70"
-                }`}
-              >
-                Book a call
-              </a>
-            </motion.div>
-          ))}
         </div>
       </div>
     </section>
@@ -743,15 +635,15 @@ function FAQ() {
   ];
 
   return (
-    <section id="faq" className="py-24 border-b border-border">
+    <section id="faq" className="py-28">
       <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-[1fr_2fr] gap-12">
         <div>
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-4">
+          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-5">
             FAQ
           </div>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.05]">
-            Common <br />
-            <span className="text-accent">questions.</span>
+          <h2 className="text-3xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
+            Common{" "}
+            <span className="font-serif italic font-normal text-accent">questions.</span>
           </h2>
         </div>
         <div className="border-t border-border">
@@ -770,9 +662,9 @@ function FAQItem({ q, a }: { q: string; a: string }) {
     <div className="border-b border-border">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center justify-between gap-6 py-5 text-left group"
+        className="w-full flex items-center justify-between gap-6 py-6 text-left group"
       >
-        <span className="font-semibold text-base md:text-lg tracking-tight group-hover:text-accent transition-colors">
+        <span className="font-medium text-base md:text-lg tracking-tight group-hover:text-accent transition-colors">
           {q}
         </span>
         <span className="shrink-0 size-7 border border-border rounded-full flex items-center justify-center text-accent">
@@ -785,7 +677,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
         className="overflow-hidden"
       >
-        <p className="text-sm text-muted-foreground leading-relaxed pb-5 max-w-2xl">{a}</p>
+        <p className="text-sm text-muted-foreground leading-relaxed pb-6 max-w-2xl">{a}</p>
       </motion.div>
     </div>
   );
@@ -794,26 +686,26 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 /* ---------------- FOOTER + CTA ---------------- */
 function Footer() {
   return (
-    <footer id="cta" className="relative overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom,hsl(165_78%_42%/0.12),transparent_60%)]" />
+    <footer id="cta" className="relative overflow-hidden border-t border-border/60">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom,hsl(168_72%_32%/0.10),transparent_60%)]" />
       <div className="absolute inset-0 -z-10 grid-bg [mask-image:radial-gradient(ellipse_at_bottom,#000,transparent_70%)]" />
 
-      <div className="max-w-7xl mx-auto px-6 pt-28 pb-14">
+      <div className="max-w-[1280px] mx-auto px-6 pt-28 pb-14">
         <div className="text-center mb-24 max-w-3xl mx-auto">
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-6">
+          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-6">
             Ready when you are
           </div>
-          <h2 className="text-4xl md:text-7xl font-black tracking-tight leading-[1] mb-8">
+          <h2 className="text-4xl md:text-7xl font-semibold tracking-[-0.035em] leading-[1.02] mb-8 text-balance">
             Stop wasting hours on{" "}
-            <span className="text-accent">work AI can do for you.</span>
+            <span className="font-serif italic font-normal text-accent">work AI can do for you.</span>
           </h2>
-          <p className="text-muted-foreground text-lg mb-10">
+          <p className="text-muted-foreground text-lg mb-10 leading-relaxed">
             Book a free 20-minute workflow audit. We'll look at your business, find the highest-cost
             repetitive task, and tell you honestly whether automating it makes sense.
           </p>
           <a
             href="#"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-accent-foreground font-semibold rounded-md hover:brightness-110 transition-all shadow-[0_0_50px_hsl(165_78%_42%/0.35)]"
+            className="inline-flex items-center gap-2 px-7 py-3.5 bg-foreground text-background font-medium rounded-full hover:bg-foreground/90 transition-all"
           >
             Book your free audit <ArrowUpRight className="size-4" />
           </a>
@@ -824,11 +716,8 @@ function Footer() {
 
         <div className="border-t border-border pt-12 grid md:grid-cols-[2fr_1fr_1fr_1fr] gap-12">
           <div>
-            <div className="flex items-center gap-2 mb-5">
-              <img src={logoUrl} alt="BrightFlow AI" className="h-7 w-auto" />
-              <span className="font-black tracking-tight text-lg">
-                BrightFlow<span className="text-accent">.</span>AI
-              </span>
+            <div className="mb-5">
+              <Wordmark />
             </div>
             <p className="text-muted-foreground text-sm max-w-sm leading-relaxed">
               We build custom AI systems that remove repetitive admin work from service businesses.
@@ -839,7 +728,7 @@ function Footer() {
             title="Solutions"
             links={["Bookkeepers", "Property managers", "Recruiters", "Clinics", "Local business"]}
           />
-          <FooterCol title="Company" links={["How it works", "Pricing", "FAQ", "Contact"]} />
+          <FooterCol title="Company" links={["How it works", "FAQ", "Contact"]} />
           <FooterCol title="Legal" links={["Terms", "Privacy", "Security"]} />
         </div>
 
@@ -858,13 +747,13 @@ function Footer() {
 function FooterCol({ title, links }: { title: string; links: string[] }) {
   return (
     <div>
-      <div className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-4">
+      <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-4">
         {title}
       </div>
       <ul className="space-y-2.5">
         {links.map((l) => (
           <li key={l}>
-            <a href="#" className="text-sm font-medium hover:text-accent transition-colors">
+            <a href="#" className="text-sm hover:text-accent transition-colors">
               {l}
             </a>
           </li>
