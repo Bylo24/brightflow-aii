@@ -188,15 +188,15 @@ function Marquee() {
     "E-COMMERCE OPERATIONS",
   ];
   return (
-    <div className="py-10 border-y border-border/60 overflow-hidden">
-      <div className="text-center text-[11px] uppercase tracking-[0.22em] text-muted-foreground/70 mb-7">
+    <div className="py-8 sm:py-10 border-y border-border/60 overflow-hidden">
+      <div className="text-center text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.22em] text-muted-foreground/70 mb-5 sm:mb-7 px-4">
         Built for service businesses that run on repetitive work
       </div>
-      <div className="flex gap-12 whitespace-nowrap animate-marquee w-max">
+      <div className="flex gap-8 sm:gap-12 whitespace-nowrap animate-marquee w-max">
         {[...items, ...items, ...items].map((it, i) => (
           <span
             key={i}
-            className="text-muted-foreground/50 font-medium uppercase tracking-[0.22em] text-sm flex items-center gap-12"
+            className="text-muted-foreground/50 font-medium uppercase tracking-[0.2em] sm:tracking-[0.22em] text-xs sm:text-sm flex items-center gap-8 sm:gap-12"
           >
             {it}
             <span className="size-1 rounded-full bg-accent/40" />
@@ -204,6 +204,7 @@ function Marquee() {
         ))}
       </div>
     </div>
+
   );
 }
 
