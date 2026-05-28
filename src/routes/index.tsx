@@ -14,7 +14,7 @@ import {
   Star,
   UserSearch,
 } from "lucide-react";
-import { Logo } from "@/components/Logo";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
