@@ -70,7 +70,7 @@ function Index() {
 function Nav() {
   return (
     <nav className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-4">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-4">
         <Wordmark />
 
         <div className="flex items-center gap-4 sm:gap-8">
@@ -91,13 +91,12 @@ function Nav() {
           >
             Book a call <ArrowRight className="size-3.5" />
           </a>
-
         </div>
       </div>
     </nav>
-
   );
 }
+
 
 /* ---------------- HERO ---------------- */
 function Hero() {
