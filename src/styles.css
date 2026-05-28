@@ -1,7 +1,13 @@
 @import "tailwindcss" source(none);
 @source "../src";
+@source "../node_modules/daisyui";
 @import "tw-animate-css";
+@plugin "daisyui" {
+  themes: light --default, dark;
+  prefix: "d-";
+}
 @import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
 
 @custom-variant dark (&:is(.dark *));
 
