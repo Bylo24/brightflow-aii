@@ -430,10 +430,10 @@ function Process() {
   ];
 
   return (
-    <section id="process" className="py-16 sm:py-20 md:py-28 border-y border-border/60 bg-secondary/50">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
-        <div className="mb-10 sm:mb-16 max-w-2xl">
-          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-4 sm:mb-5">
+    <section id="process" className="py-20 sm:py-28 md:py-32 border-y border-border/60 bg-secondary/50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="mb-12 sm:mb-16 max-w-2xl">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4 sm:mb-5">
             How it works
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
@@ -441,6 +441,7 @@ function Process() {
             <span className="font-serif italic font-normal text-muted-foreground">in under a month.</span>
           </h2>
         </div>
+
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px bg-border/70 border border-border/70 rounded-2xl overflow-hidden">
           {steps.map((s, i) => (
