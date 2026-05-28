@@ -88,10 +88,11 @@ function Nav() {
           </div>
           <a
             href="#cta"
-            className="px-3.5 sm:px-4 py-2 bg-foreground text-background text-xs sm:text-sm font-medium rounded-full hover:bg-foreground/90 transition-all inline-flex items-center gap-1.5 whitespace-nowrap"
+            className="btn btn-sm btn-neutral rounded-full font-medium whitespace-nowrap"
           >
             Book a call <ArrowRight className="size-3.5" />
           </a>
+
         </div>
       </div>
     </nav>
