@@ -6,7 +6,7 @@ import { Nav, Footer } from "@/components/SiteChrome";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — BrightFlow AI" },
+      { title: "Contact, BrightFlow AI" },
       {
         name: "description",
         content:
@@ -76,7 +76,7 @@ function ContactPage() {
                     <div className="size-10 rounded-full bg-accent/10 text-accent flex items-center justify-center mb-5">
                       <ArrowUpRight className="size-5" />
                     </div>
-                    <h2 className="text-2xl font-semibold tracking-tight mb-2">Thanks — we got it.</h2>
+                    <h2 className="text-2xl font-semibold tracking-tight mb-2">Thanks, we got it.</h2>
                     <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
                       We'll reply within one business day with a couple of times for a 20-minute call.
                     </p>
@@ -116,7 +116,7 @@ function ContactPage() {
                       <textarea
                         required
                         rows={5}
-                        placeholder="The one repetitive task we'd love to never do again is…"
+                        placeholder="The one repetitive task we'd love to never do again is."
                         className="textarea textarea-bordered w-full rounded-xl bg-background leading-relaxed"
                       />
                     </Field>

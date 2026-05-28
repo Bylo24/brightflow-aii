@@ -22,14 +22,14 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "BrightFlow AI — AI automation that removes repetitive admin work",
+        title: "BrightFlow AI, AI automation that removes repetitive admin work",
       },
       {
         name: "description",
         content:
-          "BrightFlow AI builds and runs custom AI systems that take repetitive, time-consuming tasks off your team — for bookkeepers, property managers, recruiters, clinics, and local businesses.",
+          "BrightFlow AI builds and runs custom AI systems that take repetitive, time-consuming tasks off your team, for bookkeepers, property managers, recruiters, clinics, and local businesses.",
       },
-      { property: "og:title", content: "BrightFlow AI — Automate the repetitive work" },
+      { property: "og:title", content: "BrightFlow AI, Automate the repetitive work" },
       {
         property: "og:description",
         content:
@@ -98,7 +98,7 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mb-8 sm:mb-10 text-pretty leading-relaxed"
           >
-            We build custom AI systems that handle your manual admin — and we run them for you.
+            We build custom AI systems that handle your manual admin, and we run them for you.
           </motion.p>
 
           <motion.div
@@ -174,12 +174,12 @@ function ValueProp() {
     {
       icon: <Check className="size-5" />,
       title: "Built for your exact workflow",
-      body: "No generic chatbots. We map your specific process and build the AI system around it — integrated with the tools you already use.",
+      body: "No generic chatbots. We map your specific process and build the AI system around it, integrated with the tools you already use.",
     },
     {
       icon: <ArrowUpRight className="size-5" />,
       title: "Managed monthly, not handed off",
-      body: "We run, monitor and improve the system every month. You see the results — you never have to maintain it.",
+      body: "We run, monitor and improve the system every month. You see the results. You never have to maintain it.",
     },
   ];
 
@@ -246,7 +246,7 @@ function Bento() {
           tag="For bookkeepers"
           icon={<FileText className="size-4" />}
           title="Automatic document chasing"
-          body="The system watches for missing receipts and unexplained transactions, then automatically emails and texts clients until everything is provided — without your team lifting a finger."
+          body="The system watches for missing receipts and unexplained transactions, then automatically emails and texts clients until everything is provided, without your team lifting a finger."
           large
         />
 
@@ -379,17 +379,17 @@ function Process() {
     {
       num: "02",
       title: "Build",
-      body: "Our team designs and builds the AI system around your specific workflow. We integrate with your existing tools — CRM, email, accounting, calendar, etc.",
+      body: "Our team designs and builds the AI system around your specific workflow. We integrate with your existing tools, CRM, email, accounting, calendar, etc.",
     },
     {
       num: "03",
       title: "Launch",
-      body: "We deploy the system, train your team in under an hour, and switch it on. Most clients are live within 2–4 weeks.",
+      body: "We deploy the system, train your team in under an hour, and switch it on. Most clients are live within 2 to 4 weeks.",
     },
     {
       num: "04",
       title: "Manage",
-      body: "We monitor performance, fix edge cases, and improve the system every month — for a flat fee. You never have to maintain it.",
+      body: "We monitor performance, fix edge cases, and improve the system every month, for a flat fee. You never have to maintain it.",
     },
   ];
 
@@ -439,8 +439,8 @@ function Metrics() {
   const items = [
     { value: "14,200+", label: "Hours saved for our clients each year" },
     { value: "99.9%", label: "Automation accuracy across all systems" },
-    { value: "2–4 wks", label: "Average time from kickoff to live system" },
-    { value: "100%", label: "Managed — we run it so you don't have to" },
+    { value: "2 to 4 wks", label: "Average time from kickoff to live system" },
+    { value: "100%", label: "Managed, we run it so you don't have to" },
   ];
   return (
     <section className="py-20 sm:py-24">
@@ -472,15 +472,15 @@ function FAQ() {
   const items = [
     {
       q: "How is BrightFlow different from a generic AI agency?",
-      a: "We don't sell vague 'AI strategy' or generic chatbots. We find one specific repetitive workflow inside your business and build a managed system that runs it forever. Real scope, real outcomes.",
+      a: "We don't sell vague AI strategy or generic chatbots. We find one specific repetitive workflow inside your business and build a managed system that runs it forever. Real scope, real outcomes.",
     },
     {
       q: "What does the engagement look like?",
-      a: "Free audit call → fixed-price build (typically 2–4 weeks) → flat monthly fee for hosting, monitoring, and continuous improvement. No long-term contracts.",
+      a: "Free audit call, fixed-price build (typically 2 to 4 weeks), flat monthly fee for hosting, monitoring, and continuous improvement. No long-term contracts.",
     },
     {
       q: "Will it integrate with the tools we already use?",
-      a: "Yes. We connect to your CRM, accounting platform, email, calendar, scheduling tools, and internal systems. No rip-and-replace — we work around your existing stack.",
+      a: "Yes. We connect to your CRM, accounting platform, email, calendar, scheduling tools, and internal systems. No rip-and-replace. We work around your existing stack.",
     },
     {
       q: "Is our data safe?",

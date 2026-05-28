@@ -4,13 +4,13 @@ import { LegalPage, Section } from "@/components/LegalPage";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy — BrightFlow AI" },
+      { title: "Privacy Policy, BrightFlow AI" },
       {
         name: "description",
         content:
           "How BrightFlow AI collects, uses, and protects personal information from our website visitors and clients.",
       },
-      { property: "og:title", content: "Privacy Policy — BrightFlow AI" },
+      { property: "og:title", content: "Privacy Policy, BrightFlow AI" },
       {
         property: "og:description",
         content: "How we collect, use, and protect personal information.",
