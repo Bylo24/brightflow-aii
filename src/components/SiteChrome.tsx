@@ -132,10 +132,6 @@ export function Footer() {
 
         <div className="mt-10 sm:mt-14 pt-6 sm:pt-8 border-t border-border flex flex-col md:flex-row items-start md:items-center justify-between gap-3 md:gap-4 text-xs text-muted-foreground">
           <div>© 2026 BrightFlow AI. All rights reserved.</div>
-          <div className="flex items-center gap-2">
-            <span className="size-1.5 rounded-full bg-accent animate-pulse-dot" />
-            Currently accepting 2 new clients this quarter
-          </div>
         </div>
       </div>
     </footer>
