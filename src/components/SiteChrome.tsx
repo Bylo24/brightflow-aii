@@ -63,12 +63,14 @@ export function Nav() {
               FAQ
             </a>
           </div>
-          <Link
-            to="/contact"
-            className="btn btn-sm btn-neutral rounded-full font-medium whitespace-nowrap"
-          >
-            Book a call <ArrowRight className="size-3.5" />
-          </Link>
+          <BookCallDialog>
+            <button
+              type="button"
+              className="btn btn-sm btn-neutral rounded-full font-medium whitespace-nowrap"
+            >
+              Book a call <ArrowRight className="size-3.5" />
+            </button>
+          </BookCallDialog>
         </div>
       </div>
     </nav>
