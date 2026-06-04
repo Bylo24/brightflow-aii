@@ -30,14 +30,14 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "BrightFlow AI — Fully Automate Repetitive Manual Admin",
+        title: "BrightFlow AI - Fully Automate Repetitive Manual Admin",
       },
       {
         name: "description",
         content:
           "We eliminate the mundane, repetitive manual tasks eating your team's time so you can focus on strategic initiatives that actually grow your business.",
       },
-      { property: "og:title", content: "BrightFlow AI — Fully Automate Repetitive Manual Admin" },
+      { property: "og:title", content: "BrightFlow AI - Fully Automate Repetitive Manual Admin" },
       {
         property: "og:description",
         content:
@@ -107,7 +107,7 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mb-8 sm:mb-10 text-pretty leading-relaxed"
           >
-            We fully automate the repetitive manual work running inside your business — and operate the system for you, end to end. You get the hours back.
+            We fully automate the repetitive manual work running inside your business and operate the system for you, end to end. You get the hours back.
           </motion.p>
 
           <motion.div
@@ -180,8 +180,8 @@ function ValueProp() {
     index: "01",
     icon: <Clock className="size-5" />,
     label: "The outcome",
-    title: "Your week back — every week.",
-    body: "Walk into Monday with the repetitive admin already handled. No backlog, no chasing, no friction — just the hours and headspace to do the work only you can do.",
+    title: "Your week back. Every week.",
+    body: "Walk into Monday with the repetitive admin already handled. No backlog, no chasing, no friction. Just the hours and headspace to do the work only you can do.",
   };
   const supporting = [
     {
@@ -189,14 +189,14 @@ function ValueProp() {
       icon: <ArrowUpRight className="size-5" />,
       label: "The outcome",
       title: "More revenue, same team.",
-      body: "Capacity shifts from busywork to the activities that actually grow the business — closing deals, serving clients, building product.",
+      body: "Capacity shifts from busywork to the activities that actually grow the business. Closing deals, serving clients, building product.",
     },
     {
       index: "03",
       icon: <Check className="size-5" />,
       label: "The outcome",
       title: "A business that scales without you.",
-      body: "The routine running of your operation keeps moving whether you're in the office, on holiday, or hiring — without bottlenecks or extra headcount.",
+      body: "The routine running of your operation keeps moving whether you're in the office, on holiday, or hiring. Without bottlenecks or extra headcount.",
     },
   ];
 
@@ -230,7 +230,7 @@ function ValueProp() {
                 {lead.icon}
               </div>
               <div className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-                {lead.index} — {lead.label}
+                {lead.index}. {lead.label}
               </div>
             </div>
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[-0.025em] leading-[1.1] mb-4 sm:mb-5 max-w-2xl">
@@ -255,7 +255,7 @@ function ValueProp() {
                   {p.icon}
                 </div>
                 <div className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-                  {p.index} — {p.label}
+                  {p.index}. {p.label}
                 </div>
               </div>
               <h3 className="text-xl sm:text-2xl font-semibold tracking-[-0.02em] leading-tight mb-3">
@@ -285,7 +285,7 @@ function Storyboard() {
       tag: "The shift",
       index: "02",
       title: "We take it over. Permanently.",
-      caption: "We own the workflow end to end — your team stops touching it from day one.",
+      caption: "We own the workflow end to end. Your team stops touching it from day one.",
       Visual: ShiftPanel,
     },
     {
@@ -310,7 +310,7 @@ function Storyboard() {
             <span className="font-serif italic font-normal text-accent">hours back, every week.</span>
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed text-pretty">
-            Three frames. The exact outcome we deliver — 10+ hours a week back, every engagement.
+            Three frames. The exact outcome we deliver. 10+ hours a week back, every engagement.
           </p>
         </div>
 
@@ -329,7 +329,7 @@ function Storyboard() {
             >
               <div className="flex items-center justify-between mb-5">
                 <div className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
-                  {p.index} — {p.tag}
+                  {p.index}. {p.tag}
                 </div>
                 {i < panels.length - 1 && (
                   <ArrowRight className="size-4 text-muted-foreground/50 md:hidden" />
@@ -353,7 +353,7 @@ function Storyboard() {
   );
 }
 
-/* Frame 1 — chaos: tasks piling on top of each other, inbox counter climbing */
+/* Frame 1: chaos. Tasks piling on top of each other, inbox counter climbing */
 function BeforePanel() {
   const tasks = [
     { icon: <Mail className="size-3.5" />, label: "Unread email" },
