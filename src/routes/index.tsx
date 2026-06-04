@@ -171,21 +171,24 @@ function ValueProp() {
   const lead = {
     index: "01",
     icon: <Clock className="size-5" />,
-    title: "Eliminate the mundane",
-    body: "Strip out the repetitive, low-engagement tasks draining your team — so attention goes to strategic work instead of busywork.",
+    label: "The outcome",
+    title: "Your week back — every week.",
+    body: "Walk into Monday with the repetitive admin already handled. No backlog, no chasing, no friction — just the hours and headspace to do the work only you can do.",
   };
   const supporting = [
     {
       index: "02",
       icon: <ArrowUpRight className="size-5" />,
-      title: "Reclaim your highest-value hours",
-      body: "Stop being bogged down by work anyone could do. Redirect your time to the high-impact decisions that actually move the business.",
+      label: "The outcome",
+      title: "More revenue, same team.",
+      body: "Capacity shifts from busywork to the activities that actually grow the business — closing deals, serving clients, building product.",
     },
     {
       index: "03",
       icon: <Check className="size-5" />,
-      title: "Scale without adding headcount",
-      body: "Offload the routine running of your business to a system that doesn't get tired, sick, or distracted — and grow without the overhead.",
+      label: "The outcome",
+      title: "A business that scales without you.",
+      body: "The routine running of your operation keeps moving whether you're in the office, on holiday, or hiring — without bottlenecks or extra headcount.",
     },
   ];
 
@@ -194,14 +197,14 @@ function ValueProp() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center mb-16 sm:mb-20">
           <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-5 sm:mb-6">
-            What we do
+            What you actually get
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance mb-6 sm:mb-8">
-            We fully automate the repetitive manual admin{" "}
-            <span className="font-serif italic font-normal text-accent">inside your business.</span>
+            We don't sell workflows.{" "}
+            <span className="font-serif italic font-normal text-accent">We sell the outcome.</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed text-pretty">
-            Your time is more valuable than the work that's eating it. We take the low-value, mundane tasks off your plate so you can focus on the work that actually grows the business.
+            Automation is just the means. What you're really buying is your time back, more capacity for the work that grows the business, and a company that runs without you in the loop.
           </p>
         </div>
 
@@ -219,7 +222,7 @@ function ValueProp() {
                 {lead.icon}
               </div>
               <div className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-                {lead.index} — Promise
+                {lead.index} — {lead.label}
               </div>
             </div>
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[-0.025em] leading-[1.1] mb-4 sm:mb-5 max-w-2xl">
@@ -244,7 +247,7 @@ function ValueProp() {
                   {p.icon}
                 </div>
                 <div className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-                  {p.index} — Promise
+                  {p.index} — {p.label}
                 </div>
               </div>
               <h3 className="text-xl sm:text-2xl font-semibold tracking-[-0.02em] leading-tight mb-3">
