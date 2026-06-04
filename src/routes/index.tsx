@@ -310,7 +310,7 @@ function Storyboard() {
             <span className="font-serif italic font-normal text-accent">hours back, every week.</span>
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed text-pretty">
-            Three frames. The exact transformation we deliver — every engagement, every business.
+            Three frames. The exact outcome we deliver — 10+ hours a week back, every engagement.
           </p>
         </div>
 
