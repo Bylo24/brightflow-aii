@@ -97,7 +97,7 @@ function Hero() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-[40px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[84px] leading-[1.05] lg:leading-[1.02] font-semibold tracking-[-0.035em] mb-5 sm:mb-7 max-w-4xl text-balance"
           >
-            Reclaim the hours your business is losing to{" "}
+            Stop wasting hours on{" "}
             <span className="font-serif italic font-normal text-accent">manual admin.</span>
           </motion.h1>
 
