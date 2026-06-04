@@ -75,9 +75,9 @@ function ContactPage() {
                     <div className="size-10 rounded-full bg-accent/10 text-accent flex items-center justify-center mb-5">
                       <ArrowUpRight className="size-5" />
                     </div>
-                    <h2 className="text-2xl font-semibold tracking-tight mb-2">Thanks, we got it.</h2>
+                    <h2 className="text-2xl font-semibold tracking-tight mb-2">Got it.</h2>
                     <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
-                      We'll reply within one business day with a couple of times for a 20-minute call.
+                      You'll have a time on the calendar inside one business day. No pitch, no chaser sequences — just the audit.
                     </p>
                   </div>
                 ) : (
