@@ -548,3 +548,246 @@ function FAQItem({ q, a }: { q: string; a: string }) {
   );
 }
 
+
+/* ---------------- PUZZLE ---------------- */
+function piecePath(
+  size: number,
+  tab: number,
+  sides: [number, number, number, number] // [top, right, bottom, left] — 1 tab out, -1 slot in, 0 flat
+) {
+  const half = size / 2;
+  let d = `M 0 0 `;
+  // top
+  if (sides[0] === 0) d += `L ${size} 0 `;
+  else {
+    const dir = sides[0];
+    d += `L ${half - tab} 0 C ${half - tab} ${-tab * dir}, ${half + tab} ${-tab * dir}, ${half + tab} 0 L ${size} 0 `;
+  }
+  // right
+  if (sides[1] === 0) d += `L ${size} ${size} `;
+  else {
+    const dir = sides[1];
+    d += `L ${size} ${half - tab} C ${size + tab * dir} ${half - tab}, ${size + tab * dir} ${half + tab}, ${size} ${half + tab} L ${size} ${size} `;
+  }
+  // bottom
+  if (sides[2] === 0) d += `L 0 ${size} `;
+  else {
+    const dir = sides[2];
+    d += `L ${half + tab} ${size} C ${half + tab} ${size + tab * dir}, ${half - tab} ${size + tab * dir}, ${half - tab} ${size} L 0 ${size} `;
+  }
+  // left
+  if (sides[3] === 0) d += `L 0 0 `;
+  else {
+    const dir = sides[3];
+    d += `L 0 ${half + tab} C ${-tab * dir} ${half + tab}, ${-tab * dir} ${half - tab}, 0 ${half - tab} L 0 0 `;
+  }
+  d += `Z`;
+  return d;
+}
+
+function Puzzle() {
+  const size = 150;
+  const tab = 22;
+
+  // 2x2 layout. Tabs/slots configured so the four pieces interlock cleanly.
+  // [top, right, bottom, left]
+  const tl: [number, number, number, number] = [0, 1, -1, 0];
+  const tr: [number, number, number, number] = [0, 0, -1, -1];
+  const bl: [number, number, number, number] = [1, 1, 0, 0];
+  const br: [number, number, number, number] = [1, 0, 0, -1]; // BrightFlow piece
+
+  const pieces = [
+    {
+      key: "sales",
+      label: "Sales",
+      stuck: "Manual lead entry & follow-ups",
+      freed: "Closing high-value deals",
+      d: piecePath(size, tab, tl),
+      gridPos: "col-start-1 row-start-1",
+      x: 0,
+      y: 0,
+    },
+    {
+      key: "ops",
+      label: "Operations",
+      stuck: "Invoicing & data shuffling",
+      freed: "Building scalable systems",
+      d: piecePath(size, tab, tr),
+      gridPos: "col-start-2 row-start-1",
+      x: size,
+      y: 0,
+    },
+    {
+      key: "strategy",
+      label: "Strategy",
+      stuck: "Email triage & reporting",
+      freed: "Driving growth initiatives",
+      d: piecePath(size, tab, bl),
+      gridPos: "col-start-1 row-start-2",
+      x: 0,
+      y: size,
+    },
+  ];
+
+  return (
+    <section className="py-20 sm:py-28 md:py-32 border-y border-border/60 bg-secondary/40">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="max-w-3xl mb-12 sm:mb-16">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4 sm:mb-5">
+            The missing piece
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
+            Your team is stuck doing admin.{" "}
+            <span className="font-serif italic font-normal text-muted-foreground">
+              BrightFlow is the piece that sets them free.
+            </span>
+          </h2>
+          <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">
+            Every part of your business is allocated to low-leverage repetitive work. Snap BrightFlow
+            into place and each piece is freed up to focus on what actually scales the company.
+          </p>
+        </div>
+
+        <motion.div
+          initial="stuck"
+          whileInView="freed"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ staggerChildren: 0.15, delayChildren: 0.4 }}
+          className="relative mx-auto w-full max-w-3xl"
+        >
+          <div
+            className="relative mx-auto"
+            style={{
+              width: size * 2 + tab * 2,
+              height: size * 2 + tab * 2,
+              maxWidth: "100%",
+            }}
+          >
+            <svg
+              viewBox={`${-tab} ${-tab} ${size * 2 + tab * 2} ${size * 2 + tab * 2}`}
+              className="absolute inset-0 w-full h-full"
+            >
+              <defs>
+                <linearGradient id="pieceFill" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stopColor="hsl(var(--background))" />
+                  <stop offset="100%" stopColor="hsl(var(--secondary))" />
+                </linearGradient>
+                <linearGradient id="brightFill" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stopColor="hsl(var(--accent))" />
+                  <stop offset="100%" stopColor="hsl(var(--accent) / 0.7)" />
+                </linearGradient>
+              </defs>
+
+              {pieces.map((p) => (
+                <g key={p.key} transform={`translate(${p.x}, ${p.y})`}>
+                  <path
+                    d={p.d}
+                    fill="url(#pieceFill)"
+                    stroke="hsl(var(--border))"
+                    strokeWidth="1.5"
+                  />
+                </g>
+              ))}
+
+              {/* BrightFlow piece — slides into bottom-right slot */}
+              <motion.g
+                variants={{
+                  stuck: { x: size + 220, y: size - 80, opacity: 0, rotate: 8 },
+                  freed: { x: size, y: size, opacity: 1, rotate: 0 },
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 120,
+                  damping: 16,
+                  delay: 0.2,
+                }}
+                style={{ originX: "50%", originY: "50%" }}
+              >
+                <path
+                  d={piecePath(size, tab, br)}
+                  fill="url(#brightFill)"
+                  stroke="hsl(var(--accent))"
+                  strokeWidth="1.5"
+                />
+                <text
+                  x={size / 2}
+                  y={size / 2 - 4}
+                  textAnchor="middle"
+                  className="fill-accent-foreground"
+                  style={{ fontSize: 13, letterSpacing: "0.18em", textTransform: "uppercase" }}
+                >
+                  BRIGHTFLOW
+                </text>
+                <text
+                  x={size / 2}
+                  y={size / 2 + 16}
+                  textAnchor="middle"
+                  className="fill-accent-foreground/80"
+                  style={{ fontSize: 11 }}
+                >
+                  the missing piece
+                </text>
+              </motion.g>
+
+              {/* Piece labels */}
+              {pieces.map((p) => (
+                <g key={`${p.key}-label`} transform={`translate(${p.x + size / 2}, ${p.y + size / 2})`}>
+                  <text
+                    textAnchor="middle"
+                    y={-6}
+                    className="fill-foreground"
+                    style={{ fontSize: 14, fontWeight: 600, letterSpacing: "-0.01em" }}
+                  >
+                    {p.label}
+                  </text>
+                </g>
+              ))}
+            </svg>
+          </div>
+
+          {/* Before / after labels under the puzzle */}
+          <div className="mt-10 grid sm:grid-cols-3 gap-4 sm:gap-6">
+            {pieces.map((p) => (
+              <motion.div
+                key={p.key}
+                variants={{
+                  stuck: { opacity: 1 },
+                  freed: { opacity: 1 },
+                }}
+                className="rounded-xl border border-border/70 bg-background p-5"
+              >
+                <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-2">
+                  {p.label}
+                </div>
+                <div className="relative h-12">
+                  <motion.div
+                    variants={{
+                      stuck: { opacity: 1, y: 0 },
+                      freed: { opacity: 0, y: -8 },
+                    }}
+                    transition={{ duration: 0.4 }}
+                    className="absolute inset-0 text-sm text-muted-foreground line-through"
+                  >
+                    {p.stuck}
+                  </motion.div>
+                  <motion.div
+                    variants={{
+                      stuck: { opacity: 0, y: 8 },
+                      freed: { opacity: 1, y: 0 },
+                    }}
+                    transition={{ duration: 0.4, delay: 0.1 }}
+                    className="absolute inset-0 text-sm font-medium text-foreground"
+                  >
+                    {p.freed}
+                  </motion.div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+
