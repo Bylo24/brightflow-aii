@@ -217,7 +217,7 @@ function ValueProp() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border/70 border border-border/70 rounded-2xl overflow-hidden">
-          {/* Lead card — spans full row */}
+          {/* Lead card spans full row */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
