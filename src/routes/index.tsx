@@ -223,17 +223,17 @@ function ValueProp() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="md:col-span-2 bg-background p-8 sm:p-10 md:p-14 hover:bg-secondary/60 transition-colors"
+            className="md:col-span-2 bg-background p-8 sm:p-10 md:p-12 hover:bg-secondary/60 transition-colors"
           >
-            <div className="flex items-center gap-4 mb-6 sm:mb-7">
-              <div className="size-11 rounded-lg bg-accent/10 text-accent flex items-center justify-center">
+            <div className="flex items-center gap-4 mb-5 sm:mb-6">
+              <div className="size-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center">
                 {lead.icon}
               </div>
               <div className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
                 {lead.index}. {lead.label}
               </div>
             </div>
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[-0.025em] leading-[1.1] mb-4 sm:mb-5 max-w-2xl">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[-0.025em] leading-[1.1] mb-4 max-w-2xl">
               {lead.title}
             </h3>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
@@ -261,7 +261,7 @@ function ValueProp() {
               <h3 className="text-xl sm:text-2xl font-semibold tracking-[-0.02em] leading-tight mb-3">
                 {p.title}
               </h3>
-              <p className="text-[15px] text-muted-foreground leading-relaxed">{p.body}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{p.body}</p>
             </motion.div>
           ))}
         </div>
@@ -309,7 +309,7 @@ function Storyboard() {
             From manual chaos to{" "}
             <span className="font-serif italic font-normal text-accent">hours back, every week.</span>
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed text-pretty">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed text-pretty">
             Three frames. The exact outcome we deliver. 10+ hours a week back, every engagement.
           </p>
         </div>
@@ -641,7 +641,7 @@ function BentoCard({
         {tag}
       </div>
       <div className="relative z-10 max-w-md pt-6">
-        <div className="size-9 border border-border rounded-md flex items-center justify-center mb-5 sm:mb-6 text-accent group-hover:border-accent/60 transition-colors">
+        <div className="size-10 border border-border rounded-md flex items-center justify-center mb-5 sm:mb-6 text-accent group-hover:border-accent/60 transition-colors">
           {icon}
         </div>
         <h3
@@ -744,7 +744,7 @@ function Metrics() {
     { value: "100%", label: "Managed by us. You never touch the system" },
   ];
   return (
-    <section className="py-24 sm:py-28 md:py-32">
+    <section className="py-24 sm:py-32 md:py-40">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
         {items.map((m, i) => (
           <motion.div
