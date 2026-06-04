@@ -23,18 +23,18 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "BrightFlow AI, AI automation that removes repetitive admin work",
+        title: "BrightFlow AI — Fully Automate Repetitive Manual Admin",
       },
       {
         name: "description",
         content:
-          "BrightFlow AI builds and runs custom AI systems that take repetitive, time-consuming tasks off your team, for bookkeepers, property managers, recruiters, clinics, and local businesses.",
+          "We eliminate the mundane, repetitive manual tasks eating your team's time so you can focus on strategic initiatives that actually grow your business.",
       },
-      { property: "og:title", content: "BrightFlow AI, Automate the repetitive work" },
+      { property: "og:title", content: "BrightFlow AI — Fully Automate Repetitive Manual Admin" },
       {
         property: "og:description",
         content:
-          "We find the painful, repeated workflow in your business and build the AI system that runs it for you. Managed monthly.",
+          "We handle the low-value repetitive admin in your business, freeing you to focus on the critical areas that truly matter.",
       },
     ],
   }),
@@ -99,7 +99,7 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mb-8 sm:mb-10 text-pretty leading-relaxed"
           >
-            We build custom AI systems that handle your manual admin, and we run them for you.
+            We fully automate the repetitive manual admin within your business — and run it for you, end to end.
           </motion.p>
 
           <motion.div
@@ -171,13 +171,13 @@ function ValueProp() {
   const points = [
     {
       icon: <Clock className="size-5" />,
-      title: "Stop losing hours to manual admin",
-      body: "Your team should be growing the business, not chasing receipts or copy-pasting from emails into your CRM.",
+      title: "Reclaim time for what matters",
+      body: "Stop losing hours to manual admin. Redirect your team toward high-impact activities that drive growth, not tasks easily handled by others.",
     },
     {
       icon: <Check className="size-5" />,
       title: "Built for your exact workflow",
-      body: "No generic chatbots. We map your specific process and build the AI system around it, integrated with the tools you already use.",
+      body: "We map your specific process and build the automation around it, integrated with the tools you already use. No generic chatbots.",
     },
     {
       icon: <ArrowUpRight className="size-5" />,
@@ -238,8 +238,8 @@ function Bento() {
           </h2>
         </div>
         <p className="text-muted-foreground text-sm sm:text-base max-w-sm leading-relaxed">
-          A few examples of the systems we've built. Each one removes a repetitive task that used
-          to eat hours of staff time every week.
+          A few examples of what we've automated. Each one removes a repetitive manual task that used
+          to eat hours of staff time every week — so your team can focus on strategic work.
         </p>
       </div>
 
@@ -382,7 +382,7 @@ function Process() {
     {
       num: "02",
       title: "Build",
-      body: "Our team designs and builds the AI system around your specific workflow. We integrate with your existing tools, CRM, email, accounting, calendar, etc.",
+      body: "Our team designs and builds the automated workflow around your specific process. We integrate with your existing tools, CRM, email, accounting, calendar, etc.",
     },
     {
       num: "03",
@@ -473,7 +473,7 @@ function FAQ() {
   const items = [
     {
       q: "How is BrightFlow different from a generic AI agency?",
-      a: "We don't sell vague AI strategy or generic chatbots. We find one specific repetitive workflow inside your business and build a managed system that runs it forever. Real scope, real outcomes.",
+      a: "We don't sell vague AI strategy or generic chatbots. We find one specific repetitive admin workflow inside your business, automate it end to end, and manage it for you. Real scope, real outcomes.",
     },
     {
       q: "What does the engagement look like?",
@@ -489,7 +489,7 @@ function FAQ() {
     },
     {
       q: "What if something goes wrong with the system?",
-      a: "We monitor every system 24/7 with automatic alerts. Most issues self-recover. Real incidents are handled by our team. That's exactly what the managed monthly fee covers.",
+      a: "We monitor every workflow 24/7 with automatic alerts. Most issues self-recover. Real incidents are handled by our team. That's exactly what the managed monthly fee covers.",
     },
     {
       q: "What industries do you typically work with?",
