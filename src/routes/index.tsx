@@ -738,13 +738,13 @@ function Process() {
 /* ---------------- METRICS ---------------- */
 function Metrics() {
   const items = [
-    { value: "14,200+", label: "Hours saved for our clients each year" },
-    { value: "100%", label: "Automation accuracy across all systems" },
-    { value: "1-7 days", label: "Average time from kickoff to live system" },
-    { value: "100%", label: "Managed, we run it so you don't have to" },
+    { value: "14,200+", label: "Hours handed back to our clients each year" },
+    { value: "100%", label: "Automation accuracy across every system we run" },
+    { value: "1-7 days", label: "From kickoff to live, in production" },
+    { value: "100%", label: "Managed by us — you never touch the system" },
   ];
   return (
-    <section className="py-20 sm:py-24">
+    <section className="py-24 sm:py-28 md:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
         {items.map((m, i) => (
           <motion.div
