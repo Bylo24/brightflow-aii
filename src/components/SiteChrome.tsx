@@ -113,8 +113,8 @@ export function Footer() {
               <Wordmark />
             </div>
             <p className="text-muted-foreground text-sm max-w-sm leading-relaxed">
-              We build custom AI systems that remove repetitive admin work from service businesses.
-              Part of the Bright ecosystem.
+              We fully automate repetitive manual admin for service businesses, so your team can
+              focus on growth. Part of the Bright ecosystem.
             </p>
           </div>
           <FooterCol
