@@ -635,7 +635,7 @@ function BentoCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6 }}
-      className={`group relative bg-background p-7 sm:p-9 md:p-10 hover:bg-secondary/50 transition-colors flex flex-col justify-between overflow-hidden ${className}`}
+      className={`group relative bg-background p-8 sm:p-10 md:p-12 hover:bg-secondary/50 transition-colors flex flex-col justify-between overflow-hidden ${className}`}
     >
       <div className="absolute top-5 right-6 text-[10px] uppercase tracking-[0.18em] text-muted-foreground/60">
         {tag}
