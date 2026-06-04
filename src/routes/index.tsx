@@ -56,6 +56,7 @@ function Index() {
         <Hero />
         <Marquee />
         <ValueProp />
+        <Storyboard />
         <Bento />
         <Process />
         <Metrics />
