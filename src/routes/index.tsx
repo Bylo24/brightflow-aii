@@ -798,15 +798,15 @@ function FAQ() {
   ];
 
   return (
-    <section id="faq" className="py-20 sm:py-28 md:py-32">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 grid md:grid-cols-[1fr_2fr] gap-10 md:gap-16">
+    <section id="faq" className="py-24 sm:py-32 md:py-40">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 grid md:grid-cols-[1fr_2fr] gap-12 md:gap-20">
         <div>
-          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4 sm:mb-5">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-5 sm:mb-6">
             FAQ
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
-            Common{" "}
-            <span className="font-serif italic font-normal text-muted-foreground">questions.</span>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
+            The honest{" "}
+            <span className="font-serif italic font-normal text-muted-foreground">answers.</span>
           </h2>
         </div>
         <div className="border-t border-border">
