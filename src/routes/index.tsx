@@ -89,8 +89,8 @@ function Hero() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-[40px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[84px] leading-[1.05] lg:leading-[1.02] font-semibold tracking-[-0.035em] mb-5 sm:mb-7 max-w-4xl text-balance"
           >
-            Automate the repetitive work{" "}
-            <span className="font-serif italic font-normal text-accent">killing your week.</span>
+            Get your week back.{" "}
+            <span className="font-serif italic font-normal text-accent">We'll run the rest.</span>
           </motion.h1>
 
           <motion.p
@@ -99,8 +99,9 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mb-8 sm:mb-10 text-pretty leading-relaxed"
           >
-            We fully automate the repetitive manual admin within your business — and run it for you, end to end.
+            We don't sell workflows — we sell the outcome. Your time back, more capacity for growth, and a business that runs without you in the loop.
           </motion.p>
+
 
           <motion.div
             initial={{ opacity: 0, y: 16 }}
