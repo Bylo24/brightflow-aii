@@ -278,21 +278,21 @@ function Storyboard() {
       tag: "Before",
       index: "01",
       title: "The week you know too well.",
-      caption: "Inbox overflowing. Tasks piling. Time bleeding.",
+      caption: "Inbox overflowing. Tasks piling. Hours bleeding out of the business.",
       Visual: BeforePanel,
     },
     {
       tag: "The shift",
       index: "02",
-      title: "Your system takes over.",
-      caption: "Workflows kick in. Repetitive work routes itself.",
+      title: "We take it over. Permanently.",
+      caption: "Your repetitive work routes itself. Nothing for your team to triage.",
       Visual: ShiftPanel,
     },
     {
       tag: "After",
       index: "03",
-      title: "Calm operations. Real time back.",
-      caption: "Clean queue. Cleared calendar. Compounding wins.",
+      title: "Hours back. Room for what matters.",
+      caption: "Cleared queue. Reclaimed hours. Capacity for the work that actually grows the business.",
       Visual: AfterPanel,
     },
   ];
@@ -305,12 +305,12 @@ function Storyboard() {
           <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-5 sm:mb-6">
             The transformation
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance mb-6">
-            From chaos to{" "}
-            <span className="font-serif italic font-normal text-accent">quiet operations.</span>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance mb-6 sm:mb-8">
+            From manual chaos to{" "}
+            <span className="font-serif italic font-normal text-accent">hours back, every week.</span>
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
-            Three frames. The same business, before and after we take the repetitive work off your plate.
+          <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed text-pretty">
+            Three frames. The exact transformation we deliver — every engagement, every business.
           </p>
         </div>
 
