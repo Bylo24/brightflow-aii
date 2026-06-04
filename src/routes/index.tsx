@@ -97,8 +97,8 @@ function Hero() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-[40px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[84px] leading-[1.05] lg:leading-[1.02] font-semibold tracking-[-0.035em] mb-5 sm:mb-7 max-w-4xl text-balance"
           >
-            Automate the repetitive work{" "}
-            <span className="font-serif italic font-normal text-accent">killing your week.</span>
+            Reclaim the hours your business is losing to{" "}
+            <span className="font-serif italic font-normal text-accent">manual admin.</span>
           </motion.h1>
 
           <motion.p
@@ -107,7 +107,7 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mb-8 sm:mb-10 text-pretty leading-relaxed"
           >
-            We fully automate the repetitive manual admin within your business — and run it for you, end to end.
+            We fully automate the repetitive manual work running inside your business — and operate the system for you, end to end. You get the hours back.
           </motion.p>
 
           <motion.div
@@ -156,7 +156,7 @@ function Marquee() {
   return (
     <div className="py-10 sm:py-12 border-y border-border/60 overflow-hidden">
       <div className="text-center text-[11px] uppercase tracking-[0.18em] text-muted-foreground/70 mb-6 sm:mb-8 px-4">
-        Built for service businesses that run on repetitive work
+        Trusted by service businesses done running on manual admin
       </div>
       <div className="flex gap-10 sm:gap-14 whitespace-nowrap animate-marquee w-max">
         {[...items, ...items, ...items].map((it, i) => (
@@ -278,21 +278,21 @@ function Storyboard() {
       tag: "Before",
       index: "01",
       title: "The week you know too well.",
-      caption: "Inbox overflowing. Tasks piling. Time bleeding.",
+      caption: "Inbox overflowing. Tasks piling. Hours bleeding out of the business.",
       Visual: BeforePanel,
     },
     {
       tag: "The shift",
       index: "02",
-      title: "Your system takes over.",
-      caption: "Workflows kick in. Repetitive work routes itself.",
+      title: "We take it over. Permanently.",
+      caption: "Your repetitive work routes itself. Nothing for your team to triage.",
       Visual: ShiftPanel,
     },
     {
       tag: "After",
       index: "03",
-      title: "Calm operations. Real time back.",
-      caption: "Clean queue. Cleared calendar. Compounding wins.",
+      title: "Hours back. Room for what matters.",
+      caption: "Cleared queue. Reclaimed hours. Capacity for the work that actually grows the business.",
       Visual: AfterPanel,
     },
   ];
@@ -305,12 +305,12 @@ function Storyboard() {
           <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-5 sm:mb-6">
             The transformation
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance mb-6">
-            From chaos to{" "}
-            <span className="font-serif italic font-normal text-accent">quiet operations.</span>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance mb-6 sm:mb-8">
+            From manual chaos to{" "}
+            <span className="font-serif italic font-normal text-accent">hours back, every week.</span>
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
-            Three frames. The same business, before and after we take the repetitive work off your plate.
+          <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed text-pretty">
+            Three frames. The exact transformation we deliver — every engagement, every business.
           </p>
         </div>
 
@@ -527,20 +527,19 @@ function AfterPanel() {
 /* ---------------- BENTO ---------------- */
 function Bento() {
   return (
-    <section id="services" className="py-20 sm:py-28 md:py-32 max-w-6xl mx-auto px-4 sm:px-6">
-      <div className="mb-12 sm:mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-        <div className="max-w-2xl">
-          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4 sm:mb-5">
+    <section id="services" className="py-24 sm:py-32 md:py-40 max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="mb-16 sm:mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+        <div className="max-w-3xl">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-5 sm:mb-6">
             What we build
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
-            Real workflows. Real automation.{" "}
-            <span className="font-serif italic font-normal text-muted-foreground">No fluff.</span>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
+            Live systems.{" "}
+            <span className="font-serif italic font-normal text-muted-foreground">Built in days, not quarters.</span>
           </h2>
         </div>
         <p className="text-muted-foreground text-sm sm:text-base max-w-sm leading-relaxed">
-          A few examples of what we've automated. Each one removes a repetitive manual task that used
-          to eat hours of staff time every week — so your team can focus on strategic work.
+          A sample of what we've already deployed. Each one removes a repetitive manual task that was burning hours of staff time every week — and hands those hours back to the business.
         </p>
       </div>
 
@@ -550,7 +549,7 @@ function Bento() {
           tag="For bookkeepers"
           icon={<FileText className="size-4" />}
           title="Automatic document chasing"
-          body="The system watches for missing receipts and unexplained transactions, then automatically emails and texts clients until everything is provided, without your team lifting a finger."
+          body="The system spots missing receipts and unexplained transactions, then emails and texts clients until everything is provided. Your team never touches it."
           large
         />
 
@@ -559,7 +558,7 @@ function Bento() {
           tag="For property managers"
           icon={<Building2 className="size-4" />}
           title="Maintenance intake on autopilot"
-          body="Tenants report issues through a smart intake flow that collects details, photos and urgency, then routes to the right contractor automatically."
+          body="Tenants report issues through a smart intake flow that captures details, photos and urgency, then routes the job to the right contractor automatically."
           stats={[
             { value: "85%", label: "Faster response time" },
             { value: "0", label: "Manual triage needed" },
@@ -571,7 +570,7 @@ function Bento() {
           tag="For recruiters"
           icon={<UserSearch className="size-4" />}
           title="Candidate screening & scheduling"
-          body="AI screens inbound candidates against your criteria, collects availability, and books interviews into your calendar, 24/7."
+          body="Inbound candidates are screened against your exact criteria, availability is collected, and interviews land in your calendar — 24/7, no recruiter required."
         />
 
         <BentoCard
@@ -579,7 +578,7 @@ function Bento() {
           tag="For local businesses"
           icon={<Star className="size-4" />}
           title="Review requests & reputation"
-          body="Automatically asks happy customers for reviews at the right moment, and alerts you the second a damaging review appears."
+          body="Happy customers are asked for reviews at the exact right moment. Damaging reviews trigger an instant alert — before they cost you another booking."
         />
 
         <BentoCard
@@ -587,16 +586,16 @@ function Bento() {
           tag="For clinics & service businesses"
           icon={<HeartPulse className="size-4" />}
           title="Client comms & follow-ups"
-          body="Handles appointment reminders, intake forms, and follow-up messages so your front desk can focus on people, not admin."
+          body="Appointment reminders, intake forms and follow-up messages handled end to end. Your front desk gets its day back to focus on people, not admin."
         />
 
-        <div className="col-span-12 bg-foreground p-7 sm:p-9 md:p-10 text-background flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className="col-span-12 bg-foreground p-8 sm:p-10 md:p-12 text-background flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
             <div className="text-[11px] uppercase tracking-[0.18em] mb-3 opacity-60">
               Don't see your workflow?
             </div>
             <h4 className="font-semibold tracking-tight text-xl sm:text-2xl md:text-3xl text-balance">
-              If it's repetitive, we can probably automate it.
+              If it's repetitive, we automate it. Every time.
             </h4>
           </div>
           <Link
@@ -636,7 +635,7 @@ function BentoCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6 }}
-      className={`group relative bg-background p-7 sm:p-9 md:p-10 hover:bg-secondary/50 transition-colors flex flex-col justify-between overflow-hidden ${className}`}
+      className={`group relative bg-background p-8 sm:p-10 md:p-12 hover:bg-secondary/50 transition-colors flex flex-col justify-between overflow-hidden ${className}`}
     >
       <div className="absolute top-5 right-6 text-[10px] uppercase tracking-[0.18em] text-muted-foreground/60">
         {tag}
@@ -678,34 +677,34 @@ function Process() {
     {
       num: "01",
       title: "Audit",
-      body: "We sit down with you and map the repetitive workflows costing the most time and money. You get a clear plan even if you don't move forward.",
+      body: "We sit down with you and map the repetitive workflows costing the most time and money. You leave with a clear plan, whether or not you work with us.",
     },
     {
       num: "02",
       title: "Build",
-      body: "Our team designs and builds the automated workflow around your specific process. We integrate with your existing tools, CRM, email, accounting, calendar, etc.",
+      body: "We design and build the automated workflow around your exact process, integrated with the tools you already use — CRM, email, accounting, calendar.",
     },
     {
       num: "03",
       title: "Launch",
-      body: "We deploy the system, train your team in under an hour, and switch it on. Most clients are live in under a week.",
+      body: "We deploy the system, train your team in under an hour, and switch it on. Every client is live in under a week.",
     },
     {
       num: "04",
       title: "Manage",
-      body: "We monitor performance, fix edge cases, and improve the system every month, for a flat fee. You never have to maintain it.",
+      body: "We monitor, maintain and improve the system every month at a flat fee. You never lift a finger to keep it running.",
     },
   ];
 
   return (
-    <section id="process" className="py-20 sm:py-28 md:py-32 border-y border-border/60 bg-secondary/50">
+    <section id="process" className="py-24 sm:py-32 md:py-40 border-y border-border/60 bg-secondary/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="mb-12 sm:mb-16 max-w-2xl">
-          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4 sm:mb-5">
+        <div className="mb-16 sm:mb-20 max-w-3xl">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-5 sm:mb-6">
             How it works
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
-            From first call to running system{" "}
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
+            From first call to live system{" "}
             <span className="font-serif italic font-normal text-muted-foreground">in under a week.</span>
           </h2>
         </div>
@@ -719,7 +718,7 @@ function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="bg-background p-6 sm:p-7 md:p-8 min-h-[200px] sm:min-h-[240px] grid grid-rows-[auto_auto_1fr] gap-y-6 group hover:bg-secondary/50 transition-colors"
+              className="bg-background p-8 sm:p-10 md:p-12 min-h-[220px] sm:min-h-[260px] grid grid-rows-[auto_auto_1fr] gap-y-6 group hover:bg-secondary/50 transition-colors"
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono text-accent">{s.num}</span>
@@ -739,13 +738,13 @@ function Process() {
 /* ---------------- METRICS ---------------- */
 function Metrics() {
   const items = [
-    { value: "14,200+", label: "Hours saved for our clients each year" },
-    { value: "100%", label: "Automation accuracy across all systems" },
-    { value: "1-7 days", label: "Average time from kickoff to live system" },
-    { value: "100%", label: "Managed, we run it so you don't have to" },
+    { value: "14,200+", label: "Hours handed back to our clients each year" },
+    { value: "100%", label: "Automation accuracy across every system we run" },
+    { value: "1-7 days", label: "From kickoff to live, in production" },
+    { value: "100%", label: "Managed by us — you never touch the system" },
   ];
   return (
-    <section className="py-20 sm:py-24">
+    <section className="py-24 sm:py-28 md:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
         {items.map((m, i) => (
           <motion.div
@@ -786,11 +785,11 @@ function FAQ() {
     },
     {
       q: "How fast will I see results?",
-      a: "Most systems are live within 7 days of kickoff. You'll see the time savings the week it switches on — not a quarter from now, not after a 'transformation roadmap'.",
+      a: "Every system is live within 7 days of kickoff. You see the hours come back the week it switches on — not next quarter, not after a 'transformation roadmap'.",
     },
     {
       q: "What happens if it breaks?",
-      a: "It won't, because we monitor every workflow 24/7 and most issues self-recover before you'd ever notice. If something real goes wrong, our team handles it — that's the entire point of the managed monthly fee.",
+      a: "It doesn't, because we monitor every workflow 24/7 and most issues self-recover before you'd ever notice. Anything real, our team handles — that's the entire point of the managed monthly fee.",
     },
     {
       q: "Do I have to learn anything technical?",
@@ -799,15 +798,15 @@ function FAQ() {
   ];
 
   return (
-    <section id="faq" className="py-20 sm:py-28 md:py-32">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 grid md:grid-cols-[1fr_2fr] gap-10 md:gap-16">
+    <section id="faq" className="py-24 sm:py-32 md:py-40">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 grid md:grid-cols-[1fr_2fr] gap-12 md:gap-20">
         <div>
-          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4 sm:mb-5">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-5 sm:mb-6">
             FAQ
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
-            Common{" "}
-            <span className="font-serif italic font-normal text-muted-foreground">questions.</span>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
+            The honest{" "}
+            <span className="font-serif italic font-normal text-muted-foreground">answers.</span>
           </h2>
         </div>
         <div className="border-t border-border">

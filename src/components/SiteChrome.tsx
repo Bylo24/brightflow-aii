@@ -89,12 +89,11 @@ export function Footer() {
             Ready when you are
           </div>
           <h2 className="text-[34px] sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.035em] leading-[1.05] lg:leading-[1.02] mb-6 sm:mb-8 text-balance">
-            Stop wasting hours on{" "}
-            <span className="font-serif italic font-normal text-accent">work AI can do for you.</span>
+            Reclaim the hours your business is losing{" "}
+            <span className="font-serif italic font-normal text-accent">to manual admin.</span>
           </h2>
-          <p className="text-muted-foreground text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed">
-            Book a free 20-minute workflow audit. We'll look at your business, find the highest-cost
-            repetitive task, and tell you honestly whether automating it makes sense.
+          <p className="text-muted-foreground text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed max-w-xl mx-auto">
+            Book a 20-minute workflow audit. We'll find the highest-cost repetitive task in your business and show you exactly how we'll automate it — at a fixed price, live in under a week.
           </p>
           <BookCallDialog>
             <button type="button" className="btn btn-lg btn-neutral rounded-full">
@@ -103,7 +102,7 @@ export function Footer() {
           </BookCallDialog>
 
           <div className="mt-5 text-sm text-muted-foreground">
-            No pitch. No pressure. Just a clear plan.
+            No pitch. No pressure. A clear plan, in writing.
           </div>
         </div>
 
@@ -113,8 +112,7 @@ export function Footer() {
               <Wordmark />
             </div>
             <p className="text-muted-foreground text-sm max-w-sm leading-relaxed">
-              We fully automate repetitive manual admin for service businesses, so your team can
-              focus on growth. Part of the Bright ecosystem.
+              We fully automate the repetitive manual admin running inside service businesses — so leadership and teams get their hours back for the work that actually moves the business forward.
             </p>
           </div>
           <FooterCol
