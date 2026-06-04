@@ -278,21 +278,21 @@ function Storyboard() {
       tag: "Before",
       index: "01",
       title: "The week you know too well.",
-      caption: "Inbox overflowing. Tasks piling. Hours bleeding out of the business.",
+      caption: "10+ hours a week lost to admin your team shouldn't be touching.",
       Visual: BeforePanel,
     },
     {
       tag: "The shift",
       index: "02",
       title: "We take it over. Permanently.",
-      caption: "Your repetitive work routes itself. Nothing for your team to triage.",
+      caption: "We own the workflow end to end — your team stops touching it from day one.",
       Visual: ShiftPanel,
     },
     {
       tag: "After",
       index: "03",
-      title: "Hours back. Room for what matters.",
-      caption: "Cleared queue. Reclaimed hours. Capacity for the work that actually grows the business.",
+      title: "Hours back. Capacity unlocked.",
+      caption: "10+ hours a week redirected to closing deals, serving clients, and growing revenue.",
       Visual: AfterPanel,
     },
   ];
@@ -310,7 +310,7 @@ function Storyboard() {
             <span className="font-serif italic font-normal text-accent">hours back, every week.</span>
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed text-pretty">
-            Three frames. The exact transformation we deliver — every engagement, every business.
+            Three frames. The exact outcome we deliver — 10+ hours a week back, every engagement.
           </p>
         </div>
 
@@ -539,7 +539,7 @@ function Bento() {
           </h2>
         </div>
         <p className="text-muted-foreground text-sm sm:text-base max-w-sm leading-relaxed">
-          A sample of what we've already deployed. Each one removes a repetitive manual task that was burning hours of staff time every week — and hands those hours back to the business.
+          A sample of what we've already deployed. Each one hands 10+ hours a week back to the business — capacity redirected to the work that actually drives growth.
         </p>
       </div>
 
@@ -789,7 +789,7 @@ function FAQ() {
     },
     {
       q: "What happens if it breaks?",
-      a: "It doesn't, because we monitor every workflow 24/7 and most issues self-recover before you'd ever notice. Anything real, our team handles — that's the entire point of the managed monthly fee.",
+      a: "It doesn't reach you. We monitor every workflow 24/7, issues self-recover, and our team handles anything else before it touches your business. That's the entire point of the managed monthly fee.",
     },
     {
       q: "Do I have to learn anything technical?",
@@ -805,7 +805,7 @@ function FAQ() {
             FAQ
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
-            The honest{" "}
+            The straight{" "}
             <span className="font-serif italic font-normal text-muted-foreground">answers.</span>
           </h2>
         </div>
