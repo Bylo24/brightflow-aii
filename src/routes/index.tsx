@@ -805,7 +805,7 @@ function FAQ() {
             FAQ
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
-            The honest{" "}
+            The straight{" "}
             <span className="font-serif italic font-normal text-muted-foreground">answers.</span>
           </h2>
         </div>
