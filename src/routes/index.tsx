@@ -156,7 +156,7 @@ function Marquee() {
   return (
     <div className="py-10 sm:py-12 border-y border-border/60 overflow-hidden">
       <div className="text-center text-[11px] uppercase tracking-[0.18em] text-muted-foreground/70 mb-6 sm:mb-8 px-4">
-        Built for service businesses that run on repetitive work
+        Trusted by service businesses done running on manual admin
       </div>
       <div className="flex gap-10 sm:gap-14 whitespace-nowrap animate-marquee w-max">
         {[...items, ...items, ...items].map((it, i) => (
