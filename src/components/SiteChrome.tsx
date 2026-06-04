@@ -112,8 +112,7 @@ export function Footer() {
               <Wordmark />
             </div>
             <p className="text-muted-foreground text-sm max-w-sm leading-relaxed">
-              We fully automate repetitive manual admin for service businesses, so your team can
-              focus on growth. Part of the Bright ecosystem.
+              We fully automate the repetitive manual admin running inside service businesses — so leadership and teams get their hours back for the work that actually moves the business forward.
             </p>
           </div>
           <FooterCol
