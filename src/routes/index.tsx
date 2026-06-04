@@ -261,7 +261,7 @@ function ValueProp() {
               <h3 className="text-xl sm:text-2xl font-semibold tracking-[-0.02em] leading-tight mb-3">
                 {p.title}
               </h3>
-              <p className="text-[15px] text-muted-foreground leading-relaxed">{p.body}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{p.body}</p>
             </motion.div>
           ))}
         </div>
