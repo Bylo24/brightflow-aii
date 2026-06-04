@@ -402,7 +402,7 @@ function BeforePanel() {
   );
 }
 
-/* Frame 2 — shift: animated beam routing tasks through the system */
+/* Frame 2: shift. Animated beam routing tasks through the system */
 function ShiftPanel() {
   return (
     <div className="absolute inset-0 p-4">
@@ -473,7 +473,7 @@ function ShiftPanel() {
   );
 }
 
-/* Frame 3 — calm: cleared list, time reclaimed counter */
+/* Frame 3: calm. Cleared list, time reclaimed counter */
 function AfterPanel() {
   const done = ["Replies sent", "Invoices filed", "Bookings confirmed", "Reports built"];
   return (
@@ -539,7 +539,7 @@ function Bento() {
           </h2>
         </div>
         <p className="text-muted-foreground text-sm sm:text-base max-w-sm leading-relaxed">
-          A sample of what we've already deployed. Each one hands 10+ hours a week back to the business — capacity redirected to the work that actually drives growth.
+          A sample of what we've already deployed. Each one hands 10+ hours a week back to the business. Capacity redirected to the work that actually drives growth.
         </p>
       </div>
 
@@ -570,7 +570,7 @@ function Bento() {
           tag="For recruiters"
           icon={<UserSearch className="size-4" />}
           title="Candidate screening & scheduling"
-          body="Inbound candidates are screened against your exact criteria, availability is collected, and interviews land in your calendar — 24/7, no recruiter required."
+          body="Inbound candidates are screened against your exact criteria, availability is collected, and interviews land in your calendar. 24/7, no recruiter required."
         />
 
         <BentoCard
@@ -578,7 +578,7 @@ function Bento() {
           tag="For local businesses"
           icon={<Star className="size-4" />}
           title="Review requests & reputation"
-          body="Happy customers are asked for reviews at the exact right moment. Damaging reviews trigger an instant alert — before they cost you another booking."
+          body="Happy customers are asked for reviews at the exact right moment. Damaging reviews trigger an instant alert. Before they cost you another booking."
         />
 
         <BentoCard
@@ -682,7 +682,7 @@ function Process() {
     {
       num: "02",
       title: "Build",
-      body: "We design and build the automated workflow around your exact process, integrated with the tools you already use — CRM, email, accounting, calendar.",
+      body: "We design and build the automated workflow around your exact process, integrated with the tools you already use. CRM, email, accounting, calendar.",
     },
     {
       num: "03",
@@ -741,7 +741,7 @@ function Metrics() {
     { value: "14,200+", label: "Hours handed back to our clients each year" },
     { value: "100%", label: "Automation accuracy across every system we run" },
     { value: "1-7 days", label: "From kickoff to live, in production" },
-    { value: "100%", label: "Managed by us — you never touch the system" },
+    { value: "100%", label: "Managed by us. You never touch the system" },
   ];
   return (
     <section className="py-24 sm:py-28 md:py-32">
@@ -773,15 +773,15 @@ function FAQ() {
   const items = [
     {
       q: "Why should I trust you over an in-house hire or another agency?",
-      a: "An in-house hire costs you six figures, takes months to ramp, and still gets sick. Other agencies sell you 'AI strategy' decks. We ship a working system inside a week and run it for you — flat fee, no excuses.",
+      a: "An in-house hire costs you six figures, takes months to ramp, and still gets sick. Other agencies sell you 'AI strategy' decks. We ship a working system inside a week and run it for you. Flat fee, no excuses.",
     },
     {
       q: "How do I know it'll actually work in my business?",
-      a: "Because we don't guess. We audit your workflow first, scope exactly what we're automating, and only quote once we know it'll work. If we can't deliver the outcome, we tell you upfront — not three months in.",
+      a: "Because we don't guess. We audit your workflow first, scope exactly what we're automating, and only quote once we know it'll work. If we can't deliver the outcome, we tell you upfront. Not three months in.",
     },
     {
       q: "What if my processes are too messy or custom to automate?",
-      a: "Good. That's our entire job. If your workflow was clean and templated, you wouldn't need us — you'd buy a SaaS tool. Messy, bespoke, glued-together processes are exactly what we're built to fix.",
+      a: "Good. That's our entire job. If your workflow was clean and templated, you wouldn't need us. You'd buy a SaaS tool. Messy, bespoke, glued-together processes are exactly what we're built to fix.",
     },
     {
       q: "How fast will I see results?",
