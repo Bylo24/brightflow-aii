@@ -2,16 +2,23 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef, useState } from "react";
 import {
+  AlertCircle,
   ArrowRight,
   ArrowUpRight,
   Building2,
+  Calendar,
   Check,
   Clock,
+  Coffee,
   FileText,
   HeartPulse,
+  Inbox,
+  Mail,
   Plus,
+  Sparkles,
   Star,
   UserSearch,
+  Zap,
 } from "lucide-react";
 import { Nav, Footer } from "@/components/SiteChrome";
 import { BookCallDialog } from "@/components/BookCallDialog";
