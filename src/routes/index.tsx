@@ -527,20 +527,19 @@ function AfterPanel() {
 /* ---------------- BENTO ---------------- */
 function Bento() {
   return (
-    <section id="services" className="py-20 sm:py-28 md:py-32 max-w-6xl mx-auto px-4 sm:px-6">
-      <div className="mb-12 sm:mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-        <div className="max-w-2xl">
-          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4 sm:mb-5">
+    <section id="services" className="py-24 sm:py-32 md:py-40 max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="mb-16 sm:mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+        <div className="max-w-3xl">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-5 sm:mb-6">
             What we build
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
-            Real workflows. Real automation.{" "}
-            <span className="font-serif italic font-normal text-muted-foreground">No fluff.</span>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
+            Live systems.{" "}
+            <span className="font-serif italic font-normal text-muted-foreground">Built in days, not quarters.</span>
           </h2>
         </div>
         <p className="text-muted-foreground text-sm sm:text-base max-w-sm leading-relaxed">
-          A few examples of what we've automated. Each one removes a repetitive manual task that used
-          to eat hours of staff time every week — so your team can focus on strategic work.
+          A sample of what we've already deployed. Each one removes a repetitive manual task that was burning hours of staff time every week — and hands those hours back to the business.
         </p>
       </div>
 
@@ -550,7 +549,7 @@ function Bento() {
           tag="For bookkeepers"
           icon={<FileText className="size-4" />}
           title="Automatic document chasing"
-          body="The system watches for missing receipts and unexplained transactions, then automatically emails and texts clients until everything is provided, without your team lifting a finger."
+          body="The system spots missing receipts and unexplained transactions, then emails and texts clients until everything is provided. Your team never touches it."
           large
         />
 
@@ -559,7 +558,7 @@ function Bento() {
           tag="For property managers"
           icon={<Building2 className="size-4" />}
           title="Maintenance intake on autopilot"
-          body="Tenants report issues through a smart intake flow that collects details, photos and urgency, then routes to the right contractor automatically."
+          body="Tenants report issues through a smart intake flow that captures details, photos and urgency, then routes the job to the right contractor automatically."
           stats={[
             { value: "85%", label: "Faster response time" },
             { value: "0", label: "Manual triage needed" },
@@ -571,7 +570,7 @@ function Bento() {
           tag="For recruiters"
           icon={<UserSearch className="size-4" />}
           title="Candidate screening & scheduling"
-          body="AI screens inbound candidates against your criteria, collects availability, and books interviews into your calendar, 24/7."
+          body="Inbound candidates are screened against your exact criteria, availability is collected, and interviews land in your calendar — 24/7, no recruiter required."
         />
 
         <BentoCard
@@ -579,7 +578,7 @@ function Bento() {
           tag="For local businesses"
           icon={<Star className="size-4" />}
           title="Review requests & reputation"
-          body="Automatically asks happy customers for reviews at the right moment, and alerts you the second a damaging review appears."
+          body="Happy customers are asked for reviews at the exact right moment. Damaging reviews trigger an instant alert — before they cost you another booking."
         />
 
         <BentoCard
@@ -587,16 +586,16 @@ function Bento() {
           tag="For clinics & service businesses"
           icon={<HeartPulse className="size-4" />}
           title="Client comms & follow-ups"
-          body="Handles appointment reminders, intake forms, and follow-up messages so your front desk can focus on people, not admin."
+          body="Appointment reminders, intake forms and follow-up messages handled end to end. Your front desk gets its day back to focus on people, not admin."
         />
 
-        <div className="col-span-12 bg-foreground p-7 sm:p-9 md:p-10 text-background flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className="col-span-12 bg-foreground p-8 sm:p-10 md:p-12 text-background flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
             <div className="text-[11px] uppercase tracking-[0.18em] mb-3 opacity-60">
               Don't see your workflow?
             </div>
             <h4 className="font-semibold tracking-tight text-xl sm:text-2xl md:text-3xl text-balance">
-              If it's repetitive, we can probably automate it.
+              If it's repetitive, we automate it. Every time.
             </h4>
           </div>
           <Link
