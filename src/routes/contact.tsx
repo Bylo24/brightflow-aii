@@ -41,13 +41,12 @@ function ContactPage() {
                 <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4 sm:mb-5">
                   Contact
                 </div>
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.05] mb-6 text-balance">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] mb-6 text-balance">
                   Tell us about the work{" "}
                   <span className="font-serif italic font-normal text-accent">eating your week.</span>
                 </h1>
                 <p className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-10 max-w-md">
-                  Send us a short note. We'll reply within one business day with a time for a free
-                  20-minute workflow audit.
+                  Send us the details. You'll have a time on the calendar for a 20-minute workflow audit inside one business day.
                 </p>
 
                 <div className="space-y-5">
