@@ -785,7 +785,7 @@ function FAQ() {
     },
     {
       q: "How fast will I see results?",
-      a: "Most systems are live within 7 days of kickoff. You'll see the time savings the week it switches on — not a quarter from now, not after a 'transformation roadmap'.",
+      a: "Every system is live within 7 days of kickoff. You see the hours come back the week it switches on — not next quarter, not after a 'transformation roadmap'.",
     },
     {
       q: "What happens if it breaks?",
