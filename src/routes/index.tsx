@@ -271,6 +271,259 @@ function ValueProp() {
 }
 
 
+/* ---------------- STORYBOARD ---------------- */
+function Storyboard() {
+  const panels = [
+    {
+      tag: "Before",
+      index: "01",
+      title: "The week you know too well.",
+      caption: "Inbox overflowing. Tasks piling. Time bleeding.",
+      Visual: BeforePanel,
+    },
+    {
+      tag: "The shift",
+      index: "02",
+      title: "Your system takes over.",
+      caption: "Workflows kick in. Repetitive work routes itself.",
+      Visual: ShiftPanel,
+    },
+    {
+      tag: "After",
+      index: "03",
+      title: "Calm operations. Real time back.",
+      caption: "Clean queue. Cleared calendar. Compounding wins.",
+      Visual: AfterPanel,
+    },
+  ];
+
+  return (
+    <section className="py-24 sm:py-32 md:py-40 relative overflow-hidden">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_50%_0%,hsl(168_72%_32%/0.06),transparent_60%)]" />
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-5 sm:mb-6">
+            The transformation
+          </div>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance mb-6">
+            From chaos to{" "}
+            <span className="font-serif italic font-normal text-accent">quiet operations.</span>
+          </h2>
+          <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
+            Three frames. The same business, before and after we take the repetitive work off your plate.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 relative">
+          {/* connecting line */}
+          <div className="hidden md:block absolute top-[140px] left-[16%] right-[16%] h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+
+          {panels.map((p, i) => (
+            <motion.div
+              key={p.index}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
+              className="relative bg-background border border-border/70 rounded-2xl p-6 sm:p-7 flex flex-col"
+            >
+              <div className="flex items-center justify-between mb-5">
+                <div className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
+                  {p.index} — {p.tag}
+                </div>
+                {i < panels.length - 1 && (
+                  <ArrowRight className="size-4 text-muted-foreground/50 md:hidden" />
+                )}
+              </div>
+
+              {/* Animated visual */}
+              <div className="relative h-44 sm:h-48 rounded-xl border border-border/60 bg-secondary/30 overflow-hidden mb-6">
+                <p.Visual />
+              </div>
+
+              <h3 className="text-lg sm:text-xl font-semibold tracking-tight mb-2 leading-snug">
+                {p.title}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{p.caption}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* Frame 1 — chaos: tasks piling on top of each other, inbox counter climbing */
+function BeforePanel() {
+  const tasks = [
+    { icon: <Mail className="size-3.5" />, label: "Unread email" },
+    { icon: <FileText className="size-3.5" />, label: "Invoice to chase" },
+    { icon: <AlertCircle className="size-3.5" />, label: "Follow-up overdue" },
+    { icon: <Calendar className="size-3.5" />, label: "Reschedule request" },
+    { icon: <Mail className="size-3.5" />, label: "Reply needed" },
+  ];
+  return (
+    <div className="absolute inset-0 p-4 flex flex-col justify-between">
+      <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+        <span className="flex items-center gap-1.5">
+          <Inbox className="size-3" /> Inbox
+        </span>
+        <motion.span
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+          className="text-foreground font-medium tracking-normal normal-case"
+        >
+          + {tasks.length} new
+        </motion.span>
+      </div>
+      <div className="relative flex-1 mt-3">
+        {tasks.map((t, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: -12, rotate: 0 }}
+            whileInView={{
+              opacity: 1,
+              y: i * 8,
+              rotate: (i % 2 === 0 ? -1 : 1) * (i * 0.8),
+            }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ delay: 0.2 + i * 0.12, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute left-0 right-0 mx-auto w-[90%] bg-background border border-border rounded-md px-2.5 py-1.5 flex items-center gap-2 text-[11px] text-foreground shadow-sm"
+            style={{ top: `${i * 14}px`, zIndex: tasks.length - i }}
+          >
+            <span className="text-muted-foreground">{t.icon}</span>
+            <span className="truncate">{t.label}</span>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* Frame 2 — shift: animated beam routing tasks through the system */
+function ShiftPanel() {
+  return (
+    <div className="absolute inset-0 p-4">
+      <div className="absolute inset-0 flex items-center justify-between px-6">
+        {/* left: incoming tasks */}
+        <div className="flex flex-col gap-1.5">
+          {[0, 1, 2].map((i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -8 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 + i * 0.1 }}
+              className="size-2 rounded-full bg-muted-foreground/40"
+            />
+          ))}
+        </div>
+
+        {/* center: pulsing core */}
+        <motion.div
+          initial={{ scale: 0.6, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="relative size-14 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center"
+        >
+          <motion.div
+            animate={{ scale: [1, 1.3, 1], opacity: [0.6, 0, 0.6] }}
+            transition={{ duration: 2.4, repeat: Infinity, ease: "easeOut" }}
+            className="absolute inset-0 rounded-full bg-accent/20"
+          />
+          <Zap className="size-5 text-accent relative z-10" />
+        </motion.div>
+
+        {/* right: clean output */}
+        <div className="flex flex-col gap-1.5">
+          {[0, 1, 2].map((i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: 8 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.7 + i * 0.1 }}
+              className="size-2 rounded-full bg-accent"
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* animated traveling dots */}
+      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <motion.line
+          x1="18" y1="50" x2="42" y2="50"
+          stroke="currentColor" strokeWidth="0.4" strokeDasharray="2 2"
+          className="text-border"
+        />
+        <motion.line
+          x1="58" y1="50" x2="82" y2="50"
+          stroke="currentColor" strokeWidth="0.4" strokeDasharray="2 2"
+          className="text-border"
+        />
+      </svg>
+
+      <div className="absolute bottom-3 left-0 right-0 text-center text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+        Routing · Replying · Filing
+      </div>
+    </div>
+  );
+}
+
+/* Frame 3 — calm: cleared list, time reclaimed counter */
+function AfterPanel() {
+  const done = ["Replies sent", "Invoices filed", "Bookings confirmed", "Reports built"];
+  return (
+    <div className="absolute inset-0 p-4 flex flex-col">
+      <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-3">
+        <span className="flex items-center gap-1.5">
+          <Sparkles className="size-3 text-accent" /> Handled today
+        </span>
+        <motion.span
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.8 }}
+          className="text-foreground font-medium tracking-normal normal-case flex items-center gap-1"
+        >
+          <Coffee className="size-3" /> Inbox zero
+        </motion.span>
+      </div>
+      <div className="flex-1 space-y-1.5">
+        {done.map((d, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, x: -6 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 + i * 0.12 }}
+            className="flex items-center gap-2 text-[11px] text-foreground"
+          >
+            <span className="size-4 rounded-full bg-accent/15 text-accent flex items-center justify-center">
+              <Check className="size-2.5" strokeWidth={3} />
+            </span>
+            <span className="text-muted-foreground line-through decoration-border">{d}</span>
+          </motion.div>
+        ))}
+      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 6 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.9 }}
+        className="mt-3 pt-3 border-t border-border/60 flex items-center justify-between text-[11px]"
+      >
+        <span className="text-muted-foreground">Time reclaimed</span>
+        <span className="font-semibold text-foreground tracking-tight">+ 14h / week</span>
+      </motion.div>
+    </div>
+  );
+}
+
+
 /* ---------------- BENTO ---------------- */
 function Bento() {
   return (
