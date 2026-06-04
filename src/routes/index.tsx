@@ -49,6 +49,7 @@ function Index() {
         <Hero />
         <Marquee />
         <ValueProp />
+        <Puzzle />
         <Bento />
         <Process />
         <Metrics />
@@ -58,6 +59,7 @@ function Index() {
     </div>
   );
 }
+
 
 
 
