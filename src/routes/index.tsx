@@ -539,7 +539,7 @@ function Bento() {
           </h2>
         </div>
         <p className="text-muted-foreground text-sm sm:text-base max-w-sm leading-relaxed">
-          A sample of what we've already deployed. Each one removes a repetitive manual task that was burning hours of staff time every week — and hands those hours back to the business.
+          A sample of what we've already deployed. Each one hands 10+ hours a week back to the business — capacity redirected to the work that actually drives growth.
         </p>
       </div>
 
