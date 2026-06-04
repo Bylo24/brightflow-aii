@@ -93,7 +93,7 @@ export function Footer() {
             <span className="font-serif italic font-normal text-accent">to manual admin.</span>
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed max-w-xl mx-auto">
-            Book a 20-minute workflow audit. We'll find the highest-cost repetitive task in your business and show you exactly how we'll automate it — at a fixed price, live in under a week.
+            Book a 20-minute workflow audit. We'll find the highest-cost repetitive task in your business and show you exactly how we'll automate it. At a fixed price, live in under a week.
           </p>
           <BookCallDialog>
             <button type="button" className="btn btn-lg btn-neutral rounded-full">
@@ -112,7 +112,7 @@ export function Footer() {
               <Wordmark />
             </div>
             <p className="text-muted-foreground text-sm max-w-sm leading-relaxed">
-              We fully automate the repetitive manual admin running inside service businesses — so leadership and teams get their hours back for the work that actually moves the business forward.
+              We fully automate the repetitive manual admin running inside service businesses so leadership and teams get their hours back for the work that actually moves the business forward.
             </p>
           </div>
           <FooterCol

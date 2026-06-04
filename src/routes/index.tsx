@@ -785,7 +785,7 @@ function FAQ() {
     },
     {
       q: "How fast will I see results?",
-      a: "Every system is live within 7 days of kickoff. You see the hours come back the week it switches on — not next quarter, not after a 'transformation roadmap'.",
+      a: "Every system is live within 7 days of kickoff. You see the hours come back the week it switches on. Not next quarter, not after a 'transformation roadmap'.",
     },
     {
       q: "What happens if it breaks?",
@@ -793,7 +793,7 @@ function FAQ() {
     },
     {
       q: "Do I have to learn anything technical?",
-      a: "No. You hired us so you wouldn't have to. We build it, we run it, we improve it. Your job is to keep doing the work only you can do — we'll handle everything else.",
+      a: "No. You hired us so you wouldn't have to. We build it, we run it, we improve it. Your job is to keep doing the work only you can do. We'll handle everything else.",
     },
   ];
 
