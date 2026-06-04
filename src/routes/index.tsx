@@ -238,8 +238,8 @@ function Bento() {
           </h2>
         </div>
         <p className="text-muted-foreground text-sm sm:text-base max-w-sm leading-relaxed">
-          A few examples of the systems we've built. Each one removes a repetitive task that used
-          to eat hours of staff time every week.
+          A few examples of what we've automated. Each one removes a repetitive manual task that used
+          to eat hours of staff time every week — so your team can focus on strategic work.
         </p>
       </div>
 
@@ -382,7 +382,7 @@ function Process() {
     {
       num: "02",
       title: "Build",
-      body: "Our team designs and builds the AI system around your specific workflow. We integrate with your existing tools, CRM, email, accounting, calendar, etc.",
+      body: "Our team designs and builds the automated workflow around your specific process. We integrate with your existing tools, CRM, email, accounting, calendar, etc.",
     },
     {
       num: "03",
@@ -473,7 +473,7 @@ function FAQ() {
   const items = [
     {
       q: "How is BrightFlow different from a generic AI agency?",
-      a: "We don't sell vague AI strategy or generic chatbots. We find one specific repetitive workflow inside your business and build a managed system that runs it forever. Real scope, real outcomes.",
+      a: "We don't sell vague AI strategy or generic chatbots. We find one specific repetitive admin workflow inside your business, automate it end to end, and manage it for you. Real scope, real outcomes.",
     },
     {
       q: "What does the engagement look like?",
@@ -489,7 +489,7 @@ function FAQ() {
     },
     {
       q: "What if something goes wrong with the system?",
-      a: "We monitor every system 24/7 with automatic alerts. Most issues self-recover. Real incidents are handled by our team. That's exactly what the managed monthly fee covers.",
+      a: "We monitor every workflow 24/7 with automatic alerts. Most issues self-recover. Real incidents are handled by our team. That's exactly what the managed monthly fee covers.",
     },
     {
       q: "What industries do you typically work with?",
