@@ -512,28 +512,28 @@ function Metrics() {
 function FAQ() {
   const items = [
     {
-      q: "How is BrightFlow different from a generic AI agency?",
-      a: "We don't sell vague AI strategy or generic chatbots. We find one specific repetitive admin workflow inside your business, automate it end to end, and manage it for you. Real scope, real outcomes.",
+      q: "Why should I trust you over an in-house hire or another agency?",
+      a: "An in-house hire costs you six figures, takes months to ramp, and still gets sick. Other agencies sell you 'AI strategy' decks. We ship a working system inside a week and run it for you — flat fee, no excuses.",
     },
     {
-      q: "What does the engagement look like?",
-      a: "Free audit call, fixed-price build (typically under a week), flat monthly fee for hosting, monitoring, and continuous improvement. No long-term contracts.",
+      q: "How do I know it'll actually work in my business?",
+      a: "Because we don't guess. We audit your workflow first, scope exactly what we're automating, and only quote once we know it'll work. If we can't deliver the outcome, we tell you upfront — not three months in.",
     },
     {
-      q: "Will it integrate with the tools we already use?",
-      a: "Yes. We connect to your CRM, accounting platform, email, calendar, scheduling tools, and internal systems. No rip-and-replace. We work around your existing stack.",
+      q: "What if my processes are too messy or custom to automate?",
+      a: "Good. That's our entire job. If your workflow was clean and templated, you wouldn't need us — you'd buy a SaaS tool. Messy, bespoke, glued-together processes are exactly what we're built to fix.",
     },
     {
-      q: "Is our data safe?",
-      a: "Everything we build runs on enterprise-grade infrastructure. We sign NDAs by default, use scoped credentials, and never train external models on your data.",
+      q: "How fast will I see results?",
+      a: "Most systems are live within 7 days of kickoff. You'll see the time savings the week it switches on — not a quarter from now, not after a 'transformation roadmap'.",
     },
     {
-      q: "What if something goes wrong with the system?",
-      a: "We monitor every workflow 24/7 with automatic alerts. Most issues self-recover. Real incidents are handled by our team. That's exactly what the managed monthly fee covers.",
+      q: "What happens if it breaks?",
+      a: "It won't, because we monitor every workflow 24/7 and most issues self-recover before you'd ever notice. If something real goes wrong, our team handles it — that's the entire point of the managed monthly fee.",
     },
     {
-      q: "What industries do you typically work with?",
-      a: "Bookkeepers, property managers, recruiters, clinics, and local service businesses. But if your team does the same admin task over and over again, it's probably a fit.",
+      q: "Do I have to learn anything technical?",
+      a: "No. You hired us so you wouldn't have to. We build it, we run it, we improve it. Your job is to keep doing the work only you can do — we'll handle everything else.",
     },
   ];
 
