@@ -641,7 +641,7 @@ function BentoCard({
         {tag}
       </div>
       <div className="relative z-10 max-w-md pt-6">
-        <div className="size-9 border border-border rounded-md flex items-center justify-center mb-5 sm:mb-6 text-accent group-hover:border-accent/60 transition-colors">
+        <div className="size-10 border border-border rounded-md flex items-center justify-center mb-5 sm:mb-6 text-accent group-hover:border-accent/60 transition-colors">
           {icon}
         </div>
         <h3
