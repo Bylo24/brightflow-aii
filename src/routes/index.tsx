@@ -223,17 +223,17 @@ function ValueProp() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="md:col-span-2 bg-background p-8 sm:p-10 md:p-14 hover:bg-secondary/60 transition-colors"
+            className="md:col-span-2 bg-background p-8 sm:p-10 md:p-12 hover:bg-secondary/60 transition-colors"
           >
-            <div className="flex items-center gap-4 mb-6 sm:mb-7">
-              <div className="size-11 rounded-lg bg-accent/10 text-accent flex items-center justify-center">
+            <div className="flex items-center gap-4 mb-5 sm:mb-6">
+              <div className="size-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center">
                 {lead.icon}
               </div>
               <div className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
                 {lead.index}. {lead.label}
               </div>
             </div>
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[-0.025em] leading-[1.1] mb-4 sm:mb-5 max-w-2xl">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[-0.025em] leading-[1.1] mb-4 max-w-2xl">
               {lead.title}
             </h3>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
