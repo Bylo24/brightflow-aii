@@ -789,7 +789,7 @@ function FAQ() {
     },
     {
       q: "What happens if it breaks?",
-      a: "It won't, because we monitor every workflow 24/7 and most issues self-recover before you'd ever notice. If something real goes wrong, our team handles it — that's the entire point of the managed monthly fee.",
+      a: "It doesn't, because we monitor every workflow 24/7 and most issues self-recover before you'd ever notice. Anything real, our team handles — that's the entire point of the managed monthly fee.",
     },
     {
       q: "Do I have to learn anything technical?",
