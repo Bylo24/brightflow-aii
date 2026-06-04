@@ -309,7 +309,7 @@ function Storyboard() {
             From manual chaos to{" "}
             <span className="font-serif italic font-normal text-accent">hours back, every week.</span>
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed text-pretty">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed text-pretty">
             Three frames. The exact outcome we deliver. 10+ hours a week back, every engagement.
           </p>
         </div>
