@@ -89,8 +89,8 @@ function Hero() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-[40px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[84px] leading-[1.05] lg:leading-[1.02] font-semibold tracking-[-0.035em] mb-5 sm:mb-7 max-w-4xl text-balance"
           >
-            Automate the repetitive work{" "}
-            <span className="font-serif italic font-normal text-accent">killing your week.</span>
+            Get your week back.{" "}
+            <span className="font-serif italic font-normal text-accent">We'll run the rest.</span>
           </motion.h1>
 
           <motion.p
@@ -99,8 +99,9 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mb-8 sm:mb-10 text-pretty leading-relaxed"
           >
-            We fully automate the repetitive manual admin within your business — and run it for you, end to end.
+            We don't sell workflows — we sell the outcome. Your time back, more capacity for growth, and a business that runs without you in the loop.
           </motion.p>
+
 
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -148,8 +149,9 @@ function Marquee() {
   return (
     <div className="py-10 sm:py-12 border-y border-border/60 overflow-hidden">
       <div className="text-center text-[11px] uppercase tracking-[0.18em] text-muted-foreground/70 mb-6 sm:mb-8 px-4">
-        Built for service businesses that run on repetitive work
+        Outcomes delivered to operators across
       </div>
+
       <div className="flex gap-10 sm:gap-14 whitespace-nowrap animate-marquee w-max">
         {[...items, ...items, ...items].map((it, i) => (
           <span
@@ -193,74 +195,109 @@ function ValueProp() {
   ];
 
   return (
-    <section className="py-24 sm:py-32 md:py-40">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto text-center mb-16 sm:mb-20">
-          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-5 sm:mb-6">
-            What you actually get
-          </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance mb-6 sm:mb-8">
-            We don't sell workflows.{" "}
-            <span className="font-serif italic font-normal text-accent">We sell the outcome.</span>
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed text-pretty">
-            Automation is just the means. What you're really buying is your time back, more capacity for the work that grows the business, and a company that runs without you in the loop.
-          </p>
-        </div>
+    <section className="relative py-28 sm:py-36 md:py-48 overflow-hidden">
+      {/* Ambient backdrop — makes this section feel like a moment, not a card grid */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_30%,hsl(168_72%_32%/0.08),transparent_65%)]" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border/70 border border-border/70 rounded-2xl overflow-hidden">
-          {/* Lead card — spans full row */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        {/* Manifesto header — oversized, centered, the visual centerpiece of the page */}
+        <div className="max-w-5xl mx-auto text-center mb-20 sm:mb-28 md:mb-32">
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="md:col-span-2 bg-background p-8 sm:p-10 md:p-14 hover:bg-secondary/60 transition-colors"
+            className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-muted-foreground mb-8 sm:mb-10"
           >
-            <div className="flex items-center gap-4 mb-6 sm:mb-7">
-              <div className="size-11 rounded-lg bg-accent/10 text-accent flex items-center justify-center">
-                {lead.icon}
-              </div>
-              <div className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-                {lead.index} — {lead.label}
-              </div>
-            </div>
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[-0.025em] leading-[1.1] mb-4 sm:mb-5 max-w-2xl">
-              {lead.title}
-            </h3>
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              {lead.body}
-            </p>
+            <span className="h-px w-8 bg-border" />
+            What you actually get
+            <span className="h-px w-8 bg-border" />
           </motion.div>
 
-          {supporting.map((p, i) => (
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-[44px] sm:text-6xl md:text-7xl lg:text-[96px] xl:text-[112px] leading-[0.98] font-semibold tracking-[-0.04em] text-balance mb-10 sm:mb-12"
+          >
+            We don't sell workflows.
+            <br />
+            <span className="font-serif italic font-normal text-accent">We sell the outcome.</span>
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-[1.5] text-pretty"
+          >
+            Automation is just the means. What you're really buying is{" "}
+            <span className="text-foreground">your time back</span>, more capacity for the work that grows the business, and{" "}
+            <span className="text-foreground">a company that runs without you in the loop.</span>
+          </motion.p>
+        </div>
+
+        {/* Outcome cards — restaged as three big horizontal slabs that read like statements, not features */}
+        <div className="max-w-5xl mx-auto flex flex-col gap-px bg-border/70 border border-border/70 rounded-3xl overflow-hidden">
+          {[lead, ...supporting].map((p, i) => (
             <motion.div
               key={p.index}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.08 + i * 0.08 }}
-              className="bg-background p-8 sm:p-10 md:p-12 hover:bg-secondary/60 transition-colors"
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="group bg-background p-8 sm:p-12 md:p-16 hover:bg-secondary/50 transition-colors"
             >
-              <div className="flex items-center gap-4 mb-5 sm:mb-6">
-                <div className="size-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center">
+              <div className="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-6 md:gap-12 items-start">
+                {/* Oversized numeral — the visual anchor */}
+                <div className="font-serif italic text-5xl sm:text-6xl md:text-7xl text-accent/70 leading-none tracking-tight">
+                  {p.index}
+                </div>
+
+                <div>
+                  <div className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground mb-3 sm:mb-4">
+                    {p.label}
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[-0.025em] leading-[1.1] mb-4 sm:mb-5 max-w-2xl">
+                    {p.title}
+                  </h3>
+                  <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+                    {p.body}
+                  </p>
+                </div>
+
+                <div className="hidden md:flex size-12 rounded-full border border-border items-center justify-center text-muted-foreground group-hover:text-accent group-hover:border-accent transition-colors">
                   {p.icon}
                 </div>
-                <div className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-                  {p.index} — {p.label}
-                </div>
               </div>
-              <h3 className="text-xl sm:text-2xl font-semibold tracking-[-0.02em] leading-tight mb-3">
-                {p.title}
-              </h3>
-              <p className="text-[15px] text-muted-foreground leading-relaxed">{p.body}</p>
             </motion.div>
           ))}
         </div>
+
+        {/* Closing line — drives the point home one more time */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="max-w-3xl mx-auto text-center mt-16 sm:mt-20"
+        >
+          <p className="text-sm sm:text-base text-muted-foreground">
+            Buy the outcome.{" "}
+            <span className="text-foreground font-medium">Skip everything in between.</span>
+          </p>
+        </motion.div>
       </div>
     </section>
   );
 }
+
 
 
 /* ---------------- BENTO ---------------- */
