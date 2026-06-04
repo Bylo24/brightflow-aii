@@ -677,34 +677,34 @@ function Process() {
     {
       num: "01",
       title: "Audit",
-      body: "We sit down with you and map the repetitive workflows costing the most time and money. You get a clear plan even if you don't move forward.",
+      body: "We sit down with you and map the repetitive workflows costing the most time and money. You leave with a clear plan, whether or not you work with us.",
     },
     {
       num: "02",
       title: "Build",
-      body: "Our team designs and builds the automated workflow around your specific process. We integrate with your existing tools, CRM, email, accounting, calendar, etc.",
+      body: "We design and build the automated workflow around your exact process, integrated with the tools you already use — CRM, email, accounting, calendar.",
     },
     {
       num: "03",
       title: "Launch",
-      body: "We deploy the system, train your team in under an hour, and switch it on. Most clients are live in under a week.",
+      body: "We deploy the system, train your team in under an hour, and switch it on. Every client is live in under a week.",
     },
     {
       num: "04",
       title: "Manage",
-      body: "We monitor performance, fix edge cases, and improve the system every month, for a flat fee. You never have to maintain it.",
+      body: "We monitor, maintain and improve the system every month at a flat fee. You never lift a finger to keep it running.",
     },
   ];
 
   return (
-    <section id="process" className="py-20 sm:py-28 md:py-32 border-y border-border/60 bg-secondary/50">
+    <section id="process" className="py-24 sm:py-32 md:py-40 border-y border-border/60 bg-secondary/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="mb-12 sm:mb-16 max-w-2xl">
-          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4 sm:mb-5">
+        <div className="mb-16 sm:mb-20 max-w-3xl">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-5 sm:mb-6">
             How it works
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
-            From first call to running system{" "}
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
+            From first call to live system{" "}
             <span className="font-serif italic font-normal text-muted-foreground">in under a week.</span>
           </h2>
         </div>
@@ -718,7 +718,7 @@ function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="bg-background p-6 sm:p-7 md:p-8 min-h-[200px] sm:min-h-[240px] grid grid-rows-[auto_auto_1fr] gap-y-6 group hover:bg-secondary/50 transition-colors"
+              className="bg-background p-8 sm:p-10 md:p-12 min-h-[220px] sm:min-h-[260px] grid grid-rows-[auto_auto_1fr] gap-y-6 group hover:bg-secondary/50 transition-colors"
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono text-accent">{s.num}</span>
