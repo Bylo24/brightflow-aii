@@ -77,7 +77,7 @@ function ContactPage() {
                     </div>
                     <h2 className="text-2xl font-semibold tracking-tight mb-2">Got it.</h2>
                     <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
-                      You'll have a time on the calendar inside one business day. No pitch, no chaser sequences — just the audit.
+                      You'll have a time on the calendar inside one business day. No pitch, no chaser sequences. Just the audit.
                     </p>
                   </div>
                 ) : (

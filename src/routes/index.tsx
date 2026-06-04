@@ -30,14 +30,14 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "BrightFlow AI — Fully Automate Repetitive Manual Admin",
+        title: "BrightFlow AI - Fully Automate Repetitive Manual Admin",
       },
       {
         name: "description",
         content:
           "We eliminate the mundane, repetitive manual tasks eating your team's time so you can focus on strategic initiatives that actually grow your business.",
       },
-      { property: "og:title", content: "BrightFlow AI — Fully Automate Repetitive Manual Admin" },
+      { property: "og:title", content: "BrightFlow AI - Fully Automate Repetitive Manual Admin" },
       {
         property: "og:description",
         content:
@@ -107,7 +107,7 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mb-8 sm:mb-10 text-pretty leading-relaxed"
           >
-            We fully automate the repetitive manual work running inside your business — and operate the system for you, end to end. You get the hours back.
+            We fully automate the repetitive manual work running inside your business and operate the system for you, end to end. You get the hours back.
           </motion.p>
 
           <motion.div
@@ -180,8 +180,8 @@ function ValueProp() {
     index: "01",
     icon: <Clock className="size-5" />,
     label: "The outcome",
-    title: "Your week back — every week.",
-    body: "Walk into Monday with the repetitive admin already handled. No backlog, no chasing, no friction — just the hours and headspace to do the work only you can do.",
+    title: "Your week back. Every week.",
+    body: "Walk into Monday with the repetitive admin already handled. No backlog, no chasing, no friction. Just the hours and headspace to do the work only you can do.",
   };
   const supporting = [
     {
@@ -189,14 +189,14 @@ function ValueProp() {
       icon: <ArrowUpRight className="size-5" />,
       label: "The outcome",
       title: "More revenue, same team.",
-      body: "Capacity shifts from busywork to the activities that actually grow the business — closing deals, serving clients, building product.",
+      body: "Capacity shifts from busywork to the activities that actually grow the business. Closing deals, serving clients, building product.",
     },
     {
       index: "03",
       icon: <Check className="size-5" />,
       label: "The outcome",
       title: "A business that scales without you.",
-      body: "The routine running of your operation keeps moving whether you're in the office, on holiday, or hiring — without bottlenecks or extra headcount.",
+      body: "The routine running of your operation keeps moving whether you're in the office, on holiday, or hiring. Without bottlenecks or extra headcount.",
     },
   ];
 
@@ -217,7 +217,7 @@ function ValueProp() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border/70 border border-border/70 rounded-2xl overflow-hidden">
-          {/* Lead card — spans full row */}
+          {/* Lead card spans full row */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -230,7 +230,7 @@ function ValueProp() {
                 {lead.icon}
               </div>
               <div className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-                {lead.index} — {lead.label}
+                {lead.index}. {lead.label}
               </div>
             </div>
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[-0.025em] leading-[1.1] mb-4 sm:mb-5 max-w-2xl">
@@ -255,7 +255,7 @@ function ValueProp() {
                   {p.icon}
                 </div>
                 <div className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-                  {p.index} — {p.label}
+                  {p.index}. {p.label}
                 </div>
               </div>
               <h3 className="text-xl sm:text-2xl font-semibold tracking-[-0.02em] leading-tight mb-3">
@@ -285,7 +285,7 @@ function Storyboard() {
       tag: "The shift",
       index: "02",
       title: "We take it over. Permanently.",
-      caption: "We own the workflow end to end — your team stops touching it from day one.",
+      caption: "We own the workflow end to end. Your team stops touching it from day one.",
       Visual: ShiftPanel,
     },
     {
@@ -310,7 +310,7 @@ function Storyboard() {
             <span className="font-serif italic font-normal text-accent">hours back, every week.</span>
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed text-pretty">
-            Three frames. The exact outcome we deliver — 10+ hours a week back, every engagement.
+            Three frames. The exact outcome we deliver. 10+ hours a week back, every engagement.
           </p>
         </div>
 
@@ -329,7 +329,7 @@ function Storyboard() {
             >
               <div className="flex items-center justify-between mb-5">
                 <div className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
-                  {p.index} — {p.tag}
+                  {p.index}. {p.tag}
                 </div>
                 {i < panels.length - 1 && (
                   <ArrowRight className="size-4 text-muted-foreground/50 md:hidden" />
@@ -353,7 +353,7 @@ function Storyboard() {
   );
 }
 
-/* Frame 1 — chaos: tasks piling on top of each other, inbox counter climbing */
+/* Frame 1: chaos. Tasks piling on top of each other, inbox counter climbing */
 function BeforePanel() {
   const tasks = [
     { icon: <Mail className="size-3.5" />, label: "Unread email" },
@@ -402,7 +402,7 @@ function BeforePanel() {
   );
 }
 
-/* Frame 2 — shift: animated beam routing tasks through the system */
+/* Frame 2: shift. Animated beam routing tasks through the system */
 function ShiftPanel() {
   return (
     <div className="absolute inset-0 p-4">
@@ -473,7 +473,7 @@ function ShiftPanel() {
   );
 }
 
-/* Frame 3 — calm: cleared list, time reclaimed counter */
+/* Frame 3: calm. Cleared list, time reclaimed counter */
 function AfterPanel() {
   const done = ["Replies sent", "Invoices filed", "Bookings confirmed", "Reports built"];
   return (
@@ -539,7 +539,7 @@ function Bento() {
           </h2>
         </div>
         <p className="text-muted-foreground text-sm sm:text-base max-w-sm leading-relaxed">
-          A sample of what we've already deployed. Each one hands 10+ hours a week back to the business — capacity redirected to the work that actually drives growth.
+          A sample of what we've already deployed. Each one hands 10+ hours a week back to the business. Capacity redirected to the work that actually drives growth.
         </p>
       </div>
 
@@ -570,7 +570,7 @@ function Bento() {
           tag="For recruiters"
           icon={<UserSearch className="size-4" />}
           title="Candidate screening & scheduling"
-          body="Inbound candidates are screened against your exact criteria, availability is collected, and interviews land in your calendar — 24/7, no recruiter required."
+          body="Inbound candidates are screened against your exact criteria, availability is collected, and interviews land in your calendar. 24/7, no recruiter required."
         />
 
         <BentoCard
@@ -578,7 +578,7 @@ function Bento() {
           tag="For local businesses"
           icon={<Star className="size-4" />}
           title="Review requests & reputation"
-          body="Happy customers are asked for reviews at the exact right moment. Damaging reviews trigger an instant alert — before they cost you another booking."
+          body="Happy customers are asked for reviews at the exact right moment. Damaging reviews trigger an instant alert. Before they cost you another booking."
         />
 
         <BentoCard
@@ -682,7 +682,7 @@ function Process() {
     {
       num: "02",
       title: "Build",
-      body: "We design and build the automated workflow around your exact process, integrated with the tools you already use — CRM, email, accounting, calendar.",
+      body: "We design and build the automated workflow around your exact process, integrated with the tools you already use. CRM, email, accounting, calendar.",
     },
     {
       num: "03",
@@ -741,7 +741,7 @@ function Metrics() {
     { value: "14,200+", label: "Hours handed back to our clients each year" },
     { value: "100%", label: "Automation accuracy across every system we run" },
     { value: "1-7 days", label: "From kickoff to live, in production" },
-    { value: "100%", label: "Managed by us — you never touch the system" },
+    { value: "100%", label: "Managed by us. You never touch the system" },
   ];
   return (
     <section className="py-24 sm:py-28 md:py-32">
@@ -773,19 +773,19 @@ function FAQ() {
   const items = [
     {
       q: "Why should I trust you over an in-house hire or another agency?",
-      a: "An in-house hire costs you six figures, takes months to ramp, and still gets sick. Other agencies sell you 'AI strategy' decks. We ship a working system inside a week and run it for you — flat fee, no excuses.",
+      a: "An in-house hire costs you six figures, takes months to ramp, and still gets sick. Other agencies sell you 'AI strategy' decks. We ship a working system inside a week and run it for you. Flat fee, no excuses.",
     },
     {
       q: "How do I know it'll actually work in my business?",
-      a: "Because we don't guess. We audit your workflow first, scope exactly what we're automating, and only quote once we know it'll work. If we can't deliver the outcome, we tell you upfront — not three months in.",
+      a: "Because we don't guess. We audit your workflow first, scope exactly what we're automating, and only quote once we know it'll work. If we can't deliver the outcome, we tell you upfront. Not three months in.",
     },
     {
       q: "What if my processes are too messy or custom to automate?",
-      a: "Good. That's our entire job. If your workflow was clean and templated, you wouldn't need us — you'd buy a SaaS tool. Messy, bespoke, glued-together processes are exactly what we're built to fix.",
+      a: "Good. That's our entire job. If your workflow was clean and templated, you wouldn't need us. You'd buy a SaaS tool. Messy, bespoke, glued-together processes are exactly what we're built to fix.",
     },
     {
       q: "How fast will I see results?",
-      a: "Every system is live within 7 days of kickoff. You see the hours come back the week it switches on — not next quarter, not after a 'transformation roadmap'.",
+      a: "Every system is live within 7 days of kickoff. You see the hours come back the week it switches on. Not next quarter, not after a 'transformation roadmap'.",
     },
     {
       q: "What happens if it breaks?",
@@ -793,7 +793,7 @@ function FAQ() {
     },
     {
       q: "Do I have to learn anything technical?",
-      a: "No. You hired us so you wouldn't have to. We build it, we run it, we improve it. Your job is to keep doing the work only you can do — we'll handle everything else.",
+      a: "No. You hired us so you wouldn't have to. We build it, we run it, we improve it. Your job is to keep doing the work only you can do. We'll handle everything else.",
     },
   ];
 
