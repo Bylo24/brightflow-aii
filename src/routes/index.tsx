@@ -23,18 +23,18 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "BrightFlow AI, AI automation that removes repetitive admin work",
+        title: "BrightFlow AI — Fully Automate Repetitive Manual Admin",
       },
       {
         name: "description",
         content:
-          "BrightFlow AI builds and runs custom AI systems that take repetitive, time-consuming tasks off your team, for bookkeepers, property managers, recruiters, clinics, and local businesses.",
+          "We eliminate the mundane, repetitive manual tasks eating your team's time so you can focus on strategic initiatives that actually grow your business.",
       },
-      { property: "og:title", content: "BrightFlow AI, Automate the repetitive work" },
+      { property: "og:title", content: "BrightFlow AI — Fully Automate Repetitive Manual Admin" },
       {
         property: "og:description",
         content:
-          "We find the painful, repeated workflow in your business and build the AI system that runs it for you. Managed monthly.",
+          "We handle the low-value repetitive admin in your business, freeing you to focus on the critical areas that truly matter.",
       },
     ],
   }),
@@ -99,7 +99,7 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mb-8 sm:mb-10 text-pretty leading-relaxed"
           >
-            We build custom AI systems that handle your manual admin, and we run them for you.
+            We fully automate the repetitive manual admin within your business — and run it for you, end to end.
           </motion.p>
 
           <motion.div
@@ -171,13 +171,13 @@ function ValueProp() {
   const points = [
     {
       icon: <Clock className="size-5" />,
-      title: "Stop losing hours to manual admin",
-      body: "Your team should be growing the business, not chasing receipts or copy-pasting from emails into your CRM.",
+      title: "Reclaim time for what matters",
+      body: "Stop losing hours to manual admin. Redirect your team toward high-impact activities that drive growth, not tasks easily handled by others.",
     },
     {
       icon: <Check className="size-5" />,
       title: "Built for your exact workflow",
-      body: "No generic chatbots. We map your specific process and build the AI system around it, integrated with the tools you already use.",
+      body: "We map your specific process and build the automation around it, integrated with the tools you already use. No generic chatbots.",
     },
     {
       icon: <ArrowUpRight className="size-5" />,
