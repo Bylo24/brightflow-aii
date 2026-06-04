@@ -168,52 +168,89 @@ function Marquee() {
 
 /* ---------------- VALUE PROP ---------------- */
 function ValueProp() {
-  const points = [
+  const lead = {
+    index: "01",
+    icon: <Clock className="size-5" />,
+    title: "Eliminate the mundane",
+    body: "Strip out the repetitive, low-engagement tasks draining your team — so attention goes to strategic work instead of busywork.",
+  };
+  const supporting = [
     {
-      icon: <Clock className="size-5" />,
-      title: "Reclaim time for what matters",
-      body: "Stop losing hours to manual admin. Redirect your team toward high-impact activities that drive growth, not tasks easily handled by others.",
-    },
-    {
-      icon: <Check className="size-5" />,
-      title: "Built for your exact workflow",
-      body: "We map your specific process and build the automation around it, integrated with the tools you already use. No generic chatbots.",
-    },
-    {
+      index: "02",
       icon: <ArrowUpRight className="size-5" />,
-      title: "Managed monthly, not handed off",
-      body: "We run, monitor and improve the system every month. You see the results. You never have to maintain it.",
+      title: "Reclaim your highest-value hours",
+      body: "Stop being bogged down by work anyone could do. Redirect your time to the high-impact decisions that actually move the business.",
+    },
+    {
+      index: "03",
+      icon: <Check className="size-5" />,
+      title: "Scale without adding headcount",
+      body: "Offload the routine running of your business to a system that doesn't get tired, sick, or distracted — and grow without the overhead.",
     },
   ];
 
   return (
-    <section className="py-20 sm:py-28 md:py-32">
+    <section className="py-24 sm:py-32 md:py-40">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="max-w-3xl mb-12 sm:mb-16">
-          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4 sm:mb-5">
-            Why BrightFlow
+        <div className="max-w-4xl mx-auto text-center mb-16 sm:mb-20">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-5 sm:mb-6">
+            What we do
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-balance">
-            Most businesses lose money to{" "}
-            <span className="font-serif italic font-normal text-muted-foreground">work that should never be done by hand.</span>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance mb-6 sm:mb-8">
+            We fully automate the repetitive manual admin{" "}
+            <span className="font-serif italic font-normal text-accent">inside your business.</span>
           </h2>
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed text-pretty">
+            Your time is more valuable than the work that's eating it. We take the low-value, mundane tasks off your plate so you can focus on the work that actually grows the business.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-px bg-border/70 border border-border/70 rounded-2xl overflow-hidden">
-          {points.map((p, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border/70 border border-border/70 rounded-2xl overflow-hidden">
+          {/* Lead card — spans full row */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="md:col-span-2 bg-background p-8 sm:p-10 md:p-14 hover:bg-secondary/60 transition-colors"
+          >
+            <div className="flex items-center gap-4 mb-6 sm:mb-7">
+              <div className="size-11 rounded-lg bg-accent/10 text-accent flex items-center justify-center">
+                {lead.icon}
+              </div>
+              <div className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+                {lead.index} — Promise
+              </div>
+            </div>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[-0.025em] leading-[1.1] mb-4 sm:mb-5 max-w-2xl">
+              {lead.title}
+            </h3>
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+              {lead.body}
+            </p>
+          </motion.div>
+
+          {supporting.map((p, i) => (
             <motion.div
-              key={i}
+              key={p.index}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="bg-background p-7 sm:p-9 md:p-10 hover:bg-secondary/60 transition-colors"
+              transition={{ duration: 0.5, delay: 0.08 + i * 0.08 }}
+              className="bg-background p-8 sm:p-10 md:p-12 hover:bg-secondary/60 transition-colors"
             >
-              <div className="size-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center mb-5 sm:mb-6">
-                {p.icon}
+              <div className="flex items-center gap-4 mb-5 sm:mb-6">
+                <div className="size-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center">
+                  {p.icon}
+                </div>
+                <div className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+                  {p.index} — Promise
+                </div>
               </div>
-              <h3 className="text-lg font-semibold mb-2 tracking-tight">{p.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{p.body}</p>
+              <h3 className="text-xl sm:text-2xl font-semibold tracking-[-0.02em] leading-tight mb-3">
+                {p.title}
+              </h3>
+              <p className="text-[15px] text-muted-foreground leading-relaxed">{p.body}</p>
             </motion.div>
           ))}
         </div>
