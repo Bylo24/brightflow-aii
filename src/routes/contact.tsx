@@ -6,16 +6,16 @@ import { Nav, Footer } from "@/components/SiteChrome";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact, BrightFlow AI" },
+      { title: "Contact BrightFlow AI" },
       {
         name: "description",
         content:
-          "Book a free 20-minute workflow audit with BrightFlow AI, or send us a note about the repetitive task eating your team's time.",
+          "Book a free 20-minute workflow audit. Tell us about the repetitive manual admin eating your team's time and we'll show you how to eliminate it.",
       },
       { property: "og:title", content: "Contact BrightFlow AI" },
       {
         property: "og:description",
-        content: "Book a free workflow audit or send us a note.",
+        content: "Book a free workflow audit or send us a note about the repetitive admin eating your team's time.",
       },
     ],
   }),
