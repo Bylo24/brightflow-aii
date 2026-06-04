@@ -111,11 +111,11 @@ function ContactPage() {
                         className="input input-bordered w-full rounded-xl bg-background"
                       />
                     </Field>
-                    <Field label="What's eating your team's time?">
+                    <Field label="The repetitive work eating your team's time">
                       <textarea
                         required
                         rows={5}
-                        placeholder="The one repetitive task we'd love to never do again is."
+                        placeholder="The one task we'd love to never do again is…"
                         className="textarea textarea-bordered w-full rounded-xl bg-background leading-relaxed"
                       />
                     </Field>
@@ -127,7 +127,7 @@ function ContactPage() {
                       Send and book a free audit <ArrowUpRight className="size-4" />
                     </button>
                     <p className="text-xs text-muted-foreground">
-                      No pitch. No newsletter. Just a clear plan.
+                      No pitch. No newsletter. A clear plan, in writing.
                     </p>
                   </form>
                 )}
