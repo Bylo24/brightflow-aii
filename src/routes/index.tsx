@@ -744,7 +744,7 @@ function Metrics() {
     { value: "100%", label: "Managed by us. You never touch the system" },
   ];
   return (
-    <section className="py-24 sm:py-28 md:py-32">
+    <section className="py-24 sm:py-32 md:py-40">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
         {items.map((m, i) => (
           <motion.div
