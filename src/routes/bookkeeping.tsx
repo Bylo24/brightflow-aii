@@ -26,7 +26,7 @@ export const Route = createFileRoute("/bookkeeping")({
       {
         name: "description",
         content:
-          "Bookkeepers: save 10+ hours on month end in 2 weeks. We automate chasing missing client documents — or your next month is on us. Free 10-min call.",
+          "Bookkeepers: save 10+ hours on month end in 2 weeks. We automate chasing missing client documents — or you don't pay a single cent. Free 10-min call.",
       },
       {
         property: "og:title",
@@ -35,7 +35,7 @@ export const Route = createFileRoute("/bookkeeping")({
       {
         property: "og:description",
         content:
-          "Automate the chase for missing client documents. Save 10 hours in 2 weeks — or the next month is free.",
+          "Automate the chase for missing client documents. Save 10 hours in 2 weeks — or you don't pay a single cent.",
       },
     ],
   }),
