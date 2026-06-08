@@ -4,11 +4,11 @@ import { useRef, useState } from "react";
 import {
   ArrowRight,
   ArrowUpRight,
-  Calendar,
   Check,
   Clock,
   Plus,
-  Receipt,
+  Sparkles,
+  TrendingUp,
 } from "lucide-react";
 import { Nav, Footer } from "@/components/SiteChrome";
 
@@ -24,7 +24,7 @@ export const Route = createFileRoute("/bookkeeping")({
       {
         name: "description",
         content:
-          "We automate client follow-ups for bookkeepers. Stop chasing receipts and statements. Finish the books faster. Free 10-min workflow diagnosis call.",
+          "We automate client follow-ups for bookkeepers. Get a free 10-min diagnosis call and a 2-week free pilot. No contracts.",
       },
       {
         property: "og:title",
@@ -33,7 +33,7 @@ export const Route = createFileRoute("/bookkeeping")({
       {
         property: "og:description",
         content:
-          "We automate client follow-ups for bookkeepers. Finish the books faster. Free 10-min workflow diagnosis call.",
+          "We automate client follow-ups for bookkeepers. Free 10-min diagnosis call, then a 2-week free pilot.",
       },
     ],
   }),
@@ -50,9 +50,9 @@ function BookkeepingPage() {
         <WhatYouGet />
         <HowItWorks />
         <FAQ />
-        <CTA />
+        <FinalCTA />
       </main>
-      <Footer />
+      <Footer hideCta />
     </div>
   );
 }
@@ -102,14 +102,14 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mb-8 sm:mb-10 text-pretty leading-relaxed"
           >
-            We automate client follow-ups for bookkeepers. Free 10-min workflow diagnosis call.
+            We automate client follow-ups for bookkeepers. Get a free 10-min diagnosis call, then a 2-week free pilot. No obligation.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="w-full sm:w-auto"
+            className="w-full sm:w-auto flex flex-col items-center"
           >
             <a
               href={CAL_LINK}
@@ -117,11 +117,25 @@ function Hero() {
               rel="noopener noreferrer"
               className="btn btn-lg btn-neutral rounded-full w-full sm:w-auto"
             >
-              Book a free call <ArrowRight className="size-4" />
+              Book my free call <ArrowRight className="size-4" />
             </a>
             <div className="mt-4 text-sm text-muted-foreground">
-              No pitch. No pressure. Just a clear plan.
+              10 minutes. No pitch. No pressure.
             </div>
+          </motion.div>
+
+          {/* Proof point */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.35 }}
+            className="mt-12 sm:mt-14 inline-flex items-center gap-3 rounded-full border border-border/70 bg-background/60 backdrop-blur px-5 py-2.5"
+          >
+            <TrendingUp className="size-4 text-accent" />
+            <span className="text-sm text-foreground">
+              <span className="font-semibold">14 hours/month</span>{" "}
+              <span className="text-muted-foreground">saved by one bookkeeper after switching to us.</span>
+            </span>
           </motion.div>
         </div>
       </div>
@@ -145,14 +159,18 @@ function WhatWeDo() {
         </div>
         <div className="space-y-8">
           <p className="text-base sm:text-lg md:text-xl text-foreground leading-relaxed text-pretty">
-            You spend hours every month chasing receipts, statements, and answers. We take that off your plate. We design the follow-up system, run it, and you close the books on time.
+            You spend hours every month chasing receipts, statements and answers. We take that off your plate. We build the follow-up system around the tools you already use, then run it for you, every month, so you close the books on time.
           </p>
-          <div className="pt-6 border-t border-border">
-            <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-3">
+          <div className="rounded-xl border border-border bg-secondary/40 p-5 sm:p-6">
+            <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-3">
+              <Sparkles className="size-3.5 text-accent" />
               Built for
             </div>
-            <p className="text-base text-muted-foreground leading-relaxed">
-              Solo bookkeepers, small firms, CAS practices, virtual CFOs.
+            <p className="text-base text-foreground leading-relaxed">
+              Solo bookkeepers, small firms, CAS practices and virtual CFOs.
+            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed mt-2">
+              Any bookkeeper losing hours each month chasing missing client documents.
             </p>
           </div>
         </div>
@@ -233,23 +251,29 @@ function HowItWorks() {
     {
       num: "01",
       title: "Free 10-min call",
-      body: "We diagnose your workflow and identify the biggest time-waster.",
+      body: "We diagnose your workflow and identify the biggest time-waster in your month end.",
     },
     {
       num: "02",
       title: "We build",
-      body: "A follow-up system around your tools. QuickBooks, Google Drive, and the rest of your stack.",
+      body: "We build a client follow-up system using your existing tools. Your email, Google Drive, QuickBooks and the rest of your stack. No new software for you to learn.",
     },
     {
       num: "03",
       title: "We run",
-      body: "Client reminders, document collection, and query resolution. All handled by us.",
+      body: "We handle all the client communication: reminders, document collection, and answering the routine queries that come back.",
     },
     {
       num: "04",
       title: "You close",
-      body: "Books ready on time, without the chase.",
+      body: "Books ready on time. You walk into close week with everything in hand.",
     },
+  ];
+
+  const benefits = [
+    "Live in under a week",
+    "Flat monthly fee, no surprises",
+    "No contracts, cancel anytime",
   ];
 
   return (
@@ -260,12 +284,12 @@ function HowItWorks() {
             How it works
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
-            From first call to books closed{" "}
-            <span className="font-serif italic font-normal text-muted-foreground">in under a week.</span>
+            From first call to a closing month{" "}
+            <span className="font-serif italic font-normal text-muted-foreground">we already run.</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px bg-border/70 border border-border/70 rounded-2xl overflow-hidden">
+        <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px bg-border/70 border border-border/70 rounded-2xl overflow-hidden">
           {steps.map((s, i) => (
             <motion.div
               key={i}
@@ -273,11 +297,15 @@ function HowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="bg-background p-8 sm:p-10 md:p-12 min-h-[220px] sm:min-h-[260px] grid grid-rows-[auto_auto_1fr] gap-y-6 group hover:bg-secondary/50 transition-colors"
+              className="relative bg-background p-8 sm:p-10 md:p-12 min-h-[260px] grid grid-rows-[auto_auto_1fr] gap-y-5 group hover:bg-secondary/40 transition-colors"
             >
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono text-accent">{s.num}</span>
-                <div className="size-1.5 rounded-full bg-accent group-hover:scale-150 transition-transform" />
+                <div className="size-10 rounded-full border border-accent/40 bg-accent/10 text-accent flex items-center justify-center text-xs font-mono font-semibold">
+                  {s.num}
+                </div>
+                {i < steps.length - 1 && (
+                  <ArrowRight className="size-4 text-muted-foreground/40" />
+                )}
               </div>
               <h4 className="text-xl sm:text-2xl font-semibold tracking-tight">{s.title}</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">{s.body}</p>
@@ -285,11 +313,13 @@ function HowItWorks() {
           ))}
         </div>
 
-        <div className="mt-10 sm:mt-12 flex items-center justify-center gap-3 text-sm sm:text-base text-muted-foreground">
-          <Receipt className="size-4 text-accent" />
-          <span>
-            <span className="text-foreground font-medium">Flat monthly fee.</span> No surprises.
-          </span>
+        <div className="mt-10 sm:mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-muted-foreground">
+          {benefits.map((b) => (
+            <div key={b} className="flex items-center gap-2">
+              <Check className="size-4 text-accent" strokeWidth={2.5} />
+              <span className="text-foreground">{b}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -305,11 +335,15 @@ function FAQ() {
     },
     {
       q: "How fast does it start?",
-      a: "Live within one week from kickoff.",
+      a: "Live within one week from kickoff. You'll feel the difference the next month end.",
     },
     {
       q: "Do I need to learn technical tools?",
-      a: "No. We run everything. You just get the books.",
+      a: "No. We build it around your existing stack and run everything ourselves. You just get the books.",
+    },
+    {
+      q: "What's the catch with the free pilot?",
+      a: "None. Two weeks, on us, so you can see it work in your practice before committing. No contracts, cancel anytime.",
     },
   ];
 
@@ -362,23 +396,20 @@ function FAQItem({ q, a }: { q: string; a: string }) {
   );
 }
 
-/* ---------------- CTA ---------------- */
-function CTA() {
+/* ---------------- FINAL CTA ---------------- */
+function FinalCTA() {
   return (
     <section className="relative overflow-hidden border-t border-border/60">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom,hsl(168_72%_32%/0.10),transparent_60%)]" />
       <div className="absolute inset-0 -z-10 grid-bg [mask-image:radial-gradient(ellipse_at_bottom,#000,transparent_70%)]" />
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-24 sm:py-32 md:py-40 text-center">
-        <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-5 sm:mb-6">
-          Ready when you are
-        </div>
         <h2 className="text-[34px] sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.035em] leading-[1.05] lg:leading-[1.02] mb-6 sm:mb-8 text-balance">
           Ready to{" "}
           <span className="font-serif italic font-normal text-accent">stop chasing?</span>
         </h2>
         <p className="text-muted-foreground text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed max-w-xl mx-auto">
-          Book a free 10-min workflow diagnosis call. We'll map your biggest bottleneck and show you exactly how we automate it.
+          Book a free 10-min diagnosis call. We'll map your biggest bottleneck and offer a 2-week free pilot, no obligation.
         </p>
         <a
           href={CAL_LINK}
@@ -386,15 +417,10 @@ function CTA() {
           rel="noopener noreferrer"
           className="btn btn-lg btn-neutral rounded-full"
         >
-          Book a free call <ArrowUpRight className="size-4" />
+          Book my free call <ArrowUpRight className="size-4" />
         </a>
         <div className="mt-5 text-sm text-muted-foreground">
-          No pitch. No pressure. Just a clear plan.
-        </div>
-
-        <div className="mt-20 sm:mt-24 pt-8 border-t border-border/60 flex items-center justify-center gap-2 text-xs text-muted-foreground">
-          <Calendar className="size-3.5" />
-          <span>Automating client follow-ups for bookkeepers</span>
+          No contracts. Cancel anytime after the pilot.
         </div>
       </div>
     </section>
