@@ -79,10 +79,10 @@ function Hero() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-6 sm:mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-3.5 py-1.5 text-[11px] uppercase tracking-[0.18em] text-muted-foreground"
+            className="mb-6 sm:mb-8 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3.5 py-1.5 text-[11px] uppercase tracking-[0.18em] text-accent"
           >
             <span className="size-1.5 rounded-full bg-accent" />
-            The automation agency for bookkeepers
+            Free 10-min call · no signup required
           </motion.div>
 
           <motion.h1
@@ -101,7 +101,7 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mb-8 sm:mb-10 text-pretty leading-relaxed"
           >
-            We automate client follow-ups for bookkeepers. Get a free 10-min diagnosis call, then a 2-week free pilot. No obligation.
+            Hop on a <span className="text-foreground font-medium">free 10-minute call</span>. We'll map your biggest document-chasing bottleneck and show you exactly how we'd fix it. If you like the plan, we run a <span className="text-foreground font-medium">2-week pilot, free</span>. If not, you walk away with the plan.
           </motion.p>
 
           <motion.div
@@ -116,10 +116,12 @@ function Hero() {
               rel="noopener noreferrer"
               className="btn btn-lg btn-neutral rounded-full w-full sm:w-auto"
             >
-              Book my free call <ArrowRight className="size-4" />
+              Grab a free 10-min slot <ArrowRight className="size-4" />
             </a>
-            <div className="mt-4 text-sm text-muted-foreground">
-              10 minutes. No pitch. No pressure.
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-xs sm:text-sm text-muted-foreground">
+              <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> 100% free</span>
+              <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> No signup, no card</span>
+              <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> No sales pitch</span>
             </div>
           </motion.div>
 
@@ -403,12 +405,16 @@ function FinalCTA() {
       <div className="absolute inset-0 -z-10 grid-bg [mask-image:radial-gradient(ellipse_at_bottom,#000,transparent_70%)]" />
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-24 sm:py-32 md:py-40 text-center">
+        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3.5 py-1.5 text-[11px] uppercase tracking-[0.18em] text-accent">
+          <span className="size-1.5 rounded-full bg-accent" />
+          Free · 10 minutes · zero commitment
+        </div>
         <h2 className="text-[34px] sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.035em] leading-[1.05] lg:leading-[1.02] mb-6 sm:mb-8 text-balance">
           Ready to{" "}
           <span className="font-serif italic font-normal text-accent">stop chasing?</span>
         </h2>
         <p className="text-muted-foreground text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed max-w-xl mx-auto">
-          Book a free 10-min diagnosis call. We'll map your biggest bottleneck and offer a 2-week free pilot, no obligation.
+          One free 10-minute call. We map your biggest bottleneck and you walk away with a clear plan — whether you work with us or not. If you want to try it, the 2-week pilot is on us.
         </p>
         <a
           href={CAL_LINK}
@@ -416,10 +422,12 @@ function FinalCTA() {
           rel="noopener noreferrer"
           className="btn btn-lg btn-neutral rounded-full"
         >
-          Book my free call <ArrowUpRight className="size-4" />
+          Grab a free 10-min slot <ArrowUpRight className="size-4" />
         </a>
-        <div className="mt-5 text-sm text-muted-foreground">
-          No contracts. Cancel anytime after the pilot.
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-xs sm:text-sm text-muted-foreground">
+          <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> 100% free</span>
+          <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> No card, no signup</span>
+          <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> No contracts, ever</span>
         </div>
       </div>
     </section>
