@@ -263,7 +263,7 @@ function FAQ() {
     },
     {
       q: "What happens on the call?",
-      a: "10 minutes. We map your chase and hand you the exact plan. Even if you never hire us, you keep it.",
+      a: "10 minutes. We map your chase, show you exactly where the 10+ hours are hiding, and walk you through how we'd automate it.",
     },
     {
       q: "What if I want to leave after the trial?",
