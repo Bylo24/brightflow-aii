@@ -90,16 +90,22 @@ function Hero() {
             For bookkeepers · drowning in client follow-ups
           </motion.div>
 
-          <motion.h1
+          <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[40px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] leading-[1.05] lg:leading-[1.02] font-semibold tracking-[-0.035em] mb-6 sm:mb-8 max-w-5xl text-balance"
+            className="mb-6 sm:mb-8 max-w-5xl text-balance"
           >
-            Save{" "}
-            <span className="font-serif italic font-normal text-accent">10 hours</span>{" "}
-            on your month end in 2 weeks.
-          </motion.h1>
+            <h1 className="text-[40px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] leading-[1.05] lg:leading-[1.02] font-semibold tracking-[-0.035em]">
+              <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-muted-foreground font-medium tracking-tight mb-3 sm:mb-4">Bookkeepers</span>
+              Save{" "}
+              <span className="font-serif italic font-normal text-accent">10 hours</span>{" "}
+              on your month end in 2 weeks with our automation that chases missing client documents for you
+            </h1>
+            <p className="mt-4 sm:mt-5 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-[-0.03em] text-accent uppercase">
+              OR you don't pay a single cent
+            </p>
+          </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -119,7 +125,7 @@ function Hero() {
           >
             <Shield className="size-4 text-accent shrink-0" strokeWidth={2.5} />
             <span className="text-sm sm:text-base font-semibold tracking-tight text-foreground">
-              Save 10+ hours in 2 weeks <span className="text-accent">— or the next month is on us.</span>
+              Save 10+ hours in 2 weeks <span className="text-accent">— or you don't pay a single cent.</span>
             </span>
           </motion.div>
 
