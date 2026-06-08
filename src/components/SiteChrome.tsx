@@ -77,34 +77,36 @@ export function Nav() {
   );
 }
 
-export function Footer() {
+export function Footer({ hideCta = false }: { hideCta?: boolean } = {}) {
   return (
     <footer id="cta" className="relative overflow-hidden border-t border-border/60">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom,hsl(168_72%_32%/0.10),transparent_60%)]" />
       <div className="absolute inset-0 -z-10 grid-bg [mask-image:radial-gradient(ellipse_at_bottom,#000,transparent_70%)]" />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-24 sm:pt-28 md:pt-32 pb-10 sm:pb-14">
-        <div className="text-center mb-20 sm:mb-24 max-w-3xl mx-auto">
-          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-5 sm:mb-6">
-            Ready when you are
-          </div>
-          <h2 className="text-[34px] sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.035em] leading-[1.05] lg:leading-[1.02] mb-6 sm:mb-8 text-balance">
-            Reclaim the hours your business is losing{" "}
-            <span className="font-serif italic font-normal text-accent">to manual admin.</span>
-          </h2>
-          <p className="text-muted-foreground text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed max-w-xl mx-auto">
-            Book a 20-minute workflow audit. We'll find the highest-cost repetitive task in your business and show you exactly how we'll automate it. At a fixed price, live in under a week.
-          </p>
-          <BookCallDialog>
-            <button type="button" className="btn btn-lg btn-neutral rounded-full">
-              Book your free audit <ArrowUpRight className="size-4" />
-            </button>
-          </BookCallDialog>
+      <div className={`max-w-6xl mx-auto px-4 sm:px-6 ${hideCta ? "pt-14 sm:pt-16" : "pt-24 sm:pt-28 md:pt-32"} pb-10 sm:pb-14`}>
+        {!hideCta && (
+          <div className="text-center mb-20 sm:mb-24 max-w-3xl mx-auto">
+            <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-5 sm:mb-6">
+              Ready when you are
+            </div>
+            <h2 className="text-[34px] sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.035em] leading-[1.05] lg:leading-[1.02] mb-6 sm:mb-8 text-balance">
+              Reclaim the hours your business is losing{" "}
+              <span className="font-serif italic font-normal text-accent">to manual admin.</span>
+            </h2>
+            <p className="text-muted-foreground text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed max-w-xl mx-auto">
+              Book a 20-minute workflow audit. We'll find the highest-cost repetitive task in your business and show you exactly how we'll automate it. At a fixed price, live in under a week.
+            </p>
+            <BookCallDialog>
+              <button type="button" className="btn btn-lg btn-neutral rounded-full">
+                Book your free audit <ArrowUpRight className="size-4" />
+              </button>
+            </BookCallDialog>
 
-          <div className="mt-5 text-sm text-muted-foreground">
-            No pitch. No pressure. A clear plan, in writing.
+            <div className="mt-5 text-sm text-muted-foreground">
+              No pitch. No pressure. A clear plan, in writing.
+            </div>
           </div>
-        </div>
+        )}
 
         <div className="border-t border-border pt-10 sm:pt-12 grid grid-cols-2 md:grid-cols-[2fr_1fr_1fr] gap-8 sm:gap-12">
           <div className="col-span-2 md:col-span-1">
