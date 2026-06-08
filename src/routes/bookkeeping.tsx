@@ -116,9 +116,10 @@ function Hero() {
               Book my free 10-min call <ArrowRight className="size-4" />
             </a>
             <div className="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-xs sm:text-sm text-muted-foreground">
-              <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> 100% free</span>
+            <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> 100% free</span>
               <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> No card</span>
-              <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> No pitch</span>
+              <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> No commitment</span>
+              <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> Leave anytime</span>
             </div>
           </motion.div>
         </div>
@@ -202,11 +203,20 @@ function Pricing() {
           <span className="font-serif italic font-normal text-accent">Then pay for hours saved.</span>
         </h2>
         <p className="mt-6 sm:mt-8 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-          The trial is completely free — no card, no commitment. If you continue, you only pay based on the hours we actually give back. The more time you reclaim, the more you benefit. Always proportional to value.
+          The trial is completely free — no card, no commitment, no strings. Use it for 2 weeks. If you want to walk away at the end, you pay absolutely nothing. If you stay, you only pay based on the hours we actually give back. The more time you reclaim, the more you benefit. Always proportional to value.
         </p>
+
+        <div className="mt-10 inline-flex items-center gap-2.5 rounded-2xl border-2 border-accent/40 bg-accent/10 px-6 py-4 shadow-[0_0_40px_-12px_hsl(168_72%_32%/0.4)]">
+          <Shield className="size-5 text-accent shrink-0" strokeWidth={2.5} />
+          <span className="text-sm sm:text-base font-semibold tracking-tight">
+            Walk away after 2 weeks and pay nothing. Zero risk.
+          </span>
+        </div>
+
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-muted-foreground">
           <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> 2 weeks completely free</span>
           <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> No upfront fees</span>
+          <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> No commitment</span>
           <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> Scales with your savings</span>
         </div>
       </div>
@@ -254,6 +264,10 @@ function FAQ() {
     {
       q: "What happens on the call?",
       a: "10 minutes. We map your chase and hand you the exact plan. Even if you never hire us, you keep it.",
+    },
+    {
+      q: "What if I want to leave after the trial?",
+      a: "Then you leave, and you don't pay a single cent. No contract, no lock-in, no awkward conversations. The 2 weeks are completely free with zero obligation.",
     },
   ];
 
@@ -321,6 +335,7 @@ function FinalCTA() {
         <div className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-xs sm:text-sm text-muted-foreground">
           <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> Free</span>
           <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> No card</span>
+          <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> No commitment</span>
           <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> No pitch</span>
         </div>
       </div>
