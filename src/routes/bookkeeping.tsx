@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef, useState } from "react";
-import { ArrowRight, Check, Plus, Shield } from "lucide-react";
+import { ArrowRight, Check, Clock, Plus, Shield } from "lucide-react";
 import { Nav, Footer } from "@/components/SiteChrome";
 
 const CAL_LINK = "https://cal.com/samuel-howell-iwfnp4/15min";
