@@ -34,6 +34,7 @@ function BookkeepingPage() {
         <Pain />
         <HowItWorks />
         <Pricing />
+        <Calculator />
         <Guarantee />
         <FAQ />
         <FinalCTA />
