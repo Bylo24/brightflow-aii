@@ -91,7 +91,7 @@ function Hero() {
             className="mb-6 sm:mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-3.5 py-1.5 text-[11px] uppercase tracking-[0.18em] text-muted-foreground"
           >
             <span className="size-1.5 rounded-full bg-accent" />
-            Built for bookkeepers
+            The automation agency for bookkeepers
           </motion.div>
 
           <motion.h1
@@ -100,8 +100,8 @@ function Hero() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-[40px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[84px] leading-[1.05] lg:leading-[1.02] font-semibold tracking-[-0.035em] mb-5 sm:mb-7 max-w-4xl text-balance"
           >
-            Close the books without{" "}
-            <span className="font-serif italic font-normal text-accent">chasing a single client.</span>
+            Stop chasing clients.{" "}
+            <span className="font-serif italic font-normal text-accent">Finish the books faster.</span>
           </motion.h1>
 
           <motion.p
@@ -110,7 +110,7 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mb-8 sm:mb-10 text-pretty leading-relaxed"
           >
-            We take over the client follow-ups draining your month end. Missing receipts, unanswered questions, overdue documents. All handled for you, end to end, so the books close on time.
+            We're the agency built for one job: taking the client follow-ups off your plate so month end stops dragging. We design the system, we run it, you close the books.
           </motion.p>
 
           <motion.div
