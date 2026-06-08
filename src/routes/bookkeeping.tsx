@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef, useState } from "react";
-import { ArrowRight, Check, Plus, Shield } from "lucide-react";
+import { ArrowRight, Check, Clock, Plus, Shield } from "lucide-react";
 import { Nav, Footer } from "@/components/SiteChrome";
 
 const CAL_LINK = "https://cal.com/samuel-howell-iwfnp4/15min";
@@ -33,6 +33,7 @@ function BookkeepingPage() {
         <Hero />
         <Pain />
         <HowItWorks />
+        <Pricing />
         <Guarantee />
         <FAQ />
         <FinalCTA />
@@ -182,6 +183,31 @@ function HowItWorks() {
               <p className="text-base text-muted-foreground leading-relaxed">{s.body}</p>
             </motion.div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- PRICING ---------------- */
+function Pricing() {
+  return (
+    <section className="py-24 sm:py-32 border-t border-border/60 bg-secondary/40">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+        <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3.5 py-1.5 text-[11px] uppercase tracking-[0.18em] text-accent mb-8">
+          <Clock className="size-3.5" /> Pricing
+        </div>
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
+          2 weeks free.{" "}
+          <span className="font-serif italic font-normal text-accent">Then pay for hours saved.</span>
+        </h2>
+        <p className="mt-6 sm:mt-8 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+          The trial is completely free — no card, no commitment. If you continue, you only pay based on the hours we actually give back. The more time you reclaim, the more you benefit. Always proportional to value.
+        </p>
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-muted-foreground">
+          <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> 2 weeks completely free</span>
+          <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> No upfront fees</span>
+          <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> Scales with your savings</span>
         </div>
       </div>
     </section>
