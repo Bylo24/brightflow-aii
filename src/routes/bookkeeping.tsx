@@ -26,7 +26,7 @@ export const Route = createFileRoute("/bookkeeping")({
       {
         name: "description",
         content:
-          "Bookkeepers: save 10+ hours on month end in 2 weeks. We automate chasing missing client documents — or your next month is on us. Free 10-min call.",
+          "Bookkeepers: save 10+ hours on month end in 2 weeks. We automate chasing missing client documents — or you don't pay a single cent. Free 10-min call.",
       },
       {
         property: "og:title",
@@ -35,7 +35,7 @@ export const Route = createFileRoute("/bookkeeping")({
       {
         property: "og:description",
         content:
-          "Automate the chase for missing client documents. Save 10 hours in 2 weeks — or the next month is free.",
+          "Automate the chase for missing client documents. Save 10 hours in 2 weeks — or you don't pay a single cent.",
       },
     ],
   }),
@@ -90,16 +90,22 @@ function Hero() {
             For bookkeepers · drowning in client follow-ups
           </motion.div>
 
-          <motion.h1
+          <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[40px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] leading-[1.05] lg:leading-[1.02] font-semibold tracking-[-0.035em] mb-6 sm:mb-8 max-w-5xl text-balance"
+            className="mb-6 sm:mb-8 max-w-5xl text-balance"
           >
-            Save{" "}
-            <span className="font-serif italic font-normal text-accent">10 hours</span>{" "}
-            on your month end in 2 weeks.
-          </motion.h1>
+            <h1 className="text-[40px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] leading-[1.05] lg:leading-[1.02] font-semibold tracking-[-0.035em]">
+              <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-muted-foreground font-medium tracking-tight mb-3 sm:mb-4">Bookkeepers</span>
+              Save{" "}
+              <span className="font-serif italic font-normal text-accent">10 hours</span>{" "}
+              on your month end in 2 weeks with our automation that chases missing client documents for you
+            </h1>
+            <p className="mt-4 sm:mt-5 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-[-0.03em] text-accent uppercase">
+              OR you don't pay a single cent
+            </p>
+          </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -119,7 +125,7 @@ function Hero() {
           >
             <Shield className="size-4 text-accent shrink-0" strokeWidth={2.5} />
             <span className="text-sm sm:text-base font-semibold tracking-tight text-foreground">
-              Save 10+ hours in 2 weeks <span className="text-accent">— or the next month is on us.</span>
+              Save 10+ hours in 2 weeks <span className="text-accent">— or you don't pay a single cent.</span>
             </span>
           </motion.div>
 
@@ -219,10 +225,10 @@ function Guarantee() {
           <span className="text-accent">10+ hours</span>{" "}
           in 2 weeks
           <br />
-          <span className="font-serif italic font-normal text-muted-foreground">or the next month is on us.</span>
+          <span className="font-serif italic font-normal text-muted-foreground">or you don't pay a single cent.</span>
         </h2>
         <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-10">
-          We're so confident our system saves you double-digit hours that we'll put our money on it. Don't see the time back in 2 weeks? Next month of service is free. Simple.
+          We're so confident our system saves you double-digit hours that we'll put our money on it. Don't see the time back in 2 weeks? You don't pay a single cent. Simple.
         </p>
         <a
           href={CAL_LINK}
@@ -435,7 +441,7 @@ function FAQ() {
   const items = [
     {
       q: "How can you guarantee 10 hours saved?",
-      a: "Because chasing is the biggest time-sink in bookkeeping, and we've never seen a workflow where we couldn't cut at least that. If we somehow miss the mark in 2 weeks, the next month is free. Zero risk to you.",
+      a: "Because chasing is the biggest time-sink in bookkeeping, and we've never seen a workflow where we couldn't cut at least that. If we somehow miss the mark in 2 weeks, you don't pay a single cent. Zero risk to you.",
     },
     {
       q: "Will my clients be annoyed by the automation?",
@@ -518,7 +524,7 @@ function FinalCTA() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-24 sm:py-32 md:py-40 text-center">
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border-2 border-accent/40 bg-accent/10 px-3.5 py-1.5 text-[11px] uppercase tracking-[0.18em] text-accent">
           <Shield className="size-3.5" />
-          10 hours saved · or next month free
+          10 hours saved · or you don't pay a single cent
         </div>
         <h2 className="text-[36px] sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.035em] leading-[1.05] lg:leading-[1.02] mb-6 sm:mb-8 text-balance">
           Get your{" "}
