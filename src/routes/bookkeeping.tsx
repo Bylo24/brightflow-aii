@@ -225,10 +225,10 @@ function Guarantee() {
           <span className="text-accent">10+ hours</span>{" "}
           in 2 weeks
           <br />
-          <span className="font-serif italic font-normal text-muted-foreground">or the next month is on us.</span>
+          <span className="font-serif italic font-normal text-muted-foreground">or you don't pay a single cent.</span>
         </h2>
         <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-10">
-          We're so confident our system saves you double-digit hours that we'll put our money on it. Don't see the time back in 2 weeks? Next month of service is free. Simple.
+          We're so confident our system saves you double-digit hours that we'll put our money on it. Don't see the time back in 2 weeks? You don't pay a single cent. Simple.
         </p>
         <a
           href={CAL_LINK}
