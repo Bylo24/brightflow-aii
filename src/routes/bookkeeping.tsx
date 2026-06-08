@@ -326,6 +326,9 @@ function Calculator() {
       </div>
     </section>
   );
+}
+
+
 
 /* ---------------- GUARANTEE ---------------- */
 function Guarantee() {
