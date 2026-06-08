@@ -441,7 +441,7 @@ function FAQ() {
   const items = [
     {
       q: "How can you guarantee 10 hours saved?",
-      a: "Because chasing is the biggest time-sink in bookkeeping, and we've never seen a workflow where we couldn't cut at least that. If we somehow miss the mark in 2 weeks, the next month is free. Zero risk to you.",
+      a: "Because chasing is the biggest time-sink in bookkeeping, and we've never seen a workflow where we couldn't cut at least that. If we somehow miss the mark in 2 weeks, you don't pay a single cent. Zero risk to you.",
     },
     {
       q: "Will my clients be annoyed by the automation?",
