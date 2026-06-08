@@ -33,6 +33,7 @@ function BookkeepingPage() {
         <Hero />
         <Pain />
         <HowItWorks />
+        <Pricing />
         <Guarantee />
         <FAQ />
         <FinalCTA />
