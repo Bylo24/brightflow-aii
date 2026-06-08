@@ -206,11 +206,11 @@ function ValueProp() {
             What you actually get
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance mb-6 sm:mb-8">
-            We don't sell tools.{" "}
-            <span className="font-serif italic font-normal text-accent">We sell the close.</span>
+            We're not another portal.{" "}
+            <span className="font-serif italic font-normal text-accent">We're the team that runs it for you.</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed text-pretty">
-            What you're really buying is your month end back. The follow-ups handled, the documents in, and a close that finishes on time without you spending the last week of the month chasing clients.
+            Tools you've already tried. The reason follow-ups still fall on you is that nobody's actually running them. We are. The system gets built around your practice, and our team operates it month after month.
           </p>
         </div>
 
