@@ -12,8 +12,7 @@ import {
 } from "lucide-react";
 import { Nav, Footer } from "@/components/SiteChrome";
 
-// TODO: replace with the real Cal.com booking link
-const CAL_LINK = "https://cal.com/brightflow-ai/10min";
+const CAL_LINK = "https://cal.com/samuel-howell-iwfnp4/15min";
 
 export const Route = createFileRoute("/bookkeeping")({
   head: () => ({
