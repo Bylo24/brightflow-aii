@@ -155,7 +155,7 @@ function Marquee() {
   return (
     <div className="py-10 sm:py-12 border-y border-border/60 overflow-hidden">
       <div className="text-center text-[11px] uppercase tracking-[0.18em] text-muted-foreground/70 mb-6 sm:mb-8 px-4">
-        Trusted by bookkeepers done chasing clients to close the books
+        An automation agency built exclusively for bookkeeping practices
       </div>
       <div className="flex gap-10 sm:gap-14 whitespace-nowrap animate-marquee w-max">
         {[...items, ...items, ...items].map((it, i) => (
