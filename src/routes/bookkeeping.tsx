@@ -524,7 +524,7 @@ function FinalCTA() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-24 sm:py-32 md:py-40 text-center">
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border-2 border-accent/40 bg-accent/10 px-3.5 py-1.5 text-[11px] uppercase tracking-[0.18em] text-accent">
           <Shield className="size-3.5" />
-          10 hours saved · or next month free
+          10 hours saved · or you don't pay a single cent
         </div>
         <h2 className="text-[36px] sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.035em] leading-[1.05] lg:leading-[1.02] mb-6 sm:mb-8 text-balance">
           Get your{" "}
