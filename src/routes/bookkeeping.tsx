@@ -9,16 +9,16 @@ const CAL_LINK = "https://cal.com/samuel-howell-iwfnp4/15min";
 export const Route = createFileRoute("/bookkeeping")({
   head: () => ({
     meta: [
-      { title: "Save 10 Hours on Month End — Guaranteed | BrightFlow AI" },
+      { title: "Stop Chasing Client Docs — Guaranteed | BrightFlow AI" },
       {
         name: "description",
         content:
-          "Bookkeepers: save 10+ hours on month end in 2 weeks. We automate chasing missing client documents — or you don't pay a single cent.",
+          "Bookkeepers: how many hours do you lose each month chasing missing client documents? We automate the chase — or you don't pay a cent.",
       },
-      { property: "og:title", content: "Save 10 Hours on Month End — Guaranteed | BrightFlow AI" },
+      { property: "og:title", content: "Stop Chasing Client Docs — Guaranteed | BrightFlow AI" },
       {
         property: "og:description",
-        content: "Automate the chase. Save 10 hours in 2 weeks — or you don't pay a single cent.",
+        content: "Automate the chase. Get your month end back — or you don't pay a single cent.",
       },
     ],
   }),
