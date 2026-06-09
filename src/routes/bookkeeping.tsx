@@ -6,6 +6,45 @@ import { Nav, Footer } from "@/components/SiteChrome";
 
 const CAL_LINK = "https://cal.com/samuel-howell-iwfnp4/15min";
 
+const CYCLE_PHRASES = [
+  "closing more clients",
+  "growing your practice",
+  "working on high-value work",
+  "having dinner with your family",
+  "hitting the gym",
+  "reading that book",
+  "taking a real weekend",
+  "focusing on advisory",
+];
+
+function CyclingText() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setIndex((i) => (i + 1) % CYCLE_PHRASES.length);
+    }, 2500);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <span className="relative inline-block align-bottom overflow-hidden h-[1.3em]" style={{ width: "16ch" }}>
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={index}
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -20, opacity: 0 }}
+          transition={{ duration: 0.4, ease: [0.32, 0.72, 0, 1] }}
+          className="absolute inset-0 text-foreground font-semibold"
+        >
+          {CYCLE_PHRASES[index]}
+        </motion.span>
+      </AnimatePresence>
+    </span>
+  );
+}
+
 export const Route = createFileRoute("/bookkeeping")({
   head: () => ({
     meta: [
