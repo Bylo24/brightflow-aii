@@ -200,16 +200,16 @@ function Pricing() {
         </div>
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
           2 weeks free.{" "}
-          <span className="font-serif italic font-normal text-accent">Then pay for hours saved.</span>
+          <span className="font-serif italic font-normal text-accent">Only pay if you keep it.</span>
         </h2>
         <p className="mt-6 sm:mt-8 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-          The trial is completely free — no card, no commitment, no strings. Use it for 2 weeks. If you want to walk away at the end, you pay absolutely nothing. If you stay, you only pay based on the hours we actually give back. The more time you reclaim, the more you benefit. Always proportional to value.
+          Try it for 2 weeks — completely free, no card, no strings. If you love it and want to keep the system, you only pay based on the hours we give back. If it's not for you, just walk away. Zero cost, zero commitment, completely up to you. Risk free.
         </p>
 
         <div className="mt-10 inline-flex items-center gap-2.5 rounded-2xl border-2 border-accent/40 bg-accent/10 px-6 py-4 shadow-[0_0_40px_-12px_hsl(168_72%_32%/0.4)]">
           <Shield className="size-5 text-accent shrink-0" strokeWidth={2.5} />
           <span className="text-sm sm:text-base font-semibold tracking-tight">
-            Walk away after 2 weeks and pay nothing. Zero risk.
+            Walk away after 2 weeks and pay nothing. No commitment, completely up to you.
           </span>
         </div>
 
@@ -339,12 +339,12 @@ function Guarantee() {
           <Shield className="size-3.5" /> The guarantee
         </div>
         <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
-          Hours back in 2 weeks
+          2 weeks free.
           <br />
-          <span className="font-serif italic font-normal text-accent">or you don't pay a cent.</span>
+          <span className="font-serif italic font-normal text-accent">Only pay if you keep it.</span>
         </h2>
         <p className="mt-8 text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto leading-relaxed">
-          That's it. No fine print. No catch.
+          No contract, no catch, no hard feelings. Try it risk free. If you want to keep the system, we'll agree on a price based on the hours you get back. If not, just walk away — zero cost, completely up to you.
         </p>
       </div>
     </section>
@@ -372,7 +372,7 @@ function FAQ() {
     },
     {
       q: "What if I want to leave after the trial?",
-      a: "Then you leave, and you don't pay a single cent. No contract, no lock-in, no awkward conversations. The 2 weeks are completely free with zero obligation.",
+      a: "Then you leave, and you don't pay a single cent. No contract, no lock-in, no awkward conversations. The 2 weeks are completely free with zero obligation. Only pay if you decide to keep the system — completely up to you.",
     },
   ];
 
