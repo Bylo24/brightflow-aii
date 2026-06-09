@@ -200,7 +200,7 @@ function Pricing() {
         </div>
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
           2 weeks free.{" "}
-          <span className="font-serif italic font-normal text-accent">Then pay for hours saved.</span>
+          <span className="font-serif italic font-normal text-accent">Only pay if you keep it.</span>
         </h2>
         <p className="mt-6 sm:mt-8 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
           The trial is completely free — no card, no commitment, no strings. Use it for 2 weeks. If you want to walk away at the end, you pay absolutely nothing. If you stay, you only pay based on the hours we actually give back. The more time you reclaim, the more you benefit. Always proportional to value.
