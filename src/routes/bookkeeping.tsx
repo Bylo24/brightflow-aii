@@ -74,11 +74,10 @@ function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[44px] sm:text-6xl md:text-7xl lg:text-[88px] leading-[1.02] font-semibold tracking-[-0.04em] text-balance max-w-4xl"
+            className="text-[40px] sm:text-5xl md:text-6xl lg:text-[80px] leading-[1.04] font-semibold tracking-[-0.04em] text-balance max-w-4xl"
           >
-            Save{" "}
-            <span className="font-serif italic font-normal text-accent">10 hours</span>{" "}
-            on month end. In 2 weeks.
+            How many hours do you lose each month{" "}
+            <span className="font-serif italic font-normal text-accent">chasing missing client documents?</span>
           </motion.h1>
 
           <motion.p
@@ -87,7 +86,7 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="mt-6 sm:mt-8 text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-2xl text-pretty leading-relaxed"
           >
-            We build the automation that chases missing client documents for you.
+            Whatever the number is — we give it back. We build the automation that chases clients for you, so month end closes itself.
           </motion.p>
 
           <motion.div
