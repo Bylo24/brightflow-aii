@@ -346,7 +346,7 @@ function Calculator() {
               </div>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed pt-2">
-              Imagine <span className="text-foreground font-semibold">{hours} hours</span> every month redirected toward closing more clients instead of chasing documents.
+              Imagine <span className="text-foreground font-semibold">{hours} hours</span> every month redirected toward <CyclingText /> instead of chasing documents.
             </p>
           </div>
         </div>
