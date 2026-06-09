@@ -487,14 +487,13 @@ function FinalCTA() {
           Get your{" "}
           <span className="font-serif italic font-normal text-accent">month back.</span>
         </h2>
-        <a
-          href={CAL_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          type="button"
+          {...CAL_BUTTON_PROPS}
           className="btn btn-lg btn-neutral rounded-full text-base"
         >
           Book my free 10-min call <ArrowRight className="size-4" />
-        </a>
+        </button>
         <div className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-xs sm:text-sm text-muted-foreground">
           <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> Free</span>
           <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> No card</span>
