@@ -253,7 +253,7 @@ function Calculator() {
           <div className="bg-background p-8 sm:p-10 flex flex-col gap-10 justify-center">
             <div>
               <div className="flex items-baseline justify-between mb-3">
-                <label className="text-sm uppercase tracking-[0.14em] text-muted-foreground">Your hourly rate</label>
+                <label className="text-sm uppercase tracking-[0.14em] text-muted-foreground">Your equivalent hourly rate</label>
                 <span className="text-2xl font-semibold tabular-nums">{fmt(rate)}<span className="text-sm text-muted-foreground font-normal">/hr</span></span>
               </div>
               <input
@@ -272,7 +272,7 @@ function Calculator() {
 
             <div>
               <div className="flex items-baseline justify-between mb-3">
-                <label className="text-sm uppercase tracking-[0.14em] text-muted-foreground">Hours saved / month</label>
+                <label className="text-sm uppercase tracking-[0.14em] text-muted-foreground">Hours spent chasing docs / month</label>
                 <span className="text-2xl font-semibold tabular-nums">{hours}<span className="text-sm text-muted-foreground font-normal"> hrs</span></span>
               </div>
               <input
@@ -294,20 +294,20 @@ function Calculator() {
           <div className="bg-accent/5 p-8 sm:p-10 flex flex-col justify-center gap-6 relative overflow-hidden">
             <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,hsl(168_72%_32%/0.18),transparent_70%)]" />
             <div>
-              <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground mb-2">You save / month</div>
+              <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground mb-2">You save / year</div>
               <div className="text-5xl sm:text-6xl font-semibold tracking-[-0.035em] text-accent tabular-nums">
-                {fmt(monthly)}
+                {fmt(yearly)}
               </div>
             </div>
             <div className="h-px bg-border/70" />
             <div>
-              <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground mb-2">You save / year</div>
+              <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground mb-2">You save / month</div>
               <div className="text-4xl sm:text-5xl font-semibold tracking-[-0.035em] tabular-nums">
-                {fmt(yearly)}
+                {fmt(monthly)}
               </div>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed pt-2">
-              That's {hours} hours every month back in your pocket — at your rate, billable to real client work.
+              Imagine <span className="text-foreground font-semibold">{hours} hours</span> every month redirected toward closing more clients instead of chasing documents.
             </p>
           </div>
         </div>
@@ -319,7 +319,7 @@ function Calculator() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 rounded-full bg-foreground text-background px-7 py-3.5 text-[15px] font-medium tracking-tight hover:bg-foreground/90 transition-colors"
           >
-            Claim my {fmt(monthly)}/mo back <ArrowRight className="size-4" />
+            Reclaim {fmt(yearly)}/yr worth of time <ArrowRight className="size-4" />
           </a>
         </div>
       </div>
