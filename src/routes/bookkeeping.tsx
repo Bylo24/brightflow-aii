@@ -28,14 +28,18 @@ function CyclingText() {
   }, []);
 
   return (
-    <span className="relative inline-block align-bottom overflow-hidden h-[1.3em]" style={{ width: "16ch" }}>
+    <span className="relative block w-full overflow-hidden leading-[1.4]">
+      {/* invisible sizer reserves height for the tallest phrase */}
+      <span aria-hidden className="invisible block text-foreground font-semibold">
+        {CYCLE_PHRASES.reduce((a, b) => (a.length >= b.length ? a : b))}
+      </span>
       <AnimatePresence mode="wait">
         <motion.span
           key={index}
-          initial={{ y: 20, opacity: 0 }}
+          initial={{ y: "0.6em", opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -20, opacity: 0 }}
-          transition={{ duration: 0.4, ease: [0.32, 0.72, 0, 1] }}
+          exit={{ y: "-0.6em", opacity: 0 }}
+          transition={{ duration: 0.45, ease: [0.32, 0.72, 0, 1] }}
           className="absolute inset-0 text-foreground font-semibold"
         >
           {CYCLE_PHRASES[index]}
@@ -345,9 +349,13 @@ function Calculator() {
                 {fmt(monthly)}
               </div>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed pt-2">
-              Imagine <span className="text-foreground font-semibold">{hours} hours</span> every month redirected toward <CyclingText /> instead of chasing documents.
-            </p>
+            <div className="text-sm text-muted-foreground leading-relaxed pt-2 space-y-1">
+              <p>
+                Imagine <span className="text-foreground font-semibold">{hours} hours</span> every month spent
+              </p>
+              <CyclingText />
+              <p>instead of chasing documents.</p>
+            </div>
           </div>
         </div>
 
