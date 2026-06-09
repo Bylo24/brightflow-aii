@@ -372,7 +372,7 @@ function FAQ() {
     },
     {
       q: "What if I want to leave after the trial?",
-      a: "Then you leave, and you don't pay a single cent. No contract, no lock-in, no awkward conversations. The 2 weeks are completely free with zero obligation.",
+      a: "Then you leave, and you don't pay a single cent. No contract, no lock-in, no awkward conversations. The 2 weeks are completely free with zero obligation. Only pay if you decide to keep the system — completely up to you.",
     },
   ];
 
