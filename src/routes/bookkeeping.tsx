@@ -355,8 +355,8 @@ function Guarantee() {
 function FAQ() {
   const items = [
     {
-      q: "How can you guarantee 10 hours?",
-      a: "Chasing is the biggest time-sink in bookkeeping — we've never seen a workflow where we couldn't cut at least 10 hours. If we miss it in 2 weeks, you pay nothing.",
+      q: "How many hours will I actually save?",
+      a: "Depends on your client load and how messy the chase is — but every bookkeeper we've worked with has gotten back significant time in the first 2 weeks. If you don't see a real difference, you pay nothing.",
     },
     {
       q: "Will my clients notice?",
@@ -368,7 +368,7 @@ function FAQ() {
     },
     {
       q: "What happens on the call?",
-      a: "10 minutes. We map your chase, show you exactly where the 10+ hours are hiding, and walk you through how we'd automate it.",
+      a: "10 minutes. We map your chase, show you exactly where the hours are hiding, and walk you through how we'd automate it.",
     },
     {
       q: "What if I want to leave after the trial?",
