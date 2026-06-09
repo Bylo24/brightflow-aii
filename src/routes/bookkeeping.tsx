@@ -339,12 +339,12 @@ function Guarantee() {
           <Shield className="size-3.5" /> The guarantee
         </div>
         <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
-          Hours back in 2 weeks
+          2 weeks free.
           <br />
-          <span className="font-serif italic font-normal text-accent">or you don't pay a cent.</span>
+          <span className="font-serif italic font-normal text-accent">Only pay if you keep it.</span>
         </h2>
         <p className="mt-8 text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto leading-relaxed">
-          That's it. No fine print. No catch.
+          No contract, no catch, no hard feelings. Try it risk free. If you want to keep the system, we'll agree on a price based on the hours you get back. If not, just walk away — zero cost, completely up to you.
         </p>
       </div>
     </section>
