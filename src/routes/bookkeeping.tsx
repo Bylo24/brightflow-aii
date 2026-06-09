@@ -9,16 +9,16 @@ const CAL_LINK = "https://cal.com/samuel-howell-iwfnp4/15min";
 export const Route = createFileRoute("/bookkeeping")({
   head: () => ({
     meta: [
-      { title: "Save 10 Hours on Month End — Guaranteed | BrightFlow AI" },
+      { title: "Stop Chasing Client Docs — Guaranteed | BrightFlow AI" },
       {
         name: "description",
         content:
-          "Bookkeepers: save 10+ hours on month end in 2 weeks. We automate chasing missing client documents — or you don't pay a single cent.",
+          "Bookkeepers: how many hours do you lose each month chasing missing client documents? We automate the chase — or you don't pay a cent.",
       },
-      { property: "og:title", content: "Save 10 Hours on Month End — Guaranteed | BrightFlow AI" },
+      { property: "og:title", content: "Stop Chasing Client Docs — Guaranteed | BrightFlow AI" },
       {
         property: "og:description",
-        content: "Automate the chase. Save 10 hours in 2 weeks — or you don't pay a single cent.",
+        content: "Automate the chase. Get your month end back — or you don't pay a single cent.",
       },
     ],
   }),
@@ -74,11 +74,10 @@ function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[44px] sm:text-6xl md:text-7xl lg:text-[88px] leading-[1.02] font-semibold tracking-[-0.04em] text-balance max-w-4xl"
+            className="text-[40px] sm:text-5xl md:text-6xl lg:text-[80px] leading-[1.04] font-semibold tracking-[-0.04em] text-balance max-w-4xl"
           >
-            Save{" "}
-            <span className="font-serif italic font-normal text-accent">10 hours</span>{" "}
-            on month end. In 2 weeks.
+            How many hours do you lose each month{" "}
+            <span className="font-serif italic font-normal text-accent">chasing missing client documents?</span>
           </motion.h1>
 
           <motion.p
@@ -87,7 +86,7 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="mt-6 sm:mt-8 text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-2xl text-pretty leading-relaxed"
           >
-            We build the automation that chases missing client documents for you.
+            Whatever the number is — we give it back. We build the automation that chases clients for you, so month end closes itself.
           </motion.p>
 
           <motion.div
@@ -139,10 +138,10 @@ function Pain() {
           <span className="font-serif italic font-normal text-accent">to be a chaser.</span>
         </h2>
         <p className="mt-6 sm:mt-8 text-lg sm:text-xl text-muted-foreground leading-relaxed">
-          Yet every month end, 10+ hours vanish into reminder emails, Slack pings, and "just following up."
+          Yet every month end, hours vanish into reminder emails, Slack pings, and "just following up." For most bookkeepers it's 10, 20, sometimes 30+ hours a month.
         </p>
         <p className="mt-6 text-xl sm:text-2xl font-semibold tracking-tight">
-          We give those hours back.
+          We give every one of them back.
         </p>
       </div>
     </section>
@@ -340,7 +339,7 @@ function Guarantee() {
           <Shield className="size-3.5" /> The guarantee
         </div>
         <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
-          10 hours back in 2 weeks
+          Hours back in 2 weeks
           <br />
           <span className="font-serif italic font-normal text-accent">or you don't pay a cent.</span>
         </h2>
@@ -356,8 +355,8 @@ function Guarantee() {
 function FAQ() {
   const items = [
     {
-      q: "How can you guarantee 10 hours?",
-      a: "Chasing is the biggest time-sink in bookkeeping — we've never seen a workflow where we couldn't cut at least 10 hours. If we miss it in 2 weeks, you pay nothing.",
+      q: "How many hours will I actually save?",
+      a: "Depends on your client load and how messy the chase is — but every bookkeeper we've worked with has gotten back significant time in the first 2 weeks. If you don't see a real difference, you pay nothing.",
     },
     {
       q: "Will my clients notice?",
@@ -369,7 +368,7 @@ function FAQ() {
     },
     {
       q: "What happens on the call?",
-      a: "10 minutes. We map your chase, show you exactly where the 10+ hours are hiding, and walk you through how we'd automate it.",
+      a: "10 minutes. We map your chase, show you exactly where the hours are hiding, and walk you through how we'd automate it.",
     },
     {
       q: "What if I want to leave after the trial?",
