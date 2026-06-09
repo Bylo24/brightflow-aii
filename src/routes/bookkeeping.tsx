@@ -138,10 +138,10 @@ function Pain() {
           <span className="font-serif italic font-normal text-accent">to be a chaser.</span>
         </h2>
         <p className="mt-6 sm:mt-8 text-lg sm:text-xl text-muted-foreground leading-relaxed">
-          Yet every month end, 10+ hours vanish into reminder emails, Slack pings, and "just following up."
+          Yet every month end, hours vanish into reminder emails, Slack pings, and "just following up." For most bookkeepers it's 10, 20, sometimes 30+ hours a month.
         </p>
         <p className="mt-6 text-xl sm:text-2xl font-semibold tracking-tight">
-          We give those hours back.
+          We give every one of them back.
         </p>
       </div>
     </section>
