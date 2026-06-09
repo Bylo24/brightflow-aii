@@ -209,7 +209,7 @@ function Pricing() {
         <div className="mt-10 inline-flex items-center gap-2.5 rounded-2xl border-2 border-accent/40 bg-accent/10 px-6 py-4 shadow-[0_0_40px_-12px_hsl(168_72%_32%/0.4)]">
           <Shield className="size-5 text-accent shrink-0" strokeWidth={2.5} />
           <span className="text-sm sm:text-base font-semibold tracking-tight">
-            Walk away after 2 weeks and pay nothing. Zero risk.
+            Walk away after 2 weeks and pay nothing. No commitment, completely up to you.
           </span>
         </div>
 
