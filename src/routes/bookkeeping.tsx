@@ -372,14 +372,13 @@ function Calculator() {
         </div>
 
         <div className="mt-10 text-center">
-          <a
-            href={CAL_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            {...CAL_BUTTON_PROPS}
             className="inline-flex items-center gap-2.5 rounded-full bg-foreground text-background px-7 py-3.5 text-[15px] font-medium tracking-tight hover:bg-foreground/90 transition-colors"
           >
             Reclaim {fmt(yearly)}/yr worth of time <ArrowRight className="size-4" />
-          </a>
+          </button>
         </div>
       </div>
     </section>
