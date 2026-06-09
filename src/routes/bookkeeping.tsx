@@ -3,8 +3,15 @@ import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
 import { useRef, useState, useEffect } from "react";
 import { ArrowRight, Check, Clock, Plus, Shield } from "lucide-react";
 import { Nav, Footer } from "@/components/SiteChrome";
+import { getCalApi } from "@calcom/embed-react";
 
-const CAL_LINK = "https://cal.com/samuel-howell-iwfnp4/15min";
+const CAL_NAMESPACE = "15min";
+const CAL_LINK_SLUG = "samuel-howell-iwfnp4/15min";
+const CAL_BUTTON_PROPS = {
+  "data-cal-namespace": CAL_NAMESPACE,
+  "data-cal-link": CAL_LINK_SLUG,
+  "data-cal-config": '{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}',
+} as const;
 
 const CYCLE_PHRASES = [
   "closing more clients",
@@ -69,6 +76,12 @@ export const Route = createFileRoute("/bookkeeping")({
 });
 
 function BookkeepingPage() {
+  useEffect(() => {
+    (async () => {
+      const cal = await getCalApi({ namespace: CAL_NAMESPACE });
+      cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
+    })();
+  }, []);
   return (
     <div className="min-h-screen bg-background text-foreground font-display selection:bg-accent/20">
       <Nav />
@@ -150,14 +163,13 @@ function Hero() {
             transition={{ duration: 0.6, delay: 0.35 }}
             className="mt-10 flex flex-col items-center"
           >
-            <a
-              href={CAL_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              {...CAL_BUTTON_PROPS}
               className="btn btn-lg btn-neutral rounded-full text-base"
             >
               Book my free 10-min call <ArrowRight className="size-4" />
-            </a>
+            </button>
             <div className="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-xs sm:text-sm text-muted-foreground">
             <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> 100% free</span>
               <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> No card</span>
@@ -360,14 +372,13 @@ function Calculator() {
         </div>
 
         <div className="mt-10 text-center">
-          <a
-            href={CAL_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            {...CAL_BUTTON_PROPS}
             className="inline-flex items-center gap-2.5 rounded-full bg-foreground text-background px-7 py-3.5 text-[15px] font-medium tracking-tight hover:bg-foreground/90 transition-colors"
           >
             Reclaim {fmt(yearly)}/yr worth of time <ArrowRight className="size-4" />
-          </a>
+          </button>
         </div>
       </div>
     </section>
@@ -476,14 +487,13 @@ function FinalCTA() {
           Get your{" "}
           <span className="font-serif italic font-normal text-accent">month back.</span>
         </h2>
-        <a
-          href={CAL_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          type="button"
+          {...CAL_BUTTON_PROPS}
           className="btn btn-lg btn-neutral rounded-full text-base"
         >
           Book my free 10-min call <ArrowRight className="size-4" />
-        </a>
+        </button>
         <div className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-xs sm:text-sm text-muted-foreground">
           <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> Free</span>
           <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> No card</span>
