@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { motion, useScroll, useTransform } from "motion/react";
-import { useRef, useState } from "react";
+import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
+import { useRef, useState, useEffect } from "react";
 import { ArrowRight, Check, Clock, Plus, Shield } from "lucide-react";
 import { Nav, Footer } from "@/components/SiteChrome";
 
