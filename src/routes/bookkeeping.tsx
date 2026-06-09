@@ -238,7 +238,7 @@ function Pricing() {
           <Clock className="size-3.5" /> Pricing
         </div>
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
-          2 weeks free.{" "}
+          Try it for 2 weeks.{" "}
           <span className="font-serif italic font-normal text-accent">Only pay if you keep it.</span>
         </h2>
         <p className="mt-6 sm:mt-8 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
@@ -253,7 +253,7 @@ function Pricing() {
         </div>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-muted-foreground">
-          <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> 2 weeks completely free</span>
+          <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> Try it for 2 weeks completely free</span>
           <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> No upfront fees</span>
           <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> No commitment</span>
           <span className="inline-flex items-center gap-1.5"><Check className="size-3.5 text-accent" strokeWidth={2.5} /> Scales with your savings</span>
@@ -378,7 +378,7 @@ function Guarantee() {
           <Shield className="size-3.5" /> The guarantee
         </div>
         <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
-          2 weeks free.
+          Try it for 2 weeks.
           <br />
           <span className="font-serif italic font-normal text-accent">Only pay if you keep it.</span>
         </h2>
@@ -411,7 +411,7 @@ function FAQ() {
     },
     {
       q: "What if I want to leave after the trial?",
-      a: "Then you leave, and you don't pay a single cent. No contract, no lock-in, no awkward conversations. The 2 weeks are completely free with zero obligation. Only pay if you decide to keep the system — completely up to you.",
+      a: "Then you leave, and you don't pay a single cent. No contract, no lock-in, no awkward conversations. Try it for 2 weeks completely free with zero obligation. Only pay if you decide to keep the system — completely up to you.",
     },
   ];
 
