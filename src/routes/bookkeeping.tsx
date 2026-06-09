@@ -339,7 +339,7 @@ function Guarantee() {
           <Shield className="size-3.5" /> The guarantee
         </div>
         <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
-          10 hours back in 2 weeks
+          Hours back in 2 weeks
           <br />
           <span className="font-serif italic font-normal text-accent">or you don't pay a cent.</span>
         </h2>
