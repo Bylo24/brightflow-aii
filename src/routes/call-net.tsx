@@ -326,9 +326,6 @@ function CallNetPageInner() {
           <p className="mt-6 text-sm text-muted-foreground">
             Or save 17% annually: <span className="font-medium text-foreground">$970/year</span> ($80.83/month — 2 months free vs. monthly).
           </p>
-          <p className="mt-2 text-xs font-medium text-foreground">
-            Founding offer: first 50 customers get free setup + 10% off any plan for life. Use code <span className="font-mono">FOUNDER10</span> at checkout. Only 37 spots left.
-          </p>
           <a
             href="https://buy.stripe.com/14A00kdXt50Y93yezT33W03" target="_blank" rel="noopener noreferrer"
             className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
