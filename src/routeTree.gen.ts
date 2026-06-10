@@ -13,6 +13,7 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SecurityRouteImport } from './routes/security'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CallNetRouteImport } from './routes/call-net'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BookkeepingIndexRouteImport } from './routes/bookkeeping.index'
 import { Route as BookkeepingThanksRouteImport } from './routes/bookkeeping.thanks'
@@ -37,6 +38,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CallNetRoute = CallNetRouteImport.update({
+  id: '/call-net',
+  path: '/call-net',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -55,6 +61,7 @@ const BookkeepingThanksRoute = BookkeepingThanksRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/call-net': typeof CallNetRoute
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
@@ -64,6 +71,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/call-net': typeof CallNetRoute
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
@@ -74,6 +82,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/call-net': typeof CallNetRoute
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
@@ -85,6 +94,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/call-net'
     | '/contact'
     | '/privacy'
     | '/security'
@@ -94,6 +104,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/call-net'
     | '/contact'
     | '/privacy'
     | '/security'
@@ -103,6 +114,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/call-net'
     | '/contact'
     | '/privacy'
     | '/security'
@@ -113,6 +125,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CallNetRoute: typeof CallNetRoute
   ContactRoute: typeof ContactRoute
   PrivacyRoute: typeof PrivacyRoute
   SecurityRoute: typeof SecurityRoute
@@ -151,6 +164,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/call-net': {
+      id: '/call-net'
+      path: '/call-net'
+      fullPath: '/call-net'
+      preLoaderRoute: typeof CallNetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -177,6 +197,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CallNetRoute: CallNetRoute,
   ContactRoute: ContactRoute,
   PrivacyRoute: PrivacyRoute,
   SecurityRoute: SecurityRoute,
