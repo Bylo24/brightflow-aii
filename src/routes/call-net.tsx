@@ -228,13 +228,10 @@ function CallNetPage() {
               a: "Full access to every feature. No credit card required to start. Cancel anytime inside the trial and pay nothing.",
             },
           ].map((f) => (
-            <details key={f.q} className="group rounded-xl border border-border bg-card p-5">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-medium">
-                {f.q}
-                <span className="text-muted-foreground transition group-open:rotate-45">+</span>
-              </summary>
-              <p className="mt-3 text-sm text-muted-foreground">{f.a}</p>
-            </details>
+            <div key={f.q} className="rounded-xl border border-border bg-card p-5">
+              <h3 className="text-sm font-semibold">{f.q}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{f.a}</p>
+            </div>
           ))}
         </div>
       </section>
