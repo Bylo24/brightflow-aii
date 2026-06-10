@@ -84,15 +84,25 @@ function CallNetPage() {
               Live demo
             </div>
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-              Try it for yourself
+              Try a live demo
             </h2>
             <p className="max-w-md text-sm text-muted-foreground">
-              Tap the Call Net icon in the bottom-right of your screen and talk to it like a real caller would. No signup needed.
+              Talk to Call Net like a real caller would — ask about pricing, book a job, or leave a message. Hear how it sounds before you sign up.
             </p>
-            <div className="mt-2 flex items-center gap-2 text-xs font-medium text-muted-foreground">
-              <ArrowRight className="h-4 w-4 rotate-90" />
-              Look in the bottom-right corner
-            </div>
+            <button
+              type="button"
+              onClick={() => {
+                const w = document.querySelector('elevenlabs-convai') as (HTMLElement & { open?: () => void }) | null;
+                if (w?.open) w.open();
+                else w?.dispatchEvent(new Event('click', { bubbles: true }));
+              }}
+              className="mt-2 inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background hover:opacity-90"
+            >
+              Start the demo <ArrowRight className="h-4 w-4" />
+            </button>
+            <p className="text-xs text-muted-foreground">
+              Or tap the chat bubble in the bottom-right corner.
+            </p>
           </div>
         </div>
       </section>
