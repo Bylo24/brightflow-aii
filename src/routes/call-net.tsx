@@ -28,11 +28,26 @@ export const Route = createFileRoute("/call-net")({
 
 const AGENT_ID = "agent_7001ks6yjp6rfbh9899wpb8kvy7t";
 
+function CallNetLoading() {
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      <div className="mx-auto flex min-h-screen max-w-md flex-col items-center justify-center px-6 text-center">
+        <div className="relative flex h-14 w-14 items-center justify-center rounded-full bg-foreground/5">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500/30" />
+          <Phone className="relative h-6 w-6 text-foreground" />
+        </div>
+        <p className="mt-5 text-sm font-medium text-foreground">Warming up Call Net…</p>
+        <p className="mt-1 text-xs text-muted-foreground">Getting the live demo ready. This only takes a second.</p>
+      </div>
+    </div>
+  );
+}
+
 function CallNetPage() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => { setMounted(true); }, []);
   if (!mounted) {
-    return <div className="min-h-screen bg-background" />;
+    return <CallNetLoading />;
   }
   return (
     <ConversationProvider>
@@ -81,7 +96,7 @@ function CallNetPageInner() {
       <header className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
         <Wordmark />
         <a
-          href="#trial"
+          href="https://buy.stripe.com/14A00kdXt50Y93yezT33W03" target="_blank" rel="noopener noreferrer"
           className="rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background hover:opacity-90"
         >
           Start free trial
@@ -103,7 +118,7 @@ function CallNetPageInner() {
           It doesn't replace you. It only works when you can't.
         </p>
         <a
-          href="#trial"
+          href="https://buy.stripe.com/14A00kdXt50Y93yezT33W03" target="_blank" rel="noopener noreferrer"
           className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
         >
           Start my 14-day free trial <ArrowRight className="h-4 w-4" />
@@ -157,9 +172,11 @@ function CallNetPageInner() {
               </button>
             )}
             <p className="text-xs text-muted-foreground">
-              {isActive
-                ? conversation.isSpeaking ? "Call Net is speaking…" : "Listening — go ahead and talk."
-                : "You'll be asked to allow microphone access."}
+              {starting || status === "connecting"
+                ? "Connecting to Call Net…"
+                : status === "connected"
+                  ? conversation.isSpeaking ? "Call Net is speaking…" : "Listening — go ahead and talk."
+                  : "You'll be asked to allow microphone access."}
             </p>
 
           </div>
@@ -230,7 +247,7 @@ function CallNetPageInner() {
             </div>
           </div>
           <a
-            href="#trial"
+            href="https://buy.stripe.com/14A00kdXt50Y93yezT33W03" target="_blank" rel="noopener noreferrer"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
           >
             Start my 14-day free trial <ArrowRight className="h-4 w-4" />
@@ -309,11 +326,8 @@ function CallNetPageInner() {
           <p className="mt-6 text-sm text-muted-foreground">
             Or save 17% annually: <span className="font-medium text-foreground">$970/year</span> ($80.83/month — 2 months free vs. monthly).
           </p>
-          <p className="mt-2 text-xs font-medium text-foreground">
-            Founding offer: first 50 customers get free setup + 10% off any plan for life. Use code <span className="font-mono">FOUNDER10</span> at checkout. Only 37 spots left.
-          </p>
           <a
-            href="#trial"
+            href="https://buy.stripe.com/14A00kdXt50Y93yezT33W03" target="_blank" rel="noopener noreferrer"
             className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
           >
             Start my 14-day free trial <ArrowRight className="h-4 w-4" />
@@ -389,7 +403,7 @@ function CallNetPageInner() {
           Start your 14-day free trial. Setup takes 2 minutes. Cancel anytime in your dashboard.
         </p>
         <a
-          href="mailto:samuel@brightflowagency.com?subject=Call%20Net%20free%20trial"
+          href="https://buy.stripe.com/14A00kdXt50Y93yezT33W03" target="_blank" rel="noopener noreferrer"
           className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
         >
           Start my 14-day free trial <ArrowRight className="h-4 w-4" />
