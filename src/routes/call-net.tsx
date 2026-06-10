@@ -116,23 +116,8 @@ function CallNetPage() {
       />
 
 
-      {/* Problem / Solution */}
-      <section className="mx-auto max-w-4xl px-6 py-12">
-        <div className="grid gap-6 sm:grid-cols-2">
-          <div className="rounded-2xl border border-border bg-card p-6">
-            <h3 className="text-lg font-semibold">The problem</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Every missed call is a potential client who hangs up and calls your competitor. You're losing money every time your phone rings and you can't answer.
-            </p>
-          </div>
-          <div className="rounded-2xl border border-border bg-card p-6">
-            <h3 className="text-lg font-semibold">The solution</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Call Net is your AI receptionist. It answers calls 24/7, speaks naturally, captures the lead's details, and texts you the summary within seconds.
-            </p>
-          </div>
-        </div>
-      </section>
+
+
 
       {/* How it works */}
       <section className="mx-auto max-w-5xl px-6 py-12">
