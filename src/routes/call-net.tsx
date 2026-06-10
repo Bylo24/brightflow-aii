@@ -209,8 +209,8 @@ function TryItNudge() {
   }, []);
   if (!open) return null;
   return (
-    <div className="pointer-events-none fixed bottom-24 right-4 z-40 sm:bottom-28 sm:right-6">
-      <div className="pointer-events-auto relative flex items-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background shadow-lg">
+    <div className="pointer-events-none fixed bottom-[110px] right-5 z-[2147483646] sm:bottom-[120px] sm:right-6">
+      <div className="pointer-events-auto relative flex items-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background shadow-xl ring-1 ring-black/5">
         <span className="relative flex h-2 w-2">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
           <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
