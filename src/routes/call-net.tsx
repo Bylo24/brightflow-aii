@@ -26,16 +26,39 @@ export const Route = createFileRoute("/call-net")({
   component: CallNetPage,
 });
 
+const AGENT_ID = "agent_7001ks6yjp6rfbh9899wpb8kvy7t";
+
 function CallNetPage() {
+  const [starting, setStarting] = useState(false);
+  const conversation = useConversation({
+    onError: (err) => console.error("Call Net demo error:", err),
+  });
+  const status = conversation.status;
+  const isActive = status === "connected" || status === "connecting";
+
+  const startDemo = useCallback(async () => {
+    if (isActive || starting) return;
+    setStarting(true);
+    try {
+      await navigator.mediaDevices.getUserMedia({ audio: true });
+      await conversation.startSession({ agentId: AGENT_ID, connectionType: "webrtc" });
+    } catch (err) {
+      console.error("Failed to start demo:", err);
+      alert("Couldn't start the demo. Please allow microphone access and try again.");
+    } finally {
+      setStarting(false);
+    }
+  }, [conversation, isActive, starting]);
+
+  const endDemo = useCallback(async () => {
+    try { await conversation.endSession(); } catch (err) { console.error(err); }
+  }, [conversation]);
+
   useEffect(() => {
-    if (document.querySelector('script[data-elevenlabs-convai]')) return;
-    const s = document.createElement("script");
-    s.src = "https://unpkg.com/@elevenlabs/convai-widget-embed";
-    s.async = true;
-    s.type = "text/javascript";
-    s.setAttribute("data-elevenlabs-convai", "true");
-    document.body.appendChild(s);
+    return () => { conversation.endSession().catch(() => {}); };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
 
   return (
     <div className="min-h-screen bg-background text-foreground">
