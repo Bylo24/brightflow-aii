@@ -172,8 +172,53 @@ function CallNetPage() {
           <p className="mt-3 text-xs text-muted-foreground">
             Cancel anytime in the trial and pay nothing. No credit card required to start.
           </p>
+          <p className="mt-4 text-xs italic text-muted-foreground">
+            You're still the owner. Call Net is just your backup. When you can't answer, we catch the lead. You call back. You close.
+          </p>
         </div>
       </section>
+
+      {/* Testimonial */}
+      <section className="mx-auto max-w-3xl px-6 py-12">
+        <figure className="rounded-2xl border border-border bg-card p-8 text-center">
+          <blockquote className="text-base leading-relaxed sm:text-lg">
+            "I was worried about sounding like a robot to my customers. But Call Net only picks up when I'm on the other line or after hours. My callers still talk to me for the real conversation. I've captured 5 new jobs in 2 weeks."
+          </blockquote>
+          <figcaption className="mt-4 text-sm font-medium text-muted-foreground">
+            — Dave, Plumbing Pro
+          </figcaption>
+        </figure>
+      </section>
+
+      {/* FAQ */}
+      <section className="mx-auto max-w-3xl px-6 py-12">
+        <h2 className="text-center text-3xl font-semibold tracking-tight">FAQ</h2>
+        <div className="mt-8 space-y-4">
+          {[
+            {
+              q: "Will Call Net replace my receptionist or annoy my callers?",
+              a: "No. Call Net only answers when you can't — after hours, during lunch, or when you're already on another call. Your callers get a helpful conversation, leave their info, and you call them back. It's you they close with. Call Net just makes sure you never miss the chance.",
+            },
+            {
+              q: "How fast is setup?",
+              a: "Under 2 minutes. You forward your existing business line to Call Net (24/7 or only when you don't pick up). We email setup instructions the moment you sign up.",
+            },
+            {
+              q: "What happens during the 14-day trial?",
+              a: "Full access to every feature. No credit card required to start. Cancel anytime inside the trial and pay nothing.",
+            },
+          ].map((f) => (
+            <details key={f.q} className="group rounded-xl border border-border bg-card p-5">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-medium">
+                {f.q}
+                <span className="text-muted-foreground transition group-open:rotate-45">+</span>
+              </summary>
+              <p className="mt-3 text-sm text-muted-foreground">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
 
 
 
