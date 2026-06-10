@@ -149,7 +149,7 @@ function CallNetPage() {
             "Callers don't get voicemail — they talk to a helpful AI, leave their info, and hang up happy.",
             "You get a text summary — name, number, reason for calling. You call them back.",
             "No setup headaches — forward your existing number in 2 minutes.",
-            "Try free for 14 days — no risk, no contract, cancel anytime.",
+            "Try free for 14 days — cancel anytime in your dashboard, no contract.",
           ].map((b) => (
             <li key={b} className="flex items-start gap-3 rounded-xl border border-border bg-card p-4">
               <Check className="mt-0.5 h-5 w-5 flex-none text-foreground" />
