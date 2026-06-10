@@ -196,13 +196,19 @@ function EmailCapture() {
   }
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
     if (!validate(email)) {
-      e.preventDefault();
       setError("Please enter a valid email address.");
       return;
     }
-    trackPixelFormSubmit();
+    if (submitting) return;
     setSubmitting(true);
+    const form = e.currentTarget;
+    trackPixelFormSubmit();
+    // Give the pixel a moment to fire before navigating away
+    window.setTimeout(() => {
+      form.submit();
+    }, 400);
   }
 
   const nextUrl = thanksOrigin
