@@ -9,6 +9,52 @@ import { Wordmark, Footer } from "@/components/SiteChrome";
 const FORMSUBMIT_EMAIL = "samuel@brightflowagency.com";
 const FORMSUBMIT_ENDPOINT = `https://formsubmit.co/${FORMSUBMIT_EMAIL}`;
 
+// Meta Pixel
+const META_PIXEL_ID = "2085592105635483";
+const META_PIXEL_EVENT = "Form: 2085592105635483";
+
+declare global {
+  interface Window {
+    fbq?: ((...args: unknown[]) => void) & { callMethod?: unknown; queue?: unknown[] };
+    _fbq?: unknown;
+  }
+}
+
+function installMetaPixel() {
+  if (typeof window === "undefined") return;
+  if (window.fbq) return;
+  /* eslint-disable */
+  (function (f: any, b: Document, e: string, v: string) {
+    let n: any;
+    let t: any;
+    let s: any;
+    if (f.fbq) return;
+    n = f.fbq = function () {
+      n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+    };
+    if (!f._fbq) f._fbq = n;
+    n.push = n;
+    n.loaded = !0;
+    n.version = "2.0";
+    n.queue = [];
+    t = b.createElement(e) as HTMLScriptElement;
+    t.async = !0;
+    t.src = v;
+    s = b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t, s);
+  })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+  /* eslint-enable */
+  const fbq = window.fbq as unknown as (...args: unknown[]) => void;
+  fbq("init", META_PIXEL_ID);
+  fbq("track", "PageView");
+}
+
+function trackPixelFormSubmit() {
+  if (typeof window === "undefined" || !window.fbq) return;
+  window.fbq("trackCustom", META_PIXEL_EVENT);
+  window.fbq("track", "Lead");
+}
+
 export const Route = createFileRoute("/bookkeeping")({
   head: () => ({
     meta: [
@@ -29,6 +75,9 @@ export const Route = createFileRoute("/bookkeeping")({
 });
 
 function BookkeepingPage() {
+  useEffect(() => {
+    installMetaPixel();
+  }, []);
   return (
     <div className="min-h-screen bg-background text-foreground font-display selection:bg-accent/20">
       <BookkeepingNav />
@@ -47,14 +96,8 @@ function BookkeepingPage() {
 function BookkeepingNav() {
   return (
     <nav className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-4">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center">
         <Wordmark />
-        <a
-          href="#email-form"
-          className="btn btn-md btn-neutral rounded-full font-medium whitespace-nowrap"
-        >
-          Start free pilot <ArrowRight className="size-4" />
-        </a>
       </div>
     </nav>
   );
@@ -159,6 +202,7 @@ function EmailCapture() {
       setError("Please enter a valid email address.");
       return;
     }
+    trackPixelFormSubmit();
     setSubmitting(true);
   }
 
@@ -180,10 +224,14 @@ function EmailCapture() {
       {/* honeypot */}
       <input type="text" name="_honey" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
 
+      <label htmlFor="bk-email" className="block text-left text-sm font-semibold tracking-tight mb-2 pl-1">
+        Email address
+      </label>
       <div className="flex flex-col sm:flex-row gap-2.5">
         <div className="relative flex-1">
           <Mail className="size-4 text-muted-foreground absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
           <input
+            id="bk-email"
             type="email"
             name="email"
             required

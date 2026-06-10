@@ -1,22 +1,59 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect } from "react";
-import { ArrowRight, Check, Mail } from "lucide-react";
-import { getCalApi } from "@calcom/embed-react";
+import { Check, Mail } from "lucide-react";
+import Cal, { getCalApi } from "@calcom/embed-react";
 import { Wordmark, Footer } from "@/components/SiteChrome";
 
 const CAL_NAMESPACE = "15min";
 const CAL_LINK_SLUG = "samuel-howell-iwfnp4/15min";
-const CAL_BUTTON_PROPS = {
-  "data-cal-namespace": CAL_NAMESPACE,
-  "data-cal-link": CAL_LINK_SLUG,
-  "data-cal-config": '{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}',
-} as const;
+const META_PIXEL_ID = "2085592105635483";
+const META_PIXEL_EVENT = "Form: 2085592105635483";
+
+declare global {
+  interface Window {
+    fbq?: ((...args: unknown[]) => void) & { callMethod?: unknown; queue?: unknown[] };
+    _fbq?: unknown;
+  }
+}
+
+function installAndFirePixel() {
+  if (typeof window === "undefined") return;
+  if (!window.fbq) {
+    /* eslint-disable */
+    (function (f: any, b: Document, e: string, v: string) {
+      let n: any;
+      let t: any;
+      let s: any;
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = "2.0";
+      n.queue = [];
+      t = b.createElement(e) as HTMLScriptElement;
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+    /* eslint-enable */
+    const fbq = window.fbq as unknown as (...args: unknown[]) => void;
+    fbq("init", META_PIXEL_ID);
+  }
+  const fbq = window.fbq as unknown as (...args: unknown[]) => void;
+  fbq("track", "PageView");
+  fbq("trackCustom", META_PIXEL_EVENT);
+  fbq("track", "Lead");
+}
 
 export const Route = createFileRoute("/bookkeeping/thanks")({
   head: () => ({
     meta: [
-      { title: "Thanks — you're one step away | BrightFlow AI" },
-      { name: "description", content: "Check your inbox for your free pilot info, or book a 10-min call now." },
+      { title: "Thanks — book your call | BrightFlow AI" },
+      { name: "description", content: "Pick a time below to start your free 2-week pilot." },
       { name: "robots", content: "noindex" },
     ],
   }),
@@ -25,6 +62,7 @@ export const Route = createFileRoute("/bookkeeping/thanks")({
 
 function ThanksPage() {
   useEffect(() => {
+    installAndFirePixel();
     (async () => {
       const cal = await getCalApi({ namespace: CAL_NAMESPACE });
       cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
@@ -48,46 +86,48 @@ function ThanksPage() {
           <div className="absolute inset-0 grid-bg [mask-image:radial-gradient(ellipse_60%_45%_at_50%_0%,#000_50%,transparent_100%)]" />
         </div>
 
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 pt-20 sm:pt-28 pb-24 text-center">
-          <div className="mx-auto mb-7 size-14 rounded-full border-2 border-accent/50 bg-accent/10 flex items-center justify-center shadow-[0_0_50px_-10px_hsl(168_72%_32%/0.5)]">
-            <Check className="size-6 text-accent" strokeWidth={3} />
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 pt-14 sm:pt-20 pb-10 text-center">
+          <div className="mx-auto mb-6 size-12 rounded-full border-2 border-accent/50 bg-accent/10 flex items-center justify-center shadow-[0_0_50px_-10px_hsl(168_72%_32%/0.5)]">
+            <Check className="size-5 text-accent" strokeWidth={3} />
           </div>
 
-          <h1 className="text-[36px] sm:text-5xl md:text-6xl leading-[1.04] font-semibold tracking-[-0.04em] text-balance">
-            Thanks! You're{" "}
-            <span className="font-serif italic font-normal text-accent">one step away.</span>
+          <h1 className="text-[32px] sm:text-5xl leading-[1.04] font-semibold tracking-[-0.04em] text-balance">
+            You're in. Now{" "}
+            <span className="font-serif italic font-normal text-accent">pick a time.</span>
           </h1>
 
-          <p className="mt-6 text-lg sm:text-xl text-muted-foreground leading-relaxed">
-            Want to fast-track it? Book a quick 10-min call and we'll start your free pilot this week.
+          <p className="mt-5 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
+            Pilot info is on its way to your inbox. Grab a 10-min slot below and we'll start this week.
           </p>
+        </div>
 
-          <div className="mt-9">
-            <button
-              type="button"
-              {...CAL_BUTTON_PROPS}
-              className="btn btn-lg btn-neutral rounded-full text-base"
-            >
-              Book my call now <ArrowRight className="size-4" />
-            </button>
+        {/* Inline Cal.com booking widget */}
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 pb-16">
+          <div className="rounded-2xl border border-border bg-background overflow-hidden shadow-sm min-h-[680px]">
+            <Cal
+              namespace={CAL_NAMESPACE}
+              calLink={CAL_LINK_SLUG}
+              style={{ width: "100%", height: "680px", overflow: "scroll" }}
+              config={{ layout: "month_view" }}
+            />
           </div>
 
-          <div className="mt-12 mx-auto max-w-md rounded-2xl border border-border bg-secondary/40 p-6 text-left">
+          <div className="mt-8 mx-auto max-w-md rounded-2xl border border-border bg-secondary/40 p-5 text-left">
             <div className="flex items-start gap-3">
               <div className="mt-0.5 size-9 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center shrink-0">
                 <Mail className="size-4 text-accent" />
               </div>
               <div>
-                <div className="font-semibold tracking-tight">Not ready to book?</div>
+                <div className="font-semibold tracking-tight">Prefer email first?</div>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Watch for an email from me in the next few minutes. I'll send you a short video explaining the pilot — and a link to book whenever you're ready.
+                  No worries — check your inbox in a few minutes for the pilot details and a short video.
                 </p>
               </div>
             </div>
           </div>
 
-          <p className="mt-10 text-xs text-muted-foreground">
-            Free pilot. No card. If you don't save 10 hours, you pay nothing.
+          <p className="mt-8 text-center text-xs text-muted-foreground">
+            Free for 2 weeks. No card. If you don't save 10 hours, you pay nothing.
           </p>
         </div>
       </main>
