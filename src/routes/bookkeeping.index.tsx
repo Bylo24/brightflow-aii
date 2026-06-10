@@ -284,47 +284,6 @@ function EmailCapture() {
   );
 }
 
-/* ---------------- HOW IT WORKS ---------------- */
-function HowItWorks() {
-  const steps = [
-    { num: "01", title: "Drop your email", body: "We send you the pilot info — what it covers, what we'll automate, what you get back." },
-    { num: "02", title: "We build it in days", body: "Around your stack. Email, Drive, QBO, Xero. Nothing for you to learn." },
-    { num: "03", title: "You close on time", body: "Docs land. Reminders run. You stop chasing. If you don't save 10 hours, you pay nothing." },
-  ];
-
-  return (
-    <section className="py-20 sm:py-28 border-t border-border/60">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4">How it works</div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
-            Live in a week.{" "}
-            <span className="font-serif italic font-normal text-accent">Hours back forever.</span>
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border/70 border border-border/70 rounded-2xl overflow-hidden">
-          {steps.map((s, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="bg-background p-8 sm:p-10 min-h-[200px] flex flex-col gap-4"
-            >
-              <div className="size-10 rounded-full border border-accent/40 bg-accent/10 text-accent flex items-center justify-center text-xs font-mono font-semibold">
-                {s.num}
-              </div>
-              <h3 className="text-xl font-semibold tracking-tight">{s.title}</h3>
-              <p className="text-[15px] text-muted-foreground leading-relaxed">{s.body}</p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ---------------- GUARANTEE ---------------- */
 function Guarantee() {
