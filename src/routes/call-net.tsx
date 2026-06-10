@@ -81,7 +81,7 @@ function CallNetPageInner() {
       <header className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
         <Wordmark />
         <a
-          href="#trial"
+          href="https://buy.stripe.com/14A00kdXt50Y93yezT33W03" target="_blank" rel="noopener noreferrer"
           className="rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background hover:opacity-90"
         >
           Start free trial
@@ -103,7 +103,7 @@ function CallNetPageInner() {
           It doesn't replace you. It only works when you can't.
         </p>
         <a
-          href="#trial"
+          href="https://buy.stripe.com/14A00kdXt50Y93yezT33W03" target="_blank" rel="noopener noreferrer"
           className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
         >
           Start my 14-day free trial <ArrowRight className="h-4 w-4" />
@@ -230,7 +230,7 @@ function CallNetPageInner() {
             </div>
           </div>
           <a
-            href="#trial"
+            href="https://buy.stripe.com/14A00kdXt50Y93yezT33W03" target="_blank" rel="noopener noreferrer"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
           >
             Start my 14-day free trial <ArrowRight className="h-4 w-4" />
@@ -313,7 +313,7 @@ function CallNetPageInner() {
             Founding offer: first 50 customers get free setup + 10% off any plan for life. Use code <span className="font-mono">FOUNDER10</span> at checkout. Only 37 spots left.
           </p>
           <a
-            href="#trial"
+            href="https://buy.stripe.com/14A00kdXt50Y93yezT33W03" target="_blank" rel="noopener noreferrer"
             className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
           >
             Start my 14-day free trial <ArrowRight className="h-4 w-4" />
@@ -389,7 +389,7 @@ function CallNetPageInner() {
           Start your 14-day free trial. Setup takes 2 minutes. Cancel anytime in your dashboard.
         </p>
         <a
-          href="mailto:samuel@brightflowagency.com?subject=Call%20Net%20free%20trial"
+          href="https://buy.stripe.com/14A00kdXt50Y93yezT33W03" target="_blank" rel="noopener noreferrer"
           className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
         >
           Start my 14-day free trial <ArrowRight className="h-4 w-4" />
