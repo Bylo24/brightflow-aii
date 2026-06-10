@@ -15,6 +15,7 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BookkeepingRouteImport } from './routes/bookkeeping'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BookkeepingThanksRouteImport } from './routes/bookkeeping.thanks'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -46,31 +47,39 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BookkeepingThanksRoute = BookkeepingThanksRouteImport.update({
+  id: '/thanks',
+  path: '/thanks',
+  getParentRoute: () => BookkeepingRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/bookkeeping': typeof BookkeepingRoute
+  '/bookkeeping': typeof BookkeepingRouteWithChildren
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
   '/terms': typeof TermsRoute
+  '/bookkeeping/thanks': typeof BookkeepingThanksRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/bookkeeping': typeof BookkeepingRoute
+  '/bookkeeping': typeof BookkeepingRouteWithChildren
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
   '/terms': typeof TermsRoute
+  '/bookkeeping/thanks': typeof BookkeepingThanksRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/bookkeeping': typeof BookkeepingRoute
+  '/bookkeeping': typeof BookkeepingRouteWithChildren
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
   '/terms': typeof TermsRoute
+  '/bookkeeping/thanks': typeof BookkeepingThanksRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,8 +90,16 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/security'
     | '/terms'
+    | '/bookkeeping/thanks'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/bookkeeping' | '/contact' | '/privacy' | '/security' | '/terms'
+  to:
+    | '/'
+    | '/bookkeeping'
+    | '/contact'
+    | '/privacy'
+    | '/security'
+    | '/terms'
+    | '/bookkeeping/thanks'
   id:
     | '__root__'
     | '/'
@@ -91,11 +108,12 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/security'
     | '/terms'
+    | '/bookkeeping/thanks'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  BookkeepingRoute: typeof BookkeepingRoute
+  BookkeepingRoute: typeof BookkeepingRouteWithChildren
   ContactRoute: typeof ContactRoute
   PrivacyRoute: typeof PrivacyRoute
   SecurityRoute: typeof SecurityRoute
@@ -146,12 +164,31 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/bookkeeping/thanks': {
+      id: '/bookkeeping/thanks'
+      path: '/thanks'
+      fullPath: '/bookkeeping/thanks'
+      preLoaderRoute: typeof BookkeepingThanksRouteImport
+      parentRoute: typeof BookkeepingRoute
+    }
   }
 }
 
+interface BookkeepingRouteChildren {
+  BookkeepingThanksRoute: typeof BookkeepingThanksRoute
+}
+
+const BookkeepingRouteChildren: BookkeepingRouteChildren = {
+  BookkeepingThanksRoute: BookkeepingThanksRoute,
+}
+
+const BookkeepingRouteWithChildren = BookkeepingRoute._addFileChildren(
+  BookkeepingRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  BookkeepingRoute: BookkeepingRoute,
+  BookkeepingRoute: BookkeepingRouteWithChildren,
   ContactRoute: ContactRoute,
   PrivacyRoute: PrivacyRoute,
   SecurityRoute: SecurityRoute,
