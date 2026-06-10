@@ -11,7 +11,7 @@ const FORMSUBMIT_ENDPOINT = `https://formsubmit.co/${FORMSUBMIT_EMAIL}`;
 
 // Meta Pixel
 const META_PIXEL_ID = "2085592105635483";
-const META_PIXEL_EVENT = "Form: 2085592105635483";
+
 
 declare global {
   interface Window {
@@ -51,8 +51,8 @@ function installMetaPixel() {
 
 function trackPixelFormSubmit() {
   if (typeof window === "undefined" || !window.fbq) return;
-  window.fbq("trackCustom", META_PIXEL_EVENT);
-  window.fbq("track", "Lead");
+  const fbq = window.fbq as unknown as (...args: unknown[]) => void;
+  fbq("track", "Lead");
 }
 
 export const Route = createFileRoute("/bookkeeping")({
