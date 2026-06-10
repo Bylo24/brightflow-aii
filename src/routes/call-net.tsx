@@ -67,25 +67,13 @@ function CallNetPage() {
         <p className="mt-3 text-xs text-muted-foreground">No credit card required.</p>
       </section>
 
-      {/* Try it widget */}
-      <section className="mx-auto max-w-3xl px-6 pb-16">
-        <div className="rounded-2xl border border-border bg-card p-6 sm:p-8">
-          <div className="mb-4 text-center">
-            <h2 className="text-2xl font-semibold tracking-tight">Try it for yourself</h2>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Tap the widget below and talk to Call Net like a real caller would.
-            </p>
-          </div>
-          <div
-            style={{ width: "100%", height: 560 }}
-            className="overflow-hidden rounded-xl [&>elevenlabs-convai]:!block [&>elevenlabs-convai]:!h-full [&>elevenlabs-convai]:!w-full [&>elevenlabs-convai]:!static"
-            dangerouslySetInnerHTML={{
-              __html:
-                '<elevenlabs-convai agent-id="agent_7001ks6yjp6rfbh9899wpb8kvy7t" variant="full" style="display:block;width:100%;height:100%;position:static;"></elevenlabs-convai>',
-            }}
-          />
-        </div>
-      </section>
+      <div
+        dangerouslySetInnerHTML={{
+          __html:
+            '<elevenlabs-convai agent-id="agent_7001ks6yjp6rfbh9899wpb8kvy7t"></elevenlabs-convai>',
+        }}
+      />
+
 
       {/* Problem / Solution */}
       <section className="mx-auto max-w-4xl px-6 py-12">
