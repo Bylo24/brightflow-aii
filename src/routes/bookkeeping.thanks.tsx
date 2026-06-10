@@ -95,7 +95,7 @@ function ThanksPage() {
           </h1>
 
           <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-md mx-auto">
-            Grab a 10-min slot below. Pilot details are also on their way to your inbox.
+            Grab a 10-min slot below.
           </p>
         </div>
 
