@@ -53,10 +53,13 @@ function CallNetPage() {
           <Phone className="h-3.5 w-3.5" /> AI receptionist for small business
         </div>
         <h1 className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
-          Never miss a paying customer because you were on the other line, at lunch, or closed for the day.
+          Capture every call. Even when you can't answer.
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-pretty text-base text-muted-foreground sm:text-lg">
-          Call Net answers your missed calls instantly, collects the lead's name, number, and need, and sends it to you by text. You call back. You close. You don't lose another dollar.
+          Call Net is your AI receptionist. It answers 24/7, captures the lead's name, number, and need, and texts you the summary in seconds. You call back. You close.
+        </p>
+        <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground">
+          Sign up and we'll email setup instructions in under 2 minutes. No credit card needed.
         </p>
         <a
           href="#trial"
