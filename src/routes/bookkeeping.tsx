@@ -202,6 +202,7 @@ function EmailCapture() {
       setError("Please enter a valid email address.");
       return;
     }
+    trackPixelFormSubmit();
     setSubmitting(true);
   }
 
