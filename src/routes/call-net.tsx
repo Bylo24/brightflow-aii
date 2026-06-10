@@ -197,3 +197,33 @@ function CallNetPage() {
     </div>
   );
 }
+
+function TryItNudge() {
+  const [open, setOpen] = useState(true);
+  useEffect(() => {
+    const t = window.setTimeout(() => setOpen(true), 1200);
+    return () => window.clearTimeout(t);
+  }, []);
+  if (!open) return null;
+  return (
+    <div className="pointer-events-none fixed bottom-24 right-4 z-40 sm:bottom-28 sm:right-6">
+      <div className="pointer-events-auto relative flex items-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background shadow-lg">
+        <span className="relative flex h-2 w-2">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+          <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+        </span>
+        Try it — talk to Call Net
+        <button
+          type="button"
+          onClick={() => setOpen(false)}
+          aria-label="Dismiss"
+          className="ml-1 rounded-full px-1 text-background/70 hover:text-background"
+        >
+          ×
+        </button>
+        <span className="absolute -bottom-1 right-6 h-3 w-3 rotate-45 bg-foreground" />
+      </div>
+    </div>
+  );
+}
+
