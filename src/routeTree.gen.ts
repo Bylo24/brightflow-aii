@@ -14,7 +14,6 @@ import { Route as SecurityRouteImport } from './routes/security'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as CallnetIndexRouteImport } from './routes/callnet.index'
 import { Route as BookkeepingIndexRouteImport } from './routes/bookkeeping.index'
 import { Route as BookkeepingThanksRouteImport } from './routes/bookkeeping.thanks'
 
@@ -43,11 +42,6 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CallnetIndexRoute = CallnetIndexRouteImport.update({
-  id: '/callnet/',
-  path: '/callnet/',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const BookkeepingIndexRoute = BookkeepingIndexRouteImport.update({
   id: '/bookkeeping/',
   path: '/bookkeeping/',
@@ -67,7 +61,6 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/bookkeeping/thanks': typeof BookkeepingThanksRoute
   '/bookkeeping/': typeof BookkeepingIndexRoute
-  '/callnet/': typeof CallnetIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -77,7 +70,6 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/bookkeeping/thanks': typeof BookkeepingThanksRoute
   '/bookkeeping': typeof BookkeepingIndexRoute
-  '/callnet': typeof CallnetIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -88,7 +80,6 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/bookkeeping/thanks': typeof BookkeepingThanksRoute
   '/bookkeeping/': typeof BookkeepingIndexRoute
-  '/callnet/': typeof CallnetIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -100,7 +91,6 @@ export interface FileRouteTypes {
     | '/terms'
     | '/bookkeeping/thanks'
     | '/bookkeeping/'
-    | '/callnet/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -110,7 +100,6 @@ export interface FileRouteTypes {
     | '/terms'
     | '/bookkeeping/thanks'
     | '/bookkeeping'
-    | '/callnet'
   id:
     | '__root__'
     | '/'
@@ -120,7 +109,6 @@ export interface FileRouteTypes {
     | '/terms'
     | '/bookkeeping/thanks'
     | '/bookkeeping/'
-    | '/callnet/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -131,7 +119,6 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   BookkeepingThanksRoute: typeof BookkeepingThanksRoute
   BookkeepingIndexRoute: typeof BookkeepingIndexRoute
-  CallnetIndexRoute: typeof CallnetIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -171,13 +158,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/callnet/': {
-      id: '/callnet/'
-      path: '/callnet'
-      fullPath: '/callnet/'
-      preLoaderRoute: typeof CallnetIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/bookkeeping/': {
       id: '/bookkeeping/'
       path: '/bookkeeping'
@@ -203,7 +183,6 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   BookkeepingThanksRoute: BookkeepingThanksRoute,
   BookkeepingIndexRoute: BookkeepingIndexRoute,
-  CallnetIndexRoute: CallnetIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
