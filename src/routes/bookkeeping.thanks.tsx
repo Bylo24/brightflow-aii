@@ -101,17 +101,12 @@ function ThanksPage() {
 
         {/* Inline Cal.com booking widget */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 pb-16">
-          <div
-            className="rounded-2xl border border-border bg-background overflow-hidden shadow-sm"
-            style={{ height: "780px" }}
-          >
-            <Cal
-              namespace={CAL_NAMESPACE}
-              calLink={CAL_LINK_SLUG}
-              style={{ width: "100%", height: "100%", overflow: "scroll" }}
-              config={{ layout: "month_view", useSlotsViewOnSmallScreen: "true" }}
-            />
-          </div>
+          <Cal
+            namespace={CAL_NAMESPACE}
+            calLink={CAL_LINK_SLUG}
+            style={{ width: "100%", height: "780px", overflow: "scroll" }}
+            config={{ layout: "month_view", useSlotsViewOnSmallScreen: "true" }}
+          />
 
           <p className="mt-6 text-center text-xs text-muted-foreground">
             Free for 2 weeks. No card. If you don't save 10 hours, you pay nothing.
