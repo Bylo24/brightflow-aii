@@ -91,7 +91,7 @@ function ThanksPage() {
           </div>
 
           <h1 className="mt-5 text-[34px] sm:text-5xl leading-[1.05] font-semibold tracking-[-0.035em] text-balance">
-            Pick a time to start your pilot.
+            Let's understand how your workflow runs.
           </h1>
 
           <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-md mx-auto">
