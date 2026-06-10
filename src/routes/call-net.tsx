@@ -87,9 +87,13 @@ function CallNetPage() {
               Tap the widget below and talk to Call Net like a real caller would.
             </p>
           </div>
-          <div className="flex min-h-[120px] items-center justify-center">
-            <elevenlabs-convai agent-id="agent_7001ks6yjp6rfbh9899wpb8kvy7t"></elevenlabs-convai>
-          </div>
+          <div
+            className="flex min-h-[120px] items-center justify-center"
+            dangerouslySetInnerHTML={{
+              __html:
+                '<elevenlabs-convai agent-id="agent_7001ks6yjp6rfbh9899wpb8kvy7t"></elevenlabs-convai>',
+            }}
+          />
         </div>
       </section>
 
