@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { ArrowRight, Check, Phone, MessageSquare, Zap } from "lucide-react";
 import { Wordmark } from "@/components/SiteChrome";
 
@@ -72,13 +72,38 @@ function CallNetPage() {
         </p>
       </section>
 
+      {/* Try it for yourself */}
+      <section className="mx-auto max-w-3xl px-6 pb-16">
+        <div className="relative overflow-hidden rounded-2xl border border-border bg-card p-6 sm:p-8">
+          <div className="flex flex-col items-center gap-3 text-center">
+            <div className="inline-flex items-center gap-2 rounded-full bg-foreground/5 px-3 py-1 text-xs font-medium text-foreground">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+              </span>
+              Live demo
+            </div>
+            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+              Try it for yourself
+            </h2>
+            <p className="max-w-md text-sm text-muted-foreground">
+              Tap the Call Net icon in the bottom-right of your screen and talk to it like a real caller would. No signup needed.
+            </p>
+            <div className="mt-2 flex items-center gap-2 text-xs font-medium text-muted-foreground">
+              <ArrowRight className="h-4 w-4 rotate-90" />
+              Look in the bottom-right corner
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Floating ElevenLabs widget */}
       <div
         dangerouslySetInnerHTML={{
           __html:
             '<elevenlabs-convai agent-id="agent_7001ks6yjp6rfbh9899wpb8kvy7t"></elevenlabs-convai>',
         }}
       />
-      <TryItNudge />
 
 
       {/* Problem / Solution */}
@@ -248,32 +273,4 @@ function CallNetPage() {
   );
 }
 
-function TryItNudge() {
-  const [open, setOpen] = useState(true);
-  useEffect(() => {
-    const t = window.setTimeout(() => setOpen(true), 1200);
-    return () => window.clearTimeout(t);
-  }, []);
-  if (!open) return null;
-  return (
-    <div className="pointer-events-none fixed bottom-[180px] right-5 z-[2147483646] sm:bottom-[200px] sm:right-6">
-      <div className="pointer-events-auto relative flex items-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background shadow-xl ring-1 ring-black/5">
-        <span className="relative flex h-2 w-2">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-          <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
-        </span>
-        Try it — talk to Call Net
-        <button
-          type="button"
-          onClick={() => setOpen(false)}
-          aria-label="Dismiss"
-          className="ml-1 rounded-full px-1 text-background/70 hover:text-background"
-        >
-          ×
-        </button>
-        <span className="absolute -bottom-1 right-6 h-3 w-3 rotate-45 bg-foreground" />
-      </div>
-    </div>
-  );
-}
 
