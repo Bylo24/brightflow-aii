@@ -137,7 +137,7 @@ function Hero() {
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-7 sm:mt-8 inline-flex items-center gap-2.5 rounded-full border-2 border-accent/50 bg-accent/10 px-4 py-2 shadow-[0_0_50px_-10px_hsl(168_72%_32%/0.5)]"
+            className="mt-5 sm:mt-6 inline-flex items-center gap-2.5 rounded-full border-2 border-accent/50 bg-accent/10 px-4 py-2 shadow-[0_0_50px_-10px_hsl(168_72%_32%/0.5)]"
           >
             <Check className="size-4 text-accent shrink-0" strokeWidth={3} />
             <span className="text-sm sm:text-base font-semibold tracking-tight">
