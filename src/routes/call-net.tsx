@@ -56,18 +56,20 @@ function CallNetPage() {
           Capture every call. Even when you can't answer.
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-pretty text-base text-muted-foreground sm:text-lg">
-          Call Net is your AI receptionist. It answers 24/7, captures the lead's name, number, and need, and texts you the summary in seconds. You call back. You close.
+          Call Net answers your missed calls instantly, collects the lead's name and number, and texts you the summary. You call back. You close. You never lose another lead.
         </p>
-        <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground">
-          Sign up and we'll email setup instructions in under 2 minutes. No credit card needed.
+        <p className="mx-auto mt-4 max-w-xl text-sm font-medium text-foreground">
+          It doesn't replace you. It only works when you can't.
         </p>
         <a
           href="#trial"
-          className="mt-7 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
+          className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
         >
           Start my 14-day free trial <ArrowRight className="h-4 w-4" />
         </a>
-        <p className="mt-3 text-xs text-muted-foreground">No credit card required.</p>
+        <p className="mt-3 text-xs text-muted-foreground">
+          No credit card needed. Setup instructions emailed in under 2 minutes.
+        </p>
       </section>
 
       <div
