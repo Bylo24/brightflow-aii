@@ -176,7 +176,7 @@ function CallNetPage() {
               "AI answers unlimited calls",
               "Instant text summaries",
               "Custom greeting (your brand voice)",
-              "14-day free trial — cancel anytime",
+              "14-day free trial — not charged until day 14",
             ].map((f) => (
               <li key={f} className="flex items-start gap-2">
                 <Check className="mt-0.5 h-4 w-4 flex-none" /> {f}
