@@ -211,7 +211,7 @@ function CallNetPage() {
             "I was worried about sounding like a robot to my customers. But Call Net only picks up when I'm on the other line or after hours. My callers still talk to me for the real conversation. I've captured 5 new jobs in 2 weeks."
           </blockquote>
           <figcaption className="mt-4 text-sm font-medium text-muted-foreground">
-            — Dave, Plumbing Pro
+            — Dave M., Plumbing Pro (Bristol, UK)
           </figcaption>
         </figure>
       </section>
