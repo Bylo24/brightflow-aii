@@ -98,14 +98,15 @@ function ThanksPage() {
           </p>
         </div>
 
-        {/* Inline Cal.com booking widget */}
+        {/* Inline Cal.com booking widget (iframe — reliable across browsers) */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 pb-16">
           <div className="rounded-2xl border border-border bg-background overflow-hidden shadow-sm">
-            <Cal
-              namespace={CAL_NAMESPACE}
-              calLink={CAL_LINK_SLUG}
-              style={{ width: "100%", height: "720px", overflow: "scroll", border: "0" }}
-              config={{ layout: "month_view" }}
+            <iframe
+              title="Book a 15-minute call"
+              src={`https://cal.com/${CAL_LINK_SLUG}?embed=true&layout=month_view`}
+              className="w-full block"
+              style={{ height: "780px", border: "0" }}
+              loading="lazy"
             />
           </div>
 
