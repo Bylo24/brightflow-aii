@@ -31,18 +31,6 @@ export const Route = createFileRoute("/callnet/")({
   component: CallNetPage,
 });
 
-// Allow custom element in JSX
-declare global {
-  // eslint-disable-next-line @typescript-eslint/no-namespace
-  namespace JSX {
-    interface IntrinsicElements {
-      "elevenlabs-convai": React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLElement> & { "agent-id"?: string },
-        HTMLElement
-      >;
-    }
-  }
-}
 
 function CallNetPage() {
   return (
