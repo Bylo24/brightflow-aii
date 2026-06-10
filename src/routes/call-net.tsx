@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useCallback, useState } from "react";
 import { ArrowRight, Check, Phone, MessageSquare, Zap, PhoneCall, PhoneOff } from "lucide-react";
 import { Wordmark } from "@/components/SiteChrome";
-import { useConversation } from "@elevenlabs/react";
+import { ConversationProvider, useConversation } from "@elevenlabs/react";
 
 
 
@@ -29,6 +29,21 @@ export const Route = createFileRoute("/call-net")({
 const AGENT_ID = "agent_7001ks6yjp6rfbh9899wpb8kvy7t";
 
 function CallNetPage() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
+  if (!mounted) {
+    return <div className="min-h-screen bg-background" />;
+  }
+  return (
+    <ConversationProvider>
+      <CallNetPageInner />
+    </ConversationProvider>
+  );
+}
+
+function CallNetPageInner() {
+
+
   const [starting, setStarting] = useState(false);
   const conversation = useConversation({
     onError: (err) => console.error("Call Net demo error:", err),
