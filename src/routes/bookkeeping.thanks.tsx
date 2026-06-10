@@ -103,11 +103,11 @@ function ThanksPage() {
 
         {/* Inline Cal.com booking widget */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 pb-16">
-          <div className="rounded-2xl border border-border bg-background overflow-hidden shadow-sm">
+          <div className="rounded-2xl border border-border bg-background overflow-hidden shadow-sm min-h-[680px]">
             <Cal
               namespace={CAL_NAMESPACE}
               calLink={CAL_LINK_SLUG}
-              style={{ width: "100%", height: "100%", overflow: "scroll" }}
+              style={{ width: "100%", height: "680px", overflow: "scroll" }}
               config={{ layout: "month_view" }}
             />
           </div>
