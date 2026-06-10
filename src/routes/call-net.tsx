@@ -187,16 +187,16 @@ function CallNetPage() {
             Or save 17% annually: <span className="font-medium text-foreground">$970/year</span> ($80.83/month — 2 months free vs. monthly).
           </p>
           <p className="mt-2 text-xs font-medium text-foreground">
-            Founding offer: first 50 customers get free setup and lifetime 10% off. Only 37 spots left.
+            Founding offer: first 50 customers get free setup + 10% off any plan for life. Use code <span className="font-mono">FOUNDER10</span> at checkout. Only 37 spots left.
           </p>
           <a
             href="#trial"
             className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
           >
-            Start my free trial — setup in 2 minutes <ArrowRight className="h-4 w-4" />
+            Start my 14-day free trial <ArrowRight className="h-4 w-4" />
           </a>
           <p className="mt-3 text-xs text-muted-foreground">
-            Credit card required so we can keep the trial abuse-free. You won't be charged until day 14 — cancel anytime in your dashboard and pay nothing.
+            Credit card required. You won't be charged until day 14 — cancel anytime in your dashboard and pay nothing.
           </p>
           <p className="mt-4 text-xs italic text-muted-foreground">
             You're still the owner. Call Net is just your backup. When you can't answer, we catch the lead. You call back. You close.
