@@ -149,7 +149,7 @@ function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-6 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed"
+            className="mt-4 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed"
           >
             We build the automation that chases your clients for you — live in under a week. If you don't save 10 hours by week 2, you pay nothing.
           </motion.p>
