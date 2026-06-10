@@ -156,7 +156,7 @@ function Hero() {
 
           <EmailCapture />
 
-          <ul className="mt-10 grid sm:grid-cols-3 gap-4 sm:gap-6 text-left max-w-2xl w-full">
+          <ul className="mt-7 grid sm:grid-cols-3 gap-4 sm:gap-6 text-left max-w-2xl w-full">
             {[
               "We build the automation around your tools — email, Drive, QBO, Xero.",
               "Live in under a week. Nothing for you to learn.",
