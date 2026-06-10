@@ -83,7 +83,6 @@ function BookkeepingPage() {
       <BookkeepingNav />
       <main>
         <Hero />
-        <HowItWorks />
         <Guarantee />
         <FAQ />
       </main>
