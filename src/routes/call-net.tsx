@@ -102,12 +102,12 @@ function CallNetPage() {
                 if (w?.open) w.open();
                 else w?.dispatchEvent(new Event('click', { bubbles: true }));
               }}
-              className="mt-2 inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background hover:opacity-90"
+              className="mt-2 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-base font-semibold text-background shadow-lg hover:opacity-90"
             >
-              Start the demo <ArrowRight className="h-4 w-4" />
+              Talk to Call Net now <ArrowRight className="h-4 w-4" />
             </button>
             <p className="text-xs text-muted-foreground">
-              Or tap the chat bubble in the bottom-right corner.
+              The demo opens in the chat bubble at the bottom-right of your screen.
             </p>
           </div>
         </div>
