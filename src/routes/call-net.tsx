@@ -77,10 +77,11 @@ function CallNetPage() {
             </p>
           </div>
           <div
-            className="flex min-h-[420px] w-full items-stretch justify-center [&>*]:w-full"
+            style={{ width: "100%", height: 560 }}
+            className="overflow-hidden rounded-xl [&>elevenlabs-convai]:!block [&>elevenlabs-convai]:!h-full [&>elevenlabs-convai]:!w-full [&>elevenlabs-convai]:!static"
             dangerouslySetInnerHTML={{
               __html:
-                '<elevenlabs-convai agent-id="agent_7001ks6yjp6rfbh9899wpb8kvy7t" variant="full"></elevenlabs-convai>',
+                '<elevenlabs-convai agent-id="agent_7001ks6yjp6rfbh9899wpb8kvy7t" variant="full" style="display:block;width:100%;height:100%;position:static;"></elevenlabs-convai>',
             }}
           />
         </div>
