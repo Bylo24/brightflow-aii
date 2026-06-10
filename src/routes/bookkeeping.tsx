@@ -224,10 +224,14 @@ function EmailCapture() {
       {/* honeypot */}
       <input type="text" name="_honey" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
 
+      <label htmlFor="bk-email" className="block text-left text-sm font-semibold tracking-tight mb-2 pl-1">
+        Email address
+      </label>
       <div className="flex flex-col sm:flex-row gap-2.5">
         <div className="relative flex-1">
           <Mail className="size-4 text-muted-foreground absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
           <input
+            id="bk-email"
             type="email"
             name="email"
             required
