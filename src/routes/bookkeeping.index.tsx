@@ -105,7 +105,7 @@ function BookkeepingNav() {
 /* ---------------- HERO + EMAIL CAPTURE ---------------- */
 function Hero() {
   return (
-    <section className="relative pt-16 sm:pt-24 md:pt-28 pb-20 sm:pb-28 overflow-hidden">
+    <section className="relative pt-10 sm:pt-16 md:pt-20 pb-12 sm:pb-16 overflow-hidden">
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,hsl(168_72%_32%/0.14),transparent_60%)]" />
         <div className="absolute inset-0 grid-bg [mask-image:radial-gradient(ellipse_60%_45%_at_50%_0%,#000_50%,transparent_100%)]" />
@@ -117,7 +117,7 @@ function Hero() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-7 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3.5 py-1.5 text-[11px] uppercase tracking-[0.18em] text-accent"
+            className="mb-5 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3.5 py-1.5 text-[11px] uppercase tracking-[0.18em] text-accent"
           >
             <span className="size-1.5 rounded-full bg-accent animate-pulse" />
             For bookkeepers
@@ -137,7 +137,7 @@ function Hero() {
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-7 sm:mt-8 inline-flex items-center gap-2.5 rounded-full border-2 border-accent/50 bg-accent/10 px-4 py-2 shadow-[0_0_50px_-10px_hsl(168_72%_32%/0.5)]"
+            className="mt-5 sm:mt-6 inline-flex items-center gap-2.5 rounded-full border-2 border-accent/50 bg-accent/10 px-4 py-2 shadow-[0_0_50px_-10px_hsl(168_72%_32%/0.5)]"
           >
             <Check className="size-4 text-accent shrink-0" strokeWidth={3} />
             <span className="text-sm sm:text-base font-semibold tracking-tight">
@@ -149,14 +149,14 @@ function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-6 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed"
+            className="mt-4 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed"
           >
             We build the automation that chases your clients for you — live in under a week. If you don't save 10 hours by week 2, you pay nothing.
           </motion.p>
 
           <EmailCapture />
 
-          <ul className="mt-10 grid sm:grid-cols-3 gap-4 sm:gap-6 text-left max-w-2xl w-full">
+          <ul className="mt-7 grid sm:grid-cols-3 gap-4 sm:gap-6 text-left max-w-2xl w-full">
             {[
               "We build the automation around your tools — email, Drive, QBO, Xero.",
               "Live in under a week. Nothing for you to learn.",
@@ -169,7 +169,7 @@ function Hero() {
             ))}
           </ul>
 
-          <div className="mt-10 text-sm text-muted-foreground italic">
+          <div className="mt-7 text-sm text-muted-foreground italic">
             Already helping bookkeepers save 12+ hours a month.
           </div>
           <div className="mt-2 text-xs uppercase tracking-[0.18em] text-accent font-semibold">
@@ -278,17 +278,17 @@ function EmailCapture() {
 /* ---------------- GUARANTEE ---------------- */
 function Guarantee() {
   return (
-    <section className="py-24 sm:py-32 border-t border-border/60 relative overflow-hidden">
+    <section className="py-14 sm:py-20 border-t border-border/60 relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,hsl(168_72%_32%/0.14),transparent_60%)]" />
       <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3.5 py-1.5 text-[11px] uppercase tracking-[0.18em] text-accent mb-8">
+        <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3.5 py-1.5 text-[11px] uppercase tracking-[0.18em] text-accent mb-5">
           <Shield className="size-3.5" /> 100% risk free
         </div>
         <h2 className="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
           Free for 2 weeks.{" "}
           <span className="font-serif italic font-normal text-accent">If you don't save 10 hours, you pay nothing.</span>
         </h2>
-        <p className="mt-7 text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
+        <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
           No contract. No card. No catch. You only pay if you decide to keep the system — and only based on the hours we give back. Otherwise, walk away. Completely up to you.
         </p>
       </div>
@@ -322,7 +322,7 @@ function FAQ() {
   ];
 
   return (
-    <section className="py-20 sm:py-28 border-t border-border/60 bg-secondary/40">
+    <section className="py-14 sm:py-20 border-t border-border/60 bg-secondary/40">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <h2 className="text-3xl sm:text-4xl font-semibold tracking-[-0.035em] text-center mb-10">
           Questions?
