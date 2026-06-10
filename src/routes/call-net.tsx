@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
-import { ArrowRight, Check, Phone, MessageSquare, Zap } from "lucide-react";
+import { useEffect, useCallback, useState } from "react";
+import { ArrowRight, Check, Phone, MessageSquare, Zap, PhoneCall, PhoneOff } from "lucide-react";
 import { Wordmark } from "@/components/SiteChrome";
+import { useConversation } from "@elevenlabs/react";
+
 
 
 export const Route = createFileRoute("/call-net")({
@@ -24,16 +26,40 @@ export const Route = createFileRoute("/call-net")({
   component: CallNetPage,
 });
 
+const AGENT_ID = "agent_7001ks6yjp6rfbh9899wpb8kvy7t";
+
 function CallNetPage() {
+  const [starting, setStarting] = useState(false);
+  const conversation = useConversation({
+    onError: (err) => console.error("Call Net demo error:", err),
+  });
+  const status = conversation.status;
+  const isActive = status === "connected" || status === "connecting";
+
+  const startDemo = useCallback(async () => {
+    if (isActive || starting) return;
+    setStarting(true);
+    try {
+      await navigator.mediaDevices.getUserMedia({ audio: true });
+      await conversation.startSession({ agentId: AGENT_ID, connectionType: "webrtc" });
+    } catch (err) {
+      console.error("Failed to start demo:", err);
+      alert("Couldn't start the demo. Please allow microphone access and try again.");
+    } finally {
+      setStarting(false);
+    }
+  }, [conversation, isActive, starting]);
+
+  const endDemo = useCallback(async () => {
+    try { await conversation.endSession(); } catch (err) { console.error(err); }
+  }, [conversation]);
+
   useEffect(() => {
-    if (document.querySelector('script[data-elevenlabs-convai]')) return;
-    const s = document.createElement("script");
-    s.src = "https://unpkg.com/@elevenlabs/convai-widget-embed";
-    s.async = true;
-    s.type = "text/javascript";
-    s.setAttribute("data-elevenlabs-convai", "true");
-    document.body.appendChild(s);
+    return () => { try { void conversation.endSession(); } catch { /* noop */ } };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -95,9 +121,32 @@ function CallNetPage() {
             <p className="max-w-md text-sm text-muted-foreground">
               Talk to Call Net like a real caller would — ask about pricing, book a job, or leave a message. Hear how it sounds before you sign up.
             </p>
-            <p className="mt-2 text-sm font-medium text-foreground">
-              Tap the chat bubble in the bottom-right corner of your screen to start.
+            {!isActive ? (
+              <button
+                type="button"
+                onClick={startDemo}
+                disabled={starting}
+                className="mt-2 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-base font-semibold text-background shadow-lg hover:opacity-90 disabled:opacity-60"
+              >
+                <PhoneCall className="h-4 w-4" />
+                {starting ? "Connecting…" : "Talk to Call Net now"}
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={endDemo}
+                className="mt-2 inline-flex items-center gap-2 rounded-full bg-destructive px-6 py-3 text-base font-semibold text-destructive-foreground shadow-lg hover:opacity-90"
+              >
+                <PhoneOff className="h-4 w-4" />
+                End call
+              </button>
+            )}
+            <p className="text-xs text-muted-foreground">
+              {isActive
+                ? conversation.isSpeaking ? "Call Net is speaking…" : "Listening — go ahead and talk."
+                : "You'll be asked to allow microphone access."}
             </p>
+
           </div>
         </div>
       </section>
@@ -175,13 +224,10 @@ function CallNetPage() {
       </section>
 
 
-      {/* Floating ElevenLabs widget */}
-      <div
-        dangerouslySetInnerHTML={{
-          __html:
-            '<elevenlabs-convai agent-id="agent_7001ks6yjp6rfbh9899wpb8kvy7t"></elevenlabs-convai>',
-        }}
-      />
+
+
+
+
 
 
 
