@@ -11,7 +11,7 @@ const FORMSUBMIT_ENDPOINT = `https://formsubmit.co/${FORMSUBMIT_EMAIL}`;
 
 // Meta Pixel
 const META_PIXEL_ID = "2085592105635483";
-const META_PIXEL_EVENT = "Form: 2085592105635483";
+
 
 declare global {
   interface Window {
