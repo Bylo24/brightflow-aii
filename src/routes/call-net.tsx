@@ -55,9 +55,10 @@ function CallNetPage() {
   }, [conversation]);
 
   useEffect(() => {
-    return () => { conversation.endSession().catch(() => {}); };
+    return () => { try { void conversation.endSession(); } catch { /* noop */ } };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
 
 
   return (
