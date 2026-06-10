@@ -56,7 +56,7 @@ function CallNetPage() {
           Capture every call. Even when you can't answer.
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-pretty text-base text-muted-foreground sm:text-lg">
-          Call Net answers your missed calls instantly, collects the lead's name and number, and texts you the summary. You call back. You close. You never lose another lead.
+          Call Net answers missed calls, collects lead info, and texts you the summary. You call back. You close.
         </p>
         <p className="mx-auto mt-4 max-w-xl text-sm font-medium text-foreground">
           It doesn't replace you. It only works when you can't.
@@ -65,11 +65,17 @@ function CallNetPage() {
           href="#trial"
           className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
         >
-          Start my free trial — setup in 2 minutes <ArrowRight className="h-4 w-4" />
+          Start my 14-day free trial <ArrowRight className="h-4 w-4" />
         </a>
         <p className="mt-3 text-xs text-muted-foreground">
-          Credit card required — you won't be charged until your trial ends. Cancel anytime in your dashboard.
+          Credit card required. You won't be charged until day 14. Cancel anytime in your dashboard.
         </p>
+        <div className="mx-auto mt-8 flex max-w-xl flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
+          <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5" /> Setup in 2 minutes</span>
+          <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5" /> Cancel anytime</span>
+          <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5" /> SSL secured checkout</span>
+          <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5" /> Trusted by local trade businesses</span>
+        </div>
       </section>
 
       {/* Try it for yourself */}
