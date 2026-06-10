@@ -29,6 +29,15 @@ export const Route = createFileRoute("/call-net")({
 const AGENT_ID = "agent_7001ks6yjp6rfbh9899wpb8kvy7t";
 
 function CallNetPage() {
+  return (
+    <ConversationProvider>
+      <CallNetPageInner />
+    </ConversationProvider>
+  );
+}
+
+function CallNetPageInner() {
+
   const [starting, setStarting] = useState(false);
   const conversation = useConversation({
     onError: (err) => console.error("Call Net demo error:", err),
