@@ -56,18 +56,20 @@ function CallNetPage() {
           Capture every call. Even when you can't answer.
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-pretty text-base text-muted-foreground sm:text-lg">
-          Call Net is your AI receptionist. It answers 24/7, captures the lead's name, number, and need, and texts you the summary in seconds. You call back. You close.
+          Call Net answers your missed calls instantly, collects the lead's name and number, and texts you the summary. You call back. You close. You never lose another lead.
         </p>
-        <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground">
-          Sign up and we'll email setup instructions in under 2 minutes. No credit card needed.
+        <p className="mx-auto mt-4 max-w-xl text-sm font-medium text-foreground">
+          It doesn't replace you. It only works when you can't.
         </p>
         <a
           href="#trial"
-          className="mt-7 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
+          className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
         >
           Start my 14-day free trial <ArrowRight className="h-4 w-4" />
         </a>
-        <p className="mt-3 text-xs text-muted-foreground">No credit card required.</p>
+        <p className="mt-3 text-xs text-muted-foreground">
+          No credit card needed. Setup instructions emailed in under 2 minutes.
+        </p>
       </section>
 
       <div
@@ -123,11 +125,11 @@ function CallNetPage() {
         <h2 className="text-center text-3xl font-semibold tracking-tight">Why Call Net</h2>
         <ul className="mx-auto mt-8 grid max-w-2xl gap-3">
           {[
-            "Zero missed opportunities — every call becomes a lead.",
-            "No voicemail purgatory — callers get a helpful conversation, not a generic beep.",
-            "Affordable — costs less than a coffee per day.",
-            "No hardware — works with your existing phone number.",
-            "Try free for 14 days — no risk, no contract.",
+            "Only works when you miss a call — you stay the main point of contact.",
+            "Callers don't get voicemail — they talk to a helpful AI, leave their info, and hang up happy.",
+            "You get a text summary — name, number, reason for calling. You call them back.",
+            "No setup headaches — forward your existing number in 2 minutes.",
+            "Try free for 14 days — no risk, no contract, cancel anytime.",
           ].map((b) => (
             <li key={b} className="flex items-start gap-3 rounded-xl border border-border bg-card p-4">
               <Check className="mt-0.5 h-5 w-5 flex-none text-foreground" />
@@ -170,8 +172,53 @@ function CallNetPage() {
           <p className="mt-3 text-xs text-muted-foreground">
             Cancel anytime in the trial and pay nothing. No credit card required to start.
           </p>
+          <p className="mt-4 text-xs italic text-muted-foreground">
+            You're still the owner. Call Net is just your backup. When you can't answer, we catch the lead. You call back. You close.
+          </p>
         </div>
       </section>
+
+      {/* Testimonial */}
+      <section className="mx-auto max-w-3xl px-6 py-12">
+        <figure className="rounded-2xl border border-border bg-card p-8 text-center">
+          <blockquote className="text-base leading-relaxed sm:text-lg">
+            "I was worried about sounding like a robot to my customers. But Call Net only picks up when I'm on the other line or after hours. My callers still talk to me for the real conversation. I've captured 5 new jobs in 2 weeks."
+          </blockquote>
+          <figcaption className="mt-4 text-sm font-medium text-muted-foreground">
+            — Dave, Plumbing Pro
+          </figcaption>
+        </figure>
+      </section>
+
+      {/* FAQ */}
+      <section className="mx-auto max-w-3xl px-6 py-12">
+        <h2 className="text-center text-3xl font-semibold tracking-tight">FAQ</h2>
+        <div className="mt-8 space-y-4">
+          {[
+            {
+              q: "Will Call Net replace my receptionist or annoy my callers?",
+              a: "No. Call Net only answers when you can't — after hours, during lunch, or when you're already on another call. Your callers get a helpful conversation, leave their info, and you call them back. It's you they close with. Call Net just makes sure you never miss the chance.",
+            },
+            {
+              q: "How fast is setup?",
+              a: "Under 2 minutes. You forward your existing business line to Call Net (24/7 or only when you don't pick up). We email setup instructions the moment you sign up.",
+            },
+            {
+              q: "What happens during the 14-day trial?",
+              a: "Full access to every feature. No credit card required to start. Cancel anytime inside the trial and pay nothing.",
+            },
+          ].map((f) => (
+            <details key={f.q} className="group rounded-xl border border-border bg-card p-5">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-medium">
+                {f.q}
+                <span className="text-muted-foreground transition group-open:rotate-45">+</span>
+              </summary>
+              <p className="mt-3 text-sm text-muted-foreground">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
 
 
 
@@ -209,7 +256,7 @@ function TryItNudge() {
   }, []);
   if (!open) return null;
   return (
-    <div className="pointer-events-none fixed bottom-[110px] right-5 z-[2147483646] sm:bottom-[120px] sm:right-6">
+    <div className="pointer-events-none fixed bottom-[180px] right-5 z-[2147483646] sm:bottom-[200px] sm:right-6">
       <div className="pointer-events-auto relative flex items-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background shadow-xl ring-1 ring-black/5">
         <span className="relative flex h-2 w-2">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
