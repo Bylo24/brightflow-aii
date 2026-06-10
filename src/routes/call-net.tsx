@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { ArrowRight, Check, Phone, MessageSquare, Zap } from "lucide-react";
 import { Wordmark } from "@/components/SiteChrome";
 
