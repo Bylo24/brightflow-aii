@@ -44,8 +44,9 @@ function installMetaPixel() {
     s.parentNode.insertBefore(t, s);
   })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
   /* eslint-enable */
-  (window.fbq as (...args: unknown[]) => void)("init", META_PIXEL_ID);
-  (window.fbq as (...args: unknown[]) => void)("track", "PageView");
+  const fbq = window.fbq as unknown as (...args: unknown[]) => void;
+  fbq("init", META_PIXEL_ID);
+  fbq("track", "PageView");
 }
 
 function trackPixelFormSubmit() {
