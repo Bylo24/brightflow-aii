@@ -73,6 +73,7 @@ function CallNetPage() {
             '<elevenlabs-convai agent-id="agent_7001ks6yjp6rfbh9899wpb8kvy7t"></elevenlabs-convai>',
         }}
       />
+      <TryItNudge />
 
 
       {/* Problem / Solution */}
