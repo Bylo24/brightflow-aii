@@ -228,7 +228,9 @@ function TryItYourself() {
         </p>
 
         <div className="mt-8 flex justify-center">
-          <elevenlabs-convai agent-id="agent_7001ks6yjp6rfbh9899wpb8kvy7t"></elevenlabs-convai>
+          {React.createElement("elevenlabs-convai", {
+            "agent-id": "agent_7001ks6yjp6rfbh9899wpb8kvy7t",
+          })}
         </div>
       </div>
     </section>
