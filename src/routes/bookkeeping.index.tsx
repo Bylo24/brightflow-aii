@@ -83,7 +83,6 @@ function BookkeepingPage() {
       <BookkeepingNav />
       <main>
         <Hero />
-        <HowItWorks />
         <Guarantee />
         <FAQ />
       </main>
@@ -183,6 +182,7 @@ function Hero() {
 }
 
 function EmailCapture() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -206,6 +206,10 @@ function EmailCapture() {
     setSubmitting(true);
   }
 
+  const nextUrl = thanksOrigin
+    ? `${thanksOrigin}/bookkeeping/thanks?email=${encodeURIComponent(email)}${name ? `&name=${encodeURIComponent(name)}` : ""}`
+    : "";
+
   return (
     <form
       id="email-form"
@@ -218,11 +222,25 @@ function EmailCapture() {
       <input type="hidden" name="_subject" value="New bookkeeping pilot lead" />
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_captcha" value="false" />
-      {thanksOrigin && (
-        <input type="hidden" name="_next" value={`${thanksOrigin}/bookkeeping/thanks`} />
-      )}
+      {nextUrl && <input type="hidden" name="_next" value={nextUrl} />}
       {/* honeypot */}
       <input type="text" name="_honey" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
+
+      <label htmlFor="bk-name" className="block text-left text-sm font-semibold tracking-tight mb-2 pl-1">
+        Your name
+      </label>
+      <input
+        id="bk-name"
+        type="text"
+        name="name"
+        required
+        maxLength={120}
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        placeholder="Jane Smith"
+        className="w-full h-12 sm:h-14 px-4 rounded-full border border-border bg-background text-base outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition mb-3"
+        aria-label="Your name"
+      />
 
       <label htmlFor="bk-email" className="block text-left text-sm font-semibold tracking-tight mb-2 pl-1">
         Email address
@@ -266,47 +284,6 @@ function EmailCapture() {
   );
 }
 
-/* ---------------- HOW IT WORKS ---------------- */
-function HowItWorks() {
-  const steps = [
-    { num: "01", title: "Drop your email", body: "We send you the pilot info — what it covers, what we'll automate, what you get back." },
-    { num: "02", title: "We build it in days", body: "Around your stack. Email, Drive, QBO, Xero. Nothing for you to learn." },
-    { num: "03", title: "You close on time", body: "Docs land. Reminders run. You stop chasing. If you don't save 10 hours, you pay nothing." },
-  ];
-
-  return (
-    <section className="py-20 sm:py-28 border-t border-border/60">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4">How it works</div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
-            Live in a week.{" "}
-            <span className="font-serif italic font-normal text-accent">Hours back forever.</span>
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border/70 border border-border/70 rounded-2xl overflow-hidden">
-          {steps.map((s, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="bg-background p-8 sm:p-10 min-h-[200px] flex flex-col gap-4"
-            >
-              <div className="size-10 rounded-full border border-accent/40 bg-accent/10 text-accent flex items-center justify-center text-xs font-mono font-semibold">
-                {s.num}
-              </div>
-              <h3 className="text-xl font-semibold tracking-tight">{s.title}</h3>
-              <p className="text-[15px] text-muted-foreground leading-relaxed">{s.body}</p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ---------------- GUARANTEE ---------------- */
 function Guarantee() {
@@ -324,14 +301,6 @@ function Guarantee() {
         <p className="mt-7 text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
           No contract. No card. No catch. You only pay if you decide to keep the system — and only based on the hours we give back. Otherwise, walk away. Completely up to you.
         </p>
-        <div className="mt-10">
-          <a
-            href="#email-form"
-            className="btn btn-lg btn-neutral rounded-full text-base"
-          >
-            Start my free pilot <ArrowRight className="size-4" />
-          </a>
-        </div>
       </div>
     </section>
   );
