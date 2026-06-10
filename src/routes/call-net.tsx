@@ -77,10 +77,10 @@ function CallNetPage() {
             </p>
           </div>
           <div
-            className="flex min-h-[120px] items-center justify-center"
+            className="flex min-h-[420px] w-full items-stretch justify-center [&>*]:w-full"
             dangerouslySetInnerHTML={{
               __html:
-                '<elevenlabs-convai agent-id="agent_7001ks6yjp6rfbh9899wpb8kvy7t"></elevenlabs-convai>',
+                '<elevenlabs-convai agent-id="agent_7001ks6yjp6rfbh9899wpb8kvy7t" variant="full"></elevenlabs-convai>',
             }}
           />
         </div>
