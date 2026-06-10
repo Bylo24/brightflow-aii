@@ -65,10 +65,10 @@ function CallNetPage() {
           href="#trial"
           className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
         >
-          Start my 14-day free trial <ArrowRight className="h-4 w-4" />
+          Start my free trial — setup in 2 minutes <ArrowRight className="h-4 w-4" />
         </a>
         <p className="mt-3 text-xs text-muted-foreground">
-          No credit card needed. Setup instructions emailed in under 2 minutes.
+          Credit card required — you won't be charged until your trial ends. Cancel anytime in your dashboard.
         </p>
       </section>
 
@@ -84,15 +84,25 @@ function CallNetPage() {
               Live demo
             </div>
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-              Try it for yourself
+              Try a live demo
             </h2>
             <p className="max-w-md text-sm text-muted-foreground">
-              Tap the Call Net icon in the bottom-right of your screen and talk to it like a real caller would. No signup needed.
+              Talk to Call Net like a real caller would — ask about pricing, book a job, or leave a message. Hear how it sounds before you sign up.
             </p>
-            <div className="mt-2 flex items-center gap-2 text-xs font-medium text-muted-foreground">
-              <ArrowRight className="h-4 w-4 rotate-90" />
-              Look in the bottom-right corner
-            </div>
+            <button
+              type="button"
+              onClick={() => {
+                const w = document.querySelector('elevenlabs-convai') as (HTMLElement & { open?: () => void }) | null;
+                if (w?.open) w.open();
+                else w?.dispatchEvent(new Event('click', { bubbles: true }));
+              }}
+              className="mt-2 inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background hover:opacity-90"
+            >
+              Start the demo <ArrowRight className="h-4 w-4" />
+            </button>
+            <p className="text-xs text-muted-foreground">
+              Or tap the chat bubble in the bottom-right corner.
+            </p>
           </div>
         </div>
       </section>
@@ -106,23 +116,8 @@ function CallNetPage() {
       />
 
 
-      {/* Problem / Solution */}
-      <section className="mx-auto max-w-4xl px-6 py-12">
-        <div className="grid gap-6 sm:grid-cols-2">
-          <div className="rounded-2xl border border-border bg-card p-6">
-            <h3 className="text-lg font-semibold">The problem</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Every missed call is a potential client who hangs up and calls your competitor. You're losing money every time your phone rings and you can't answer.
-            </p>
-          </div>
-          <div className="rounded-2xl border border-border bg-card p-6">
-            <h3 className="text-lg font-semibold">The solution</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Call Net is your AI receptionist. It answers calls 24/7, speaks naturally, captures the lead's details, and texts you the summary within seconds.
-            </p>
-          </div>
-        </div>
-      </section>
+
+
 
       {/* How it works */}
       <section className="mx-auto max-w-5xl px-6 py-12">
@@ -154,7 +149,7 @@ function CallNetPage() {
             "Callers don't get voicemail — they talk to a helpful AI, leave their info, and hang up happy.",
             "You get a text summary — name, number, reason for calling. You call them back.",
             "No setup headaches — forward your existing number in 2 minutes.",
-            "Try free for 14 days — no risk, no contract, cancel anytime.",
+            "Try free for 14 days — cancel anytime in your dashboard, no contract.",
           ].map((b) => (
             <li key={b} className="flex items-start gap-3 rounded-xl border border-border bg-card p-4">
               <Check className="mt-0.5 h-5 w-5 flex-none text-foreground" />
@@ -183,19 +178,19 @@ function CallNetPage() {
             ))}
           </ul>
           <p className="mt-6 text-sm text-muted-foreground">
-            Annual: <span className="font-medium text-foreground">$970/year</span> — that's ~$80.83/month, 2 months free vs. monthly billing.
+            Or save 17% annually: <span className="font-medium text-foreground">$970/year</span> ($80.83/month — 2 months free vs. monthly).
           </p>
-          <p className="mt-2 text-xs text-muted-foreground">
-            First 50 customers get free setup and lifetime 10% off.
+          <p className="mt-2 text-xs font-medium text-foreground">
+            Founding offer: first 50 customers get free setup and lifetime 10% off. Only 37 spots left.
           </p>
           <a
             href="#trial"
             className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
           >
-            Start my 14-day free trial <ArrowRight className="h-4 w-4" />
+            Start my free trial — setup in 2 minutes <ArrowRight className="h-4 w-4" />
           </a>
           <p className="mt-3 text-xs text-muted-foreground">
-            Cancel anytime in the trial and pay nothing. No credit card required to start.
+            Credit card required so we can keep the trial abuse-free. You won't be charged until day 14 — cancel anytime in your dashboard and pay nothing.
           </p>
           <p className="mt-4 text-xs italic text-muted-foreground">
             You're still the owner. Call Net is just your backup. When you can't answer, we catch the lead. You call back. You close.
@@ -233,13 +228,10 @@ function CallNetPage() {
               a: "Full access to every feature. No credit card required to start. Cancel anytime inside the trial and pay nothing.",
             },
           ].map((f) => (
-            <details key={f.q} className="group rounded-xl border border-border bg-card p-5">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-medium">
-                {f.q}
-                <span className="text-muted-foreground transition group-open:rotate-45">+</span>
-              </summary>
-              <p className="mt-3 text-sm text-muted-foreground">{f.a}</p>
-            </details>
+            <div key={f.q} className="rounded-xl border border-border bg-card p-5">
+              <h3 className="text-sm font-semibold">{f.q}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{f.a}</p>
+            </div>
           ))}
         </div>
       </section>
@@ -253,15 +245,15 @@ function CallNetPage() {
           Stop losing money to missed calls.
         </h2>
         <p className="mt-3 text-muted-foreground">
-          Try Call Net free for 14 days. No credit card required.
+          Start your 14-day free trial. Setup takes 2 minutes. Cancel anytime in your dashboard.
         </p>
         <a
           href="mailto:samuel@brightflowagency.com?subject=Call%20Net%20free%20trial"
           className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
         >
-          Start my 14-day free trial <ArrowRight className="h-4 w-4" />
+          Start my free trial — setup in 2 minutes <ArrowRight className="h-4 w-4" />
         </a>
-        <p className="mt-3 text-xs text-muted-foreground">Cancel anytime. No contract.</p>
+        <p className="mt-3 text-xs text-muted-foreground">Credit card required. You won't be charged until day 14.</p>
       </section>
 
       <footer className="border-t border-border">
