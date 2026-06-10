@@ -288,7 +288,7 @@ function Guarantee() {
           Free for 2 weeks.{" "}
           <span className="font-serif italic font-normal text-accent">If you don't save 10 hours, you pay nothing.</span>
         </h2>
-        <p className="mt-7 text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
+        <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
           No contract. No card. No catch. You only pay if you decide to keep the system — and only based on the hours we give back. Otherwise, walk away. Completely up to you.
         </p>
       </div>
