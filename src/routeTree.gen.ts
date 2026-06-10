@@ -13,8 +13,8 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SecurityRouteImport } from './routes/security'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as BookkeepingRouteImport } from './routes/bookkeeping'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BookkeepingIndexRouteImport } from './routes/bookkeeping.index'
 import { Route as BookkeepingThanksRouteImport } from './routes/bookkeeping.thanks'
 
 const TermsRoute = TermsRouteImport.update({
@@ -37,87 +37,88 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BookkeepingRoute = BookkeepingRouteImport.update({
-  id: '/bookkeeping',
-  path: '/bookkeeping',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BookkeepingIndexRoute = BookkeepingIndexRouteImport.update({
+  id: '/bookkeeping/',
+  path: '/bookkeeping/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BookkeepingThanksRoute = BookkeepingThanksRouteImport.update({
-  id: '/thanks',
-  path: '/thanks',
-  getParentRoute: () => BookkeepingRoute,
+  id: '/bookkeeping/thanks',
+  path: '/bookkeeping/thanks',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/bookkeeping': typeof BookkeepingRouteWithChildren
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
   '/terms': typeof TermsRoute
   '/bookkeeping/thanks': typeof BookkeepingThanksRoute
+  '/bookkeeping/': typeof BookkeepingIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/bookkeeping': typeof BookkeepingRouteWithChildren
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
   '/terms': typeof TermsRoute
   '/bookkeeping/thanks': typeof BookkeepingThanksRoute
+  '/bookkeeping': typeof BookkeepingIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/bookkeeping': typeof BookkeepingRouteWithChildren
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
   '/terms': typeof TermsRoute
   '/bookkeeping/thanks': typeof BookkeepingThanksRoute
+  '/bookkeeping/': typeof BookkeepingIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/bookkeeping'
     | '/contact'
     | '/privacy'
     | '/security'
     | '/terms'
     | '/bookkeeping/thanks'
+    | '/bookkeeping/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/bookkeeping'
     | '/contact'
     | '/privacy'
     | '/security'
     | '/terms'
     | '/bookkeeping/thanks'
+    | '/bookkeeping'
   id:
     | '__root__'
     | '/'
-    | '/bookkeeping'
     | '/contact'
     | '/privacy'
     | '/security'
     | '/terms'
     | '/bookkeeping/thanks'
+    | '/bookkeeping/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  BookkeepingRoute: typeof BookkeepingRouteWithChildren
   ContactRoute: typeof ContactRoute
   PrivacyRoute: typeof PrivacyRoute
   SecurityRoute: typeof SecurityRoute
   TermsRoute: typeof TermsRoute
+  BookkeepingThanksRoute: typeof BookkeepingThanksRoute
+  BookkeepingIndexRoute: typeof BookkeepingIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -150,13 +151,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/bookkeeping': {
-      id: '/bookkeeping'
-      path: '/bookkeeping'
-      fullPath: '/bookkeeping'
-      preLoaderRoute: typeof BookkeepingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -164,36 +158,42 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/bookkeeping/': {
+      id: '/bookkeeping/'
+      path: '/bookkeeping'
+      fullPath: '/bookkeeping/'
+      preLoaderRoute: typeof BookkeepingIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/bookkeeping/thanks': {
       id: '/bookkeeping/thanks'
-      path: '/thanks'
+      path: '/bookkeeping/thanks'
       fullPath: '/bookkeeping/thanks'
       preLoaderRoute: typeof BookkeepingThanksRouteImport
-      parentRoute: typeof BookkeepingRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
 
-interface BookkeepingRouteChildren {
-  BookkeepingThanksRoute: typeof BookkeepingThanksRoute
-}
-
-const BookkeepingRouteChildren: BookkeepingRouteChildren = {
-  BookkeepingThanksRoute: BookkeepingThanksRoute,
-}
-
-const BookkeepingRouteWithChildren = BookkeepingRoute._addFileChildren(
-  BookkeepingRouteChildren,
-)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  BookkeepingRoute: BookkeepingRouteWithChildren,
   ContactRoute: ContactRoute,
   PrivacyRoute: PrivacyRoute,
   SecurityRoute: SecurityRoute,
   TermsRoute: TermsRoute,
+  BookkeepingThanksRoute: BookkeepingThanksRoute,
+  BookkeepingIndexRoute: BookkeepingIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

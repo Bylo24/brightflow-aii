@@ -55,7 +55,7 @@ function trackPixelFormSubmit() {
   fbq("track", "Lead");
 }
 
-export const Route = createFileRoute("/bookkeeping")({
+export const Route = createFileRoute("/bookkeeping/")({
   head: () => ({
     meta: [
       { title: "Save 10 hours on your month end in 2 weeks — or you don't pay | BrightFlow AI" },
