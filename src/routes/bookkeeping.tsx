@@ -51,8 +51,8 @@ function installMetaPixel() {
 
 function trackPixelFormSubmit() {
   if (typeof window === "undefined" || !window.fbq) return;
-  window.fbq("trackCustom", META_PIXEL_EVENT);
-  window.fbq("track", "Lead");
+  const fbq = window.fbq as unknown as (...args: unknown[]) => void;
+  fbq("track", "Lead");
 }
 
 export const Route = createFileRoute("/bookkeeping")({
