@@ -169,7 +169,7 @@ function Hero() {
             ))}
           </ul>
 
-          <div className="mt-10 text-sm text-muted-foreground italic">
+          <div className="mt-7 text-sm text-muted-foreground italic">
             Already helping bookkeepers save 12+ hours a month.
           </div>
           <div className="mt-2 text-xs uppercase tracking-[0.18em] text-accent font-semibold">
