@@ -163,31 +163,24 @@ function CallNetPage() {
             ))}
           </ul>
           <p className="mt-6 text-sm text-muted-foreground">
-            Annual: <span className="font-medium text-foreground">$970/year</span> (save 17%) — 2 months free.
+            Annual: <span className="font-medium text-foreground">$970/year</span> — that's ~$80.83/month, 2 months free vs. monthly billing.
+          </p>
+          <p className="mt-2 text-xs text-muted-foreground">
+            First 50 customers get free setup and lifetime 10% off.
           </p>
           <a
             href="#trial"
             className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
           >
-            Claim my free trial <ArrowRight className="h-4 w-4" />
+            Start my 14-day free trial <ArrowRight className="h-4 w-4" />
           </a>
+          <p className="mt-3 text-xs text-muted-foreground">
+            Cancel anytime in the trial and pay nothing. No credit card required to start.
+          </p>
         </div>
       </section>
 
-      {/* Social proof */}
-      <section className="mx-auto max-w-4xl px-6 py-12">
-        <div className="grid gap-6 sm:grid-cols-2">
-          {[
-            { q: "I was skeptical, but Call Net caught a $2,500 job on my first day. The caller said they loved talking to 'someone' immediately.", a: "Dave, Plumbing Pro" },
-            { q: "Best $97 I spend. I used to lose 5–10 calls a week. Now I get all of them.", a: "Sarah, Dental Clinic" },
-          ].map((t) => (
-            <figure key={t.a} className="rounded-2xl border border-border bg-card p-6">
-              <blockquote className="text-sm leading-relaxed">"{t.q}"</blockquote>
-              <figcaption className="mt-4 text-xs font-medium text-muted-foreground">— {t.a}</figcaption>
-            </figure>
-          ))}
-        </div>
-      </section>
+
 
       {/* Final CTA */}
       <section id="trial" className="mx-auto max-w-3xl px-6 py-16 text-center">
