@@ -9,6 +9,51 @@ import { Wordmark, Footer } from "@/components/SiteChrome";
 const FORMSUBMIT_EMAIL = "samuel@brightflowagency.com";
 const FORMSUBMIT_ENDPOINT = `https://formsubmit.co/${FORMSUBMIT_EMAIL}`;
 
+// Meta Pixel
+const META_PIXEL_ID = "2085592105635483";
+const META_PIXEL_EVENT = "Form: 2085592105635483";
+
+declare global {
+  interface Window {
+    fbq?: ((...args: unknown[]) => void) & { callMethod?: unknown; queue?: unknown[] };
+    _fbq?: unknown;
+  }
+}
+
+function installMetaPixel() {
+  if (typeof window === "undefined") return;
+  if (window.fbq) return;
+  /* eslint-disable */
+  (function (f: any, b: Document, e: string, v: string) {
+    let n: any;
+    let t: any;
+    let s: any;
+    if (f.fbq) return;
+    n = f.fbq = function () {
+      n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+    };
+    if (!f._fbq) f._fbq = n;
+    n.push = n;
+    n.loaded = !0;
+    n.version = "2.0";
+    n.queue = [];
+    t = b.createElement(e) as HTMLScriptElement;
+    t.async = !0;
+    t.src = v;
+    s = b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t, s);
+  })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+  /* eslint-enable */
+  window.fbq?.("init", META_PIXEL_ID);
+  window.fbq?.("track", "PageView");
+}
+
+function trackPixelFormSubmit() {
+  if (typeof window === "undefined" || !window.fbq) return;
+  window.fbq("trackCustom", META_PIXEL_EVENT);
+  window.fbq("track", "Lead");
+}
+
 export const Route = createFileRoute("/bookkeeping")({
   head: () => ({
     meta: [
