@@ -201,11 +201,16 @@ function CallNetPage() {
           href="mailto:samuel@brightflowagency.com?subject=Call%20Net%20free%20trial"
           className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
         >
-          Claim my free trial <ArrowRight className="h-4 w-4" />
+          Start my 14-day free trial <ArrowRight className="h-4 w-4" />
         </a>
+        <p className="mt-3 text-xs text-muted-foreground">Cancel anytime. No contract.</p>
       </section>
 
-      <Footer />
+      <footer className="border-t border-border">
+        <div className="mx-auto max-w-6xl px-6 py-8 text-center text-xs text-muted-foreground">
+          Call Net — AI lead capture for small business. © 2026.
+        </div>
+      </footer>
     </div>
   );
 }
