@@ -28,11 +28,26 @@ export const Route = createFileRoute("/call-net")({
 
 const AGENT_ID = "agent_7001ks6yjp6rfbh9899wpb8kvy7t";
 
+function CallNetLoading() {
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      <div className="mx-auto flex min-h-screen max-w-md flex-col items-center justify-center px-6 text-center">
+        <div className="relative flex h-14 w-14 items-center justify-center rounded-full bg-foreground/5">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500/30" />
+          <Phone className="relative h-6 w-6 text-foreground" />
+        </div>
+        <p className="mt-5 text-sm font-medium text-foreground">Warming up Call Net…</p>
+        <p className="mt-1 text-xs text-muted-foreground">Getting the live demo ready. This only takes a second.</p>
+      </div>
+    </div>
+  );
+}
+
 function CallNetPage() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => { setMounted(true); }, []);
   if (!mounted) {
-    return <div className="min-h-screen bg-background" />;
+    return <CallNetLoading />;
   }
   return (
     <ConversationProvider>
