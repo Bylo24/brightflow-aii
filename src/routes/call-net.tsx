@@ -56,7 +56,7 @@ function CallNetPage() {
           Capture every call. Even when you can't answer.
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-pretty text-base text-muted-foreground sm:text-lg">
-          Call Net answers your missed calls instantly, collects the lead's name and number, and texts you the summary. You call back. You close. You never lose another lead.
+          Call Net answers missed calls, collects lead info, and texts you the summary. You call back. You close.
         </p>
         <p className="mx-auto mt-4 max-w-xl text-sm font-medium text-foreground">
           It doesn't replace you. It only works when you can't.
@@ -65,11 +65,17 @@ function CallNetPage() {
           href="#trial"
           className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
         >
-          Start my free trial — setup in 2 minutes <ArrowRight className="h-4 w-4" />
+          Start my 14-day free trial <ArrowRight className="h-4 w-4" />
         </a>
         <p className="mt-3 text-xs text-muted-foreground">
-          Credit card required — you won't be charged until your trial ends. Cancel anytime in your dashboard.
+          Credit card required. You won't be charged until day 14. Cancel anytime in your dashboard.
         </p>
+        <div className="mx-auto mt-8 flex max-w-xl flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
+          <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5" /> Setup in 2 minutes</span>
+          <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5" /> Cancel anytime</span>
+          <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5" /> SSL secured checkout</span>
+          <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5" /> Trusted by local trade businesses</span>
+        </div>
       </section>
 
       {/* Try it for yourself */}
@@ -96,12 +102,12 @@ function CallNetPage() {
                 if (w?.open) w.open();
                 else w?.dispatchEvent(new Event('click', { bubbles: true }));
               }}
-              className="mt-2 inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background hover:opacity-90"
+              className="mt-2 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-base font-semibold text-background shadow-lg hover:opacity-90"
             >
-              Start the demo <ArrowRight className="h-4 w-4" />
+              Talk to Call Net now <ArrowRight className="h-4 w-4" />
             </button>
             <p className="text-xs text-muted-foreground">
-              Or tap the chat bubble in the bottom-right corner.
+              The demo opens in the chat bubble at the bottom-right of your screen.
             </p>
           </div>
         </div>
@@ -170,7 +176,7 @@ function CallNetPage() {
               "AI answers unlimited calls",
               "Instant text summaries",
               "Custom greeting (your brand voice)",
-              "14-day free trial — cancel anytime",
+              "14-day free trial — not charged until day 14",
             ].map((f) => (
               <li key={f} className="flex items-start gap-2">
                 <Check className="mt-0.5 h-4 w-4 flex-none" /> {f}
@@ -181,16 +187,16 @@ function CallNetPage() {
             Or save 17% annually: <span className="font-medium text-foreground">$970/year</span> ($80.83/month — 2 months free vs. monthly).
           </p>
           <p className="mt-2 text-xs font-medium text-foreground">
-            Founding offer: first 50 customers get free setup and lifetime 10% off. Only 37 spots left.
+            Founding offer: first 50 customers get free setup + 10% off any plan for life. Use code <span className="font-mono">FOUNDER10</span> at checkout. Only 37 spots left.
           </p>
           <a
             href="#trial"
             className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
           >
-            Start my free trial — setup in 2 minutes <ArrowRight className="h-4 w-4" />
+            Start my 14-day free trial <ArrowRight className="h-4 w-4" />
           </a>
           <p className="mt-3 text-xs text-muted-foreground">
-            Credit card required so we can keep the trial abuse-free. You won't be charged until day 14 — cancel anytime in your dashboard and pay nothing.
+            Credit card required. You won't be charged until day 14 — cancel anytime in your dashboard and pay nothing.
           </p>
           <p className="mt-4 text-xs italic text-muted-foreground">
             You're still the owner. Call Net is just your backup. When you can't answer, we catch the lead. You call back. You close.
@@ -205,7 +211,7 @@ function CallNetPage() {
             "I was worried about sounding like a robot to my customers. But Call Net only picks up when I'm on the other line or after hours. My callers still talk to me for the real conversation. I've captured 5 new jobs in 2 weeks."
           </blockquote>
           <figcaption className="mt-4 text-sm font-medium text-muted-foreground">
-            — Dave, Plumbing Pro
+            — Dave M., Plumbing Pro (Bristol, UK)
           </figcaption>
         </figure>
       </section>
@@ -217,15 +223,27 @@ function CallNetPage() {
           {[
             {
               q: "Will Call Net replace my receptionist or annoy my callers?",
-              a: "No. Call Net only answers when you can't — after hours, during lunch, or when you're already on another call. Your callers get a helpful conversation, leave their info, and you call them back. It's you they close with. Call Net just makes sure you never miss the chance.",
+              a: "No. Call Net only answers when you can't — after hours, during lunch, or when you're already on another call. Your callers get a helpful conversation, leave their info, and you call them back. It's still you they close with.",
             },
             {
-              q: "How fast is setup?",
-              a: "Under 2 minutes. You forward your existing business line to Call Net (24/7 or only when you don't pick up). We email setup instructions the moment you sign up.",
+              q: "How fast is setup? Do I need technical skills?",
+              a: "No tech skills needed. Setup is under 2 minutes — you forward your existing business line to Call Net (24/7 or only when you don't pick up). We email step-by-step instructions the moment you sign up.",
             },
             {
-              q: "What happens during the 14-day trial?",
-              a: "Full access to every feature. No credit card required to start. Cancel anytime inside the trial and pay nothing.",
+              q: "Why do you require a credit card for the free trial?",
+              a: "It keeps the trial free of spam signups so we can give every real business great support. You won't be charged until day 14. Cancel anytime in your dashboard during the trial and you pay nothing.",
+            },
+            {
+              q: "What happens if I forget to cancel before the trial ends?",
+              a: "We'll email you 3 days and 1 day before your trial ends so you have time to decide. If you don't cancel and decide later you don't want it, just reply to any of our emails within 7 days of being charged and we'll refund you in full.",
+            },
+            {
+              q: "Can I cancel anytime?",
+              a: "Yes. One click in your dashboard. No phone calls, no retention tactics, no contract.",
+            },
+            {
+              q: "Do my callers know they're talking to AI?",
+              a: "Call Net introduces itself as your virtual assistant. It sounds natural, takes the caller's details, and reassures them you'll call back personally — which you do.",
             },
           ].map((f) => (
             <div key={f.q} className="rounded-xl border border-border bg-card p-5">
@@ -251,9 +269,9 @@ function CallNetPage() {
           href="mailto:samuel@brightflowagency.com?subject=Call%20Net%20free%20trial"
           className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
         >
-          Start my free trial — setup in 2 minutes <ArrowRight className="h-4 w-4" />
+          Start my 14-day free trial <ArrowRight className="h-4 w-4" />
         </a>
-        <p className="mt-3 text-xs text-muted-foreground">Credit card required. You won't be charged until day 14.</p>
+        <p className="mt-3 text-xs text-muted-foreground">Credit card required. You won't be charged until day 14. Cancel anytime.</p>
       </section>
 
       <footer className="border-t border-border">
