@@ -269,9 +269,9 @@ function CallNetPage() {
           href="mailto:samuel@brightflowagency.com?subject=Call%20Net%20free%20trial"
           className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
         >
-          Start my free trial — setup in 2 minutes <ArrowRight className="h-4 w-4" />
+          Start my 14-day free trial <ArrowRight className="h-4 w-4" />
         </a>
-        <p className="mt-3 text-xs text-muted-foreground">Credit card required. You won't be charged until day 14.</p>
+        <p className="mt-3 text-xs text-muted-foreground">Credit card required. You won't be charged until day 14. Cancel anytime.</p>
       </section>
 
       <footer className="border-t border-border">
