@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { ArrowRight, Check, Plus, Phone, MessageSquare, PhoneCall } from "lucide-react";
 import { Wordmark, Footer } from "@/components/SiteChrome";
 
