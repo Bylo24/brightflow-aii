@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { ArrowRight, Check, Phone, MessageSquare, Zap } from "lucide-react";
-import { Wordmark, Footer } from "@/components/SiteChrome";
+import { Wordmark } from "@/components/SiteChrome";
 
 
 export const Route = createFileRoute("/call-net")({
