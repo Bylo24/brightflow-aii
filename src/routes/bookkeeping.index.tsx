@@ -105,7 +105,7 @@ function BookkeepingNav() {
 /* ---------------- HERO + EMAIL CAPTURE ---------------- */
 function Hero() {
   return (
-    <section className="relative pt-16 sm:pt-24 md:pt-28 pb-20 sm:pb-28 overflow-hidden">
+    <section className="relative pt-10 sm:pt-16 md:pt-20 pb-12 sm:pb-16 overflow-hidden">
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,hsl(168_72%_32%/0.14),transparent_60%)]" />
         <div className="absolute inset-0 grid-bg [mask-image:radial-gradient(ellipse_60%_45%_at_50%_0%,#000_50%,transparent_100%)]" />
