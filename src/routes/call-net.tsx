@@ -3,17 +3,6 @@ import { useEffect } from "react";
 import { ArrowRight, Check, Phone, MessageSquare, Zap } from "lucide-react";
 import { Wordmark, Footer } from "@/components/SiteChrome";
 
-declare global {
-  // eslint-disable-next-line @typescript-eslint/no-namespace
-  namespace JSX {
-    interface IntrinsicElements {
-      "elevenlabs-convai": React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLElement> & { "agent-id"?: string },
-        HTMLElement
-      >;
-    }
-  }
-}
 
 export const Route = createFileRoute("/call-net")({
   head: () => ({
