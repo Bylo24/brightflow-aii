@@ -95,23 +95,85 @@ function CallNetPage() {
             <p className="max-w-md text-sm text-muted-foreground">
               Talk to Call Net like a real caller would — ask about pricing, book a job, or leave a message. Hear how it sounds before you sign up.
             </p>
-            <button
-              type="button"
-              onClick={() => {
-                const w = document.querySelector('elevenlabs-convai') as (HTMLElement & { open?: () => void }) | null;
-                if (w?.open) w.open();
-                else w?.dispatchEvent(new Event('click', { bubbles: true }));
-              }}
-              className="mt-2 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-base font-semibold text-background shadow-lg hover:opacity-90"
-            >
-              Talk to Call Net now <ArrowRight className="h-4 w-4" />
-            </button>
-            <p className="text-xs text-muted-foreground">
-              The demo opens in the chat bubble at the bottom-right of your screen.
+            <p className="mt-2 text-sm font-medium text-foreground">
+              Tap the chat bubble in the bottom-right corner of your screen to start.
             </p>
           </div>
         </div>
       </section>
+
+      {/* The Brutal Cost of Missed Calls */}
+      <section className="mx-auto max-w-4xl px-6 py-12">
+        <div className="text-center">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
+            The math nobody talks about
+          </div>
+          <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+            The brutal cost of missed calls
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-pretty text-muted-foreground">
+            Most owners have no idea how much revenue they lose every week to unanswered calls. Let's do the math.
+          </p>
+        </div>
+
+        <div className="mt-10 grid gap-4 sm:grid-cols-3">
+          {[
+            { stat: "62%", label: "of inbound calls to small businesses go unanswered." },
+            { stat: "80%", label: "of callers who hit voicemail hang up without leaving a message." },
+            { stat: "85%", label: "of people who don't reach you on the first try never call back." },
+          ].map((s) => (
+            <div key={s.stat} className="rounded-2xl border border-border bg-card p-6 text-center">
+              <div className="text-4xl font-semibold tracking-tight">{s.stat}</div>
+              <p className="mt-2 text-sm text-muted-foreground">{s.label}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-8 rounded-2xl border border-border bg-card p-6 sm:p-8">
+          <h3 className="text-xl font-semibold tracking-tight">A missed call isn't a delayed sale. It's a sale handed to your competition.</h3>
+          <p className="mt-3 text-sm text-muted-foreground">
+            62% of unanswered callers immediately ring a competitor. At a conservative $12.15 in lost revenue per missed call, missing just 2 calls a day costs the average small business <span className="font-semibold text-foreground">$8,800 a year</span>. In home services and trades, with average job values of $500+, the real number is often <span className="font-semibold text-foreground">over $26,000 — and frequently $100,000+</span> annually.
+          </p>
+          <p className="mt-3 text-sm text-muted-foreground">
+            And speed matters. Respond within 5 minutes and you're <span className="font-semibold text-foreground">21× more likely</span> to convert. Wait 30 and 79% of callers are gone.
+          </p>
+        </div>
+      </section>
+
+      {/* ROI of Call Net */}
+      <section className="mx-auto max-w-4xl px-6 py-12">
+        <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 text-center">
+          <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+            Call Net pays for itself after 8 calls.
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-pretty text-muted-foreground">
+            $97/month. Average missed call costs $12.15 in lost revenue. Catch just 8 a month and Call Net has already paid for itself — every call after that is pure upside.
+          </p>
+          <div className="mx-auto mt-8 grid max-w-3xl gap-4 sm:grid-cols-3 text-left">
+            <div className="rounded-xl border border-border bg-background p-5">
+              <div className="text-xs font-medium text-muted-foreground">You pay</div>
+              <div className="mt-1 text-2xl font-semibold">$97<span className="text-sm text-muted-foreground">/mo</span></div>
+            </div>
+            <div className="rounded-xl border border-border bg-background p-5">
+              <div className="text-xs font-medium text-muted-foreground">Catch 100 missed calls/mo</div>
+              <div className="mt-1 text-2xl font-semibold">$1,200+</div>
+              <div className="text-xs text-muted-foreground">in recovered revenue</div>
+            </div>
+            <div className="rounded-xl border border-border bg-background p-5">
+              <div className="text-xs font-medium text-muted-foreground">At $500 avg job value</div>
+              <div className="mt-1 text-2xl font-semibold">$5,000+</div>
+              <div className="text-xs text-muted-foreground">in closed revenue/mo</div>
+            </div>
+          </div>
+          <a
+            href="#trial"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
+          >
+            Start my 14-day free trial <ArrowRight className="h-4 w-4" />
+          </a>
+        </div>
+      </section>
+
 
       {/* Floating ElevenLabs widget */}
       <div
