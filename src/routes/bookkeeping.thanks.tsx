@@ -58,10 +58,6 @@ export const Route = createFileRoute("/bookkeeping/thanks")({
 function ThanksPage() {
   useEffect(() => {
     installAndFirePixel();
-    (async () => {
-      const cal = await getCalApi({ namespace: CAL_NAMESPACE });
-      cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
-    })();
   }, []);
 
   return (
