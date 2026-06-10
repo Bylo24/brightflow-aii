@@ -1,10 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { Check, Mail } from "lucide-react";
-import Cal, { getCalApi } from "@calcom/embed-react";
 import { Wordmark, Footer } from "@/components/SiteChrome";
 
-const CAL_NAMESPACE = "15min";
 const CAL_LINK_SLUG = "samuel-howell-iwfnp4/15min";
 const META_PIXEL_ID = "2085592105635483";
 
