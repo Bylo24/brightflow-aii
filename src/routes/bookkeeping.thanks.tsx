@@ -58,8 +58,14 @@ export const Route = createFileRoute("/bookkeeping/thanks")({
 });
 
 function ThanksPage() {
+  const [prefill, setPrefill] = useState<{ email?: string; name?: string }>({});
+
   useEffect(() => {
     installAndFirePixel();
+    const params = new URLSearchParams(window.location.search);
+    const email = params.get("email") ?? undefined;
+    const name = params.get("name") ?? undefined;
+    setPrefill({ email, name });
     (async () => {
       const cal = await getCalApi({ namespace: CAL_NAMESPACE });
       cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
@@ -105,7 +111,12 @@ function ThanksPage() {
             namespace={CAL_NAMESPACE}
             calLink={CAL_LINK_SLUG}
             style={{ width: "100%", height: "780px", overflow: "scroll" }}
-            config={{ layout: "month_view", useSlotsViewOnSmallScreen: "true" }}
+            config={{
+              layout: "month_view",
+              useSlotsViewOnSmallScreen: "true",
+              ...(prefill.email ? { email: prefill.email } : {}),
+              ...(prefill.name ? { name: prefill.name } : {}),
+            }}
           />
 
           <p className="mt-6 text-center text-xs text-muted-foreground">
