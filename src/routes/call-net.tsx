@@ -29,6 +29,11 @@ export const Route = createFileRoute("/call-net")({
 const AGENT_ID = "agent_7001ks6yjp6rfbh9899wpb8kvy7t";
 
 function CallNetPage() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
+  if (!mounted) {
+    return <div className="min-h-screen bg-background" />;
+  }
   return (
     <ConversationProvider>
       <CallNetPageInner />
@@ -37,6 +42,7 @@ function CallNetPage() {
 }
 
 function CallNetPageInner() {
+
 
   const [starting, setStarting] = useState(false);
   const conversation = useConversation({
