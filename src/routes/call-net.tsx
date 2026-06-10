@@ -223,15 +223,27 @@ function CallNetPage() {
           {[
             {
               q: "Will Call Net replace my receptionist or annoy my callers?",
-              a: "No. Call Net only answers when you can't — after hours, during lunch, or when you're already on another call. Your callers get a helpful conversation, leave their info, and you call them back. It's you they close with. Call Net just makes sure you never miss the chance.",
+              a: "No. Call Net only answers when you can't — after hours, during lunch, or when you're already on another call. Your callers get a helpful conversation, leave their info, and you call them back. It's still you they close with.",
             },
             {
-              q: "How fast is setup?",
-              a: "Under 2 minutes. You forward your existing business line to Call Net (24/7 or only when you don't pick up). We email setup instructions the moment you sign up.",
+              q: "How fast is setup? Do I need technical skills?",
+              a: "No tech skills needed. Setup is under 2 minutes — you forward your existing business line to Call Net (24/7 or only when you don't pick up). We email step-by-step instructions the moment you sign up.",
             },
             {
-              q: "What happens during the 14-day trial?",
-              a: "Full access to every feature. No credit card required to start. Cancel anytime inside the trial and pay nothing.",
+              q: "Why do you require a credit card for the free trial?",
+              a: "It keeps the trial free of spam signups so we can give every real business great support. You won't be charged until day 14. Cancel anytime in your dashboard during the trial and you pay nothing.",
+            },
+            {
+              q: "What happens if I forget to cancel before the trial ends?",
+              a: "We'll email you 3 days and 1 day before your trial ends so you have time to decide. If you don't cancel and decide later you don't want it, just reply to any of our emails within 7 days of being charged and we'll refund you in full.",
+            },
+            {
+              q: "Can I cancel anytime?",
+              a: "Yes. One click in your dashboard. No phone calls, no retention tactics, no contract.",
+            },
+            {
+              q: "Do my callers know they're talking to AI?",
+              a: "Call Net introduces itself as your virtual assistant. It sounds natural, takes the caller's details, and reassures them you'll call back personally — which you do.",
             },
           ].map((f) => (
             <div key={f.q} className="rounded-xl border border-border bg-card p-5">
