@@ -322,7 +322,7 @@ function FAQ() {
   ];
 
   return (
-    <section className="py-20 sm:py-28 border-t border-border/60 bg-secondary/40">
+    <section className="py-14 sm:py-20 border-t border-border/60 bg-secondary/40">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <h2 className="text-3xl sm:text-4xl font-semibold tracking-[-0.035em] text-center mb-10">
           Questions?
