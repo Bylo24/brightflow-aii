@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useCallback, useState } from "react";
 import { ArrowRight, Check, Phone, MessageSquare, Zap, PhoneCall, PhoneOff } from "lucide-react";
 import { Wordmark } from "@/components/SiteChrome";
-import { ElevenLabsProvider, useConversation } from "@elevenlabs/react";
+import { ConversationProvider, useConversation } from "@elevenlabs/react";
 
 
 
