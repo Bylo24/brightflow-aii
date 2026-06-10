@@ -342,14 +342,6 @@ function Guarantee() {
         <p className="mt-7 text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
           No contract. No card. No catch. You only pay if you decide to keep the system — and only based on the hours we give back. Otherwise, walk away. Completely up to you.
         </p>
-        <div className="mt-10">
-          <a
-            href="#email-form"
-            className="btn btn-lg btn-neutral rounded-full text-base"
-          >
-            Start my free pilot <ArrowRight className="size-4" />
-          </a>
-        </div>
       </div>
     </section>
   );
