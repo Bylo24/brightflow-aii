@@ -172,9 +172,11 @@ function CallNetPageInner() {
               </button>
             )}
             <p className="text-xs text-muted-foreground">
-              {isActive
-                ? conversation.isSpeaking ? "Call Net is speaking…" : "Listening — go ahead and talk."
-                : "You'll be asked to allow microphone access."}
+              {starting || status === "connecting"
+                ? "Connecting to Call Net…"
+                : status === "connected"
+                  ? conversation.isSpeaking ? "Call Net is speaking…" : "Listening — go ahead and talk."
+                  : "You'll be asked to allow microphone access."}
             </p>
 
           </div>
