@@ -182,7 +182,6 @@ function Hero() {
 }
 
 function EmailCapture() {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -207,7 +206,7 @@ function EmailCapture() {
   }
 
   const nextUrl = thanksOrigin
-    ? `${thanksOrigin}/bookkeeping/thanks?email=${encodeURIComponent(email)}${name ? `&name=${encodeURIComponent(name)}` : ""}`
+    ? `${thanksOrigin}/bookkeeping/thanks?email=${encodeURIComponent(email)}`
     : "";
 
   return (
