@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect } from "react";
-import { Check, Mail } from "lucide-react";
-import Cal, { getCalApi } from "@calcom/embed-react";
+import { Check, Mail, Calendar } from "lucide-react";
+import { getCalApi } from "@calcom/embed-react";
 import { Wordmark, Footer } from "@/components/SiteChrome";
 
 const CAL_NAMESPACE = "15min";
