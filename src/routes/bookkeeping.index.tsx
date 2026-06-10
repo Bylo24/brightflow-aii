@@ -182,7 +182,6 @@ function Hero() {
 }
 
 function EmailCapture() {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -207,7 +206,7 @@ function EmailCapture() {
   }
 
   const nextUrl = thanksOrigin
-    ? `${thanksOrigin}/bookkeeping/thanks?email=${encodeURIComponent(email)}${name ? `&name=${encodeURIComponent(name)}` : ""}`
+    ? `${thanksOrigin}/bookkeeping/thanks?email=${encodeURIComponent(email)}`
     : "";
 
   return (
@@ -226,21 +225,6 @@ function EmailCapture() {
       {/* honeypot */}
       <input type="text" name="_honey" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
 
-      <label htmlFor="bk-name" className="block text-left text-sm font-semibold tracking-tight mb-2 pl-1">
-        Your name
-      </label>
-      <input
-        id="bk-name"
-        type="text"
-        name="name"
-        required
-        maxLength={120}
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder="Jane Smith"
-        className="w-full h-12 sm:h-14 px-4 rounded-full border border-border bg-background text-base outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition mb-3"
-        aria-label="Your name"
-      />
 
       <label htmlFor="bk-email" className="block text-left text-sm font-semibold tracking-tight mb-2 pl-1">
         Email address
