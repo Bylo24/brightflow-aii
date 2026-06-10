@@ -121,9 +121,32 @@ function CallNetPage() {
             <p className="max-w-md text-sm text-muted-foreground">
               Talk to Call Net like a real caller would — ask about pricing, book a job, or leave a message. Hear how it sounds before you sign up.
             </p>
-            <p className="mt-2 text-sm font-medium text-foreground">
-              Tap the chat bubble in the bottom-right corner of your screen to start.
+            {!isActive ? (
+              <button
+                type="button"
+                onClick={startDemo}
+                disabled={starting}
+                className="mt-2 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-base font-semibold text-background shadow-lg hover:opacity-90 disabled:opacity-60"
+              >
+                <PhoneCall className="h-4 w-4" />
+                {starting ? "Connecting…" : "Talk to Call Net now"}
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={endDemo}
+                className="mt-2 inline-flex items-center gap-2 rounded-full bg-destructive px-6 py-3 text-base font-semibold text-destructive-foreground shadow-lg hover:opacity-90"
+              >
+                <PhoneOff className="h-4 w-4" />
+                End call
+              </button>
+            )}
+            <p className="text-xs text-muted-foreground">
+              {isActive
+                ? conversation.isSpeaking ? "Call Net is speaking…" : "Listening — go ahead and talk."
+                : "You'll be asked to allow microphone access."}
             </p>
+
           </div>
         </div>
       </section>
