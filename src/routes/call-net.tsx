@@ -125,11 +125,11 @@ function CallNetPage() {
         <h2 className="text-center text-3xl font-semibold tracking-tight">Why Call Net</h2>
         <ul className="mx-auto mt-8 grid max-w-2xl gap-3">
           {[
-            "Zero missed opportunities — every call becomes a lead.",
-            "No voicemail purgatory — callers get a helpful conversation, not a generic beep.",
-            "Affordable — costs less than a coffee per day.",
-            "No hardware — works with your existing phone number.",
-            "Try free for 14 days — no risk, no contract.",
+            "Only works when you miss a call — you stay the main point of contact.",
+            "Callers don't get voicemail — they talk to a helpful AI, leave their info, and hang up happy.",
+            "You get a text summary — name, number, reason for calling. You call them back.",
+            "No setup headaches — forward your existing number in 2 minutes.",
+            "Try free for 14 days — no risk, no contract, cancel anytime.",
           ].map((b) => (
             <li key={b} className="flex items-start gap-3 rounded-xl border border-border bg-card p-4">
               <Check className="mt-0.5 h-5 w-5 flex-none text-foreground" />
