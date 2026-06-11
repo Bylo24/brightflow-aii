@@ -114,7 +114,7 @@ function CallNetThanksPage() {
   );
 }
 
-function Step({ icon, title, body }: { icon: React.ReactNode; title: string; body: string }) {
+function Step({ icon, title, body, action }: { icon: React.ReactNode; title: string; body: string; action?: React.ReactNode }) {
   return (
     <div className="flex gap-4 rounded-xl border border-border bg-card p-5">
       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
@@ -123,6 +123,7 @@ function Step({ icon, title, body }: { icon: React.ReactNode; title: string; bod
       <div>
         <h3 className="font-semibold">{title}</h3>
         <p className="mt-1 text-sm text-muted-foreground">{body}</p>
+        {action}
       </div>
     </div>
   );
