@@ -3,7 +3,7 @@ import { useEffect, useCallback, useState } from "react";
 import { ArrowRight, Check, Phone, MessageSquare, Zap, PhoneCall, PhoneOff } from "lucide-react";
 import { Wordmark } from "@/components/SiteChrome";
 import { ConversationProvider, useConversation } from "@elevenlabs/react";
-import { initMetaPixel, trackPixel } from "@/lib/meta-pixel";
+import { initMetaPixel, trackPixel, CALL_NET_PIXEL_ID } from "@/lib/meta-pixel";
 
 const STRIPE_TRIAL_URL = "https://buy.stripe.com/14A00kdXt50Y93yezT33W03";
 
