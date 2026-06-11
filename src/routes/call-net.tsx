@@ -261,7 +261,7 @@ function CallNetPageInner() {
             Call Net pays for itself after 8 calls.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-pretty text-muted-foreground">
-            $97/month. Average missed call costs $12.15 in lost revenue. Catch just 8 a month and Call Net has already paid for itself — every call after that is pure upside.
+            {monthlyLocal}/month. Average missed call costs around $12 in lost revenue. Catch just 8 a month and Call Net has already paid for itself — every call after that is pure upside.
           </p>
           <div className="mx-auto mt-8 grid max-w-3xl gap-4 sm:grid-cols-3 text-left">
             <div className="rounded-xl border border-border bg-background p-5">
