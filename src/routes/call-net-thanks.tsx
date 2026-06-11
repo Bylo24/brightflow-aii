@@ -34,6 +34,13 @@ function CallNetThanksPage() {
     );
   }, []);
 
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "call-net-setup-call" });
+      cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
+    })();
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
