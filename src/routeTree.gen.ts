@@ -16,6 +16,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CallNetRouteImport } from './routes/call-net'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BookkeepingIndexRouteImport } from './routes/bookkeeping.index'
+import { Route as CallNetThanksRouteImport } from './routes/call-net.thanks'
 import { Route as BookkeepingThanksRouteImport } from './routes/bookkeeping.thanks'
 
 const TermsRoute = TermsRouteImport.update({
@@ -53,6 +54,11 @@ const BookkeepingIndexRoute = BookkeepingIndexRouteImport.update({
   path: '/bookkeeping/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CallNetThanksRoute = CallNetThanksRouteImport.update({
+  id: '/thanks',
+  path: '/thanks',
+  getParentRoute: () => CallNetRoute,
+} as any)
 const BookkeepingThanksRoute = BookkeepingThanksRouteImport.update({
   id: '/bookkeeping/thanks',
   path: '/bookkeeping/thanks',
@@ -61,33 +67,36 @@ const BookkeepingThanksRoute = BookkeepingThanksRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/call-net': typeof CallNetRoute
+  '/call-net': typeof CallNetRouteWithChildren
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
   '/terms': typeof TermsRoute
   '/bookkeeping/thanks': typeof BookkeepingThanksRoute
+  '/call-net/thanks': typeof CallNetThanksRoute
   '/bookkeeping/': typeof BookkeepingIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/call-net': typeof CallNetRoute
+  '/call-net': typeof CallNetRouteWithChildren
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
   '/terms': typeof TermsRoute
   '/bookkeeping/thanks': typeof BookkeepingThanksRoute
+  '/call-net/thanks': typeof CallNetThanksRoute
   '/bookkeeping': typeof BookkeepingIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/call-net': typeof CallNetRoute
+  '/call-net': typeof CallNetRouteWithChildren
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
   '/terms': typeof TermsRoute
   '/bookkeeping/thanks': typeof BookkeepingThanksRoute
+  '/call-net/thanks': typeof CallNetThanksRoute
   '/bookkeeping/': typeof BookkeepingIndexRoute
 }
 export interface FileRouteTypes {
@@ -100,6 +109,7 @@ export interface FileRouteTypes {
     | '/security'
     | '/terms'
     | '/bookkeeping/thanks'
+    | '/call-net/thanks'
     | '/bookkeeping/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -110,6 +120,7 @@ export interface FileRouteTypes {
     | '/security'
     | '/terms'
     | '/bookkeeping/thanks'
+    | '/call-net/thanks'
     | '/bookkeeping'
   id:
     | '__root__'
@@ -120,12 +131,13 @@ export interface FileRouteTypes {
     | '/security'
     | '/terms'
     | '/bookkeeping/thanks'
+    | '/call-net/thanks'
     | '/bookkeeping/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  CallNetRoute: typeof CallNetRoute
+  CallNetRoute: typeof CallNetRouteWithChildren
   ContactRoute: typeof ContactRoute
   PrivacyRoute: typeof PrivacyRoute
   SecurityRoute: typeof SecurityRoute
@@ -185,6 +197,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BookkeepingIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/call-net/thanks': {
+      id: '/call-net/thanks'
+      path: '/thanks'
+      fullPath: '/call-net/thanks'
+      preLoaderRoute: typeof CallNetThanksRouteImport
+      parentRoute: typeof CallNetRoute
+    }
     '/bookkeeping/thanks': {
       id: '/bookkeeping/thanks'
       path: '/bookkeeping/thanks'
@@ -195,9 +214,20 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface CallNetRouteChildren {
+  CallNetThanksRoute: typeof CallNetThanksRoute
+}
+
+const CallNetRouteChildren: CallNetRouteChildren = {
+  CallNetThanksRoute: CallNetThanksRoute,
+}
+
+const CallNetRouteWithChildren =
+  CallNetRoute._addFileChildren(CallNetRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  CallNetRoute: CallNetRoute,
+  CallNetRoute: CallNetRouteWithChildren,
   ContactRoute: ContactRoute,
   PrivacyRoute: PrivacyRoute,
   SecurityRoute: SecurityRoute,
