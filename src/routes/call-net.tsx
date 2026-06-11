@@ -9,10 +9,9 @@ import { getLocaleCurrency, type GeoCurrency } from "@/lib/geo-currency.function
 function formatConverted(usd: number, geo: GeoCurrency | null): string | null {
   if (!geo || geo.currency === "USD") return null;
   const converted = usd * geo.rate;
-  // No decimals for JPY-style currencies; round to nearest whole for cleaner display
-  const whole = converted >= 100 ? Math.round(converted) : Math.round(converted * 10) / 10;
+  const whole = Math.round(converted);
   const formatted = new Intl.NumberFormat("en-US", {
-    maximumFractionDigits: whole >= 100 ? 0 : 1,
+    maximumFractionDigits: 0,
   }).format(whole);
   return `${geo.symbol}${formatted}`;
 }
