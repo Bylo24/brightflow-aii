@@ -16,7 +16,9 @@ function formatLocal(usd: number, geo: GeoCurrency | null): string {
   return `${symbol}${formatted}`;
 }
 
-const STRIPE_TRIAL_URL = "https://buy.stripe.com/14A00kdXt50Y93yezT33W03";
+const STRIPE_TRIAL_URL_USA = "https://buy.stripe.com/14A00kdXt50Y93yezT33W03";
+const STRIPE_TRIAL_URL_CANADA = "https://buy.stripe.com/28E14ocTpalifrW63n33W04";
+
 
 
 
