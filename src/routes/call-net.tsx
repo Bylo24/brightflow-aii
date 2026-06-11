@@ -343,12 +343,7 @@ function CallNetPageInner() {
         <h2 className="text-center text-3xl font-semibold tracking-tight">Simple pricing</h2>
         <div className="mt-8 rounded-2xl border border-border bg-card p-8 text-center">
           <div className="text-sm font-medium text-muted-foreground">Single plan — all features</div>
-          <div className="mt-2 text-5xl font-semibold tracking-tight">$97<span className="text-lg text-muted-foreground">/month</span></div>
-          {monthlyLocal && (
-            <div className="mt-1 text-sm text-muted-foreground">
-              ≈ {monthlyLocal}/mo — billed $97 USD
-            </div>
-          )}
+          <div className="mt-2 text-5xl font-semibold tracking-tight">{monthlyLocal}<span className="text-lg text-muted-foreground">/month</span></div>
           <ul className="mx-auto mt-6 max-w-sm space-y-2 text-left text-sm">
             {[
               "AI answers unlimited calls",
