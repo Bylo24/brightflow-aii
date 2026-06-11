@@ -9,7 +9,7 @@ import { getLocaleCurrency, type GeoCurrency } from "@/lib/geo-currency.function
 function formatLocal(usd: number, geo: GeoCurrency | null): string {
   const rate = geo?.rate ?? 1;
   const symbol = geo?.symbol ?? "$";
-  const whole = Math.round(usd * rate);
+  const whole = Math.ceil(usd * rate);
   const formatted = new Intl.NumberFormat("en-US", {
     maximumFractionDigits: 0,
   }).format(whole);
