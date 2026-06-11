@@ -107,7 +107,7 @@ function CallNetPageInner() {
   const monthlyLocal = formatLocal(97, geo);
   const annualLocal = formatLocal(970, geo);
 
-  const stripeUrl = geo?.country === "CA" ? stripeUrl_CANADA : stripeUrl_USA;
+  const stripeUrl = geo?.country === "CA" ? STRIPE_TRIAL_URL_CANADA : STRIPE_TRIAL_URL_USA;
 
   const handleTrialClick = useCallback(() => {
     trackPixel(
