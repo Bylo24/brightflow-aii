@@ -1,11 +1,10 @@
-// Meta (Facebook) Pixel helper.
-// Replace META_PIXEL_ID with your real Pixel ID from Events Manager.
+// Meta (Facebook) Pixel helper — shared across landing pages.
 // Pixel IDs are public — safe to commit.
-export const META_PIXEL_ID = "REPLACE_WITH_YOUR_PIXEL_ID";
+export const META_PIXEL_ID = "2085592105635483";
 
 declare global {
   interface Window {
-    fbq?: ((...args: unknown[]) => void) & { callMethod?: unknown; queue?: unknown[]; loaded?: boolean; version?: string; push?: unknown };
+    fbq?: ((...args: unknown[]) => void) & { callMethod?: unknown; queue?: unknown[] };
     _fbq?: unknown;
   }
 }
@@ -14,12 +13,13 @@ let initialized = false;
 
 export function initMetaPixel() {
   if (typeof window === "undefined") return;
-  if (initialized) return;
-  if (!META_PIXEL_ID || META_PIXEL_ID === "REPLACE_WITH_YOUR_PIXEL_ID") return;
+  if (initialized || window.fbq) {
+    initialized = true;
+    return;
+  }
   initialized = true;
 
   /* eslint-disable */
-  // Standard Meta Pixel base code
   (function (f: any, b, e, v, n?: any, t?: any, s?: any) {
     if (f.fbq) return;
     n = f.fbq = function () {
@@ -38,13 +38,14 @@ export function initMetaPixel() {
   })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
   /* eslint-enable */
 
-  window.fbq?.("init", META_PIXEL_ID);
-  window.fbq?.("track", "PageView");
+  const fbq = window.fbq as unknown as (...args: unknown[]) => void;
+  fbq("init", META_PIXEL_ID);
+  fbq("track", "PageView");
 }
 
 export function trackPixel(event: string, params?: Record<string, unknown>) {
-  if (typeof window === "undefined") return;
-  if (!window.fbq) return;
-  if (params) window.fbq("track", event, params);
-  else window.fbq("track", event);
+  if (typeof window === "undefined" || !window.fbq) return;
+  const fbq = window.fbq as unknown as (...args: unknown[]) => void;
+  if (params) fbq("track", event, params);
+  else fbq("track", event);
 }
