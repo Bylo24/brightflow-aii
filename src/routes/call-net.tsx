@@ -4,6 +4,18 @@ import { ArrowRight, Check, Phone, MessageSquare, Zap, PhoneCall, PhoneOff } fro
 import { Wordmark } from "@/components/SiteChrome";
 import { ConversationProvider, useConversation } from "@elevenlabs/react";
 import { initMetaPixel, trackPixel, CALL_NET_PIXEL_ID } from "@/lib/meta-pixel";
+import { getLocaleCurrency, type GeoCurrency } from "@/lib/geo-currency.functions";
+
+function formatConverted(usd: number, geo: GeoCurrency | null): string | null {
+  if (!geo || geo.currency === "USD") return null;
+  const converted = usd * geo.rate;
+  // No decimals for JPY-style currencies; round to nearest whole for cleaner display
+  const whole = converted >= 100 ? Math.round(converted) : Math.round(converted * 10) / 10;
+  const formatted = new Intl.NumberFormat("en-US", {
+    maximumFractionDigits: whole >= 100 ? 0 : 1,
+  }).format(whole);
+  return `${geo.symbol}${formatted}`;
+}
 
 const STRIPE_TRIAL_URL = "https://buy.stripe.com/14A00kdXt50Y93yezT33W03";
 
