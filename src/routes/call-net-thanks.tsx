@@ -48,7 +48,7 @@ function CallNetThanksPage() {
             You're in. Welcome to Call Net.
           </h1>
           <p className="mt-4 text-balance text-muted-foreground">
-            Your 14-day free trial is active. We'll email you shortly to get your AI receptionist
+            Your 14-day free trial is active. We'll reach out to get your AI receptionist
             set up and answering calls for your business.
           </p>
         </div>
