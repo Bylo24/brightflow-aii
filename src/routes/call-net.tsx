@@ -357,7 +357,7 @@ function CallNetPageInner() {
             ))}
           </ul>
           <p className="mt-6 text-sm text-muted-foreground">
-            Or save 17% annually: <span className="font-medium text-foreground">$970/year</span> ($80.83/month — 2 months free vs. monthly){annualLocal ? ` · ≈ ${annualLocal}/yr` : ""}.
+            Or save 17% annually: <span className="font-medium text-foreground">{annualLocal}/year</span> ({formatLocal(970/12, geo)}/month — 2 months free vs. monthly).
           </p>
           <a
             href={STRIPE_TRIAL_URL} target="_blank" rel="noopener noreferrer" onClick={handleTrialClick}
