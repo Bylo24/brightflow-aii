@@ -72,6 +72,21 @@ function CallNetThanksPage() {
             body="We'll contact you to set everything up — business name, hours, services, and FAQs — so we can build your AI receptionist."
           />
           <Step
+            icon={<Calendar className="h-5 w-5" />}
+            title="Prefer a live setup call?"
+            body="Book a quick 15-minute call and we'll get your AI receptionist configured together."
+            action={
+              <button
+                data-cal-namespace="call-net-setup-call"
+                data-cal-link="samuel-howell-iwfnp4/call-net-setup-call"
+                data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
+                className="mt-3 inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90"
+              >
+                Book a setup call
+              </button>
+            }
+          />
+          <Step
             icon={<Sparkles className="h-5 w-5" />}
             title="We build your AI receptionist"
             body="Once you send the form back, our team trains your custom agent on your business and voice. Most setups are live within 24 hours."
