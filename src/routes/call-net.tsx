@@ -77,6 +77,15 @@ function CallNetPageInner() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Meta Pixel: init on mount, fire InitiateCheckout on any Stripe trial link.
+  useEffect(() => {
+    initMetaPixel();
+  }, []);
+  const handleTrialClick = useCallback(() => {
+    trackPixel("InitiateCheckout", { value: 97, currency: "USD", content_name: "Call Net 14-day trial" });
+  }, []);
+
+
 
 
   return (
