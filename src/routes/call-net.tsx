@@ -332,6 +332,9 @@ function CallNetPageInner() {
           <p className="mt-3 text-xs text-muted-foreground">
             Credit card required. You won't be charged until day 14 — cancel anytime in your dashboard and pay nothing.
           </p>
+          <p className="mt-2 text-xs text-muted-foreground">
+            Need a dedicated business number? We'll set one up for around $5–$15/month extra.
+          </p>
           <p className="mt-4 text-xs italic text-muted-foreground">
             You're still the owner. Call Net is just your backup. When you can't answer, we catch the lead. You call back. You close.
           </p>
