@@ -93,7 +93,7 @@ function CallNetPageInner() {
       <header className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
         <Wordmark />
         <a
-          href="https://buy.stripe.com/14A00kdXt50Y93yezT33W03" target="_blank" rel="noopener noreferrer"
+          href={STRIPE_TRIAL_URL} target="_blank" rel="noopener noreferrer" onClick={handleTrialClick}
           className="rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background hover:opacity-90"
         >
           Start free trial
@@ -115,7 +115,7 @@ function CallNetPageInner() {
           It doesn't replace you. It only works when you can't.
         </p>
         <a
-          href="https://buy.stripe.com/14A00kdXt50Y93yezT33W03" target="_blank" rel="noopener noreferrer"
+          href={STRIPE_TRIAL_URL} target="_blank" rel="noopener noreferrer" onClick={handleTrialClick}
           className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
         >
           Start my 14-day free trial <ArrowRight className="h-4 w-4" />
@@ -244,7 +244,7 @@ function CallNetPageInner() {
             </div>
           </div>
           <a
-            href="https://buy.stripe.com/14A00kdXt50Y93yezT33W03" target="_blank" rel="noopener noreferrer"
+            href={STRIPE_TRIAL_URL} target="_blank" rel="noopener noreferrer" onClick={handleTrialClick}
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
           >
             Start my 14-day free trial <ArrowRight className="h-4 w-4" />
@@ -324,7 +324,7 @@ function CallNetPageInner() {
             Or save 17% annually: <span className="font-medium text-foreground">$970/year</span> ($80.83/month — 2 months free vs. monthly).
           </p>
           <a
-            href="https://buy.stripe.com/14A00kdXt50Y93yezT33W03" target="_blank" rel="noopener noreferrer"
+            href={STRIPE_TRIAL_URL} target="_blank" rel="noopener noreferrer" onClick={handleTrialClick}
             className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
           >
             Start my 14-day free trial <ArrowRight className="h-4 w-4" />
@@ -400,7 +400,7 @@ function CallNetPageInner() {
           Start your 14-day free trial. Setup takes 2 minutes. Cancel anytime in your dashboard.
         </p>
         <a
-          href="https://buy.stripe.com/14A00kdXt50Y93yezT33W03" target="_blank" rel="noopener noreferrer"
+          href={STRIPE_TRIAL_URL} target="_blank" rel="noopener noreferrer" onClick={handleTrialClick}
           className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
         >
           Start my 14-day free trial <ArrowRight className="h-4 w-4" />
