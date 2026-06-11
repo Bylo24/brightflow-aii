@@ -404,7 +404,7 @@ function CallNetPageInner() {
           Stop losing money to missed calls.
         </h2>
         <p className="mt-3 text-muted-foreground">
-          Start your 14-day free trial. Setup takes 2 minutes. Cancel anytime in your dashboard.
+          Start your 14-day free trial. We'll handle the setup. Cancel anytime in your dashboard.
         </p>
         <a
           href={STRIPE_TRIAL_URL} target="_blank" rel="noopener noreferrer" onClick={handleTrialClick}
