@@ -11,7 +11,7 @@ declare global {
 
 let initialized = false;
 
-export function initMetaPixel() {
+export function initMetaPixel(pixelId: string = META_PIXEL_ID) {
   if (typeof window === "undefined") return;
   if (initialized || window.fbq) {
     initialized = true;
@@ -39,9 +39,11 @@ export function initMetaPixel() {
   /* eslint-enable */
 
   const fbq = window.fbq as unknown as (...args: unknown[]) => void;
-  fbq("init", META_PIXEL_ID);
+  fbq("init", pixelId);
   fbq("track", "PageView");
 }
+
+export const CALL_NET_PIXEL_ID = "1028388659517363";
 
 export function trackPixel(event: string, params?: Record<string, unknown>) {
   if (typeof window === "undefined" || !window.fbq) return;
