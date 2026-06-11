@@ -4,7 +4,7 @@ import { Check } from "lucide-react";
 import { Wordmark } from "@/components/SiteChrome";
 import { initMetaPixel, trackPixel } from "@/lib/meta-pixel";
 
-export const Route = createFileRoute("/call-net/thanks")({
+export const Route = createFileRoute("/call-net-thanks")({
   head: () => ({
     meta: [
       { title: "Thanks — your Call Net trial is starting" },
