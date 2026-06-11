@@ -266,10 +266,7 @@ function CallNetPageInner() {
           <div className="mx-auto mt-8 grid max-w-3xl gap-4 sm:grid-cols-3 text-left">
             <div className="rounded-xl border border-border bg-background p-5">
               <div className="text-xs font-medium text-muted-foreground">You pay</div>
-              <div className="mt-1 text-2xl font-semibold">$97<span className="text-sm text-muted-foreground">/mo</span></div>
-              {monthlyLocal && (
-                <div className="text-xs text-muted-foreground">≈ {monthlyLocal}/mo</div>
-              )}
+              <div className="mt-1 text-2xl font-semibold">{monthlyLocal}<span className="text-sm text-muted-foreground">/mo</span></div>
             </div>
             <div className="rounded-xl border border-border bg-background p-5">
               <div className="text-xs font-medium text-muted-foreground">Catch 100 missed calls/mo</div>
