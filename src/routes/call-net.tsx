@@ -361,7 +361,11 @@ function CallNetPageInner() {
             },
             {
               q: "How fast is setup? Do I need technical skills?",
-              a: "No tech skills needed. Setup is under 2 minutes — you forward your existing business line to Call Net (24/7 or only when you don't pick up). We email step-by-step instructions the moment you sign up.",
+              a: "No technical skills needed. You just give us your business phone number, and we handle the forwarding setup. Most clients are live within 2 hours of signing up.",
+            },
+            {
+              q: "What if my business number is my personal mobile?",
+              a: "That's common. We'll set up a separate business number for you (costs about $5–$15/month) and route it so your personal phone still rings first, and Call Net only picks up when you miss it. We handle everything.",
             },
             {
               q: "Why do you require a credit card for the free trial?",
