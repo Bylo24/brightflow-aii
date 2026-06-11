@@ -267,7 +267,7 @@ function CallNetPageInner() {
         <h2 className="text-center text-3xl font-semibold tracking-tight">How it works</h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-3">
           {[
-            { icon: Phone, title: "You share your business number", body: "Tell us the phone number you want covered. That's it." },
+            { icon: Phone, title: "You give us your business number", body: "That's all." },
             { icon: Zap, title: "We set up Call Net", body: "We configure the forwarding so Call Net answers only when you don't. No technical work on your end." },
             { icon: MessageSquare, title: "You get the lead", body: "Missed calls become instant texts with the caller's name, number, and message. You call back. You close." },
           ].map((s, i) => (
@@ -331,6 +331,9 @@ function CallNetPageInner() {
           </a>
           <p className="mt-3 text-xs text-muted-foreground">
             Credit card required. You won't be charged until day 14 — cancel anytime in your dashboard and pay nothing.
+          </p>
+          <p className="mt-2 text-xs text-muted-foreground">
+            Need a dedicated business number? We'll set one up for around $5–$15/month extra.
           </p>
           <p className="mt-4 text-xs italic text-muted-foreground">
             You're still the owner. Call Net is just your backup. When you can't answer, we catch the lead. You call back. You close.
@@ -401,7 +404,7 @@ function CallNetPageInner() {
           Stop losing money to missed calls.
         </h2>
         <p className="mt-3 text-muted-foreground">
-          Start your 14-day free trial. Setup takes 2 minutes. Cancel anytime in your dashboard.
+          Start your 14-day free trial. We'll handle the setup. Cancel anytime in your dashboard.
         </p>
         <a
           href={STRIPE_TRIAL_URL} target="_blank" rel="noopener noreferrer" onClick={handleTrialClick}
