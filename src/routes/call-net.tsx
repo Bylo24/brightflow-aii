@@ -6,14 +6,14 @@ import { ConversationProvider, useConversation } from "@elevenlabs/react";
 import { initMetaPixel, trackPixel, CALL_NET_PIXEL_ID } from "@/lib/meta-pixel";
 import { getLocaleCurrency, type GeoCurrency } from "@/lib/geo-currency.functions";
 
-function formatConverted(usd: number, geo: GeoCurrency | null): string | null {
-  if (!geo || geo.currency === "USD") return null;
-  const converted = usd * geo.rate;
-  const whole = Math.round(converted);
+function formatLocal(usd: number, geo: GeoCurrency | null): string {
+  const rate = geo?.rate ?? 1;
+  const symbol = geo?.symbol ?? "$";
+  const whole = Math.round(usd * rate);
   const formatted = new Intl.NumberFormat("en-US", {
     maximumFractionDigits: 0,
   }).format(whole);
-  return `${geo.symbol}${formatted}`;
+  return `${symbol}${formatted}`;
 }
 
 const STRIPE_TRIAL_URL = "https://buy.stripe.com/14A00kdXt50Y93yezT33W03";
@@ -102,8 +102,8 @@ function CallNetPageInner() {
       .catch(() => { /* keep USD */ });
     return () => { cancelled = true; };
   }, []);
-  const monthlyLocal = formatConverted(97, geo);
-  const annualLocal = formatConverted(970, geo);
+  const monthlyLocal = formatLocal(97, geo);
+  const annualLocal = formatLocal(970, geo);
 
   const handleTrialClick = useCallback(() => {
     trackPixel(
@@ -261,15 +261,12 @@ function CallNetPageInner() {
             Call Net pays for itself after 8 calls.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-pretty text-muted-foreground">
-            $97/month. Average missed call costs $12.15 in lost revenue. Catch just 8 a month and Call Net has already paid for itself — every call after that is pure upside.
+            {monthlyLocal}/month. Average missed call costs around $12 in lost revenue. Catch just 8 a month and Call Net has already paid for itself — every call after that is pure upside.
           </p>
           <div className="mx-auto mt-8 grid max-w-3xl gap-4 sm:grid-cols-3 text-left">
             <div className="rounded-xl border border-border bg-background p-5">
               <div className="text-xs font-medium text-muted-foreground">You pay</div>
-              <div className="mt-1 text-2xl font-semibold">$97<span className="text-sm text-muted-foreground">/mo</span></div>
-              {monthlyLocal && (
-                <div className="text-xs text-muted-foreground">≈ {monthlyLocal}/mo</div>
-              )}
+              <div className="mt-1 text-2xl font-semibold">{monthlyLocal}<span className="text-sm text-muted-foreground">/mo</span></div>
             </div>
             <div className="rounded-xl border border-border bg-background p-5">
               <div className="text-xs font-medium text-muted-foreground">Catch 100 missed calls/mo</div>
@@ -346,12 +343,7 @@ function CallNetPageInner() {
         <h2 className="text-center text-3xl font-semibold tracking-tight">Simple pricing</h2>
         <div className="mt-8 rounded-2xl border border-border bg-card p-8 text-center">
           <div className="text-sm font-medium text-muted-foreground">Single plan — all features</div>
-          <div className="mt-2 text-5xl font-semibold tracking-tight">$97<span className="text-lg text-muted-foreground">/month</span></div>
-          {monthlyLocal && (
-            <div className="mt-1 text-sm text-muted-foreground">
-              ≈ {monthlyLocal}/mo — billed $97 USD
-            </div>
-          )}
+          <div className="mt-2 text-5xl font-semibold tracking-tight">{monthlyLocal}<span className="text-lg text-muted-foreground">/month</span></div>
           <ul className="mx-auto mt-6 max-w-sm space-y-2 text-left text-sm">
             {[
               "AI answers unlimited calls",
@@ -365,7 +357,7 @@ function CallNetPageInner() {
             ))}
           </ul>
           <p className="mt-6 text-sm text-muted-foreground">
-            Or save 17% annually: <span className="font-medium text-foreground">$970/year</span> ($80.83/month — 2 months free vs. monthly){annualLocal ? ` · ≈ ${annualLocal}/yr` : ""}.
+            Or save 17% annually: <span className="font-medium text-foreground">{annualLocal}/year</span> ({formatLocal(970/12, geo)}/month — 2 months free vs. monthly).
           </p>
           <a
             href={STRIPE_TRIAL_URL} target="_blank" rel="noopener noreferrer" onClick={handleTrialClick}
