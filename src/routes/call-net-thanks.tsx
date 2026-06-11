@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
-import { Check, Mail, PhoneForwarded, Sparkles } from "lucide-react";
+import { getCalApi } from "@calcom/embed-react";
+import { Calendar, Check, Mail, PhoneForwarded, Sparkles } from "lucide-react";
 import { Wordmark } from "@/components/SiteChrome";
 import { initMetaPixel, trackPixel, CALL_NET_PIXEL_ID } from "@/lib/meta-pixel";
 
@@ -31,6 +32,13 @@ function CallNetThanksPage() {
       },
       CALL_NET_PIXEL_ID
     );
+  }, []);
+
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "call-net-setup-call" });
+      cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
+    })();
   }, []);
 
   return (
@@ -64,6 +72,21 @@ function CallNetThanksPage() {
             body="We'll contact you to set everything up — business name, hours, services, and FAQs — so we can build your AI receptionist."
           />
           <Step
+            icon={<Calendar className="h-5 w-5" />}
+            title="Prefer a live setup call?"
+            body="Book a quick 15-minute call and we'll get your AI receptionist configured together."
+            action={
+              <button
+                data-cal-namespace="call-net-setup-call"
+                data-cal-link="samuel-howell-iwfnp4/call-net-setup-call"
+                data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
+                className="mt-3 inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90"
+              >
+                Book a setup call
+              </button>
+            }
+          />
+          <Step
             icon={<Sparkles className="h-5 w-5" />}
             title="We build your AI receptionist"
             body="Once you send the form back, our team trains your custom agent on your business and voice. Most setups are live within 24 hours."
@@ -91,7 +114,7 @@ function CallNetThanksPage() {
   );
 }
 
-function Step({ icon, title, body }: { icon: React.ReactNode; title: string; body: string }) {
+function Step({ icon, title, body, action }: { icon: React.ReactNode; title: string; body: string; action?: React.ReactNode }) {
   return (
     <div className="flex gap-4 rounded-xl border border-border bg-card p-5">
       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
@@ -100,6 +123,7 @@ function Step({ icon, title, body }: { icon: React.ReactNode; title: string; bod
       <div>
         <h3 className="font-semibold">{title}</h3>
         <p className="mt-1 text-sm text-muted-foreground">{body}</p>
+        {action}
       </div>
     </div>
   );
