@@ -291,7 +291,7 @@ function CallNetPageInner() {
             "Only works when you miss a call — you stay the main point of contact.",
             "Callers don't get voicemail — they talk to a helpful AI, leave their info, and hang up happy.",
             "You get a text summary — name, number, reason for calling. You call them back.",
-            "No setup headaches — forward your existing number in 2 minutes.",
+            "We handle all the setup — you don't need to know anything technical.",
             "Try free for 14 days — cancel anytime in your dashboard, no contract.",
           ].map((b) => (
             <li key={b} className="flex items-start gap-3 rounded-xl border border-border bg-card p-4">
