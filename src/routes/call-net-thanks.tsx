@@ -18,15 +18,19 @@ export const Route = createFileRoute("/call-net-thanks")({
 function CallNetThanksPage() {
   useEffect(() => {
     initMetaPixel(CALL_NET_PIXEL_ID);
-    trackPixel("Purchase", {
-      value: 97,
-      currency: "USD",
-      content_name: "Call Net 14-day trial",
-      content_type: "product",
-      content_ids: ["call-net-trial"],
-      contents: [{ id: "call-net-trial", quantity: 1, item_price: 97 }],
-      num_items: 1,
-    });
+    trackPixel(
+      "Purchase",
+      {
+        value: 97,
+        currency: "USD",
+        content_name: "Call Net 14-day trial",
+        content_type: "product",
+        content_ids: ["call-net-trial"],
+        contents: [{ id: "call-net-trial", quantity: 1, item_price: 97 }],
+        num_items: 1,
+      },
+      CALL_NET_PIXEL_ID
+    );
   }, []);
 
   return (
