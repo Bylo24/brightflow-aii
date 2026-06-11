@@ -102,8 +102,8 @@ function CallNetPageInner() {
       .catch(() => { /* keep USD */ });
     return () => { cancelled = true; };
   }, []);
-  const monthlyLocal = formatConverted(97, geo);
-  const annualLocal = formatConverted(970, geo);
+  const monthlyLocal = formatLocal(97, geo);
+  const annualLocal = formatLocal(970, geo);
 
   const handleTrialClick = useCallback(() => {
     trackPixel(
