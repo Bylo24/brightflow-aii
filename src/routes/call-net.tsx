@@ -267,9 +267,9 @@ function CallNetPageInner() {
         <h2 className="text-center text-3xl font-semibold tracking-tight">How it works</h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-3">
           {[
-            { icon: Phone, title: "Connect your number", body: "Forward your business line to Call Net when you can't answer — or 24/7." },
-            { icon: Zap, title: "AI answers", body: "Our AI greets the caller, asks what they need, and records their name and phone number." },
-            { icon: MessageSquare, title: "You get the lead", body: "Instant text with the transcript and callback info. You call back and close." },
+            { icon: Phone, title: "You share your business number", body: "Tell us the phone number you want covered. That's it." },
+            { icon: Zap, title: "We set up Call Net", body: "We configure the forwarding so Call Net answers only when you don't. No technical work on your end." },
+            { icon: MessageSquare, title: "You get the lead", body: "Missed calls become instant texts with the caller's name, number, and message. You call back. You close." },
           ].map((s, i) => (
             <div key={i} className="rounded-2xl border border-border bg-card p-6">
               <div className="flex h-9 w-9 items-center justify-center rounded-full bg-foreground text-background">
