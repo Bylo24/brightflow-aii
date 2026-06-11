@@ -7,6 +7,18 @@ import { initMetaPixel, trackPixel, CALL_NET_PIXEL_ID } from "@/lib/meta-pixel";
 import { getLocaleCurrency, type GeoCurrency } from "@/lib/geo-currency.functions";
 
 function formatLocal(usd: number, geo: GeoCurrency | null): string {
+  const isUS = geo?.country === "US";
+  const isCA = geo?.country === "CA";
+
+  // Non-US/CA visitors see USD pricing with an explicit USD label
+  if (!isUS && !isCA) {
+    const whole = Math.ceil(usd);
+    const formatted = new Intl.NumberFormat("en-US", {
+      maximumFractionDigits: 0,
+    }).format(whole);
+    return `$${formatted} USD`;
+  }
+
   const rate = geo?.rate ?? 1;
   const symbol = geo?.symbol ?? "$";
   const whole = Math.ceil(usd * rate);
