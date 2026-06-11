@@ -4,6 +4,18 @@ import { ArrowRight, Check, Phone, MessageSquare, Zap, PhoneCall, PhoneOff } fro
 import { Wordmark } from "@/components/SiteChrome";
 import { ConversationProvider, useConversation } from "@elevenlabs/react";
 import { initMetaPixel, trackPixel, CALL_NET_PIXEL_ID } from "@/lib/meta-pixel";
+import { getLocaleCurrency, type GeoCurrency } from "@/lib/geo-currency.functions";
+
+function formatConverted(usd: number, geo: GeoCurrency | null): string | null {
+  if (!geo || geo.currency === "USD") return null;
+  const converted = usd * geo.rate;
+  // No decimals for JPY-style currencies; round to nearest whole for cleaner display
+  const whole = converted >= 100 ? Math.round(converted) : Math.round(converted * 10) / 10;
+  const formatted = new Intl.NumberFormat("en-US", {
+    maximumFractionDigits: whole >= 100 ? 0 : 1,
+  }).format(whole);
+  return `${geo.symbol}${formatted}`;
+}
 
 const STRIPE_TRIAL_URL = "https://buy.stripe.com/14A00kdXt50Y93yezT33W03";
 
@@ -81,6 +93,19 @@ function CallNetPageInner() {
   useEffect(() => {
     initMetaPixel(CALL_NET_PIXEL_ID);
   }, []);
+
+  // Geo-based currency display (price still billed in USD via Stripe).
+  const [geo, setGeo] = useState<GeoCurrency | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    getLocaleCurrency()
+      .then((g) => { if (!cancelled) setGeo(g); })
+      .catch(() => { /* keep USD */ });
+    return () => { cancelled = true; };
+  }, []);
+  const monthlyLocal = formatConverted(97, geo);
+  const annualLocal = formatConverted(970, geo);
+
   const handleTrialClick = useCallback(() => {
     trackPixel(
       "InitiateCheckout",
@@ -243,6 +268,9 @@ function CallNetPageInner() {
             <div className="rounded-xl border border-border bg-background p-5">
               <div className="text-xs font-medium text-muted-foreground">You pay</div>
               <div className="mt-1 text-2xl font-semibold">$97<span className="text-sm text-muted-foreground">/mo</span></div>
+              {monthlyLocal && (
+                <div className="text-xs text-muted-foreground">≈ {monthlyLocal}/mo</div>
+              )}
             </div>
             <div className="rounded-xl border border-border bg-background p-5">
               <div className="text-xs font-medium text-muted-foreground">Catch 100 missed calls/mo</div>
@@ -320,6 +348,11 @@ function CallNetPageInner() {
         <div className="mt-8 rounded-2xl border border-border bg-card p-8 text-center">
           <div className="text-sm font-medium text-muted-foreground">Single plan — all features</div>
           <div className="mt-2 text-5xl font-semibold tracking-tight">$97<span className="text-lg text-muted-foreground">/month</span></div>
+          {monthlyLocal && (
+            <div className="mt-1 text-sm text-muted-foreground">
+              ≈ {monthlyLocal}/mo — billed $97 USD
+            </div>
+          )}
           <ul className="mx-auto mt-6 max-w-sm space-y-2 text-left text-sm">
             {[
               "AI answers unlimited calls",
@@ -333,7 +366,7 @@ function CallNetPageInner() {
             ))}
           </ul>
           <p className="mt-6 text-sm text-muted-foreground">
-            Or save 17% annually: <span className="font-medium text-foreground">$970/year</span> ($80.83/month — 2 months free vs. monthly).
+            Or save 17% annually: <span className="font-medium text-foreground">$970/year</span> ($80.83/month — 2 months free vs. monthly){annualLocal ? ` · ≈ ${annualLocal}/yr` : ""}.
           </p>
           <a
             href={STRIPE_TRIAL_URL} target="_blank" rel="noopener noreferrer" onClick={handleTrialClick}
