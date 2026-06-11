@@ -93,6 +93,19 @@ function CallNetPageInner() {
   useEffect(() => {
     initMetaPixel(CALL_NET_PIXEL_ID);
   }, []);
+
+  // Geo-based currency display (price still billed in USD via Stripe).
+  const [geo, setGeo] = useState<GeoCurrency | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    getLocaleCurrency()
+      .then((g) => { if (!cancelled) setGeo(g); })
+      .catch(() => { /* keep USD */ });
+    return () => { cancelled = true; };
+  }, []);
+  const monthlyLocal = formatConverted(97, geo);
+  const annualLocal = formatConverted(970, geo);
+
   const handleTrialClick = useCallback(() => {
     trackPixel(
       "InitiateCheckout",
