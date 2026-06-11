@@ -48,7 +48,7 @@ function CallNetThanksPage() {
             You're in. Welcome to Call Net.
           </h1>
           <p className="mt-4 text-balance text-muted-foreground">
-            Your 14-day free trial is active. We'll email you shortly to get your AI receptionist
+            Your 14-day free trial is active. We'll reach out to get your AI receptionist
             set up and answering calls for your business.
           </p>
         </div>
@@ -61,7 +61,7 @@ function CallNetThanksPage() {
           <Step
             icon={<Mail className="h-5 w-5" />}
             title="Check your inbox"
-            body="Within the next few minutes you'll get a welcome email from samuel@brightflowagency.com with a short onboarding form (business name, hours, services, FAQs)."
+            body="We'll contact you to set everything up — business name, hours, services, and FAQs — so we can build your AI receptionist."
           />
           <Step
             icon={<Sparkles className="h-5 w-5" />}
