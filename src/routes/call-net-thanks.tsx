@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
-import { Check, Mail, PhoneForwarded, Sparkles } from "lucide-react";
+import { getCalApi } from "@calcom/embed-react";
+import { Calendar, Check, Mail, PhoneForwarded, Sparkles } from "lucide-react";
 import { Wordmark } from "@/components/SiteChrome";
 import { initMetaPixel, trackPixel, CALL_NET_PIXEL_ID } from "@/lib/meta-pixel";
 
