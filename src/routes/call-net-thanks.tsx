@@ -70,8 +70,8 @@ function CallNetThanksPage() {
           />
           <Step
             icon={<PhoneForwarded className="h-5 w-5" />}
-            title="Forward your line and go live"
-            body="We'll send you a dedicated number and a 2-minute call-forwarding guide. Your AI starts catching missed calls immediately — no calls slip through."
+            title="We handle the technical setup"
+            body="Our team configures call forwarding on your line — no work needed from you. Your AI receptionist starts catching missed calls immediately."
           />
         </div>
 
