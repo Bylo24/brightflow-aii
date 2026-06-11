@@ -79,7 +79,7 @@ function CallNetPageInner() {
 
   // Meta Pixel: init on mount, fire InitiateCheckout on any Stripe trial link.
   useEffect(() => {
-    initMetaPixel();
+    initMetaPixel(CALL_NET_PIXEL_ID);
   }, []);
   const handleTrialClick = useCallback(() => {
     trackPixel("InitiateCheckout", { value: 97, currency: "USD", content_name: "Call Net 14-day trial" });
