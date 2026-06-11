@@ -6,14 +6,14 @@ import { ConversationProvider, useConversation } from "@elevenlabs/react";
 import { initMetaPixel, trackPixel, CALL_NET_PIXEL_ID } from "@/lib/meta-pixel";
 import { getLocaleCurrency, type GeoCurrency } from "@/lib/geo-currency.functions";
 
-function formatConverted(usd: number, geo: GeoCurrency | null): string | null {
-  if (!geo || geo.currency === "USD") return null;
-  const converted = usd * geo.rate;
-  const whole = Math.round(converted);
+function formatLocal(usd: number, geo: GeoCurrency | null): string {
+  const rate = geo?.rate ?? 1;
+  const symbol = geo?.symbol ?? "$";
+  const whole = Math.round(usd * rate);
   const formatted = new Intl.NumberFormat("en-US", {
     maximumFractionDigits: 0,
   }).format(whole);
-  return `${geo.symbol}${formatted}`;
+  return `${symbol}${formatted}`;
 }
 
 const STRIPE_TRIAL_URL = "https://buy.stripe.com/14A00kdXt50Y93yezT33W03";
