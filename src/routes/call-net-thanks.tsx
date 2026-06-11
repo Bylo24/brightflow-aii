@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { Check, Mail, PhoneForwarded, Sparkles } from "lucide-react";
 import { Wordmark } from "@/components/SiteChrome";
-import { initMetaPixel, trackPixel } from "@/lib/meta-pixel";
+import { initMetaPixel, trackPixel, CALL_NET_PIXEL_ID } from "@/lib/meta-pixel";
 
 export const Route = createFileRoute("/call-net-thanks")({
   head: () => ({
