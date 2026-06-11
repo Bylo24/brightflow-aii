@@ -124,7 +124,7 @@ function CallNetPageInner() {
           Credit card required. You won't be charged until day 14. Cancel anytime in your dashboard.
         </p>
         <div className="mx-auto mt-8 flex max-w-xl flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
-          <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5" /> Setup in 2 minutes</span>
+          <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5" /> We handle the setup – you just tell us your number</span>
           <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5" /> Cancel anytime</span>
           <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5" /> SSL secured checkout</span>
           <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5" /> Trusted by local trade businesses</span>
@@ -267,9 +267,9 @@ function CallNetPageInner() {
         <h2 className="text-center text-3xl font-semibold tracking-tight">How it works</h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-3">
           {[
-            { icon: Phone, title: "Connect your number", body: "Forward your business line to Call Net when you can't answer — or 24/7." },
-            { icon: Zap, title: "AI answers", body: "Our AI greets the caller, asks what they need, and records their name and phone number." },
-            { icon: MessageSquare, title: "You get the lead", body: "Instant text with the transcript and callback info. You call back and close." },
+            { icon: Phone, title: "You share your business number", body: "Tell us the phone number you want covered. That's it." },
+            { icon: Zap, title: "We set up Call Net", body: "We configure the forwarding so Call Net answers only when you don't. No technical work on your end." },
+            { icon: MessageSquare, title: "You get the lead", body: "Missed calls become instant texts with the caller's name, number, and message. You call back. You close." },
           ].map((s, i) => (
             <div key={i} className="rounded-2xl border border-border bg-card p-6">
               <div className="flex h-9 w-9 items-center justify-center rounded-full bg-foreground text-background">
@@ -291,7 +291,7 @@ function CallNetPageInner() {
             "Only works when you miss a call — you stay the main point of contact.",
             "Callers don't get voicemail — they talk to a helpful AI, leave their info, and hang up happy.",
             "You get a text summary — name, number, reason for calling. You call them back.",
-            "No setup headaches — forward your existing number in 2 minutes.",
+            "We handle all the setup — you don't need to know anything technical.",
             "Try free for 14 days — cancel anytime in your dashboard, no contract.",
           ].map((b) => (
             <li key={b} className="flex items-start gap-3 rounded-xl border border-border bg-card p-4">
@@ -361,7 +361,11 @@ function CallNetPageInner() {
             },
             {
               q: "How fast is setup? Do I need technical skills?",
-              a: "No tech skills needed. Setup is under 2 minutes — you forward your existing business line to Call Net (24/7 or only when you don't pick up). We email step-by-step instructions the moment you sign up.",
+              a: "No technical skills needed. You just give us your business phone number, and we handle the forwarding setup. Most clients are live within 2 hours of signing up.",
+            },
+            {
+              q: "What if my business number is my personal mobile?",
+              a: "That's common. We'll set up a separate business number for you (costs about $5–$15/month) and route it so your personal phone still rings first, and Call Net only picks up when you miss it. We handle everything.",
             },
             {
               q: "Why do you require a credit card for the free trial?",
