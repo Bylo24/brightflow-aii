@@ -689,7 +689,6 @@ function ProductCard({
   title,
   body,
   stats,
-  Visual,
   variant = "light",
 }: {
   to: "/call-net" | "/bookkeeping";
@@ -699,7 +698,6 @@ function ProductCard({
   title: string;
   body: string;
   stats: { v: string; l: string }[];
-  Visual: React.ComponentType;
   variant?: "light" | "dark";
 }) {
   const isDark = variant === "dark";
@@ -715,14 +713,8 @@ function ProductCard({
           : "border-foreground/15 bg-background hover:border-foreground/60 shadow-sm"
       }`}
     >
-      {/* visual panel */}
-      <div className={`relative h-56 sm:h-64 overflow-hidden border-b ${isDark ? "border-background/15 bg-foreground" : "border-border bg-secondary"}`}>
-        <div className={`absolute inset-0 grid-bg opacity-40 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000,transparent)] ${isDark ? "invert opacity-20" : ""}`} />
-        <Visual />
-      </div>
-
       <div className={isDark ? "p-8 sm:p-12" : "p-8 sm:p-10"}>
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center justify-between mb-8">
           <div className="inline-flex items-center gap-3">
             <div className={`size-9 rounded-md flex items-center justify-center ${isDark ? "bg-background/10 text-background" : "bg-accent/10 text-accent"}`}>
               {icon}
