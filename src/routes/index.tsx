@@ -749,11 +749,11 @@ function ProductCard({
         </h3>
         <p className={`text-sm sm:text-base leading-relaxed mb-8 ${isDark ? "text-background/70" : "text-muted-foreground"}`}>{body}</p>
 
-        <div className={`grid grid-cols-3 gap-4 mb-8 pt-6 border-t ${isDark ? "border-background/15" : "border-border"}`}>
+        <div className={`grid grid-cols-3 gap-3 sm:gap-4 mb-8 pt-6 border-t ${isDark ? "border-background/15" : "border-border"}`}>
           {stats.map((s, i) => (
-            <div key={i}>
-              <div className={`text-2xl font-semibold tracking-[-0.02em] ${isDark ? "text-background" : "text-foreground"}`}>{s.v}</div>
-              <div className={`text-[10px] uppercase tracking-[0.18em] mt-1 leading-tight ${isDark ? "text-background/55" : "text-muted-foreground"}`}>{s.l}</div>
+            <div key={i} className="min-w-0">
+              <div className={`text-lg sm:text-2xl font-semibold tracking-[-0.02em] leading-tight break-words ${isDark ? "text-background" : "text-foreground"}`}>{s.v}</div>
+              <div className={`text-[10px] uppercase tracking-[0.16em] mt-1 leading-tight ${isDark ? "text-background/55" : "text-muted-foreground"}`}>{s.l}</div>
             </div>
           ))}
         </div>
