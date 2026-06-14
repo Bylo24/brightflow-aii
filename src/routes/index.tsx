@@ -8,9 +8,7 @@ import {
   Check,
   Clock,
   FileText,
-  Mail,
   Phone,
-  PhoneCall,
   Plus,
   Quote,
 } from "lucide-react";
