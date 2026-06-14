@@ -217,9 +217,9 @@ function ValueProp() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.06 }}
-              className="grid grid-cols-12 gap-6 sm:gap-10 py-9 sm:py-11 border-b border-border items-baseline"
+              className="grid grid-cols-12 gap-6 sm:gap-10 py-7 sm:py-9 border-b border-border items-baseline"
             >
-              <div className="col-span-2 sm:col-span-1 text-[11px] font-mono text-muted-foreground/70 pt-1">
+              <div className="col-span-2 sm:col-span-1 text-[11px] font-mono text-foreground/55 pt-1">
                 {r.index}
               </div>
               <div className="col-span-10 sm:col-span-4">
