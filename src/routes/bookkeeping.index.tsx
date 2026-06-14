@@ -106,10 +106,8 @@ function BookkeepingNav() {
 function Hero() {
   return (
     <section className="relative pt-10 sm:pt-16 md:pt-20 pb-12 sm:pb-16 overflow-hidden">
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,hsl(168_72%_32%/0.14),transparent_60%)]" />
-        <div className="absolute inset-0 grid-bg [mask-image:radial-gradient(ellipse_60%_45%_at_50%_0%,#000_50%,transparent_100%)]" />
-      </div>
+      <AuroraBackground />
+
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col items-center text-center">
