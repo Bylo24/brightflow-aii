@@ -868,8 +868,7 @@ function Process() {
 
 
         <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {/* connector line — desktop */}
-          <div className="hidden md:block absolute top-12 left-[12%] right-[12%] h-px bg-background/20" aria-hidden />
+
           {steps.map((s, i) => (
             <motion.div
               key={i}
