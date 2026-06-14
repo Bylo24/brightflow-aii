@@ -513,7 +513,7 @@ function Process() {
 /* ---------------- FINAL CTA ---------------- */
 function FinalCTA() {
   return (
-    <section className="relative bg-foreground text-background py-32 sm:py-40 overflow-hidden">
+    <section className="relative bg-foreground text-background py-36 sm:py-44 md:py-48 overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_50%_50%,hsl(168_72%_32%/0.10),transparent_65%)]" />
       <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
         <motion.div
