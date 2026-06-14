@@ -114,66 +114,6 @@ function Hero() {
   );
 }
 
-function HeroMock() {
-  const calls = [
-    { name: "Jordan M.", time: "2 min ago", note: "Leaking pipe under kitchen sink — needs callback today", status: "Callback sent" },
-    { name: "Priya S.", time: "14 min ago", note: "Boiler service quote for 3-bed terrace", status: "Callback sent" },
-    { name: "Tom W.", time: "1 hr ago", note: "Bathroom refit estimate, available Thursday", status: "Callback sent" },
-  ];
-  return (
-    <div className="relative">
-      <div className="absolute -inset-6 -z-10 bg-[radial-gradient(ellipse_at_center,hsl(168_72%_32%/0.10),transparent_70%)]" />
-      <div className="rounded-xl border border-border bg-background shadow-[0_30px_80px_-30px_hsl(0_0%_0%/0.18)] overflow-hidden">
-        <div className="flex items-center justify-between px-5 py-3.5 border-b border-border bg-secondary/30">
-          <div className="flex items-center gap-2.5">
-            <div className="size-7 rounded-md bg-foreground text-background flex items-center justify-center">
-              <Phone className="size-3.5" />
-            </div>
-            <div>
-              <div className="text-sm font-semibold tracking-tight">Call Net</div>
-              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Captured today</div>
-            </div>
-          </div>
-          <div className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-            <span className="size-1.5 rounded-full bg-accent animate-pulse" />
-            Live
-          </div>
-        </div>
-        <div className="divide-y divide-border">
-          {calls.map((c, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: 12 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 + i * 0.12 }}
-              className="px-5 py-4 flex items-start gap-4"
-            >
-              <div className="size-9 rounded-full bg-secondary text-foreground/70 flex items-center justify-center text-xs font-medium shrink-0">
-                {c.name.charAt(0)}
-              </div>
-              <div className="min-w-0 flex-1">
-                <div className="flex items-center justify-between gap-3">
-                  <div className="text-sm font-medium text-foreground truncate">{c.name}</div>
-                  <div className="text-[11px] text-muted-foreground shrink-0">{c.time}</div>
-                </div>
-                <div className="text-xs text-muted-foreground mt-0.5 leading-relaxed">{c.note}</div>
-                <div className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-accent/10 text-accent px-2 py-0.5 text-[10px] uppercase tracking-[0.14em] font-medium">
-                  <span className="size-1 rounded-full bg-accent" />
-                  {c.status}
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-        <div className="px-5 py-3 border-t border-border bg-secondary/30 text-[11px] text-muted-foreground flex items-center justify-between">
-          <span>3 calls captured · 0 missed</span>
-          <span className="font-mono">62% lift</span>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 /* ---------------- STATS STRIP ---------------- */
 function StatsStrip() {
   const items = [
