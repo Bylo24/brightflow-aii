@@ -249,7 +249,7 @@ function Marquee() {
     "AND MORE",
   ];
   return (
-    <div className="py-12 sm:py-12 border-y border-border overflow-hidden">
+    <div className="py-10 sm:py-12 border-b border-border overflow-hidden">
       <div className="text-center text-[11px] uppercase tracking-[0.18em] text-muted-foreground/70 mb-6 sm:mb-8 px-4">
         Trusted by service businesses done running on manual admin
       </div>
