@@ -839,7 +839,7 @@ function Process() {
     {
       num: "02",
       title: "Build",
-      body: "We design and build the automated workflow around your exact process, integrated with the tools you already use. CRM, email, accounting, calendar.",
+      body: "We design and build the automated workflow around your exact process, fully integrated with the tools you already use. CRM, email, accounting, calendar, all wired in.",
     },
     {
       num: "03",
