@@ -131,66 +131,13 @@ function Hero() {
             <span className="inline-flex items-center gap-2"><Check className="h-3.5 w-3.5 text-accent" /> We manage everything</span>
           </motion.div>
 
-          <HeroDashboard />
+          
         </div>
       </div>
     </section>
   );
 }
 
-/* Single, static, high-contrast dashboard card. No rotation, no float. */
-function HeroDashboard() {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-      className="relative mt-12 sm:mt-16 w-full max-w-3xl"
-    >
-      <div className="rounded-lg border border-border bg-background shadow-sm overflow-hidden">
-        <div className="flex items-center gap-2 border-b border-border px-4 py-2">
-          <span className="size-2 rounded-full bg-foreground/20" />
-          <span className="size-2 rounded-full bg-foreground/20" />
-          <span className="size-2 rounded-full bg-foreground/20" />
-          <span className="ml-3 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">brightflow / control</span>
-          <span className="ml-auto text-[10px] text-accent font-medium">● Live</span>
-        </div>
-        <div className="grid grid-cols-3 divide-x divide-border border-b border-border">
-          {[
-            { l: "Hours saved", v: "14h", s: "this week" },
-            { l: "Tasks handled", v: "1,284", s: "this month" },
-            { l: "Uptime", v: "100%", s: "30 day" },
-          ].map((m) => (
-            <div key={m.l} className="p-4 text-left">
-              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">{m.l}</div>
-              <div className="mt-1 text-2xl font-semibold tracking-[-0.02em] text-foreground">{m.v}</div>
-              <div className="text-[10px] text-muted-foreground">{m.s}</div>
-            </div>
-          ))}
-        </div>
-        <div className="p-4 space-y-2">
-          {[
-            { icon: <Mail className="size-3" />, t: "Missing receipt reminder → Southeast Plumbing" },
-            { icon: <PhoneCall className="size-3" />, t: "Missed call captured → Brown & Sons Plumbing" },
-            { icon: <Calendar className="size-3" />, t: "Client follow-up sent → Patel Salon" },
-          ].map((row, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8 + i * 0.15, duration: 0.4 }}
-              className="flex items-center gap-3 rounded-md border border-border bg-secondary px-3 py-2 text-[11px]"
-            >
-              <span className="text-accent">{row.icon}</span>
-              <span className="flex-1 truncate text-foreground">{row.t}</span>
-              <Check className="size-3 text-accent" strokeWidth={3} />
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </motion.div>
-  );
-}
 
 /* ---------------- STATS STRIP ---------------- */
 function StatsStrip() {
