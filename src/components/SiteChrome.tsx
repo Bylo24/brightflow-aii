@@ -97,7 +97,7 @@ export function Footer({ hideCta = false }: { hideCta?: boolean } = {}) {
               Book a 20-minute workflow audit. We'll find the highest-cost repetitive task in your business and show you exactly how we'll automate it. At a fixed price, live in under a week.
             </p>
             <BookCallDialog>
-              <button type="button" className="btn btn-lg btn-neutral rounded-full">
+              <button type="button" className="inline-flex items-center justify-center gap-2 rounded-md bg-foreground px-7 py-3.5 text-sm font-medium text-background hover:bg-foreground/90 transition-colors">
                 Book your free audit <ArrowUpRight className="size-4" />
               </button>
             </BookCallDialog>
