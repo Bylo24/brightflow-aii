@@ -722,17 +722,17 @@ function Products() {
       <div className="mt-6 rounded-2xl bg-foreground p-8 sm:p-10 md:p-12 text-background flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
           <div className="text-[11px] uppercase tracking-[0.18em] mb-3 opacity-60">
-            Don't see your workflow?
+            Our focus
           </div>
           <h4 className="font-semibold tracking-tight text-xl sm:text-2xl md:text-3xl text-balance">
-            If it's repetitive, we automate it. Every time.
+            We focus on validated workflows. Call Net for trades. Document Chase for bookkeepers.
           </h4>
         </div>
         <Link
           to="/contact"
-          className="btn btn-md bg-background text-foreground border-none hover:bg-background/90 rounded-full self-start md:self-auto"
+          className="btn btn-md bg-background text-foreground border-none hover:bg-background/90 rounded-full self-start md:self-auto whitespace-nowrap"
         >
-          Tell us about it <ArrowUpRight className="size-4" />
+          Get in touch <ArrowUpRight className="size-4" />
         </Link>
       </div>
     </section>
