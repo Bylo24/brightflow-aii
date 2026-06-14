@@ -61,7 +61,6 @@ function Index() {
         <Products />
         <Testimonials />
         <Process />
-        <Metrics />
         <FAQ />
       </main>
       <Footer />
@@ -76,7 +75,7 @@ function Hero() {
   return (
     <section
       id="top"
-      className="relative pt-16 sm:pt-24 pb-16 sm:pb-24 overflow-hidden"
+      className="relative pt-14 sm:pt-20 pb-16 sm:pb-20 overflow-hidden"
     >
       <div className="absolute inset-0 -z-10">
         <AuroraBackground />
@@ -89,7 +88,7 @@ function Hero() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1 text-[11px] font-medium text-foreground/80"
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1 text-[11px] font-medium text-foreground/80"
           >
             <span className="relative flex h-1.5 w-1.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
@@ -102,7 +101,7 @@ function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[44px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[88px] leading-[1.0] font-semibold tracking-[-0.04em] mb-6 max-w-4xl text-balance text-foreground"
+            className="text-[48px] sm:text-6xl md:text-7xl lg:text-[88px] xl:text-[104px] leading-[0.95] font-semibold tracking-[-0.045em] mb-5 max-w-5xl text-balance text-foreground"
           >
             Automate the repetitive work{" "}
             <span className="font-serif italic font-normal text-accent">killing your week.</span>
@@ -112,7 +111,7 @@ function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.08 }}
-            className="text-base sm:text-lg text-muted-foreground max-w-xl mb-8 text-pretty leading-relaxed"
+            className="text-sm sm:text-base text-muted-foreground max-w-lg mb-7 text-pretty leading-relaxed"
           >
             We fully automate the repetitive manual work running inside your business and operate the system for you, end to end. You get the hours back.
           </motion.p>
@@ -126,14 +125,14 @@ function Hero() {
             <BookCallDialog>
               <button
                 type="button"
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-foreground px-6 py-3 text-sm font-medium text-background hover:bg-foreground/90 transition-colors shadow-sm"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-foreground px-7 py-3.5 text-sm font-medium text-background hover:bg-foreground/90 transition-colors shadow-sm"
               >
                 Book a free audit <ArrowRight className="size-4" />
               </button>
             </BookCallDialog>
             <a
               href="#services"
-              className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-background px-6 py-3 text-sm font-medium text-foreground hover:bg-secondary transition-colors"
+              className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-background px-7 py-3.5 text-sm font-medium text-foreground hover:bg-secondary transition-colors"
             >
               See what we build
             </a>
@@ -143,7 +142,7 @@ function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.32 }}
-            className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground"
+            className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground"
           >
             <span className="inline-flex items-center gap-2"><Check className="h-3.5 w-3.5 text-accent" /> Live in under 7 days</span>
             <span className="inline-flex items-center gap-2"><Check className="h-3.5 w-3.5 text-accent" /> Fixed monthly fee</span>
@@ -164,7 +163,7 @@ function HeroDashboard() {
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-      className="relative mt-16 sm:mt-24 w-full max-w-3xl"
+      className="relative mt-12 sm:mt-16 w-full max-w-3xl"
     >
       <div className="rounded-lg border border-border bg-background shadow-sm overflow-hidden">
         <div className="flex items-center gap-2 border-b border-border px-4 py-2">
@@ -220,7 +219,7 @@ function StatsStrip() {
     { v: "£0", l: "Until it's working" },
   ];
   return (
-    <section className="border-y border-border bg-secondary/40 overflow-hidden">
+    <section className="border-b border-border bg-secondary/40 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-4 divide-x divide-border">
         {items.map((it, i) => (
           <motion.div
@@ -250,7 +249,7 @@ function Marquee() {
     "AND MORE",
   ];
   return (
-    <div className="py-12 sm:py-12 border-y border-border overflow-hidden">
+    <div className="py-10 sm:py-12 border-b border-border overflow-hidden">
       <div className="text-center text-[11px] uppercase tracking-[0.18em] text-muted-foreground/70 mb-6 sm:mb-8 px-4">
         Trusted by service businesses done running on manual admin
       </div>
@@ -303,7 +302,7 @@ function ValueProp() {
           <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6 sm:mb-6">
             What you actually get
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance mb-6 sm:mb-8">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.045em] leading-[1.0] text-balance mb-6 sm:mb-8">
             We don't sell workflows.{" "}
             <span className="font-serif italic font-normal text-accent">We sell the outcome.</span>
           </h2>
@@ -401,7 +400,7 @@ function Storyboard() {
           <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6 sm:mb-6">
             The transformation
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance mb-6 sm:mb-8">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.045em] leading-[1.0] text-balance mb-6 sm:mb-8">
             From manual chaos to{" "}
             <span className="font-serif italic font-normal text-accent">hours back, every week.</span>
           </h2>
@@ -629,7 +628,7 @@ function Products() {
           <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6 sm:mb-6">
             What we build
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.045em] leading-[1.0] text-balance">
             Two flagship systems.{" "}
             <span className="font-serif italic font-normal text-accent">Already live.</span>
           </h2>
@@ -722,7 +721,7 @@ function ProductCard({
       className={`group relative overflow-hidden rounded-lg border transition-colors ${
         isDark
           ? "border-foreground bg-foreground text-background hover:border-foreground"
-          : "border-border bg-background hover:border-foreground/40"
+          : "border-foreground/15 bg-background hover:border-foreground/60 shadow-sm"
       }`}
     >
       {/* visual panel */}
@@ -731,7 +730,7 @@ function ProductCard({
         <Visual />
       </div>
 
-      <div className="p-8">
+      <div className={isDark ? "p-8 sm:p-12" : "p-8 sm:p-10"}>
         <div className="flex items-center justify-between mb-6">
           <div className="inline-flex items-center gap-3">
             <div className={`size-9 rounded-md flex items-center justify-center ${isDark ? "bg-background/10 text-background" : "bg-accent/10 text-accent"}`}>
@@ -868,14 +867,14 @@ function Testimonials() {
     },
   ];
   return (
-    <section className="py-24 sm:py-32 md:py-32 border-y border-border bg-secondary/40 relative overflow-hidden">
+    <section className="py-24 sm:py-32 md:py-32 bg-secondary/40 relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_50%_0%,hsl(168_72%_32%/0.08),transparent_60%)]" />
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="max-w-3xl mb-16 sm:mb-16">
           <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6">
             What clients say
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.045em] leading-[1.0] text-balance">
             Quietly running{" "}
             <span className="font-serif italic font-normal text-accent">in the background.</span>
           </h2>
@@ -935,22 +934,22 @@ function Process() {
   ];
 
   return (
-    <section id="process" className="py-24 sm:py-32 md:py-32 border-y border-border bg-secondary/50">
+    <section id="process" className="py-24 sm:py-32 md:py-32 bg-foreground text-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="mb-16 sm:mb-24 max-w-3xl">
-          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6 sm:mb-6">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-background/60 mb-6 sm:mb-6">
             How it works
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.045em] leading-[1.0] text-balance text-background">
             From first call to live system{" "}
-            <span className="font-serif italic font-normal text-muted-foreground">in under a week.</span>
+            <span className="font-serif italic font-normal text-background/55">in under a week.</span>
           </h2>
         </div>
 
 
         <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {/* connector line — desktop */}
-          <div className="hidden md:block absolute top-12 left-[12%] right-[12%] h-px bg-border" aria-hidden />
+          <div className="hidden md:block absolute top-12 left-[12%] right-[12%] h-px bg-background/20" aria-hidden />
           {steps.map((s, i) => (
             <motion.div
               key={i}
@@ -962,13 +961,13 @@ function Process() {
             >
               {/* numbered node sitting on the connector line */}
               <div className="relative flex items-center justify-center mb-6">
-                <div className="relative z-10 size-8 rounded-full bg-background border border-foreground flex items-center justify-center text-[11px] font-mono font-semibold text-foreground">
+                <div className="relative z-10 size-8 rounded-full bg-foreground border border-background/30 flex items-center justify-center text-[11px] font-mono font-semibold text-background">
                   {String(i + 1).padStart(2, "0")}
                 </div>
               </div>
-              <div className="bg-background border border-border rounded-lg p-8 min-h-[200px]">
-                <h4 className="text-xl font-semibold tracking-tight mb-3 text-foreground">{s.title}</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">{s.body}</p>
+              <div className="bg-background/[0.04] border border-background/15 rounded-lg p-8 min-h-[200px]">
+                <h4 className="text-xl font-semibold tracking-tight mb-3 text-background">{s.title}</h4>
+                <p className="text-sm text-background/65 leading-relaxed">{s.body}</p>
               </div>
             </motion.div>
           ))}
@@ -1048,7 +1047,7 @@ function FAQ() {
           <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6 sm:mb-6">
             FAQ
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.045em] leading-[1.0] text-balance">
             The straight{" "}
             <span className="font-serif italic font-normal text-muted-foreground">answers.</span>
           </h2>
