@@ -230,10 +230,10 @@ function StatsStrip() {
             transition={{ delay: i * 0.06 }}
             className={`min-w-0 px-4 sm:px-6 md:px-8 py-8 sm:py-12 text-left border-border ${i % 2 === 1 ? "border-l" : ""} ${i >= 1 ? "md:border-l" : ""} ${i === 2 ? "border-t md:border-t-0" : ""} ${i === 3 ? "border-t md:border-t-0" : ""}`}
           >
-            <div className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-foreground leading-[1.05] [overflow-wrap:anywhere]">
+            <div className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-foreground leading-[1.05] whitespace-normal break-words">
               {it.v}
             </div>
-            <div className="mt-2 sm:mt-3 text-[10px] uppercase tracking-[0.18em] text-muted-foreground/80 leading-snug [overflow-wrap:anywhere]">
+            <div className="mt-2 sm:mt-3 text-[10px] uppercase tracking-[0.18em] text-muted-foreground/80 leading-snug whitespace-normal break-words">
               {it.l}
             </div>
           </motion.div>
