@@ -4,9 +4,6 @@ import { useState } from "react";
 import {
   ArrowRight,
   ArrowUpRight,
-  Calendar,
-  Check,
-  Clock,
   FileText,
   Phone,
   Plus,
@@ -15,9 +12,6 @@ import {
 import { Nav, Footer } from "@/components/SiteChrome";
 import { BookCallDialog } from "@/components/BookCallDialog";
 import { AuroraBackground } from "@/components/AuroraBackground";
-
-
-
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -53,6 +47,7 @@ function Index() {
         <Products />
         <Testimonials />
         <Process />
+        <FinalCTA />
         <FAQ />
       </main>
       <Footer />
@@ -60,82 +55,147 @@ function Index() {
   );
 }
 
-
-
 /* ---------------- HERO ---------------- */
 function Hero() {
   return (
     <section
       id="top"
-      className="relative pt-14 sm:pt-20 pb-16 sm:pb-20 overflow-hidden"
+      className="relative pt-14 sm:pt-20 pb-20 sm:pb-28 overflow-hidden"
     >
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 -z-10 opacity-70">
         <AuroraBackground />
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="flex flex-col items-center text-center">
-
-
-          <motion.h1
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[48px] sm:text-6xl md:text-7xl lg:text-[88px] xl:text-[104px] leading-[0.95] font-semibold tracking-[-0.045em] mb-5 max-w-5xl text-balance text-foreground"
-          >
-            Automate the repetitive work{" "}
-            <span className="font-serif italic font-normal text-accent">killing your week.</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.08 }}
-            className="text-sm sm:text-base text-muted-foreground max-w-lg mb-7 text-pretty leading-relaxed"
-          >
-            We fully automate the repetitive manual work running inside your business and operate the system for you, end to end. You get the hours back.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.16 }}
-            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto"
-          >
-            <BookCallDialog>
-              <button
-                type="button"
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-foreground px-7 py-3.5 text-sm font-medium text-background hover:bg-foreground/90 transition-colors shadow-sm"
-              >
-                Book a free audit <ArrowRight className="size-4" />
-              </button>
-            </BookCallDialog>
-            <a
-              href="#services"
-              className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-background px-7 py-3.5 text-sm font-medium text-foreground hover:bg-secondary transition-colors"
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* LEFT */}
+          <div className="lg:col-span-7 flex flex-col items-start text-left">
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 backdrop-blur px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6"
             >
-              See what we build
-            </a>
-          </motion.div>
+              <span className="size-1.5 rounded-full bg-accent" />
+              Live in under 7 days · Managed end-to-end
+            </motion.div>
 
+            <motion.h1
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="text-[44px] sm:text-6xl md:text-6xl lg:text-7xl leading-[0.95] font-semibold tracking-[-0.045em] mb-5 text-balance text-foreground"
+            >
+              Automate the repetitive work{" "}
+              <span className="font-serif italic font-normal text-accent">killing your week.</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.08 }}
+              className="text-base text-muted-foreground max-w-md mb-8 text-pretty leading-relaxed"
+            >
+              We fully automate the repetitive manual work running inside your business and operate the system for you, end to end. You get the hours back.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.16 }}
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto"
+            >
+              <BookCallDialog>
+                <button
+                  type="button"
+                  className="inline-flex items-center justify-center gap-2 rounded-md bg-foreground px-7 py-3.5 text-sm font-medium text-background hover:bg-foreground/90 transition-colors shadow-sm"
+                >
+                  Book a free audit <ArrowRight className="size-4" />
+                </button>
+              </BookCallDialog>
+              <a
+                href="#services"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-background px-7 py-3.5 text-sm font-medium text-foreground hover:bg-secondary transition-colors"
+              >
+                See what we build
+              </a>
+            </motion.div>
+          </div>
+
+          {/* RIGHT — product mock */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.32 }}
-            className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="hidden lg:block lg:col-span-5 lg:-mr-6 xl:-mr-12"
           >
-            <span className="inline-flex items-center gap-2"><Check className="h-3.5 w-3.5 text-accent" /> Live in under 7 days</span>
-            <span className="inline-flex items-center gap-2"><Check className="h-3.5 w-3.5 text-accent" /> Fixed monthly fee</span>
-            <span className="inline-flex items-center gap-2"><Check className="h-3.5 w-3.5 text-accent" /> We manage everything</span>
+            <HeroMock />
           </motion.div>
-
-          
         </div>
       </div>
     </section>
   );
 }
 
+function HeroMock() {
+  const calls = [
+    { name: "Jordan M.", time: "2 min ago", note: "Leaking pipe under kitchen sink — needs callback today", status: "Callback sent" },
+    { name: "Priya S.", time: "14 min ago", note: "Boiler service quote for 3-bed terrace", status: "Callback sent" },
+    { name: "Tom W.", time: "1 hr ago", note: "Bathroom refit estimate, available Thursday", status: "Callback sent" },
+  ];
+  return (
+    <div className="relative">
+      <div className="absolute -inset-6 -z-10 bg-[radial-gradient(ellipse_at_center,hsl(168_72%_32%/0.10),transparent_70%)]" />
+      <div className="rounded-xl border border-border bg-background shadow-[0_30px_80px_-30px_hsl(0_0%_0%/0.18)] overflow-hidden">
+        <div className="flex items-center justify-between px-5 py-3.5 border-b border-border bg-secondary/30">
+          <div className="flex items-center gap-2.5">
+            <div className="size-7 rounded-md bg-foreground text-background flex items-center justify-center">
+              <Phone className="size-3.5" />
+            </div>
+            <div>
+              <div className="text-sm font-semibold tracking-tight">Call Net</div>
+              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Captured today</div>
+            </div>
+          </div>
+          <div className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+            <span className="size-1.5 rounded-full bg-accent animate-pulse" />
+            Live
+          </div>
+        </div>
+        <div className="divide-y divide-border">
+          {calls.map((c, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: 12 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 + i * 0.12 }}
+              className="px-5 py-4 flex items-start gap-4"
+            >
+              <div className="size-9 rounded-full bg-secondary text-foreground/70 flex items-center justify-center text-xs font-medium shrink-0">
+                {c.name.charAt(0)}
+              </div>
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center justify-between gap-3">
+                  <div className="text-sm font-medium text-foreground truncate">{c.name}</div>
+                  <div className="text-[11px] text-muted-foreground shrink-0">{c.time}</div>
+                </div>
+                <div className="text-xs text-muted-foreground mt-0.5 leading-relaxed">{c.note}</div>
+                <div className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-accent/10 text-accent px-2 py-0.5 text-[10px] uppercase tracking-[0.14em] font-medium">
+                  <span className="size-1 rounded-full bg-accent" />
+                  {c.status}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+        <div className="px-5 py-3 border-t border-border bg-secondary/30 text-[11px] text-muted-foreground flex items-center justify-between">
+          <span>3 calls captured · 0 missed</span>
+          <span className="font-mono">62% lift</span>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 /* ---------------- STATS STRIP ---------------- */
 function StatsStrip() {
@@ -147,7 +207,7 @@ function StatsStrip() {
   ];
   return (
     <section className="border-y border-border bg-secondary/40">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-4 md:divide-x divide-y md:divide-y-0 divide-border">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-4 md:divide-x divide-y md:divide-y-0 divide-border/60">
         {items.map((it, i) => (
           <motion.div
             key={i}
@@ -169,7 +229,6 @@ function StatsStrip() {
     </section>
   );
 }
-
 
 /* ---------------- MARQUEE ---------------- */
 function Marquee() {
@@ -199,95 +258,65 @@ function Marquee() {
   );
 }
 
-
 /* ---------------- VALUE PROP ---------------- */
 function ValueProp() {
-  const lead = {
-    index: "01",
-    icon: <Clock className="size-5" />,
-    label: "The outcome",
-    title: "Your week back. Every week.",
-    body: "Walk into Monday with the repetitive admin already handled. No backlog, no chasing, no friction. Just the hours and headspace to do the work only you can do.",
-  };
-  const supporting = [
+  const rows = [
+    {
+      index: "01",
+      title: "Your week back. Every week.",
+      body: "Walk into Monday with the repetitive admin already handled. No backlog, no chasing, no friction. Just the hours and headspace to do the work only you can do.",
+    },
     {
       index: "02",
-      icon: <ArrowUpRight className="size-5" />,
-      label: "The outcome",
       title: "More revenue, same team.",
       body: "Capacity shifts from busywork to the activities that actually grow the business. Closing deals, serving clients, building product.",
     },
     {
       index: "03",
-      icon: <Check className="size-5" />,
-      label: "The outcome",
       title: "A business that scales without you.",
       body: "The routine running of your operation keeps moving whether you're in the office, on holiday, or hiring. Without bottlenecks or extra headcount.",
     },
   ];
 
   return (
-    <section className="py-24 sm:py-32 md:py-32">
+    <section className="py-24 sm:py-32 md:py-40">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto text-center mb-16 sm:mb-24">
-          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6 sm:mb-6">
+        <div className="max-w-3xl mb-20 sm:mb-28">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6">
             What you actually get
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.045em] leading-[1.0] text-balance mb-6 sm:mb-8">
             We don't sell workflows.{" "}
             <span className="font-serif italic font-normal text-accent">We sell the outcome.</span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed text-pretty">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed text-pretty">
             Automation is just the means. What you're really buying is your time back, more capacity for the work that grows the business, and a company that runs without you in the loop.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border border border-border rounded-lg overflow-hidden">
-          {/* Lead card spans full row */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="md:col-span-2 bg-background p-8 sm:p-12 md:p-12 hover:bg-secondary/60 transition-colors"
-          >
-            <div className="flex items-center gap-4 mb-6 sm:mb-6">
-              <div className="size-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center">
-                {lead.icon}
-              </div>
-              <div className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-                {lead.index}. {lead.label}
-              </div>
-            </div>
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[-0.025em] leading-[1.1] mb-4 max-w-2xl">
-              {lead.title}
-            </h3>
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              {lead.body}
-            </p>
-          </motion.div>
-
-          {supporting.map((p, i) => (
+        <div className="border-t border-border">
+          {rows.map((r, i) => (
             <motion.div
-              key={p.index}
+              key={r.index}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.08 + i * 0.08 }}
-              className="bg-background p-8 sm:p-12 md:p-12 hover:bg-secondary/60 transition-colors"
+              transition={{ duration: 0.5, delay: i * 0.06 }}
+              className="grid grid-cols-12 gap-6 sm:gap-10 py-12 sm:py-16 border-b border-border items-baseline"
             >
-              <div className="flex items-center gap-4 mb-6 sm:mb-6">
-                <div className="size-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center">
-                  {p.icon}
-                </div>
-                <div className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-                  {p.index}. {p.label}
-                </div>
+              <div className="col-span-2 sm:col-span-1 text-[11px] font-mono text-muted-foreground/70">
+                {r.index}
               </div>
-              <h3 className="text-xl sm:text-2xl font-semibold tracking-[-0.02em] leading-tight mb-3">
-                {p.title}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{p.body}</p>
+              <div className="col-span-10 sm:col-span-4">
+                <h3 className="text-2xl sm:text-3xl md:text-[34px] font-semibold tracking-[-0.025em] leading-[1.1] text-foreground">
+                  {r.title}
+                </h3>
+              </div>
+              <div className="col-span-12 sm:col-span-7 sm:pl-8 md:pl-12">
+                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl">
+                  {r.body}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -296,74 +325,56 @@ function ValueProp() {
   );
 }
 
-
-
-
 /* ---------------- PRODUCTS ---------------- */
 function Products() {
   return (
-    <section id="services" className="py-24 sm:py-32 md:py-32 max-w-6xl mx-auto px-4 sm:px-6">
-      <div className="mb-16 sm:mb-24 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
-        <div className="max-w-3xl">
-          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6 sm:mb-6">
-            What we build
+    <section id="services" className="bg-secondary/30 border-y border-border py-24 sm:py-32 md:py-32">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="mb-16 sm:mb-24 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+          <div className="max-w-3xl">
+            <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6">
+              What we build
+            </div>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.045em] leading-[1.0] text-balance">
+              Two flagship systems.{" "}
+              <span className="font-serif italic font-normal text-accent">Already live.</span>
+            </h2>
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.045em] leading-[1.0] text-balance">
-            Two flagship systems.{" "}
-            <span className="font-serif italic font-normal text-accent">Already live.</span>
-          </h2>
+          <p className="text-muted-foreground text-sm sm:text-base max-w-sm leading-relaxed">
+            Productised automations we deploy in days. Each one is a complete, managed system — not a script you have to babysit.
+          </p>
         </div>
-        <p className="text-muted-foreground text-sm sm:text-base max-w-sm leading-relaxed">
-          Productised automations we deploy in days. Each one is a complete, managed system — not a script you have to babysit.
-        </p>
-      </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-6">
-        <ProductCard
-          to="/call-net"
-          eyebrow="Call Net"
-          tag="For trades & local service businesses"
-          icon={<Phone className="size-5" />}
-          title="Capture every missed call. 24/7."
-          body="An AI receptionist answers when you can't, collects the caller's name, number and need, then texts you the summary instantly. You call back. You close."
-          stats={[
-            { v: "62%", l: "calls usually missed" },
-            { v: "<5 min", l: "callback window" },
-            { v: "$97/mo", l: "flat fee" },
-          ]}
-          variant="dark"
-        />
-        <ProductCard
-          to="/bookkeeping"
-          eyebrow="Document Chase"
-          tag="For bookkeeping firms"
-          icon={<FileText className="size-5" />}
-          title="The month-end document chase, on autopilot."
-          body="The system spots missing receipts and unexplained transactions, then emails and texts clients until everything is in. Your team never touches the chase again."
-          stats={[
-            { v: "10h+", l: "saved per month-end" },
-            { v: "0", l: "manual follow-ups" },
-            { v: "Free pilot", l: "2 weeks, or you don't pay" },
-          ]}
-          variant="light"
-        />
-      </div>
-
-      <div className="mt-6 rounded-lg border border-foreground bg-foreground p-8 sm:p-10 text-background flex flex-col md:flex-row md:items-center justify-between gap-6">
-        <div className="max-w-xl">
-          <div className="text-[11px] uppercase tracking-[0.22em] mb-3 text-background/55">
-            Our focus
-          </div>
-          <h4 className="font-semibold tracking-[-0.02em] text-xl sm:text-2xl md:text-[28px] leading-[1.15] text-balance">
-            Two systems. Built for real businesses. Already in production.
-          </h4>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <ProductCard
+            to="/call-net"
+            eyebrow="Call Net"
+            tag="For trades & local service businesses"
+            icon={<Phone className="size-5" />}
+            title="Capture every missed call. 24/7."
+            body="An AI receptionist answers when you can't, collects the caller's name, number and need, then texts you the summary instantly. You call back. You close."
+            stats={[
+              { v: "62%", l: "calls usually missed" },
+              { v: "<5 min", l: "callback window" },
+              { v: "$97/mo", l: "flat fee" },
+            ]}
+            variant="dark"
+          />
+          <ProductCard
+            to="/bookkeeping"
+            eyebrow="Document Chase"
+            tag="For bookkeeping firms"
+            icon={<FileText className="size-5" />}
+            title="The month-end document chase, on autopilot."
+            body="The system spots missing receipts and unexplained transactions, then emails and texts clients until everything is in. Your team never touches the chase again."
+            stats={[
+              { v: "10h+", l: "saved per month-end" },
+              { v: "0", l: "manual follow-ups" },
+              { v: "Free pilot", l: "2 weeks, or you don't pay" },
+            ]}
+            variant="light"
+          />
         </div>
-        <Link
-          to="/contact"
-          className="inline-flex items-center justify-center gap-2 rounded-md bg-background px-6 py-3 text-sm font-medium text-foreground hover:bg-background/90 transition-colors self-start md:self-auto whitespace-nowrap"
-        >
-          Get in touch <ArrowUpRight className="size-4" />
-        </Link>
       </div>
     </section>
   );
@@ -395,34 +406,32 @@ function ProductCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-      className={`group relative overflow-hidden rounded-lg border transition-colors ${
+      className={`group relative overflow-hidden rounded-lg transition-colors flex flex-col h-full ${
         isDark
-          ? "border-foreground bg-foreground text-background hover:border-foreground"
-          : "border-foreground/15 bg-background hover:border-foreground/60 shadow-sm"
+          ? "bg-foreground text-background"
+          : "border border-foreground/12 bg-background hover:border-foreground/40 shadow-sm"
       }`}
     >
-      <div className={isDark ? "p-8 sm:p-12" : "p-8 sm:p-10"}>
-        <div className="flex items-center justify-between mb-8">
-          <div className="inline-flex items-center gap-3">
-            <div className={`size-9 rounded-md flex items-center justify-center ${isDark ? "bg-background/10 text-background" : "bg-accent/10 text-accent"}`}>
-              {icon}
-            </div>
-            <div>
-              <div className={`text-base font-semibold tracking-tight leading-tight ${isDark ? "text-background" : "text-foreground"}`}>{eyebrow}</div>
-              <div className={`text-[10px] uppercase tracking-[0.18em] mt-1 ${isDark ? "text-background/60" : "text-muted-foreground"}`}>{tag}</div>
-            </div>
+      <div className="p-10 sm:p-14 flex flex-col h-full">
+        <div className="flex items-center gap-3 mb-10">
+          <div className={`size-9 rounded-md flex items-center justify-center ${isDark ? "bg-background/10 text-background" : "bg-accent/10 text-accent"}`}>
+            {icon}
+          </div>
+          <div>
+            <div className={`text-base font-semibold tracking-tight leading-tight ${isDark ? "text-background" : "text-foreground"}`}>{eyebrow}</div>
+            <div className={`text-[10px] uppercase tracking-[0.18em] mt-1 ${isDark ? "text-background/60" : "text-muted-foreground"}`}>{tag}</div>
           </div>
         </div>
 
-        <h3 className={`text-2xl sm:text-3xl font-semibold tracking-[-0.025em] leading-[1.1] mb-4 text-balance ${isDark ? "text-background" : "text-foreground"}`}>
+        <h3 className={`text-2xl sm:text-3xl font-semibold tracking-[-0.025em] leading-[1.1] mb-5 text-balance ${isDark ? "text-background" : "text-foreground"}`}>
           {title}
         </h3>
-        <p className={`text-sm sm:text-base leading-relaxed mb-8 ${isDark ? "text-background/70" : "text-muted-foreground"}`}>{body}</p>
+        <p className={`text-sm sm:text-base leading-relaxed mb-10 ${isDark ? "text-background/70" : "text-muted-foreground"}`}>{body}</p>
 
-        <div className={`grid grid-cols-3 gap-3 sm:gap-4 mb-8 pt-6 border-t ${isDark ? "border-background/15" : "border-border"}`}>
+        <div className={`grid grid-cols-3 gap-6 mb-10 pt-8 border-t ${isDark ? "border-background/15" : "border-border"}`}>
           {stats.map((s, i) => (
             <div key={i} className="min-w-0">
-              <div className={`text-lg sm:text-2xl font-semibold tracking-[-0.02em] leading-tight break-words ${isDark ? "text-background" : "text-foreground"}`}>{s.v}</div>
+              <div className={`text-xl sm:text-2xl font-semibold tracking-[-0.02em] leading-tight break-words ${isDark ? "text-background" : "text-foreground"}`}>{s.v}</div>
               <div className={`text-[10px] uppercase tracking-[0.16em] mt-1 leading-tight ${isDark ? "text-background/55" : "text-muted-foreground"}`}>{s.l}</div>
             </div>
           ))}
@@ -430,7 +439,7 @@ function ProductCard({
 
         <Link
           to={to}
-          className={`inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-medium transition-colors ${
+          className={`inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-medium transition-colors self-start mt-auto ${
             isDark
               ? "bg-background text-foreground hover:bg-background/90"
               : "bg-foreground text-background hover:bg-foreground/90"
@@ -442,7 +451,6 @@ function ProductCard({
     </motion.div>
   );
 }
-
 
 /* ---------------- TESTIMONIALS ---------------- */
 function Testimonials() {
@@ -463,36 +471,52 @@ function Testimonials() {
       role: "Founder, recruitment agency",
     },
   ];
+  const [lead, ...rest] = quotes;
   return (
-    <section className="py-24 sm:py-32 md:py-32 bg-secondary/40 relative overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_50%_0%,hsl(168_72%_32%/0.08),transparent_60%)]" />
+    <section className="py-24 sm:py-32 md:py-32 bg-foreground text-background relative overflow-hidden">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_30%_0%,hsl(168_72%_32%/0.12),transparent_60%)]" />
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="max-w-3xl mb-16 sm:mb-16">
-          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6">
+        <div className="max-w-3xl mb-16 sm:mb-20">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-background/60 mb-6">
             What clients say
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.045em] leading-[1.0] text-balance">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.045em] leading-[1.0] text-balance text-background">
             Quietly running{" "}
             <span className="font-serif italic font-normal text-accent">in the background.</span>
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {quotes.map((q, i) => (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <motion.figure
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-2 lg:row-span-2 rounded-lg border border-background/15 bg-background/[0.04] p-10 sm:p-14 flex flex-col"
+          >
+            <Quote className="size-8 text-accent mb-6" />
+            <blockquote className="text-xl sm:text-2xl lg:text-[28px] leading-[1.3] text-background tracking-[-0.015em] flex-1">
+              {lead.q}
+            </blockquote>
+            <figcaption className="mt-10 pt-6 border-t border-background/15">
+              <div className="text-sm font-medium text-background">{lead.name}</div>
+              <div className="text-xs text-background/60 mt-1">{lead.role}</div>
+            </figcaption>
+          </motion.figure>
+          {rest.map((q, i) => (
             <motion.figure
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="rounded-lg border border-border bg-background p-8 flex flex-col"
+              transition={{ duration: 0.5, delay: 0.08 + i * 0.08 }}
+              className="rounded-lg border border-background/15 bg-background/[0.04] p-8 flex flex-col"
             >
-              <Quote className="size-6 text-accent/60 mb-4" />
-              <blockquote className="text-base leading-relaxed text-foreground/90 flex-1">
+              <blockquote className="text-base leading-relaxed text-background/90 flex-1">
                 {q.q}
               </blockquote>
-              <figcaption className="mt-6 pt-6 border-t border-border">
-                <div className="text-sm font-medium">{q.name}</div>
-                <div className="text-xs text-muted-foreground mt-1">{q.role}</div>
+              <figcaption className="mt-6 pt-6 border-t border-background/15">
+                <div className="text-sm font-medium text-background">{q.name}</div>
+                <div className="text-xs text-background/60 mt-1">{q.role}</div>
               </figcaption>
             </motion.figure>
           ))}
@@ -501,9 +525,6 @@ function Testimonials() {
     </section>
   );
 }
-
-
-
 
 /* ---------------- PROCESS ---------------- */
 function Process() {
@@ -531,20 +552,19 @@ function Process() {
   ];
 
   return (
-    <section id="process" className="py-24 sm:py-32 md:py-32 bg-foreground text-background">
+    <section id="process" className="py-24 sm:py-32 md:py-32 bg-secondary/40 border-y border-border">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="mb-16 sm:mb-24 max-w-3xl">
-          <div className="text-[11px] uppercase tracking-[0.18em] text-background/60 mb-6 sm:mb-6">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6">
             How it works
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.045em] leading-[1.0] text-balance text-background">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.045em] leading-[1.0] text-balance text-foreground">
             From first call to live system{" "}
-            <span className="font-serif italic font-normal text-background/55">in under a week.</span>
+            <span className="font-serif italic font-normal text-muted-foreground">in under a week.</span>
           </h2>
         </div>
 
-
-        <div className="border-t border-background/15">
+        <div className="border-t border-border">
           {steps.map((s, i) => (
             <motion.div
               key={i}
@@ -552,18 +572,18 @@ function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.06 }}
-              className="grid grid-cols-12 gap-6 sm:gap-8 py-8 sm:py-10 border-b border-background/15 items-baseline"
+              className="grid grid-cols-12 gap-6 sm:gap-8 py-12 sm:py-14 border-b border-border items-baseline"
             >
-              <div className="col-span-2 sm:col-span-1 text-[11px] font-mono text-background/50">
+              <div className="col-span-2 sm:col-span-1 text-[11px] font-mono text-foreground/40">
                 {s.num}
               </div>
               <div className="col-span-10 sm:col-span-3">
-                <h4 className="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] text-background">
+                <h4 className="text-3xl sm:text-4xl font-semibold tracking-[-0.025em] text-foreground">
                   {s.title}
                 </h4>
               </div>
               <div className="col-span-12 sm:col-span-8 sm:pl-8 md:pl-12">
-                <p className="text-base text-background/70 leading-relaxed max-w-xl">
+                <p className="text-base text-muted-foreground leading-relaxed max-w-xl">
                   {s.body}
                 </p>
               </div>
@@ -572,42 +592,53 @@ function Process() {
         </div>
       </div>
     </section>
-
   );
 }
 
-/* ---------------- METRICS ---------------- */
-function Metrics() {
-  const items = [
-    { value: "Thousands", label: "Of hours handed back to clients" },
-    { value: "99.9%", label: "Automation reliability across our systems" },
-    { value: "<1 week", label: "Typical time from kickoff to live" },
-    { value: "100%", label: "Managed by us. You never touch the system" },
-  ];
+/* ---------------- FINAL CTA ---------------- */
+function FinalCTA() {
   return (
-    <section className="py-24 sm:py-32 md:py-32">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
-        {items.map((m, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.05 }}
-            className="flex flex-col"
-          >
-            <span className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.035em] text-foreground">
-              {m.value}
-            </span>
-            <span className="text-xs sm:text-sm text-muted-foreground mt-3 leading-snug">{m.label}</span>
-          </motion.div>
-        ))}
+    <section className="relative bg-foreground text-background py-32 sm:py-40 overflow-hidden">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_50%_50%,hsl(168_72%_32%/0.10),transparent_65%)]" />
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-[11px] uppercase tracking-[0.22em] text-background/55 mb-8"
+        >
+          Ready when you are
+        </motion.div>
+        <motion.h2
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.05 }}
+          className="text-5xl sm:text-6xl md:text-7xl font-semibold tracking-[-0.045em] leading-[1.0] text-balance text-background mb-12"
+        >
+          Stop paying for the hours{" "}
+          <span className="font-serif italic font-normal text-background/55">you keep losing.</span>
+        </motion.h2>
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.12 }}
+        >
+          <BookCallDialog>
+            <button
+              type="button"
+              className="inline-flex items-center justify-center gap-2 rounded-md bg-background px-8 py-4 text-sm font-medium text-foreground hover:bg-background/90 transition-colors"
+            >
+              Book a free audit <ArrowRight className="size-4" />
+            </button>
+          </BookCallDialog>
+        </motion.div>
       </div>
     </section>
   );
 }
-
-
 
 /* ---------------- FAQ ---------------- */
 function FAQ() {
@@ -642,7 +673,7 @@ function FAQ() {
     <section id="faq" className="py-24 sm:py-32 md:py-32">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 grid md:grid-cols-[1fr_2fr] gap-12 md:gap-24">
         <div>
-          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6 sm:mb-6">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6">
             FAQ
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.045em] leading-[1.0] text-balance">
@@ -650,7 +681,7 @@ function FAQ() {
             <span className="font-serif italic font-normal text-muted-foreground">answers.</span>
           </h2>
         </div>
-        <div className="border-t border-border">
+        <div>
           {items.map((it, i) => (
             <FAQItem key={i} q={it.q} a={it.a} />
           ))}
@@ -663,17 +694,17 @@ function FAQ() {
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-border">
+    <div className="border-b border-border/60 transition-colors hover:bg-secondary/40 -mx-4 px-4 rounded-sm">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center justify-between gap-6 py-6 sm:py-6 text-left group"
+        className="w-full flex items-center justify-between gap-6 py-8 text-left group"
       >
-        <span className="font-medium text-base md:text-lg tracking-tight group-hover:text-foreground transition-colors">
+        <span className="font-medium text-base md:text-lg tracking-tight text-foreground">
           {q}
         </span>
-        <span className="shrink-0 size-8 border border-border rounded-full flex items-center justify-center text-muted-foreground group-hover:text-foreground group-hover:border-foreground transition-colors">
-          <Plus className={`size-3.5 transition-transform duration-300 ${open ? "rotate-45" : ""}`} />
-        </span>
+        <Plus
+          className={`size-4 shrink-0 text-muted-foreground transition-transform duration-300 ${open ? "rotate-45 text-foreground" : ""}`}
+        />
       </button>
       <motion.div
         initial={false}
@@ -681,9 +712,8 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
         className="overflow-hidden"
       >
-        <p className="text-sm md:text-base text-muted-foreground leading-relaxed pb-6 max-w-2xl">{a}</p>
+        <p className="text-sm md:text-base text-muted-foreground leading-relaxed pb-8 max-w-2xl">{a}</p>
       </motion.div>
     </div>
   );
 }
-
