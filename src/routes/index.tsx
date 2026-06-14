@@ -302,7 +302,7 @@ function ValueProp() {
           <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6 sm:mb-6">
             What you actually get
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance mb-6 sm:mb-8">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.045em] leading-[1.0] text-balance mb-6 sm:mb-8">
             We don't sell workflows.{" "}
             <span className="font-serif italic font-normal text-accent">We sell the outcome.</span>
           </h2>
@@ -400,7 +400,7 @@ function Storyboard() {
           <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6 sm:mb-6">
             The transformation
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance mb-6 sm:mb-8">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.045em] leading-[1.0] text-balance mb-6 sm:mb-8">
             From manual chaos to{" "}
             <span className="font-serif italic font-normal text-accent">hours back, every week.</span>
           </h2>
@@ -628,7 +628,7 @@ function Products() {
           <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6 sm:mb-6">
             What we build
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.045em] leading-[1.0] text-balance">
             Two flagship systems.{" "}
             <span className="font-serif italic font-normal text-accent">Already live.</span>
           </h2>
@@ -874,7 +874,7 @@ function Testimonials() {
           <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6">
             What clients say
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.045em] leading-[1.0] text-balance">
             Quietly running{" "}
             <span className="font-serif italic font-normal text-accent">in the background.</span>
           </h2>
@@ -1047,7 +1047,7 @@ function FAQ() {
           <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6 sm:mb-6">
             FAQ
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.045em] leading-[1.0] text-balance">
             The straight{" "}
             <span className="font-serif italic font-normal text-muted-foreground">answers.</span>
           </h2>
