@@ -672,18 +672,18 @@ function Products() {
         />
       </div>
 
-      <div className="mt-6 rounded-lg bg-foreground p-8 sm:p-12 md:p-12 text-background flex flex-col md:flex-row md:items-center justify-between gap-6">
-        <div>
-          <div className="text-[11px] uppercase tracking-[0.18em] mb-3 opacity-60">
+      <div className="mt-6 rounded-lg border border-foreground bg-foreground p-8 sm:p-10 text-background flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className="max-w-xl">
+          <div className="text-[11px] uppercase tracking-[0.22em] mb-3 text-background/55">
             Our focus
           </div>
-          <h4 className="font-semibold tracking-tight text-xl sm:text-2xl md:text-3xl text-balance">
-            We focus on validated workflows. Call Net for trades. Document Chase for bookkeepers.
+          <h4 className="font-semibold tracking-[-0.02em] text-xl sm:text-2xl md:text-[28px] leading-[1.15] text-balance">
+            Two systems. Built for real businesses. Already in production.
           </h4>
         </div>
         <Link
           to="/contact"
-          className="btn btn-md bg-background text-foreground border-none hover:bg-background rounded-full self-start md:self-auto whitespace-nowrap"
+          className="inline-flex items-center justify-center gap-2 rounded-md bg-background px-6 py-3 text-sm font-medium text-foreground hover:bg-background/90 transition-colors self-start md:self-auto whitespace-nowrap"
         >
           Get in touch <ArrowUpRight className="size-4" />
         </Link>
