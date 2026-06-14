@@ -609,16 +609,16 @@ function FAQ() {
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-border/60 transition-colors hover:bg-secondary/40 -mx-4 px-4 rounded-sm">
+    <div className="border-b border-border/40 group/item">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center justify-between gap-6 py-8 text-left group"
+        className="w-full flex items-center justify-between gap-6 py-9 text-left transition-opacity hover:opacity-70"
       >
-        <span className="font-medium text-base md:text-lg tracking-tight text-foreground">
+        <span className={`font-medium text-base md:text-lg tracking-tight transition-colors ${open ? "text-foreground" : "text-foreground/85"}`}>
           {q}
         </span>
         <Plus
-          className={`size-4 shrink-0 text-muted-foreground transition-transform duration-300 ${open ? "rotate-45 text-foreground" : ""}`}
+          className={`size-4 shrink-0 transition-all duration-300 ${open ? "rotate-45 text-foreground" : "text-muted-foreground"}`}
         />
       </button>
       <motion.div
