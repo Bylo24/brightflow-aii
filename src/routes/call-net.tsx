@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useCallback, useState } from "react";
 import { ArrowRight, Check, Phone, MessageSquare, Zap, PhoneCall, PhoneOff } from "lucide-react";
 import { Wordmark } from "@/components/SiteChrome";
+import { AuroraBackground } from "@/components/AuroraBackground";
 import { ConversationProvider, useConversation } from "@elevenlabs/react";
 import { initMetaPixel, trackPixel, CALL_NET_PIXEL_ID } from "@/lib/meta-pixel";
 import { getLocaleCurrency, type GeoCurrency } from "@/lib/geo-currency.functions";
@@ -153,7 +154,9 @@ function CallNetPageInner() {
       </header>
 
       {/* Hero */}
-      <section className="mx-auto max-w-4xl px-6 pt-10 pb-16 text-center">
+      <section className="relative mx-auto max-w-4xl px-6 pt-10 pb-16 text-center overflow-hidden">
+        <AuroraBackground />
+
         <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
           <Phone className="h-3.5 w-3.5" /> AI receptionist for small business
         </div>
