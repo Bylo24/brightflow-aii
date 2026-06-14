@@ -213,7 +213,7 @@ function HeroDashboard() {
 /* ---------------- STATS STRIP ---------------- */
 function StatsStrip() {
   const items = [
-    { v: "Thousands", l: "Hours returned to clients" },
+    { v: "1,000s+", l: "Hours returned to clients" },
     { v: "<7 days", l: "From kickoff to live" },
     { v: "100%", l: "Managed end-to-end" },
     { v: "£0", l: "Until it's working" },
