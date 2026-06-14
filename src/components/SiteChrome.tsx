@@ -47,7 +47,7 @@ function LogoMark() {
 
 export function Nav() {
   return (
-    <nav className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
+    <nav className="sticky top-0 z-50 border-b border-border bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-4">
         <Wordmark />
 
@@ -79,7 +79,7 @@ export function Nav() {
 
 export function Footer({ hideCta = false }: { hideCta?: boolean } = {}) {
   return (
-    <footer id="cta" className="relative overflow-hidden border-t border-border/60">
+    <footer id="cta" className="relative overflow-hidden border-t border-border">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom,hsl(168_72%_32%/0.10),transparent_60%)]" />
       <div className="absolute inset-0 -z-10 grid-bg [mask-image:radial-gradient(ellipse_at_bottom,#000,transparent_70%)]" />
 

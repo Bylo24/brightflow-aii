@@ -95,7 +95,7 @@ function BookkeepingPage() {
 /* ---------------- NAV ---------------- */
 function BookkeepingNav() {
   return (
-    <nav className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
+    <nav className="sticky top-0 z-50 border-b border-border bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center">
         <Wordmark />
       </div>
@@ -277,7 +277,7 @@ function EmailCapture() {
 /* ---------------- GUARANTEE ---------------- */
 function Guarantee() {
   return (
-    <section className="py-14 sm:py-20 border-t border-border/60 relative overflow-hidden">
+    <section className="py-14 sm:py-24 border-t border-border relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,hsl(168_72%_32%/0.14),transparent_60%)]" />
       <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
         <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3.5 py-1.5 text-[11px] uppercase tracking-[0.18em] text-accent mb-5">
@@ -321,7 +321,7 @@ function FAQ() {
   ];
 
   return (
-    <section className="py-14 sm:py-20 border-t border-border/60 bg-secondary/40">
+    <section className="py-14 sm:py-24 border-t border-border bg-secondary/40">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <h2 className="text-3xl sm:text-4xl font-semibold tracking-[-0.035em] text-center mb-10">
           Questions?
