@@ -61,7 +61,6 @@ function Index() {
         <Products />
         <Testimonials />
         <Process />
-        <Metrics />
         <FAQ />
       </main>
       <Footer />
