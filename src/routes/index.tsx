@@ -937,12 +937,12 @@ function Process() {
     <section id="process" className="py-24 sm:py-32 md:py-32 bg-foreground text-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="mb-16 sm:mb-24 max-w-3xl">
-          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6 sm:mb-6">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-background/60 mb-6 sm:mb-6">
             How it works
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.045em] leading-[1.0] text-balance text-background">
             From first call to live system{" "}
-            <span className="font-serif italic font-normal text-muted-foreground">in under a week.</span>
+            <span className="font-serif italic font-normal text-background/55">in under a week.</span>
           </h2>
         </div>
 
