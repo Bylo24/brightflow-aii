@@ -220,7 +220,7 @@ function StatsStrip() {
     { v: "£0", l: "Until it's working" },
   ];
   return (
-    <section className="border-y border-border bg-secondary/40">
+    <section className="border-y border-border bg-secondary/40 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-4 divide-x divide-border">
         {items.map((it, i) => (
           <motion.div
@@ -229,10 +229,10 @@ function StatsStrip() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.06 }}
-            className="px-4 sm:px-6 md:px-8 py-8 sm:py-12 text-left min-w-0"
+            className="px-3 sm:px-6 md:px-8 py-6 sm:py-12 text-left min-w-0"
           >
-            <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-[-0.04em] text-foreground break-words leading-[1.05]">{it.v}</div>
-            <div className="mt-3 text-[10px] sm:text-[11px] uppercase tracking-[0.18em] sm:tracking-[0.22em] text-muted-foreground/80 leading-snug">{it.l}</div>
+            <div className="text-[26px] sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-[-0.04em] text-foreground leading-[1.05] truncate">{it.v}</div>
+            <div className="mt-2 sm:mt-3 text-[10px] sm:text-[11px] uppercase tracking-[0.16em] sm:tracking-[0.22em] text-muted-foreground/80 leading-snug">{it.l}</div>
           </motion.div>
         ))}
       </div>
