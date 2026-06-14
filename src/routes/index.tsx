@@ -71,7 +71,7 @@ function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="text-[44px] sm:text-6xl md:text-6xl lg:text-7xl leading-[0.95] font-semibold tracking-[-0.045em] mb-5 text-balance text-foreground"
+          className="text-[48px] sm:text-[56px] md:text-[64px] lg:text-[80px] leading-[0.92] font-semibold tracking-[-0.05em] mb-4 text-balance text-foreground"
         >
           Automate the repetitive work{" "}
           <span className="font-serif italic font-normal text-accent">killing your week.</span>
@@ -81,7 +81,7 @@ function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.08 }}
-          className="text-base text-muted-foreground max-w-md mb-8 text-pretty leading-relaxed"
+          className="text-base text-muted-foreground max-w-sm mb-6 text-pretty leading-relaxed"
         >
           We fully automate the repetitive manual work running inside your business and operate the system for you, end to end. You get the hours back.
         </motion.p>
@@ -95,14 +95,14 @@ function Hero() {
           <BookCallDialog>
             <button
               type="button"
-              className="inline-flex items-center justify-center gap-2 rounded-md bg-foreground px-7 py-3.5 text-sm font-medium text-background hover:bg-foreground/90 transition-colors shadow-sm"
+              className="inline-flex items-center justify-center gap-2 rounded-md bg-foreground px-8 py-4 text-[15px] font-semibold text-background hover:bg-foreground/90 transition-colors shadow-sm"
             >
               Book a free audit <ArrowRight className="size-4" />
             </button>
           </BookCallDialog>
           <a
             href="#services"
-            className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-background px-7 py-3.5 text-sm font-medium text-foreground hover:bg-secondary transition-colors"
+            className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-background px-7 py-4 text-sm font-medium text-foreground hover:bg-secondary transition-colors"
           >
             See what we build
           </a>
@@ -217,18 +217,18 @@ function ValueProp() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.06 }}
-              className="grid grid-cols-12 gap-6 sm:gap-10 py-12 sm:py-16 border-b border-border items-baseline"
+              className="grid grid-cols-12 gap-6 sm:gap-10 py-9 sm:py-11 border-b border-border items-baseline"
             >
-              <div className="col-span-2 sm:col-span-1 text-[11px] font-mono text-muted-foreground/70">
+              <div className="col-span-2 sm:col-span-1 text-[11px] font-mono text-muted-foreground/70 pt-1">
                 {r.index}
               </div>
               <div className="col-span-10 sm:col-span-4">
-                <h3 className="text-2xl sm:text-3xl md:text-[34px] font-semibold tracking-[-0.025em] leading-[1.1] text-foreground">
+                <h3 className="text-[22px] sm:text-[26px] md:text-[30px] font-semibold tracking-[-0.03em] leading-[1.1] text-foreground">
                   {r.title}
                 </h3>
               </div>
-              <div className="col-span-12 sm:col-span-7 sm:pl-8 md:pl-12">
-                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl">
+              <div className="col-span-12 sm:col-span-7">
+                <p className="text-[15px] sm:text-base text-muted-foreground leading-relaxed max-w-xl">
                   {r.body}
                 </p>
               </div>
@@ -324,10 +324,10 @@ function ProductCard({
       className={`group relative overflow-hidden rounded-lg transition-colors flex flex-col h-full ${
         isDark
           ? "bg-foreground text-background"
-          : "border border-foreground/12 bg-background hover:border-foreground/40 shadow-sm"
+          : "border border-foreground/15 bg-background hover:border-foreground/40 shadow-sm"
       }`}
     >
-      <div className="p-10 sm:p-14 flex flex-col h-full">
+      <div className="p-12 sm:p-16 flex flex-col h-full">
         <div className="flex items-center gap-3 mb-10">
           <div className={`size-9 rounded-md flex items-center justify-center ${isDark ? "bg-background/10 text-background" : "bg-accent/10 text-accent"}`}>
             {icon}
@@ -406,15 +406,15 @@ function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-2 lg:row-span-2 rounded-lg border border-background/15 bg-background/[0.04] p-10 sm:p-14 flex flex-col"
+            className="lg:col-span-2 lg:row-span-2 rounded-lg border border-background/15 bg-background/[0.04] p-8 sm:p-12 flex flex-col"
           >
-            <Quote className="size-8 text-accent mb-6" />
-            <blockquote className="text-xl sm:text-2xl lg:text-[28px] leading-[1.3] text-background tracking-[-0.015em] flex-1">
+            <Quote className="size-7 text-accent mb-5" />
+            <blockquote className="text-xl sm:text-2xl lg:text-[26px] leading-[1.3] text-background tracking-[-0.015em] font-medium flex-1">
               {lead.q}
             </blockquote>
-            <figcaption className="mt-10 pt-6 border-t border-background/15">
-              <div className="text-sm font-medium text-background">{lead.name}</div>
-              <div className="text-xs text-background/60 mt-1">{lead.role}</div>
+            <figcaption className="mt-8 pt-5 border-t border-background/15">
+              <div className="text-sm font-semibold text-background">{lead.name}</div>
+              <div className="text-xs text-background/60 mt-0.5">{lead.role}</div>
             </figcaption>
           </motion.figure>
           {rest.map((q, i) => (
@@ -424,9 +424,9 @@ function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.08 + i * 0.08 }}
-              className="rounded-lg border border-background/15 bg-background/[0.04] p-8 flex flex-col"
+              className="rounded-lg border border-background/15 bg-background/[0.04] p-6 sm:p-7 flex flex-col"
             >
-              <blockquote className="text-base leading-relaxed text-background/90 flex-1">
+              <blockquote className="text-[15px] leading-relaxed text-background/90 flex-1">
                 {q.q}
               </blockquote>
               <figcaption className="mt-6 pt-6 border-t border-background/15">
