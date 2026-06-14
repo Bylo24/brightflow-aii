@@ -294,13 +294,9 @@ function StatsStrip() {
 function Marquee() {
   const items = [
     "BOOKKEEPING FIRMS",
-    "PROPERTY MANAGEMENT",
+    "TRADES & LOCAL SERVICES",
     "RECRUITMENT AGENCIES",
-    "MEDICAL & DENTAL CLINICS",
-    "LOCAL SERVICE BUSINESSES",
-    "REAL ESTATE TEAMS",
-    "LEGAL PRACTICES",
-    "E-COMMERCE OPERATIONS",
+    "AND MORE",
   ];
   return (
     <div className="py-10 sm:py-12 border-y border-border/60 overflow-hidden">
