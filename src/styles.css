@@ -76,7 +76,8 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --font-display: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Syne", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
