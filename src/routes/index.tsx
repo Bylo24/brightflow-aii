@@ -844,7 +844,7 @@ function Process() {
     {
       num: "03",
       title: "Launch",
-      body: "We deploy the system, train your team in under an hour, and switch it on. Every client is live in under a week.",
+      body: "We deploy the system, train your team in under an hour, and switch it on for you. Every client is fully live in under a week.",
     },
     {
       num: "04",
