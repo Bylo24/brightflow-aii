@@ -188,7 +188,7 @@ function CallNetPageInner() {
 
       {/* Try it for yourself */}
       <section className="mx-auto max-w-3xl px-6 pb-16">
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-card p-6 sm:p-8">
+        <div className="relative overflow-hidden rounded-lg border border-border bg-card p-6 sm:p-8">
           <div className="flex flex-col items-center gap-3 text-center">
             <div className="inline-flex items-center gap-2 rounded-full bg-foreground/5 px-3 py-1 text-xs font-medium text-foreground">
               <span className="relative flex h-2 w-2">
@@ -208,7 +208,7 @@ function CallNetPageInner() {
                 type="button"
                 onClick={startDemo}
                 disabled={starting}
-                className="mt-2 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-base font-semibold text-background shadow-lg hover:opacity-90 disabled:opacity-60"
+                className="mt-2 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-base font-semibold text-background shadow-sm hover:opacity-90 disabled:opacity-60"
               >
                 <PhoneCall className="h-4 w-4" />
                 {starting ? "Connecting…" : "Talk to Call Net now"}
@@ -217,7 +217,7 @@ function CallNetPageInner() {
               <button
                 type="button"
                 onClick={endDemo}
-                className="mt-2 inline-flex items-center gap-2 rounded-full bg-destructive px-6 py-3 text-base font-semibold text-destructive-foreground shadow-lg hover:opacity-90"
+                className="mt-2 inline-flex items-center gap-2 rounded-full bg-destructive px-6 py-3 text-base font-semibold text-destructive-foreground shadow-sm hover:opacity-90"
               >
                 <PhoneOff className="h-4 w-4" />
                 End call
@@ -255,14 +255,14 @@ function CallNetPageInner() {
             { stat: "80%", label: "of callers who hit voicemail hang up without leaving a message." },
             { stat: "85%", label: "of people who don't reach you on the first try never call back." },
           ].map((s) => (
-            <div key={s.stat} className="rounded-2xl border border-border bg-card p-6 text-center">
+            <div key={s.stat} className="rounded-lg border border-border bg-card p-6 text-center">
               <div className="text-4xl font-semibold tracking-tight">{s.stat}</div>
               <p className="mt-2 text-sm text-muted-foreground">{s.label}</p>
             </div>
           ))}
         </div>
 
-        <div className="mt-8 rounded-2xl border border-border bg-card p-6 sm:p-8">
+        <div className="mt-8 rounded-lg border border-border bg-card p-6 sm:p-8">
           <h3 className="text-xl font-semibold tracking-tight">A missed call isn't a delayed sale. It's a sale handed to your competition.</h3>
           <p className="mt-3 text-sm text-muted-foreground">
             62% of unanswered callers immediately ring a competitor. At a conservative $12.15 in lost revenue per missed call, missing just 2 calls a day costs the average small business <span className="font-semibold text-foreground">$8,800 a year</span>. In home services and trades, with average job values of $500+, the real number is often <span className="font-semibold text-foreground">over $26,000 — and frequently $100,000+</span> annually.
@@ -275,7 +275,7 @@ function CallNetPageInner() {
 
       {/* ROI of Call Net */}
       <section className="mx-auto max-w-4xl px-6 py-12">
-        <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 text-center">
+        <div className="rounded-lg border border-border bg-card p-6 sm:p-8 text-center">
           <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
             Call Net pays for itself after 8 calls.
           </h2>
@@ -283,16 +283,16 @@ function CallNetPageInner() {
             {monthlyLocal}/month. Average missed call costs around $12 in lost revenue. Catch just 8 a month and Call Net has already paid for itself — every call after that is pure upside.
           </p>
           <div className="mx-auto mt-8 grid max-w-3xl gap-4 sm:grid-cols-3 text-left">
-            <div className="rounded-xl border border-border bg-background p-5">
+            <div className="rounded-md border border-border bg-background p-5">
               <div className="text-xs font-medium text-muted-foreground">You pay</div>
               <div className="mt-1 text-2xl font-semibold">{monthlyLocal}<span className="text-sm text-muted-foreground">/mo</span></div>
             </div>
-            <div className="rounded-xl border border-border bg-background p-5">
+            <div className="rounded-md border border-border bg-background p-5">
               <div className="text-xs font-medium text-muted-foreground">Catch 100 missed calls/mo</div>
               <div className="mt-1 text-2xl font-semibold">$1,200+</div>
               <div className="text-xs text-muted-foreground">in recovered revenue</div>
             </div>
-            <div className="rounded-xl border border-border bg-background p-5">
+            <div className="rounded-md border border-border bg-background p-5">
               <div className="text-xs font-medium text-muted-foreground">At $500 avg job value</div>
               <div className="mt-1 text-2xl font-semibold">$5,000+</div>
               <div className="text-xs text-muted-foreground">in closed revenue/mo</div>
@@ -326,7 +326,7 @@ function CallNetPageInner() {
             { icon: Zap, title: "We set up Call Net", body: "We configure the forwarding so Call Net answers only when you don't. No technical work on your end." },
             { icon: MessageSquare, title: "You get the lead", body: "Missed calls become instant texts with the caller's name, number, and message. You call back. You close." },
           ].map((s, i) => (
-            <div key={i} className="rounded-2xl border border-border bg-card p-6">
+            <div key={i} className="rounded-lg border border-border bg-card p-6">
               <div className="flex h-9 w-9 items-center justify-center rounded-full bg-foreground text-background">
                 <s.icon className="h-4 w-4" />
               </div>
@@ -349,7 +349,7 @@ function CallNetPageInner() {
             "We handle all the setup — you don't need to know anything technical.",
             "Try free for 14 days — cancel anytime in your dashboard, no contract.",
           ].map((b) => (
-            <li key={b} className="flex items-start gap-3 rounded-xl border border-border bg-card p-4">
+            <li key={b} className="flex items-start gap-3 rounded-md border border-border bg-card p-4">
               <Check className="mt-0.5 h-5 w-5 flex-none text-foreground" />
               <span className="text-sm">{b}</span>
             </li>
@@ -360,7 +360,7 @@ function CallNetPageInner() {
       {/* Pricing */}
       <section className="mx-auto max-w-3xl px-6 py-12">
         <h2 className="text-center text-3xl font-semibold tracking-tight">Simple pricing</h2>
-        <div className="mt-8 rounded-2xl border border-border bg-card p-8 text-center">
+        <div className="mt-8 rounded-lg border border-border bg-card p-8 text-center">
           <div className="text-sm font-medium text-muted-foreground">Single plan — all features</div>
           <div className="mt-2 text-5xl font-semibold tracking-tight">{monthlyLocal}<span className="text-lg text-muted-foreground">/month</span></div>
           <ul className="mx-auto mt-6 max-w-sm space-y-2 text-left text-sm">
@@ -398,7 +398,7 @@ function CallNetPageInner() {
 
       {/* Testimonial */}
       <section className="mx-auto max-w-3xl px-6 py-12">
-        <figure className="rounded-2xl border border-border bg-card p-8 text-center">
+        <figure className="rounded-lg border border-border bg-card p-8 text-center">
           <blockquote className="text-base leading-relaxed sm:text-lg">
             "I was worried about sounding like a robot to my customers. But Call Net only picks up when I'm on the other line or after hours. My callers still talk to me for the real conversation. I've captured 5 new jobs in 2 weeks."
           </blockquote>
@@ -442,7 +442,7 @@ function CallNetPageInner() {
               a: "Call Net introduces itself as your virtual assistant. It sounds natural, takes the caller's details, and reassures them you'll call back personally — which you do.",
             },
           ].map((f) => (
-            <div key={f.q} className="rounded-xl border border-border bg-card p-5">
+            <div key={f.q} className="rounded-md border border-border bg-card p-5">
               <h3 className="text-sm font-semibold">{f.q}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{f.a}</p>
             </div>

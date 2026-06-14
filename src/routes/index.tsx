@@ -96,7 +96,7 @@ function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-background/70 backdrop-blur px-3 py-2 text-xs font-medium text-muted-foreground shadow-sm"
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-2 text-xs font-medium text-muted-foreground shadow-sm"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
@@ -178,7 +178,7 @@ function HeroCollage() {
         <motion.div
           animate={{ y: [0, -8, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute left-1/2 top-4 -translate-x-1/2 w-[78%] sm:w-[70%] rounded-2xl border border-border bg-background/90 backdrop-blur-xl shadow-2xl overflow-hidden"
+          className="absolute left-1/2 top-4 -translate-x-1/2 w-[78%] sm:w-[70%] rounded-lg border border-border bg-background shadow-md overflow-hidden"
         >
           <div className="flex items-center gap-2 border-b border-border px-4 py-2">
             <span className="size-2.5 rounded-full bg-muted-foreground/30" />
@@ -210,7 +210,7 @@ function HeroCollage() {
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1 + i * 0.2 }}
-                className="flex items-center gap-2 rounded-md border border-border/70 bg-secondary/40 px-3 py-2 text-[11px]"
+                className="flex items-center gap-2 rounded-md border border-border bg-secondary/40 px-3 py-2 text-[11px]"
               >
                 <span className="text-accent">{row.icon}</span>
                 <span className="flex-1 truncate text-foreground/80">{row.t}</span>
@@ -225,7 +225,7 @@ function HeroCollage() {
           initial={{ opacity: 0, x: -40, rotate: -8 }}
           animate={{ opacity: 1, x: 0, rotate: -6, y: [0, 6, 0] }}
           transition={{ opacity: { duration: 0.8, delay: 0.8 }, x: { duration: 0.8, delay: 0.8 }, rotate: { duration: 0.8, delay: 0.8 }, y: { duration: 5, repeat: Infinity, ease: "easeInOut" } }}
-          className="hidden sm:block absolute left-0 sm:left-4 top-24 w-[220px] rounded-2xl border border-border bg-background shadow-xl p-4"
+          className="hidden sm:block absolute left-0 sm:left-4 top-24 w-[220px] rounded-lg border border-border bg-background shadow-sm p-4"
         >
           <div className="flex items-center gap-2 mb-2">
             <div className="size-7 rounded-full bg-accent/10 text-accent flex items-center justify-center">
@@ -243,7 +243,7 @@ function HeroCollage() {
           initial={{ opacity: 0, x: 40, rotate: 8 }}
           animate={{ opacity: 1, x: 0, rotate: 5, y: [0, -6, 0] }}
           transition={{ opacity: { duration: 0.8, delay: 1 }, x: { duration: 0.8, delay: 1 }, rotate: { duration: 0.8, delay: 1 }, y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 } }}
-          className="hidden sm:block absolute right-0 sm:right-4 top-32 w-[220px] rounded-2xl border border-border bg-background shadow-xl p-4"
+          className="hidden sm:block absolute right-0 sm:right-4 top-32 w-[220px] rounded-lg border border-border bg-background shadow-sm p-4"
         >
           <div className="flex items-center gap-2 mb-2">
             <div className="size-7 rounded-full bg-accent/10 text-accent flex items-center justify-center">
@@ -269,8 +269,8 @@ function StatsStrip() {
     { v: "£0", l: "Until it's working" },
   ];
   return (
-    <section className="border-y border-border/60 bg-secondary/40">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-4 divide-x divide-border/60">
+    <section className="border-y border-border bg-secondary/40">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-4 divide-x divide-border">
         {items.map((it, i) => (
           <motion.div
             key={i}
@@ -299,7 +299,7 @@ function Marquee() {
     "AND MORE",
   ];
   return (
-    <div className="py-12 sm:py-12 border-y border-border/60 overflow-hidden">
+    <div className="py-12 sm:py-12 border-y border-border overflow-hidden">
       <div className="text-center text-[11px] uppercase tracking-[0.18em] text-muted-foreground/70 mb-6 sm:mb-8 px-4">
         Trusted by service businesses done running on manual admin
       </div>
@@ -361,7 +361,7 @@ function ValueProp() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border/70 border border-border/70 rounded-2xl overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border border border-border rounded-lg overflow-hidden">
           {/* Lead card spans full row */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -470,7 +470,7 @@ function Storyboard() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="relative bg-background border border-border/70 rounded-2xl p-6 sm:p-8 flex flex-col"
+              className="relative bg-background border border-border rounded-lg p-6 sm:p-8 flex flex-col"
             >
               <div className="flex items-center justify-between mb-6">
                 <div className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
@@ -482,7 +482,7 @@ function Storyboard() {
               </div>
 
               {/* Animated visual */}
-              <div className="relative h-44 sm:h-48 rounded-xl border border-border/60 bg-secondary/30 overflow-hidden mb-6">
+              <div className="relative h-44 sm:h-48 rounded-md border border-border bg-secondary/30 overflow-hidden mb-6">
                 <p.Visual />
               </div>
 
@@ -659,7 +659,7 @@ function AfterPanel() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.9 }}
-        className="mt-3 pt-3 border-t border-border/60 flex items-center justify-between text-[11px]"
+        className="mt-3 pt-3 border-t border-border flex items-center justify-between text-[11px]"
       >
         <span className="text-muted-foreground">Time reclaimed</span>
         <span className="font-semibold text-foreground tracking-tight">+ 14h / week</span>
@@ -719,7 +719,7 @@ function Products() {
         />
       </div>
 
-      <div className="mt-6 rounded-2xl bg-foreground p-8 sm:p-12 md:p-12 text-background flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div className="mt-6 rounded-lg bg-foreground p-8 sm:p-12 md:p-12 text-background flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
           <div className="text-[11px] uppercase tracking-[0.18em] mb-3 opacity-60">
             Our focus
@@ -730,7 +730,7 @@ function Products() {
         </div>
         <Link
           to="/contact"
-          className="btn btn-md bg-background text-foreground border-none hover:bg-background/90 rounded-full self-start md:self-auto whitespace-nowrap"
+          className="btn btn-md bg-background text-foreground border-none hover:bg-background rounded-full self-start md:self-auto whitespace-nowrap"
         >
           Get in touch <ArrowUpRight className="size-4" />
         </Link>
@@ -764,7 +764,7 @@ function ProductCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="group relative overflow-hidden rounded-2xl border border-border bg-background hover:border-accent/40 transition-colors"
+      className="group relative overflow-hidden rounded-lg border border-border bg-background hover:border-accent/40 transition-colors"
     >
       {/* visual panel */}
       <div className="relative h-56 sm:h-64 overflow-hidden border-b border-border bg-gradient-to-br from-secondary/60 via-background to-background">
@@ -836,7 +836,7 @@ function CallNetVisual() {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.4 }}
-        className="absolute right-5 bottom-5 w-[180px] rounded-xl border border-border bg-background shadow-md p-3"
+        className="absolute right-5 bottom-5 w-[180px] rounded-md border border-border bg-background shadow-md p-3"
       >
         <div className="text-[9px] uppercase tracking-[0.18em] text-muted-foreground mb-1">New lead · just now</div>
         <div className="text-[11px] text-foreground leading-snug">
@@ -856,7 +856,7 @@ function BookkeepingVisual() {
   ];
   return (
     <div className="absolute inset-0 p-6 sm:p-6 flex flex-col justify-center">
-      <div className="rounded-xl border border-border bg-background/90 backdrop-blur shadow-md overflow-hidden">
+      <div className="rounded-md border border-border bg-background shadow-md overflow-hidden">
         <div className="flex items-center justify-between border-b border-border px-3 py-2">
           <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Chase queue</div>
           <div className="text-[10px] text-accent font-medium">Auto · running</div>
@@ -906,7 +906,7 @@ function Testimonials() {
     },
   ];
   return (
-    <section className="py-24 sm:py-32 md:py-32 border-y border-border/60 bg-secondary/40 relative overflow-hidden">
+    <section className="py-24 sm:py-32 md:py-32 border-y border-border bg-secondary/40 relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_50%_0%,hsl(168_72%_32%/0.08),transparent_60%)]" />
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="max-w-3xl mb-16 sm:mb-16">
@@ -926,7 +926,7 @@ function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="rounded-2xl border border-border bg-background p-8 flex flex-col"
+              className="rounded-lg border border-border bg-background p-8 flex flex-col"
             >
               <Quote className="size-6 text-accent/60 mb-4" />
               <blockquote className="text-base leading-relaxed text-foreground/90 flex-1">
@@ -973,7 +973,7 @@ function Process() {
   ];
 
   return (
-    <section id="process" className="py-24 sm:py-32 md:py-32 border-y border-border/60 bg-secondary/50">
+    <section id="process" className="py-24 sm:py-32 md:py-32 border-y border-border bg-secondary/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="mb-16 sm:mb-24 max-w-3xl">
           <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6 sm:mb-6">
@@ -986,7 +986,7 @@ function Process() {
         </div>
 
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px bg-border/70 border border-border/70 rounded-2xl overflow-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px bg-border border border-border rounded-lg overflow-hidden">
           {steps.map((s, i) => (
             <motion.div
               key={i}
