@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { useState, useEffect } from "react";
 import { ArrowRight, Check, Plus, Shield, Mail } from "lucide-react";
 import { Wordmark, Footer } from "@/components/SiteChrome";
+import { AuroraBackground } from "@/components/AuroraBackground";
 
 // formsubmit.co target — swap this email for the real inbox.
 // First submission to a new address triggers a one-time confirmation email from formsubmit.
