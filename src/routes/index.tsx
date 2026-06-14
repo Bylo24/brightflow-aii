@@ -66,49 +66,47 @@ function Hero() {
         <AuroraBackground />
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="max-w-3xl">
-          <motion.h1
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[44px] sm:text-6xl md:text-6xl lg:text-7xl leading-[0.95] font-semibold tracking-[-0.045em] mb-5 text-balance text-foreground"
-          >
-            Automate the repetitive work{" "}
-            <span className="font-serif italic font-normal text-accent">killing your week.</span>
-          </motion.h1>
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center">
+        <motion.h1
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="text-[44px] sm:text-6xl md:text-6xl lg:text-7xl leading-[0.95] font-semibold tracking-[-0.045em] mb-5 text-balance text-foreground"
+        >
+          Automate the repetitive work{" "}
+          <span className="font-serif italic font-normal text-accent">killing your week.</span>
+        </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.08 }}
-            className="text-base text-muted-foreground max-w-md mb-8 text-pretty leading-relaxed"
-          >
-            We fully automate the repetitive manual work running inside your business and operate the system for you, end to end. You get the hours back.
-          </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.08 }}
+          className="text-base text-muted-foreground max-w-md mb-8 text-pretty leading-relaxed"
+        >
+          We fully automate the repetitive manual work running inside your business and operate the system for you, end to end. You get the hours back.
+        </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.16 }}
-            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto"
-          >
-            <BookCallDialog>
-              <button
-                type="button"
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-foreground px-7 py-3.5 text-sm font-medium text-background hover:bg-foreground/90 transition-colors shadow-sm"
-              >
-                Book a free audit <ArrowRight className="size-4" />
-              </button>
-            </BookCallDialog>
-            <a
-              href="#services"
-              className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-background px-7 py-3.5 text-sm font-medium text-foreground hover:bg-secondary transition-colors"
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.16 }}
+          className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 w-full sm:w-auto"
+        >
+          <BookCallDialog>
+            <button
+              type="button"
+              className="inline-flex items-center justify-center gap-2 rounded-md bg-foreground px-7 py-3.5 text-sm font-medium text-background hover:bg-foreground/90 transition-colors shadow-sm"
             >
-              See what we build
-            </a>
-          </motion.div>
-        </div>
+              Book a free audit <ArrowRight className="size-4" />
+            </button>
+          </BookCallDialog>
+          <a
+            href="#services"
+            className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-background px-7 py-3.5 text-sm font-medium text-foreground hover:bg-secondary transition-colors"
+          >
+            See what we build
+          </a>
+        </motion.div>
       </div>
     </section>
   );
