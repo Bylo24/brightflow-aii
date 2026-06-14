@@ -83,22 +83,33 @@ function Hero() {
     <section
       id="top"
       ref={ref}
-      className="relative pt-16 sm:pt-24 md:pt-28 pb-16 sm:pb-24 md:pb-28 overflow-hidden"
+      className="relative pt-14 sm:pt-20 md:pt-24 pb-20 sm:pb-28 md:pb-32 overflow-hidden"
     >
       <motion.div style={{ y, opacity }} className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,hsl(168_72%_32%/0.10),transparent_60%)]" />
-        <div className="absolute inset-0 grid-bg [mask-image:radial-gradient(ellipse_60%_45%_at_50%_0%,#000_50%,transparent_100%)]" />
+        <AuroraBackground />
       </motion.div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col items-center text-center">
 
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-background/70 backdrop-blur px-3 py-1.5 text-xs font-medium text-muted-foreground shadow-sm"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+            </span>
+            Now booking Q1 engagements — 2 spots left
+          </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[40px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[84px] leading-[1.05] lg:leading-[1.02] font-semibold tracking-[-0.035em] mb-5 sm:mb-7 max-w-4xl text-balance"
+            className="text-[44px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[88px] leading-[1.02] font-semibold tracking-[-0.035em] mb-6 max-w-4xl text-balance"
           >
             Automate the repetitive work{" "}
             <span className="font-serif italic font-normal text-accent">killing your week.</span>
@@ -108,7 +119,7 @@ function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mb-8 sm:mb-10 text-pretty leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mb-9 text-pretty leading-relaxed"
           >
             We fully automate the repetitive manual work running inside your business and operate the system for you, end to end. You get the hours back.
           </motion.p>
@@ -133,13 +144,148 @@ function Hero() {
             >
               See what we build
             </a>
-
-
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+            className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-muted-foreground"
+          >
+            <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-accent" /> Live in under 7 days</span>
+            <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-accent" /> Fixed monthly fee</span>
+            <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-accent" /> We manage everything</span>
+          </motion.div>
+
+          {/* Floating product preview collage */}
+          <HeroCollage />
         </div>
       </div>
     </section>
+  );
+}
 
+function HeroCollage() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+      className="relative mt-16 sm:mt-20 w-full max-w-5xl"
+    >
+      <div className="relative h-[320px] sm:h-[380px] md:h-[420px]">
+        {/* Center card - dashboard */}
+        <motion.div
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute left-1/2 top-4 -translate-x-1/2 w-[78%] sm:w-[70%] rounded-2xl border border-border bg-background/90 backdrop-blur-xl shadow-2xl overflow-hidden"
+        >
+          <div className="flex items-center gap-1.5 border-b border-border px-4 py-2.5">
+            <span className="size-2.5 rounded-full bg-muted-foreground/30" />
+            <span className="size-2.5 rounded-full bg-muted-foreground/30" />
+            <span className="size-2.5 rounded-full bg-muted-foreground/30" />
+            <span className="ml-3 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">brightflow / control</span>
+          </div>
+          <div className="grid grid-cols-3 gap-px bg-border">
+            {[
+              { l: "Hours saved", v: "14h", s: "this week" },
+              { l: "Tasks handled", v: "1,284", s: "this month" },
+              { l: "Uptime", v: "100%", s: "30 day" },
+            ].map((m) => (
+              <div key={m.l} className="bg-background p-4 text-left">
+                <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">{m.l}</div>
+                <div className="mt-1 text-xl sm:text-2xl font-semibold tracking-tight">{m.v}</div>
+                <div className="text-[10px] text-muted-foreground">{m.s}</div>
+              </div>
+            ))}
+          </div>
+          <div className="p-4 space-y-2">
+            {[
+              { icon: <Mail className="size-3" />, t: "Document chase sent → Acme Co.", ok: true },
+              { icon: <PhoneCall className="size-3" />, t: "Missed call captured → Brown plumbing", ok: true },
+              { icon: <Calendar className="size-3" />, t: "Interview booked → J. Patel", ok: true },
+            ].map((row, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1 + i * 0.2 }}
+                className="flex items-center gap-2.5 rounded-md border border-border/70 bg-secondary/40 px-3 py-2 text-[11px]"
+              >
+                <span className="text-accent">{row.icon}</span>
+                <span className="flex-1 truncate text-foreground/80">{row.t}</span>
+                <Check className="size-3 text-accent" strokeWidth={3} />
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Left floating card - SMS */}
+        <motion.div
+          initial={{ opacity: 0, x: -40, rotate: -8 }}
+          animate={{ opacity: 1, x: 0, rotate: -6, y: [0, 6, 0] }}
+          transition={{ opacity: { duration: 0.8, delay: 0.8 }, x: { duration: 0.8, delay: 0.8 }, rotate: { duration: 0.8, delay: 0.8 }, y: { duration: 5, repeat: Infinity, ease: "easeInOut" } }}
+          className="hidden sm:block absolute left-0 sm:left-4 top-24 w-[220px] rounded-2xl border border-border bg-background shadow-xl p-4"
+        >
+          <div className="flex items-center gap-2 mb-2">
+            <div className="size-7 rounded-full bg-accent/10 text-accent flex items-center justify-center">
+              <MessageSquare className="size-3.5" />
+            </div>
+            <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">New lead · 2s ago</div>
+          </div>
+          <div className="text-[11px] text-foreground leading-relaxed">
+            <span className="font-medium">Sarah J.</span> · Burst pipe, 24 Elm St. Wants callback today before 5pm.
+          </div>
+        </motion.div>
+
+        {/* Right floating card - invoice */}
+        <motion.div
+          initial={{ opacity: 0, x: 40, rotate: 8 }}
+          animate={{ opacity: 1, x: 0, rotate: 5, y: [0, -6, 0] }}
+          transition={{ opacity: { duration: 0.8, delay: 1 }, x: { duration: 0.8, delay: 1 }, rotate: { duration: 0.8, delay: 1 }, y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 } }}
+          className="hidden sm:block absolute right-0 sm:right-4 top-32 w-[220px] rounded-2xl border border-border bg-background shadow-xl p-4"
+        >
+          <div className="flex items-center gap-2 mb-2">
+            <div className="size-7 rounded-full bg-accent/10 text-accent flex items-center justify-center">
+              <FileText className="size-3.5" />
+            </div>
+            <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Receipt filed</div>
+          </div>
+          <div className="text-[11px] text-foreground leading-relaxed">
+            <span className="font-medium">£412.80</span> · Office supplies, matched to Xero ledger. No human touched it.
+          </div>
+        </motion.div>
+      </div>
+    </motion.div>
+  );
+}
+
+/* ---------------- STATS STRIP ---------------- */
+function StatsStrip() {
+  const items = [
+    { v: "14,200+", l: "Hours returned per year" },
+    { v: "<7 days", l: "From kickoff to live" },
+    { v: "100%", l: "Managed end-to-end" },
+    { v: "£0", l: "Until it's working" },
+  ];
+  return (
+    <section className="border-y border-border/60 bg-secondary/40">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-4 divide-x divide-border/60">
+        {items.map((it, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.06 }}
+            className="px-4 sm:px-6 py-6 sm:py-8 text-center md:text-left"
+          >
+            <div className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[-0.03em]">{it.v}</div>
+            <div className="mt-1.5 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">{it.l}</div>
+          </motion.div>
+        ))}
+      </div>
+    </section>
   );
 }
 
