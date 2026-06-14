@@ -143,11 +143,11 @@ function StatsStrip() {
     { v: "1,000s+", l: "Hours returned to clients" },
     { v: "<7 days", l: "From kickoff to live" },
     { v: "100%", l: "Managed end-to-end" },
-    { v: "£0", l: "Until it's working" },
+    { v: "$0", l: "Until it's working" },
   ];
   return (
-    <section className="border-b border-border bg-secondary/40 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-4">
+    <section className="border-y border-border bg-secondary/40">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-4 md:divide-x divide-y md:divide-y-0 divide-border">
         {items.map((it, i) => (
           <motion.div
             key={i}
@@ -155,7 +155,7 @@ function StatsStrip() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.06 }}
-            className={`min-w-0 px-4 sm:px-6 md:px-8 py-8 sm:py-12 text-left border-border ${i % 2 === 1 ? "border-l" : ""} ${i >= 1 ? "md:border-l" : ""} ${i === 2 ? "border-t md:border-t-0" : ""} ${i === 3 ? "border-t md:border-t-0" : ""}`}
+            className="min-w-0 px-5 sm:px-6 md:px-8 py-8 sm:py-12 text-left"
           >
             <div className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-foreground leading-[1.05] whitespace-normal break-words">
               {it.v}
