@@ -219,7 +219,7 @@ function StatsStrip() {
     { v: "£0", l: "Until it's working" },
   ];
   return (
-    <section className="border-y border-border bg-secondary/40 overflow-hidden">
+    <section className="border-b border-border bg-secondary/40 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-4 divide-x divide-border">
         {items.map((it, i) => (
           <motion.div
