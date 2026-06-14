@@ -867,7 +867,7 @@ function Testimonials() {
     },
   ];
   return (
-    <section className="py-24 sm:py-32 md:py-32 border-y border-border bg-secondary/40 relative overflow-hidden">
+    <section className="py-24 sm:py-32 md:py-32 bg-secondary/40 relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_50%_0%,hsl(168_72%_32%/0.08),transparent_60%)]" />
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="max-w-3xl mb-16 sm:mb-16">
