@@ -201,9 +201,9 @@ function HeroCollage() {
           </div>
           <div className="p-4 space-y-2">
             {[
-              { icon: <Mail className="size-3" />, t: "Document chase sent → Acme Co.", ok: true },
-              { icon: <PhoneCall className="size-3" />, t: "Missed call captured → Brown plumbing", ok: true },
-              { icon: <Calendar className="size-3" />, t: "Interview booked → J. Patel", ok: true },
+              { icon: <Mail className="size-3" />, t: "Missing receipt reminder → Southeast Plumbing", ok: true },
+              { icon: <PhoneCall className="size-3" />, t: "Missed call captured → Brown & Sons Plumbing", ok: true },
+              { icon: <Calendar className="size-3" />, t: "Client follow-up sent → Patel Salon", ok: true },
             ].map((row, i) => (
               <motion.div
                 key={i}
@@ -263,7 +263,7 @@ function HeroCollage() {
 /* ---------------- STATS STRIP ---------------- */
 function StatsStrip() {
   const items = [
-    { v: "14,200+", l: "Hours returned per year" },
+    { v: "Thousands", l: "Hours returned to clients" },
     { v: "<7 days", l: "From kickoff to live" },
     { v: "100%", l: "Managed end-to-end" },
     { v: "£0", l: "Until it's working" },
@@ -294,13 +294,9 @@ function StatsStrip() {
 function Marquee() {
   const items = [
     "BOOKKEEPING FIRMS",
-    "PROPERTY MANAGEMENT",
+    "TRADES & LOCAL SERVICES",
     "RECRUITMENT AGENCIES",
-    "MEDICAL & DENTAL CLINICS",
-    "LOCAL SERVICE BUSINESSES",
-    "REAL ESTATE TEAMS",
-    "LEGAL PRACTICES",
-    "E-COMMERCE OPERATIONS",
+    "AND MORE",
   ];
   return (
     <div className="py-10 sm:py-12 border-y border-border/60 overflow-hidden">
@@ -726,17 +722,17 @@ function Products() {
       <div className="mt-6 rounded-2xl bg-foreground p-8 sm:p-10 md:p-12 text-background flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
           <div className="text-[11px] uppercase tracking-[0.18em] mb-3 opacity-60">
-            Don't see your workflow?
+            Our focus
           </div>
           <h4 className="font-semibold tracking-tight text-xl sm:text-2xl md:text-3xl text-balance">
-            If it's repetitive, we automate it. Every time.
+            We focus on validated workflows. Call Net for trades. Document Chase for bookkeepers.
           </h4>
         </div>
         <Link
           to="/contact"
-          className="btn btn-md bg-background text-foreground border-none hover:bg-background/90 rounded-full self-start md:self-auto"
+          className="btn btn-md bg-background text-foreground border-none hover:bg-background/90 rounded-full self-start md:self-auto whitespace-nowrap"
         >
-          Tell us about it <ArrowUpRight className="size-4" />
+          Get in touch <ArrowUpRight className="size-4" />
         </Link>
       </div>
     </section>
@@ -1018,9 +1014,9 @@ function Process() {
 /* ---------------- METRICS ---------------- */
 function Metrics() {
   const items = [
-    { value: "14,200+", label: "Hours handed back to our clients each year" },
-    { value: "100%", label: "Automation accuracy across every system we run" },
-    { value: "1-7 days", label: "From kickoff to live, in production" },
+    { value: "Thousands", label: "Of hours handed back to clients" },
+    { value: "99.9%", label: "Automation reliability across our systems" },
+    { value: "<1 week", label: "Typical time from kickoff to live" },
     { value: "100%", label: "Managed by us. You never touch the system" },
   ];
   return (

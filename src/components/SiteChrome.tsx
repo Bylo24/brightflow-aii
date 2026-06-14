@@ -103,7 +103,7 @@ export function Footer({ hideCta = false }: { hideCta?: boolean } = {}) {
             </BookCallDialog>
 
             <div className="mt-5 text-sm text-muted-foreground">
-              No pitch. No pressure. A clear plan, in writing.
+              No risk. Free pilot. You only pay once we've saved you time.
             </div>
           </div>
         )}
