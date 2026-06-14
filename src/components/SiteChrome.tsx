@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { BookCallDialog } from "./BookCallDialog";
+import bfLogo from "@/assets/bf-logo.png.asset.json";
 
 export function Wordmark() {
   return (
@@ -15,32 +16,14 @@ export function Wordmark() {
 
 function LogoMark() {
   return (
-    <svg
-      width="28"
-      height="28"
-      viewBox="0 0 40 40"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
+    <img
+      src={bfLogo.url}
+      alt="BrightFlow AI"
+      width={28}
+      height={28}
       className="shrink-0"
-    >
-      {/* Back arrow, dark, offset up-left */}
-      <path
-        d="M10 22 L22 10 M14 10 H22 V18"
-        stroke="hsl(220 20% 8%)"
-        strokeWidth="3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      {/* Front arrow, teal accent, offset down-right */}
-      <path
-        d="M14 30 L30 14 M18 14 H30 V26"
-        stroke="hsl(168 72% 32%)"
-        strokeWidth="3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+      draggable={false}
+    />
   );
 }
 
