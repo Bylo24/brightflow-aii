@@ -228,7 +228,7 @@ function StatsStrip() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.06 }}
-            className="min-w-0 px-4 sm:px-6 md:px-8 py-8 sm:py-12 text-left border-border [&:not(:nth-child(2n))]:border-r md:[&]:border-r md:last:border-r-0"
+            className={`min-w-0 px-4 sm:px-6 md:px-8 py-8 sm:py-12 text-left border-border ${i % 2 === 1 ? "border-l" : ""} ${i >= 1 ? "md:border-l" : ""} ${i === 2 ? "border-t md:border-t-0" : ""} ${i === 3 ? "border-t md:border-t-0" : ""}`}
           >
             <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-[-0.035em] text-foreground leading-[1.05] break-words">
               {it.v}
