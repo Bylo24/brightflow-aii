@@ -66,9 +66,9 @@ export function Nav() {
           <BookCallDialog>
             <button
               type="button"
-              className="btn btn-md btn-neutral rounded-full font-medium whitespace-nowrap"
+              className="inline-flex items-center justify-center gap-2 rounded-md bg-foreground px-4 sm:px-5 h-9 sm:h-10 text-[13px] font-medium text-background hover:bg-foreground/90 transition-colors whitespace-nowrap"
             >
-              Book a free audit <ArrowRight className="size-4" />
+              Book a free audit <ArrowRight className="size-3.5" />
             </button>
           </BookCallDialog>
         </div>
