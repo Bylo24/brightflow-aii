@@ -948,22 +948,28 @@ function Process() {
         </div>
 
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px bg-border border border-border rounded-lg overflow-hidden">
+        <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          {/* connector line — desktop */}
+          <div className="hidden md:block absolute top-12 left-[12%] right-[12%] h-px bg-border" aria-hidden />
           {steps.map((s, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="bg-background p-8 sm:p-12 md:p-12 min-h-[220px] sm:min-h-[260px] grid grid-rows-[auto_auto_1fr] gap-y-6 group hover:bg-secondary/50 transition-colors"
+              className="relative"
             >
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-mono text-accent">{s.num}</span>
-                <div className="size-1.5 rounded-full bg-accent group-hover:scale-150 transition-transform" />
+              {/* numbered node sitting on the connector line */}
+              <div className="relative flex items-center justify-center mb-6">
+                <div className="relative z-10 size-8 rounded-full bg-background border border-foreground flex items-center justify-center text-[11px] font-mono font-semibold text-foreground">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
               </div>
-              <h4 className="text-xl sm:text-2xl font-semibold tracking-tight">{s.title}</h4>
-              <p className="text-sm text-muted-foreground leading-relaxed">{s.body}</p>
+              <div className="bg-background border border-border rounded-lg p-8 min-h-[200px]">
+                <h4 className="text-xl font-semibold tracking-tight mb-3 text-foreground">{s.title}</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">{s.body}</p>
+              </div>
             </motion.div>
           ))}
         </div>
