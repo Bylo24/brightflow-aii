@@ -82,8 +82,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "BrightFlow AI - Fully Automate Repetitive Manual Admin" },
       { name: "twitter:description", content: "We eliminate the mundane, repetitive tasks eating your team's time so you can focus on what actually grows your business." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/0effdf68-17c0-493c-b891-70363b0a1e1b" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/0effdf68-17c0-493c-b891-70363b0a1e1b" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/CiXXRTDAPkNiTm4uLG8PcQotUm73/social-images/social-1781450718419-social.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/CiXXRTDAPkNiTm4uLG8PcQotUm73/social-images/social-1781450718419-social.webp" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
