@@ -163,7 +163,7 @@ function HeroDashboard() {
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-      className="relative mt-16 sm:mt-24 w-full max-w-3xl"
+      className="relative mt-12 sm:mt-16 w-full max-w-3xl"
     >
       <div className="rounded-lg border border-border bg-background shadow-sm overflow-hidden">
         <div className="flex items-center gap-2 border-b border-border px-4 py-2">
