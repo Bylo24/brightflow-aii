@@ -599,26 +599,28 @@ function Process() {
         </div>
 
 
-        <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-
+        <div className="border-t border-background/15">
           {steps.map((s, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="relative"
+              transition={{ duration: 0.5, delay: i * 0.06 }}
+              className="grid grid-cols-12 gap-6 sm:gap-8 py-8 sm:py-10 border-b border-background/15 items-baseline"
             >
-              {/* numbered node sitting on the connector line */}
-              <div className="relative flex items-center justify-center mb-6">
-                <div className="relative z-10 size-8 rounded-full bg-foreground border border-background/30 flex items-center justify-center text-[11px] font-mono font-semibold text-background">
-                  {String(i + 1).padStart(2, "0")}
-                </div>
+              <div className="col-span-2 sm:col-span-1 text-[11px] font-mono text-background/50">
+                {s.num}
               </div>
-              <div className="bg-background/[0.04] border border-background/15 rounded-lg p-8 min-h-[200px]">
-                <h4 className="text-xl font-semibold tracking-tight mb-3 text-background">{s.title}</h4>
-                <p className="text-sm text-background/65 leading-relaxed">{s.body}</p>
+              <div className="col-span-10 sm:col-span-3">
+                <h4 className="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] text-background">
+                  {s.title}
+                </h4>
+              </div>
+              <div className="col-span-12 sm:col-span-8 sm:pl-8 md:pl-12">
+                <p className="text-base text-background/70 leading-relaxed max-w-xl">
+                  {s.body}
+                </p>
               </div>
             </motion.div>
           ))}
