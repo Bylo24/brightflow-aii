@@ -201,9 +201,9 @@ function HeroCollage() {
           </div>
           <div className="p-4 space-y-2">
             {[
-              { icon: <Mail className="size-3" />, t: "Document chase sent → Acme Co.", ok: true },
-              { icon: <PhoneCall className="size-3" />, t: "Missed call captured → Brown plumbing", ok: true },
-              { icon: <Calendar className="size-3" />, t: "Interview booked → J. Patel", ok: true },
+              { icon: <Mail className="size-3" />, t: "Missing receipt reminder → Southeast Plumbing", ok: true },
+              { icon: <PhoneCall className="size-3" />, t: "Missed call captured → Brown & Sons Plumbing", ok: true },
+              { icon: <Calendar className="size-3" />, t: "Client follow-up sent → Patel Salon", ok: true },
             ].map((row, i) => (
               <motion.div
                 key={i}
