@@ -643,7 +643,6 @@ function Products() {
             { v: "<5 min", l: "callback window" },
             { v: "$97/mo", l: "flat fee" },
           ]}
-          Visual={CallNetVisual}
           variant="dark"
         />
         <ProductCard
@@ -658,7 +657,7 @@ function Products() {
             { v: "0", l: "manual follow-ups" },
             { v: "Free pilot", l: "2 weeks, or you don't pay" },
           ]}
-          Visual={BookkeepingVisual}
+          variant="light"
         />
       </div>
 
@@ -690,7 +689,6 @@ function ProductCard({
   title,
   body,
   stats,
-  Visual,
   variant = "light",
 }: {
   to: "/call-net" | "/bookkeeping";
@@ -700,7 +698,6 @@ function ProductCard({
   title: string;
   body: string;
   stats: { v: string; l: string }[];
-  Visual: React.ComponentType;
   variant?: "light" | "dark";
 }) {
   const isDark = variant === "dark";
@@ -716,14 +713,8 @@ function ProductCard({
           : "border-foreground/15 bg-background hover:border-foreground/60 shadow-sm"
       }`}
     >
-      {/* visual panel */}
-      <div className={`relative h-56 sm:h-64 overflow-hidden border-b ${isDark ? "border-background/15 bg-foreground" : "border-border bg-secondary"}`}>
-        <div className={`absolute inset-0 grid-bg opacity-40 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000,transparent)] ${isDark ? "invert opacity-20" : ""}`} />
-        <Visual />
-      </div>
-
       <div className={isDark ? "p-8 sm:p-12" : "p-8 sm:p-10"}>
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center justify-between mb-8">
           <div className="inline-flex items-center gap-3">
             <div className={`size-9 rounded-md flex items-center justify-center ${isDark ? "bg-background/10 text-background" : "bg-accent/10 text-accent"}`}>
               {icon}
@@ -764,80 +755,6 @@ function ProductCard({
   );
 }
 
-function CallNetVisual() {
-  return (
-    <div className="absolute inset-0 flex items-center justify-center p-6">
-      <motion.div
-        animate={{ scale: [1, 1.04, 1] }}
-        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-        className="relative size-24 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center"
-      >
-        <motion.div
-          animate={{ scale: [1, 1.8, 1], opacity: [0.5, 0, 0.5] }}
-          transition={{ duration: 2.4, repeat: Infinity, ease: "easeOut" }}
-          className="absolute inset-0 rounded-full bg-accent/20"
-        />
-        <motion.div
-          animate={{ scale: [1, 2.4, 1], opacity: [0.3, 0, 0.3] }}
-          transition={{ duration: 2.4, repeat: Infinity, ease: "easeOut", delay: 0.5 }}
-          className="absolute inset-0 rounded-full bg-accent/10"
-        />
-        <PhoneCall className="size-9 text-accent relative z-10" />
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, x: 20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.4 }}
-        className="absolute right-5 bottom-5 w-[180px] rounded-md border border-border bg-background shadow-md p-3"
-      >
-        <div className="text-[9px] uppercase tracking-[0.18em] text-muted-foreground mb-1">New lead · just now</div>
-        <div className="text-[11px] text-foreground leading-snug">
-          <span className="font-medium">Mike R.</span> · Boiler down. Wants quote today.
-        </div>
-      </motion.div>
-    </div>
-  );
-}
-
-function BookkeepingVisual() {
-  const rows = [
-    { name: "Acme Co. — Sept receipts", done: true },
-    { name: "Bright Bistro — Q3 statements", done: true },
-    { name: "Nguyen LLC — missing invoice", done: false },
-    { name: "Patel Salon — VAT docs", done: true },
-  ];
-  return (
-    <div className="absolute inset-0 p-6 sm:p-6 flex flex-col justify-center">
-      <div className="rounded-md border border-border bg-background shadow-md overflow-hidden">
-        <div className="flex items-center justify-between border-b border-border px-3 py-2">
-          <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Chase queue</div>
-          <div className="text-[10px] text-accent font-medium">Auto · running</div>
-        </div>
-        <div className="divide-y divide-border">
-          {rows.map((r, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: -8 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.15 + i * 0.1 }}
-              className="flex items-center gap-2 px-3 py-2 text-[11px]"
-            >
-              <span className={`size-4 rounded-full flex items-center justify-center ${r.done ? "bg-accent/15 text-accent" : "bg-secondary text-muted-foreground"}`}>
-                {r.done ? <Check className="size-2.5" strokeWidth={3} /> : <Clock className="size-2.5" />}
-              </span>
-              <span className={`flex-1 truncate ${r.done ? "text-muted-foreground line-through decoration-border" : "text-foreground"}`}>
-                {r.name}
-              </span>
-              {!r.done && <span className="text-[9px] uppercase tracking-[0.18em] text-accent">chasing</span>}
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
 
 /* ---------------- TESTIMONIALS ---------------- */
 function Testimonials() {
