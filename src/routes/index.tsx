@@ -699,6 +699,7 @@ function ProductCard({
   body,
   stats,
   Visual,
+  variant = "light",
 }: {
   to: "/call-net" | "/bookkeeping";
   eyebrow: string;
@@ -708,52 +709,61 @@ function ProductCard({
   body: string;
   stats: { v: string; l: string }[];
   Visual: React.ComponentType;
+  variant?: "light" | "dark";
 }) {
+  const isDark = variant === "dark";
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="group relative overflow-hidden rounded-lg border border-border bg-background hover:border-accent/40 transition-colors"
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+      className={`group relative overflow-hidden rounded-lg border transition-colors ${
+        isDark
+          ? "border-foreground bg-foreground text-background hover:border-foreground"
+          : "border-border bg-background hover:border-foreground/40"
+      }`}
     >
       {/* visual panel */}
-      <div className="relative h-56 sm:h-64 overflow-hidden border-b border-border bg-gradient-to-br from-secondary/60 via-background to-background">
-        <div className="absolute inset-0 grid-bg opacity-50 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000,transparent)]" />
-        <div className="absolute -top-20 -right-16 size-56 rounded-full blur-3xl bg-accent/15" />
+      <div className={`relative h-56 sm:h-64 overflow-hidden border-b ${isDark ? "border-background/15 bg-foreground" : "border-border bg-secondary"}`}>
+        <div className={`absolute inset-0 grid-bg opacity-40 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000,transparent)] ${isDark ? "invert opacity-20" : ""}`} />
         <Visual />
       </div>
 
-      <div className="p-8 sm:p-8">
+      <div className="p-8">
         <div className="flex items-center justify-between mb-6">
-          <div className="inline-flex items-center gap-2">
-            <div className="size-9 rounded-lg bg-accent/10 text-accent flex items-center justify-center">
+          <div className="inline-flex items-center gap-3">
+            <div className={`size-9 rounded-md flex items-center justify-center ${isDark ? "bg-background/10 text-background" : "bg-accent/10 text-accent"}`}>
               {icon}
             </div>
             <div>
-              <div className="text-base font-semibold tracking-tight leading-tight">{eyebrow}</div>
-              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground mt-1">{tag}</div>
+              <div className={`text-base font-semibold tracking-tight leading-tight ${isDark ? "text-background" : "text-foreground"}`}>{eyebrow}</div>
+              <div className={`text-[10px] uppercase tracking-[0.18em] mt-1 ${isDark ? "text-background/60" : "text-muted-foreground"}`}>{tag}</div>
             </div>
           </div>
         </div>
 
-        <h3 className="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15] mb-3 text-balance">
+        <h3 className={`text-2xl sm:text-3xl font-semibold tracking-[-0.025em] leading-[1.1] mb-4 text-balance ${isDark ? "text-background" : "text-foreground"}`}>
           {title}
         </h3>
-        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-8">{body}</p>
+        <p className={`text-sm sm:text-base leading-relaxed mb-8 ${isDark ? "text-background/70" : "text-muted-foreground"}`}>{body}</p>
 
-        <div className="grid grid-cols-3 gap-3 mb-8 pt-6 border-t border-border">
+        <div className={`grid grid-cols-3 gap-4 mb-8 pt-6 border-t ${isDark ? "border-background/15" : "border-border"}`}>
           {stats.map((s, i) => (
             <div key={i}>
-              <div className="text-xl sm:text-2xl font-semibold tracking-tight">{s.v}</div>
-              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground mt-1 leading-tight">{s.l}</div>
+              <div className={`text-2xl font-semibold tracking-[-0.02em] ${isDark ? "text-background" : "text-foreground"}`}>{s.v}</div>
+              <div className={`text-[10px] uppercase tracking-[0.18em] mt-1 leading-tight ${isDark ? "text-background/55" : "text-muted-foreground"}`}>{s.l}</div>
             </div>
           ))}
         </div>
 
         <Link
           to={to}
-          className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-2 text-sm font-medium text-background hover:opacity-90 transition-opacity"
+          className={`inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-medium transition-colors ${
+            isDark
+              ? "bg-background text-foreground hover:bg-background/90"
+              : "bg-foreground text-background hover:bg-foreground/90"
+          }`}
         >
           See {eyebrow} <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </Link>
