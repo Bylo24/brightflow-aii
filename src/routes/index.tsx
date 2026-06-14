@@ -52,7 +52,6 @@ function Index() {
         <StatsStrip />
         <Marquee />
         <ValueProp />
-        <Storyboard />
         <Products />
         <Testimonials />
         <Process />
