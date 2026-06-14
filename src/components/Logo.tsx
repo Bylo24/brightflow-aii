@@ -1,4 +1,4 @@
-import bfLogo from "@/assets/bf-logo.png.asset.json";
+import bfLogo from "@/assets/brightflow-logo.png.asset.json";
 
 export function Logo({ className = "size-7" }: { className?: string }) {
   return (

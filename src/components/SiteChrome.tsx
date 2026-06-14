@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { BookCallDialog } from "./BookCallDialog";
-import bfLogo from "@/assets/bf-logo.png.asset.json";
+import bfLogo from "@/assets/brightflow-logo.png.asset.json";
 
 export function Wordmark() {
   return (
