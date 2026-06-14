@@ -643,7 +643,6 @@ function Products() {
             { v: "<5 min", l: "callback window" },
             { v: "$97/mo", l: "flat fee" },
           ]}
-          Visual={undefined as never}
           variant="dark"
         />
         <ProductCard
