@@ -834,22 +834,22 @@ function Process() {
     {
       num: "01",
       title: "Audit",
-      body: "We sit down with you and map the repetitive workflows costing the most time and money. You leave with a clear plan, whether or not you work with us.",
+      body: "We sit down with you and map every repetitive workflow costing your team the most time and money. You always leave with a clear, actionable plan.",
     },
     {
       num: "02",
       title: "Build",
-      body: "We design and build the automated workflow around your exact process, integrated with the tools you already use. CRM, email, accounting, calendar.",
+      body: "We design and build the automated workflow around your exact process, fully integrated with the tools you already use. CRM, email, accounting, calendar, all wired in.",
     },
     {
       num: "03",
       title: "Launch",
-      body: "We deploy the system, train your team in under an hour, and switch it on. Every client is live in under a week.",
+      body: "We deploy the system, train your team in under an hour, and switch it on for you. Every client is fully live in under a week.",
     },
     {
       num: "04",
       title: "Manage",
-      body: "We monitor, maintain and improve the system every month at a flat fee. You never lift a finger to keep it running.",
+      body: "We monitor, maintain and actively improve the system every single month at one flat monthly fee. You will never lift a finger to keep it running.",
     },
   ];
 
