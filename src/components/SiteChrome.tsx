@@ -24,21 +24,23 @@ function LogoMark() {
       aria-hidden="true"
       className="shrink-0"
     >
-      {/* Back arrow, dark, offset up-left */}
+      {/* Back arrow, follows text color */}
       <path
         d="M10 22 L22 10 M14 10 H22 V18"
-        stroke="hsl(220 20% 8%)"
+        stroke="currentColor"
         strokeWidth="3"
         strokeLinecap="round"
         strokeLinejoin="round"
+        className="text-foreground"
       />
-      {/* Front arrow, teal accent, offset down-right */}
+      {/* Front arrow, accent color */}
       <path
         d="M14 30 L30 14 M18 14 H30 V26"
-        stroke="hsl(168 72% 32%)"
+        stroke="currentColor"
         strokeWidth="3"
         strokeLinecap="round"
         strokeLinejoin="round"
+        className="text-accent"
       />
     </svg>
   );
