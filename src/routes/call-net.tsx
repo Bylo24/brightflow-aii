@@ -153,7 +153,9 @@ function CallNetPageInner() {
       </header>
 
       {/* Hero */}
-      <section className="mx-auto max-w-4xl px-6 pt-10 pb-16 text-center">
+      <section className="relative mx-auto max-w-4xl px-6 pt-10 pb-16 text-center overflow-hidden">
+        <AuroraBackground />
+
         <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
           <Phone className="h-3.5 w-3.5" /> AI receptionist for small business
         </div>
