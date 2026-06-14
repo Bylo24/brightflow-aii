@@ -130,12 +130,12 @@ function StatsStrip() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.06 }}
-            className="min-w-0 px-5 sm:px-6 md:px-8 py-8 sm:py-12 text-left"
+            className="min-w-0 px-5 sm:px-7 md:px-8 py-7 sm:py-10 md:py-11 text-left"
           >
-            <div className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-foreground leading-[1.05] whitespace-normal break-words">
+            <div className="text-[22px] sm:text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-foreground leading-[1.05] whitespace-normal break-words">
               {it.v}
             </div>
-            <div className="mt-2 sm:mt-3 text-[10px] uppercase tracking-[0.18em] text-muted-foreground/80 leading-snug whitespace-normal break-words">
+            <div className="mt-2.5 sm:mt-3 text-[10px] uppercase tracking-[0.15em] text-muted-foreground/75 leading-snug whitespace-normal break-words">
               {it.l}
             </div>
           </motion.div>
