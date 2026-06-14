@@ -721,7 +721,7 @@ function ProductCard({
       className={`group relative overflow-hidden rounded-lg border transition-colors ${
         isDark
           ? "border-foreground bg-foreground text-background hover:border-foreground"
-          : "border-border bg-background hover:border-foreground/40"
+          : "border-foreground/15 bg-background hover:border-foreground/60 shadow-sm"
       }`}
     >
       {/* visual panel */}
@@ -730,7 +730,7 @@ function ProductCard({
         <Visual />
       </div>
 
-      <div className="p-8">
+      <div className={isDark ? "p-8 sm:p-12" : "p-8 sm:p-10"}>
         <div className="flex items-center justify-between mb-6">
           <div className="inline-flex items-center gap-3">
             <div className={`size-9 rounded-md flex items-center justify-center ${isDark ? "bg-background/10 text-background" : "bg-accent/10 text-accent"}`}>
