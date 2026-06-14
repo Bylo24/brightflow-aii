@@ -653,6 +653,7 @@ function Products() {
             { v: "$97/mo", l: "flat fee" },
           ]}
           Visual={CallNetVisual}
+          variant="dark"
         />
         <ProductCard
           to="/bookkeeping"
