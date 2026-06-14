@@ -934,7 +934,7 @@ function Process() {
   ];
 
   return (
-    <section id="process" className="py-24 sm:py-32 md:py-32 border-y border-border bg-secondary/50">
+    <section id="process" className="py-24 sm:py-32 md:py-32 bg-foreground text-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="mb-16 sm:mb-24 max-w-3xl">
           <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6 sm:mb-6">
