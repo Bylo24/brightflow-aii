@@ -220,7 +220,7 @@ function StatsStrip() {
     { v: "£0", l: "Until it's working" },
   ];
   return (
-    <section className="border-y border-border bg-secondary/40">
+    <section className="border-y border-border bg-secondary/40 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-4 divide-x divide-border">
         {items.map((it, i) => (
           <motion.div
@@ -229,10 +229,10 @@ function StatsStrip() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.06 }}
-            className="px-6 sm:px-8 py-8 sm:py-12 text-left"
+            className="px-3 sm:px-6 md:px-8 py-6 sm:py-12 text-left min-w-0"
           >
-            <div className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.04em] text-foreground">{it.v}</div>
-            <div className="mt-3 text-[11px] uppercase tracking-[0.22em] text-muted-foreground/80">{it.l}</div>
+            <div className="text-[26px] sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-[-0.04em] text-foreground leading-[1.05] truncate">{it.v}</div>
+            <div className="mt-2 sm:mt-3 text-[10px] sm:text-[11px] uppercase tracking-[0.16em] sm:tracking-[0.22em] text-muted-foreground/80 leading-snug">{it.l}</div>
           </motion.div>
         ))}
       </div>
@@ -749,11 +749,11 @@ function ProductCard({
         </h3>
         <p className={`text-sm sm:text-base leading-relaxed mb-8 ${isDark ? "text-background/70" : "text-muted-foreground"}`}>{body}</p>
 
-        <div className={`grid grid-cols-3 gap-4 mb-8 pt-6 border-t ${isDark ? "border-background/15" : "border-border"}`}>
+        <div className={`grid grid-cols-3 gap-3 sm:gap-4 mb-8 pt-6 border-t ${isDark ? "border-background/15" : "border-border"}`}>
           {stats.map((s, i) => (
-            <div key={i}>
-              <div className={`text-2xl font-semibold tracking-[-0.02em] ${isDark ? "text-background" : "text-foreground"}`}>{s.v}</div>
-              <div className={`text-[10px] uppercase tracking-[0.18em] mt-1 leading-tight ${isDark ? "text-background/55" : "text-muted-foreground"}`}>{s.l}</div>
+            <div key={i} className="min-w-0">
+              <div className={`text-lg sm:text-2xl font-semibold tracking-[-0.02em] leading-tight break-words ${isDark ? "text-background" : "text-foreground"}`}>{s.v}</div>
+              <div className={`text-[10px] uppercase tracking-[0.16em] mt-1 leading-tight ${isDark ? "text-background/55" : "text-muted-foreground"}`}>{s.l}</div>
             </div>
           ))}
         </div>
