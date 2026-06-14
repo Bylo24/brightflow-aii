@@ -388,14 +388,14 @@ function Testimonials() {
   ];
   const [lead, ...rest] = quotes;
   return (
-    <section className="py-24 sm:py-32 md:py-32 bg-foreground text-background relative overflow-hidden">
+    <section className="py-32 sm:py-40 md:py-44 bg-foreground text-background relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_30%_0%,hsl(168_72%_32%/0.12),transparent_60%)]" />
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="max-w-3xl mb-16 sm:mb-20">
+        <div className="max-w-3xl mb-20 sm:mb-24">
           <div className="text-[11px] uppercase tracking-[0.18em] text-background/60 mb-6">
             What clients say
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.045em] leading-[1.0] text-balance text-background">
+          <h2 className="text-5xl sm:text-6xl md:text-7xl font-semibold tracking-[-0.045em] leading-[0.98] text-balance text-background">
             Quietly running{" "}
             <span className="font-serif italic font-normal text-accent">in the background.</span>
           </h2>
