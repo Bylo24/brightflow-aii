@@ -67,133 +67,50 @@ function Hero() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* LEFT */}
-          <div className="lg:col-span-7 flex flex-col items-start text-left">
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 backdrop-blur px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6"
-            >
-              <span className="size-1.5 rounded-full bg-accent" />
-              Live in under 7 days · Managed end-to-end
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="text-[44px] sm:text-6xl md:text-6xl lg:text-7xl leading-[0.95] font-semibold tracking-[-0.045em] mb-5 text-balance text-foreground"
-            >
-              Automate the repetitive work{" "}
-              <span className="font-serif italic font-normal text-accent">killing your week.</span>
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.08 }}
-              className="text-base text-muted-foreground max-w-md mb-8 text-pretty leading-relaxed"
-            >
-              We fully automate the repetitive manual work running inside your business and operate the system for you, end to end. You get the hours back.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.16 }}
-              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto"
-            >
-              <BookCallDialog>
-                <button
-                  type="button"
-                  className="inline-flex items-center justify-center gap-2 rounded-md bg-foreground px-7 py-3.5 text-sm font-medium text-background hover:bg-foreground/90 transition-colors shadow-sm"
-                >
-                  Book a free audit <ArrowRight className="size-4" />
-                </button>
-              </BookCallDialog>
-              <a
-                href="#services"
-                className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-background px-7 py-3.5 text-sm font-medium text-foreground hover:bg-secondary transition-colors"
-              >
-                See what we build
-              </a>
-            </motion.div>
-          </div>
-
-          {/* RIGHT — product mock */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+        <div className="max-w-3xl">
+          <motion.h1
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="hidden lg:block lg:col-span-5 lg:-mr-6 xl:-mr-12"
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="text-[44px] sm:text-6xl md:text-6xl lg:text-7xl leading-[0.95] font-semibold tracking-[-0.045em] mb-5 text-balance text-foreground"
           >
-            <HeroMock />
+            Automate the repetitive work{" "}
+            <span className="font-serif italic font-normal text-accent">killing your week.</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.08 }}
+            className="text-base text-muted-foreground max-w-md mb-8 text-pretty leading-relaxed"
+          >
+            We fully automate the repetitive manual work running inside your business and operate the system for you, end to end. You get the hours back.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.16 }}
+            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto"
+          >
+            <BookCallDialog>
+              <button
+                type="button"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-foreground px-7 py-3.5 text-sm font-medium text-background hover:bg-foreground/90 transition-colors shadow-sm"
+              >
+                Book a free audit <ArrowRight className="size-4" />
+              </button>
+            </BookCallDialog>
+            <a
+              href="#services"
+              className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-background px-7 py-3.5 text-sm font-medium text-foreground hover:bg-secondary transition-colors"
+            >
+              See what we build
+            </a>
           </motion.div>
         </div>
       </div>
     </section>
-  );
-}
-
-function HeroMock() {
-  const calls = [
-    { name: "Jordan M.", time: "2 min ago", note: "Leaking pipe under kitchen sink — needs callback today", status: "Callback sent" },
-    { name: "Priya S.", time: "14 min ago", note: "Boiler service quote for 3-bed terrace", status: "Callback sent" },
-    { name: "Tom W.", time: "1 hr ago", note: "Bathroom refit estimate, available Thursday", status: "Callback sent" },
-  ];
-  return (
-    <div className="relative">
-      <div className="absolute -inset-6 -z-10 bg-[radial-gradient(ellipse_at_center,hsl(168_72%_32%/0.10),transparent_70%)]" />
-      <div className="rounded-xl border border-border bg-background shadow-[0_30px_80px_-30px_hsl(0_0%_0%/0.18)] overflow-hidden">
-        <div className="flex items-center justify-between px-5 py-3.5 border-b border-border bg-secondary/30">
-          <div className="flex items-center gap-2.5">
-            <div className="size-7 rounded-md bg-foreground text-background flex items-center justify-center">
-              <Phone className="size-3.5" />
-            </div>
-            <div>
-              <div className="text-sm font-semibold tracking-tight">Call Net</div>
-              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Captured today</div>
-            </div>
-          </div>
-          <div className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-            <span className="size-1.5 rounded-full bg-accent animate-pulse" />
-            Live
-          </div>
-        </div>
-        <div className="divide-y divide-border">
-          {calls.map((c, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: 12 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 + i * 0.12 }}
-              className="px-5 py-4 flex items-start gap-4"
-            >
-              <div className="size-9 rounded-full bg-secondary text-foreground/70 flex items-center justify-center text-xs font-medium shrink-0">
-                {c.name.charAt(0)}
-              </div>
-              <div className="min-w-0 flex-1">
-                <div className="flex items-center justify-between gap-3">
-                  <div className="text-sm font-medium text-foreground truncate">{c.name}</div>
-                  <div className="text-[11px] text-muted-foreground shrink-0">{c.time}</div>
-                </div>
-                <div className="text-xs text-muted-foreground mt-0.5 leading-relaxed">{c.note}</div>
-                <div className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-accent/10 text-accent px-2 py-0.5 text-[10px] uppercase tracking-[0.14em] font-medium">
-                  <span className="size-1 rounded-full bg-accent" />
-                  {c.status}
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-        <div className="px-5 py-3 border-t border-border bg-secondary/30 text-[11px] text-muted-foreground flex items-center justify-between">
-          <span>3 calls captured · 0 missed</span>
-          <span className="font-mono">62% lift</span>
-        </div>
-      </div>
-    </div>
   );
 }
 
