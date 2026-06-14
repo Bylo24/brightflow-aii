@@ -83,7 +83,7 @@ function Hero() {
     <section
       id="top"
       ref={ref}
-      className="relative pt-14 sm:pt-20 md:pt-24 pb-20 sm:pb-28 md:pb-32 overflow-hidden"
+      className="relative pt-16 sm:pt-24 md:pt-24 pb-24 sm:pb-32 md:pb-32 overflow-hidden"
     >
       <motion.div style={{ y, opacity }} className="absolute inset-0 -z-10">
         <AuroraBackground />
@@ -96,7 +96,7 @@ function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-background/70 backdrop-blur px-3 py-1.5 text-xs font-medium text-muted-foreground shadow-sm"
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-background/70 backdrop-blur px-3 py-2 text-xs font-medium text-muted-foreground shadow-sm"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
@@ -119,7 +119,7 @@ function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mb-9 text-pretty leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mb-8 text-pretty leading-relaxed"
           >
             We fully automate the repetitive manual work running inside your business and operate the system for you, end to end. You get the hours back.
           </motion.p>
@@ -150,11 +150,11 @@ function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-muted-foreground"
+            className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground"
           >
-            <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-accent" /> Live in under 7 days</span>
-            <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-accent" /> Fixed monthly fee</span>
-            <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-accent" /> We manage everything</span>
+            <span className="inline-flex items-center gap-2"><Check className="h-3.5 w-3.5 text-accent" /> Live in under 7 days</span>
+            <span className="inline-flex items-center gap-2"><Check className="h-3.5 w-3.5 text-accent" /> Fixed monthly fee</span>
+            <span className="inline-flex items-center gap-2"><Check className="h-3.5 w-3.5 text-accent" /> We manage everything</span>
           </motion.div>
 
           {/* Floating product preview collage */}
@@ -171,7 +171,7 @@ function HeroCollage() {
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-      className="relative mt-16 sm:mt-20 w-full max-w-5xl"
+      className="relative mt-16 sm:mt-24 w-full max-w-5xl"
     >
       <div className="relative h-[320px] sm:h-[380px] md:h-[420px]">
         {/* Center card - dashboard */}
@@ -180,7 +180,7 @@ function HeroCollage() {
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           className="absolute left-1/2 top-4 -translate-x-1/2 w-[78%] sm:w-[70%] rounded-2xl border border-border bg-background/90 backdrop-blur-xl shadow-2xl overflow-hidden"
         >
-          <div className="flex items-center gap-1.5 border-b border-border px-4 py-2.5">
+          <div className="flex items-center gap-2 border-b border-border px-4 py-2">
             <span className="size-2.5 rounded-full bg-muted-foreground/30" />
             <span className="size-2.5 rounded-full bg-muted-foreground/30" />
             <span className="size-2.5 rounded-full bg-muted-foreground/30" />
@@ -210,7 +210,7 @@ function HeroCollage() {
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1 + i * 0.2 }}
-                className="flex items-center gap-2.5 rounded-md border border-border/70 bg-secondary/40 px-3 py-2 text-[11px]"
+                className="flex items-center gap-2 rounded-md border border-border/70 bg-secondary/40 px-3 py-2 text-[11px]"
               >
                 <span className="text-accent">{row.icon}</span>
                 <span className="flex-1 truncate text-foreground/80">{row.t}</span>
@@ -281,7 +281,7 @@ function StatsStrip() {
             className="px-4 sm:px-6 py-6 sm:py-8 text-center md:text-left"
           >
             <div className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[-0.03em]">{it.v}</div>
-            <div className="mt-1.5 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">{it.l}</div>
+            <div className="mt-2 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">{it.l}</div>
           </motion.div>
         ))}
       </div>
@@ -299,15 +299,15 @@ function Marquee() {
     "AND MORE",
   ];
   return (
-    <div className="py-10 sm:py-12 border-y border-border/60 overflow-hidden">
+    <div className="py-12 sm:py-12 border-y border-border/60 overflow-hidden">
       <div className="text-center text-[11px] uppercase tracking-[0.18em] text-muted-foreground/70 mb-6 sm:mb-8 px-4">
         Trusted by service businesses done running on manual admin
       </div>
-      <div className="flex gap-10 sm:gap-14 whitespace-nowrap animate-marquee w-max">
+      <div className="flex gap-12 sm:gap-16 whitespace-nowrap animate-marquee w-max">
         {[...items, ...items, ...items].map((it, i) => (
           <span
             key={i}
-            className="text-muted-foreground/40 font-medium uppercase tracking-[0.18em] text-xs flex items-center gap-10 sm:gap-14"
+            className="text-muted-foreground/40 font-medium uppercase tracking-[0.18em] text-xs flex items-center gap-12 sm:gap-16"
           >
             {it}
             <span className="size-1 rounded-full bg-muted-foreground/30" />
@@ -346,10 +346,10 @@ function ValueProp() {
   ];
 
   return (
-    <section className="py-24 sm:py-32 md:py-40">
+    <section className="py-24 sm:py-32 md:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto text-center mb-16 sm:mb-20">
-          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-5 sm:mb-6">
+        <div className="max-w-4xl mx-auto text-center mb-16 sm:mb-24">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6 sm:mb-6">
             What you actually get
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance mb-6 sm:mb-8">
@@ -368,9 +368,9 @@ function ValueProp() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="md:col-span-2 bg-background p-8 sm:p-10 md:p-12 hover:bg-secondary/60 transition-colors"
+            className="md:col-span-2 bg-background p-8 sm:p-12 md:p-12 hover:bg-secondary/60 transition-colors"
           >
-            <div className="flex items-center gap-4 mb-5 sm:mb-6">
+            <div className="flex items-center gap-4 mb-6 sm:mb-6">
               <div className="size-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center">
                 {lead.icon}
               </div>
@@ -393,9 +393,9 @@ function ValueProp() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.08 + i * 0.08 }}
-              className="bg-background p-8 sm:p-10 md:p-12 hover:bg-secondary/60 transition-colors"
+              className="bg-background p-8 sm:p-12 md:p-12 hover:bg-secondary/60 transition-colors"
             >
-              <div className="flex items-center gap-4 mb-5 sm:mb-6">
+              <div className="flex items-center gap-4 mb-6 sm:mb-6">
                 <div className="size-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center">
                   {p.icon}
                 </div>
@@ -443,11 +443,11 @@ function Storyboard() {
   ];
 
   return (
-    <section className="py-24 sm:py-32 md:py-40 relative overflow-hidden">
+    <section className="py-24 sm:py-32 md:py-32 relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_50%_0%,hsl(168_72%_32%/0.06),transparent_60%)]" />
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
-          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-5 sm:mb-6">
+        <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-24">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6 sm:mb-6">
             The transformation
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance mb-6 sm:mb-8">
@@ -470,9 +470,9 @@ function Storyboard() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="relative bg-background border border-border/70 rounded-2xl p-6 sm:p-7 flex flex-col"
+              className="relative bg-background border border-border/70 rounded-2xl p-6 sm:p-8 flex flex-col"
             >
-              <div className="flex items-center justify-between mb-5">
+              <div className="flex items-center justify-between mb-6">
                 <div className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
                   {p.index}. {p.tag}
                 </div>
@@ -510,7 +510,7 @@ function BeforePanel() {
   return (
     <div className="absolute inset-0 p-4 flex flex-col justify-between">
       <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-        <span className="flex items-center gap-1.5">
+        <span className="flex items-center gap-2">
           <Inbox className="size-3" /> Inbox
         </span>
         <motion.span
@@ -535,7 +535,7 @@ function BeforePanel() {
             }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ delay: 0.2 + i * 0.12, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute left-0 right-0 mx-auto w-[90%] bg-background border border-border rounded-md px-2.5 py-1.5 flex items-center gap-2 text-[11px] text-foreground shadow-sm"
+            className="absolute left-0 right-0 mx-auto w-[90%] bg-background border border-border rounded-md px-2 py-2 flex items-center gap-2 text-[11px] text-foreground shadow-sm"
             style={{ top: `${i * 14}px`, zIndex: tasks.length - i }}
           >
             <span className="text-muted-foreground">{t.icon}</span>
@@ -553,7 +553,7 @@ function ShiftPanel() {
     <div className="absolute inset-0 p-4">
       <div className="absolute inset-0 flex items-center justify-between px-6">
         {/* left: incoming tasks */}
-        <div className="flex flex-col gap-1.5">
+        <div className="flex flex-col gap-2">
           {[0, 1, 2].map((i) => (
             <motion.div
               key={i}
@@ -583,7 +583,7 @@ function ShiftPanel() {
         </motion.div>
 
         {/* right: clean output */}
-        <div className="flex flex-col gap-1.5">
+        <div className="flex flex-col gap-2">
           {[0, 1, 2].map((i) => (
             <motion.div
               key={i}
@@ -624,7 +624,7 @@ function AfterPanel() {
   return (
     <div className="absolute inset-0 p-4 flex flex-col">
       <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-3">
-        <span className="flex items-center gap-1.5">
+        <span className="flex items-center gap-2">
           <Sparkles className="size-3 text-accent" /> Handled today
         </span>
         <motion.span
@@ -637,7 +637,7 @@ function AfterPanel() {
           <Coffee className="size-3" /> Inbox zero
         </motion.span>
       </div>
-      <div className="flex-1 space-y-1.5">
+      <div className="flex-1 space-y-2">
         {done.map((d, i) => (
           <motion.div
             key={i}
@@ -672,10 +672,10 @@ function AfterPanel() {
 /* ---------------- PRODUCTS ---------------- */
 function Products() {
   return (
-    <section id="services" className="py-24 sm:py-32 md:py-40 max-w-6xl mx-auto px-4 sm:px-6">
-      <div className="mb-16 sm:mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+    <section id="services" className="py-24 sm:py-32 md:py-32 max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="mb-16 sm:mb-24 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
         <div className="max-w-3xl">
-          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-5 sm:mb-6">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6 sm:mb-6">
             What we build
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
@@ -688,7 +688,7 @@ function Products() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-6">
         <ProductCard
           to="/call-net"
           eyebrow="Call Net"
@@ -719,7 +719,7 @@ function Products() {
         />
       </div>
 
-      <div className="mt-6 rounded-2xl bg-foreground p-8 sm:p-10 md:p-12 text-background flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div className="mt-6 rounded-2xl bg-foreground p-8 sm:p-12 md:p-12 text-background flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
           <div className="text-[11px] uppercase tracking-[0.18em] mb-3 opacity-60">
             Our focus
@@ -773,15 +773,15 @@ function ProductCard({
         <Visual />
       </div>
 
-      <div className="p-7 sm:p-9">
-        <div className="flex items-center justify-between mb-5">
+      <div className="p-8 sm:p-8">
+        <div className="flex items-center justify-between mb-6">
           <div className="inline-flex items-center gap-2">
             <div className="size-9 rounded-lg bg-accent/10 text-accent flex items-center justify-center">
               {icon}
             </div>
             <div>
               <div className="text-base font-semibold tracking-tight leading-tight">{eyebrow}</div>
-              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground mt-0.5">{tag}</div>
+              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground mt-1">{tag}</div>
             </div>
           </div>
         </div>
@@ -789,9 +789,9 @@ function ProductCard({
         <h3 className="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15] mb-3 text-balance">
           {title}
         </h3>
-        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-7">{body}</p>
+        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-8">{body}</p>
 
-        <div className="grid grid-cols-3 gap-3 mb-7 pt-5 border-t border-border">
+        <div className="grid grid-cols-3 gap-3 mb-8 pt-6 border-t border-border">
           {stats.map((s, i) => (
             <div key={i}>
               <div className="text-xl sm:text-2xl font-semibold tracking-tight">{s.v}</div>
@@ -802,7 +802,7 @@ function ProductCard({
 
         <Link
           to={to}
-          className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background hover:opacity-90 transition-opacity"
+          className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-2 text-sm font-medium text-background hover:opacity-90 transition-opacity"
         >
           See {eyebrow} <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </Link>
@@ -855,7 +855,7 @@ function BookkeepingVisual() {
     { name: "Patel Salon — VAT docs", done: true },
   ];
   return (
-    <div className="absolute inset-0 p-5 sm:p-6 flex flex-col justify-center">
+    <div className="absolute inset-0 p-6 sm:p-6 flex flex-col justify-center">
       <div className="rounded-xl border border-border bg-background/90 backdrop-blur shadow-md overflow-hidden">
         <div className="flex items-center justify-between border-b border-border px-3 py-2">
           <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Chase queue</div>
@@ -869,7 +869,7 @@ function BookkeepingVisual() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.15 + i * 0.1 }}
-              className="flex items-center gap-2.5 px-3 py-2 text-[11px]"
+              className="flex items-center gap-2 px-3 py-2 text-[11px]"
             >
               <span className={`size-4 rounded-full flex items-center justify-center ${r.done ? "bg-accent/15 text-accent" : "bg-secondary text-muted-foreground"}`}>
                 {r.done ? <Check className="size-2.5" strokeWidth={3} /> : <Clock className="size-2.5" />}
@@ -906,11 +906,11 @@ function Testimonials() {
     },
   ];
   return (
-    <section className="py-24 sm:py-32 md:py-40 border-y border-border/60 bg-secondary/40 relative overflow-hidden">
+    <section className="py-24 sm:py-32 md:py-32 border-y border-border/60 bg-secondary/40 relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_50%_0%,hsl(168_72%_32%/0.08),transparent_60%)]" />
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="max-w-3xl mb-14 sm:mb-16">
-          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-5">
+        <div className="max-w-3xl mb-16 sm:mb-16">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6">
             What clients say
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
@@ -918,7 +918,7 @@ function Testimonials() {
             <span className="font-serif italic font-normal text-accent">in the background.</span>
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {quotes.map((q, i) => (
             <motion.figure
               key={i}
@@ -926,15 +926,15 @@ function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="rounded-2xl border border-border bg-background p-7 flex flex-col"
+              className="rounded-2xl border border-border bg-background p-8 flex flex-col"
             >
               <Quote className="size-6 text-accent/60 mb-4" />
               <blockquote className="text-base leading-relaxed text-foreground/90 flex-1">
                 {q.q}
               </blockquote>
-              <figcaption className="mt-6 pt-5 border-t border-border">
+              <figcaption className="mt-6 pt-6 border-t border-border">
                 <div className="text-sm font-medium">{q.name}</div>
-                <div className="text-xs text-muted-foreground mt-0.5">{q.role}</div>
+                <div className="text-xs text-muted-foreground mt-1">{q.role}</div>
               </figcaption>
             </motion.figure>
           ))}
@@ -973,10 +973,10 @@ function Process() {
   ];
 
   return (
-    <section id="process" className="py-24 sm:py-32 md:py-40 border-y border-border/60 bg-secondary/50">
+    <section id="process" className="py-24 sm:py-32 md:py-32 border-y border-border/60 bg-secondary/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="mb-16 sm:mb-20 max-w-3xl">
-          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-5 sm:mb-6">
+        <div className="mb-16 sm:mb-24 max-w-3xl">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6 sm:mb-6">
             How it works
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
@@ -994,7 +994,7 @@ function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="bg-background p-8 sm:p-10 md:p-12 min-h-[220px] sm:min-h-[260px] grid grid-rows-[auto_auto_1fr] gap-y-6 group hover:bg-secondary/50 transition-colors"
+              className="bg-background p-8 sm:p-12 md:p-12 min-h-[220px] sm:min-h-[260px] grid grid-rows-[auto_auto_1fr] gap-y-6 group hover:bg-secondary/50 transition-colors"
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono text-accent">{s.num}</span>
@@ -1020,7 +1020,7 @@ function Metrics() {
     { value: "100%", label: "Managed by us. You never touch the system" },
   ];
   return (
-    <section className="py-24 sm:py-32 md:py-40">
+    <section className="py-24 sm:py-32 md:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
         {items.map((m, i) => (
           <motion.div
@@ -1074,10 +1074,10 @@ function FAQ() {
   ];
 
   return (
-    <section id="faq" className="py-24 sm:py-32 md:py-40">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 grid md:grid-cols-[1fr_2fr] gap-12 md:gap-20">
+    <section id="faq" className="py-24 sm:py-32 md:py-32">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 grid md:grid-cols-[1fr_2fr] gap-12 md:gap-24">
         <div>
-          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-5 sm:mb-6">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6 sm:mb-6">
             FAQ
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
@@ -1101,7 +1101,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
     <div className="border-b border-border">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center justify-between gap-6 py-5 sm:py-6 text-left group"
+        className="w-full flex items-center justify-between gap-6 py-6 sm:py-6 text-left group"
       >
         <span className="font-medium text-base md:text-lg tracking-tight group-hover:text-foreground transition-colors">
           {q}
