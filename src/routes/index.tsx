@@ -5,23 +5,24 @@ import {
   AlertCircle,
   ArrowRight,
   ArrowUpRight,
-  Building2,
   Calendar,
   Check,
   Clock,
   Coffee,
   FileText,
-  HeartPulse,
   Inbox,
   Mail,
+  MessageSquare,
+  Phone,
+  PhoneCall,
   Plus,
+  Quote,
   Sparkles,
-  Star,
-  UserSearch,
   Zap,
 } from "lucide-react";
 import { Nav, Footer } from "@/components/SiteChrome";
 import { BookCallDialog } from "@/components/BookCallDialog";
+import { AuroraBackground } from "@/components/AuroraBackground";
 
 
 
@@ -54,10 +55,12 @@ function Index() {
       <Nav />
       <main>
         <Hero />
+        <StatsStrip />
         <Marquee />
         <ValueProp />
         <Storyboard />
-        <Bento />
+        <Products />
+        <Testimonials />
         <Process />
         <Metrics />
         <FAQ />
