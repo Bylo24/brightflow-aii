@@ -949,7 +949,7 @@ function Process() {
 
         <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {/* connector line — desktop */}
-          <div className="hidden md:block absolute top-12 left-[12%] right-[12%] h-px bg-border" aria-hidden />
+          <div className="hidden md:block absolute top-12 left-[12%] right-[12%] h-px bg-background/20" aria-hidden />
           {steps.map((s, i) => (
             <motion.div
               key={i}
@@ -961,13 +961,13 @@ function Process() {
             >
               {/* numbered node sitting on the connector line */}
               <div className="relative flex items-center justify-center mb-6">
-                <div className="relative z-10 size-8 rounded-full bg-background border border-foreground flex items-center justify-center text-[11px] font-mono font-semibold text-foreground">
+                <div className="relative z-10 size-8 rounded-full bg-foreground border border-background/30 flex items-center justify-center text-[11px] font-mono font-semibold text-background">
                   {String(i + 1).padStart(2, "0")}
                 </div>
               </div>
-              <div className="bg-background border border-border rounded-lg p-8 min-h-[200px]">
-                <h4 className="text-xl font-semibold tracking-tight mb-3 text-foreground">{s.title}</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">{s.body}</p>
+              <div className="bg-background/[0.04] border border-background/15 rounded-lg p-8 min-h-[200px]">
+                <h4 className="text-xl font-semibold tracking-tight mb-3 text-background">{s.title}</h4>
+                <p className="text-sm text-background/65 leading-relaxed">{s.body}</p>
               </div>
             </motion.div>
           ))}
