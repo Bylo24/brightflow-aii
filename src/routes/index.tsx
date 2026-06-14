@@ -217,9 +217,9 @@ function ValueProp() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.06 }}
-              className="grid grid-cols-12 gap-6 sm:gap-10 py-9 sm:py-11 border-b border-border items-baseline"
+              className="grid grid-cols-12 gap-6 sm:gap-10 py-7 sm:py-9 border-b border-border items-baseline"
             >
-              <div className="col-span-2 sm:col-span-1 text-[11px] font-mono text-muted-foreground/70 pt-1">
+              <div className="col-span-2 sm:col-span-1 text-[11px] font-mono text-foreground/55 pt-1">
                 {r.index}
               </div>
               <div className="col-span-10 sm:col-span-4">
@@ -388,14 +388,14 @@ function Testimonials() {
   ];
   const [lead, ...rest] = quotes;
   return (
-    <section className="py-24 sm:py-32 md:py-32 bg-foreground text-background relative overflow-hidden">
+    <section className="py-32 sm:py-40 md:py-44 bg-foreground text-background relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_30%_0%,hsl(168_72%_32%/0.12),transparent_60%)]" />
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="max-w-3xl mb-16 sm:mb-20">
+        <div className="max-w-3xl mb-20 sm:mb-24">
           <div className="text-[11px] uppercase tracking-[0.18em] text-background/60 mb-6">
             What clients say
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.045em] leading-[1.0] text-balance text-background">
+          <h2 className="text-5xl sm:text-6xl md:text-7xl font-semibold tracking-[-0.045em] leading-[0.98] text-balance text-background">
             Quietly running{" "}
             <span className="font-serif italic font-normal text-accent">in the background.</span>
           </h2>
@@ -513,7 +513,7 @@ function Process() {
 /* ---------------- FINAL CTA ---------------- */
 function FinalCTA() {
   return (
-    <section className="relative bg-foreground text-background py-32 sm:py-40 overflow-hidden">
+    <section className="relative bg-foreground text-background py-36 sm:py-44 md:py-48 overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_50%_50%,hsl(168_72%_32%/0.10),transparent_65%)]" />
       <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
         <motion.div
@@ -609,16 +609,16 @@ function FAQ() {
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-border/60 transition-colors hover:bg-secondary/40 -mx-4 px-4 rounded-sm">
+    <div className="border-b border-border/40 group/item">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center justify-between gap-6 py-8 text-left group"
+        className="w-full flex items-center justify-between gap-6 py-9 text-left transition-opacity hover:opacity-70"
       >
-        <span className="font-medium text-base md:text-lg tracking-tight text-foreground">
+        <span className={`font-medium text-base md:text-lg tracking-tight transition-colors ${open ? "text-foreground" : "text-foreground/85"}`}>
           {q}
         </span>
         <Plus
-          className={`size-4 shrink-0 text-muted-foreground transition-transform duration-300 ${open ? "rotate-45 text-foreground" : ""}`}
+          className={`size-4 shrink-0 transition-all duration-300 ${open ? "rotate-45 text-foreground" : "text-muted-foreground"}`}
         />
       </button>
       <motion.div
