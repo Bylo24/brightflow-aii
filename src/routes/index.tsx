@@ -834,7 +834,7 @@ function Process() {
     {
       num: "01",
       title: "Audit",
-      body: "We sit down with you and map the repetitive workflows costing the most time and money. You leave with a clear plan, whether or not you work with us.",
+      body: "We sit down with you and map every repetitive workflow costing your team the most time and money. You always leave with a clear, actionable plan.",
     },
     {
       num: "02",
