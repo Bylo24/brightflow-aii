@@ -263,7 +263,7 @@ function HeroCollage() {
 /* ---------------- STATS STRIP ---------------- */
 function StatsStrip() {
   const items = [
-    { v: "14,200+", l: "Hours returned per year" },
+    { v: "Thousands", l: "Hours returned to clients" },
     { v: "<7 days", l: "From kickoff to live" },
     { v: "100%", l: "Managed end-to-end" },
     { v: "£0", l: "Until it's working" },
