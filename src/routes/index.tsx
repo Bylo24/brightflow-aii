@@ -657,7 +657,7 @@ function Products() {
             { v: "0", l: "manual follow-ups" },
             { v: "Free pilot", l: "2 weeks, or you don't pay" },
           ]}
-          Visual={BookkeepingVisual}
+          variant="light"
         />
       </div>
 
