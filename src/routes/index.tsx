@@ -360,80 +360,91 @@ function ValueProp() {
 
 /* ---------------- STORYBOARD ---------------- */
 function Storyboard() {
-  const panels = [
-    {
-      tag: "Before",
-      index: "01",
-      title: "The week you know too well.",
-      caption: "10+ hours a week lost to admin your team shouldn't be touching.",
-      Visual: BeforePanel,
-    },
-    {
-      tag: "The shift",
-      index: "02",
-      title: "We take it over. Permanently.",
-      caption: "We own the workflow end to end. Your team stops touching it from day one.",
-      Visual: ShiftPanel,
-    },
-    {
-      tag: "After",
-      index: "03",
-      title: "Hours back. Capacity unlocked.",
-      caption: "10+ hours a week redirected to closing deals, serving clients, and growing revenue.",
-      Visual: AfterPanel,
-    },
-  ];
-
   return (
-    <section className="py-24 sm:py-32 md:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_50%_0%,hsl(168_72%_32%/0.06),transparent_60%)]" />
+    <section className="py-24 sm:py-32 md:py-40 relative overflow-hidden">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_50%_0%,hsl(168_72%_32%/0.05),transparent_60%)]" />
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-24">
-          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6 sm:mb-6">
+        <div className="max-w-3xl mb-20 sm:mb-28">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6">
             The transformation
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.045em] leading-[1.0] text-balance mb-6 sm:mb-8">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.045em] leading-[0.98] text-balance">
             From manual chaos to{" "}
             <span className="font-serif italic font-normal text-accent">hours back, every week.</span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed text-pretty">
-            Three frames. The exact outcome we deliver. 10+ hours a week back, every engagement.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 relative">
-          {/* connecting line */}
-          <div className="hidden md:block absolute top-[140px] left-[16%] right-[16%] h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+        {/* Asymmetric storyboard: Before → Shift (dominant) → After */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-4 items-stretch">
+          {/* BEFORE — smaller, desaturated */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="md:col-span-3 md:mt-12 relative flex flex-col"
+          >
+            <div className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-4">
+              01 — Before
+            </div>
+            <div className="relative h-44 rounded-md border border-border bg-secondary/20 overflow-hidden mb-5 opacity-70 saturate-[0.6]">
+              <BeforePanel />
+            </div>
+            <h3 className="text-base font-semibold tracking-tight leading-snug text-muted-foreground">
+              The week you know too well.
+            </h3>
+          </motion.div>
 
-          {panels.map((p, i) => (
-            <motion.div
-              key={p.index}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="relative bg-background border border-border rounded-lg p-6 sm:p-8 flex flex-col"
-            >
-              <div className="flex items-center justify-between mb-6">
-                <div className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
-                  {p.index}. {p.tag}
-                </div>
-                {i < panels.length - 1 && (
-                  <ArrowRight className="size-4 text-muted-foreground/50 md:hidden" />
-                )}
-              </div>
+          {/* Arrow */}
+          <div className="hidden md:flex md:col-span-1 items-center justify-center">
+            <ArrowRight className="size-5 text-accent/60" strokeWidth={1.5} />
+          </div>
 
-              {/* Animated visual */}
-              <div className="relative h-44 sm:h-48 rounded-md border border-border bg-secondary/30 overflow-hidden mb-6">
-                <p.Visual />
-              </div>
+          {/* SHIFT — dominant centerpiece */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="md:col-span-4 relative flex flex-col bg-foreground text-background rounded-lg p-7 sm:p-8 shadow-[0_30px_60px_-30px_hsl(0_0%_0%/0.35)]"
+          >
+            <div className="text-[10px] uppercase tracking-[0.22em] text-background/60 mb-4">
+              02 — The shift
+            </div>
+            <div className="relative h-56 sm:h-64 rounded-md border border-background/10 bg-background/[0.04] overflow-hidden mb-6">
+              <ShiftPanel />
+            </div>
+            <h3 className="text-xl sm:text-2xl font-semibold tracking-tight leading-[1.15] mb-3">
+              We take it over. Permanently.
+            </h3>
+            <p className="text-sm text-background/70 leading-relaxed">
+              We own the workflow end to end. Your team stops touching it from day one.
+            </p>
+          </motion.div>
 
-              <h3 className="text-lg sm:text-xl font-semibold tracking-tight mb-2 leading-snug">
-                {p.title}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{p.caption}</p>
-            </motion.div>
-          ))}
+          {/* Arrow */}
+          <div className="hidden md:flex md:col-span-1 items-center justify-center">
+            <ArrowRight className="size-5 text-accent/60" strokeWidth={1.5} />
+          </div>
+
+          {/* AFTER — prominent outcome */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="md:col-span-3 md:mt-6 relative flex flex-col"
+          >
+            <div className="text-[10px] uppercase tracking-[0.22em] text-accent mb-4">
+              03 — After
+            </div>
+            <div className="relative h-48 rounded-md border border-accent/20 bg-accent/[0.03] overflow-hidden mb-5">
+              <AfterPanel />
+            </div>
+            <h3 className="text-base sm:text-lg font-semibold tracking-tight leading-snug text-foreground">
+              + 14 hours back, every week.
+            </h3>
+          </motion.div>
         </div>
       </div>
     </section>
