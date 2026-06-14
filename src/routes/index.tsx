@@ -849,7 +849,7 @@ function Process() {
     {
       num: "04",
       title: "Manage",
-      body: "We monitor, maintain and improve the system every month at a flat fee. You never lift a finger to keep it running.",
+      body: "We monitor, maintain and actively improve the system every single month at one flat monthly fee. You will never lift a finger to keep it running.",
     },
   ];
 
