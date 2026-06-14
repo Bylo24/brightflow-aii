@@ -75,7 +75,7 @@ function Hero() {
   return (
     <section
       id="top"
-      className="relative pt-16 sm:pt-24 pb-16 sm:pb-24 overflow-hidden"
+      className="relative pt-14 sm:pt-20 pb-16 sm:pb-20 overflow-hidden"
     >
       <div className="absolute inset-0 -z-10">
         <AuroraBackground />
@@ -88,7 +88,7 @@ function Hero() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1 text-[11px] font-medium text-foreground/80"
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1 text-[11px] font-medium text-foreground/80"
           >
             <span className="relative flex h-1.5 w-1.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
@@ -101,7 +101,7 @@ function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[44px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[88px] leading-[1.0] font-semibold tracking-[-0.04em] mb-6 max-w-4xl text-balance text-foreground"
+            className="text-[48px] sm:text-6xl md:text-7xl lg:text-[88px] xl:text-[104px] leading-[0.95] font-semibold tracking-[-0.045em] mb-5 max-w-5xl text-balance text-foreground"
           >
             Automate the repetitive work{" "}
             <span className="font-serif italic font-normal text-accent">killing your week.</span>
@@ -111,7 +111,7 @@ function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.08 }}
-            className="text-base sm:text-lg text-muted-foreground max-w-xl mb-8 text-pretty leading-relaxed"
+            className="text-sm sm:text-base text-muted-foreground max-w-lg mb-7 text-pretty leading-relaxed"
           >
             We fully automate the repetitive manual work running inside your business and operate the system for you, end to end. You get the hours back.
           </motion.p>
@@ -125,14 +125,14 @@ function Hero() {
             <BookCallDialog>
               <button
                 type="button"
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-foreground px-6 py-3 text-sm font-medium text-background hover:bg-foreground/90 transition-colors shadow-sm"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-foreground px-7 py-3.5 text-sm font-medium text-background hover:bg-foreground/90 transition-colors shadow-sm"
               >
                 Book a free audit <ArrowRight className="size-4" />
               </button>
             </BookCallDialog>
             <a
               href="#services"
-              className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-background px-6 py-3 text-sm font-medium text-foreground hover:bg-secondary transition-colors"
+              className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-background px-7 py-3.5 text-sm font-medium text-foreground hover:bg-secondary transition-colors"
             >
               See what we build
             </a>
@@ -142,7 +142,7 @@ function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.32 }}
-            className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground"
+            className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground"
           >
             <span className="inline-flex items-center gap-2"><Check className="h-3.5 w-3.5 text-accent" /> Live in under 7 days</span>
             <span className="inline-flex items-center gap-2"><Check className="h-3.5 w-3.5 text-accent" /> Fixed monthly fee</span>
