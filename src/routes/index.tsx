@@ -1014,9 +1014,9 @@ function Process() {
 /* ---------------- METRICS ---------------- */
 function Metrics() {
   const items = [
-    { value: "14,200+", label: "Hours handed back to our clients each year" },
-    { value: "100%", label: "Automation accuracy across every system we run" },
-    { value: "1-7 days", label: "From kickoff to live, in production" },
+    { value: "Thousands", label: "Of hours handed back to clients" },
+    { value: "99.9%", label: "Automation reliability across our systems" },
+    { value: "<1 week", label: "Typical time from kickoff to live" },
     { value: "100%", label: "Managed by us. You never touch the system" },
   ];
   return (
