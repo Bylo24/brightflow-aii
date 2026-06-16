@@ -391,7 +391,7 @@ function Testimonials() {
     <section className="py-32 sm:py-40 md:py-44 bg-foreground text-background relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_30%_0%,hsl(168_72%_32%/0.12),transparent_60%)]" />
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="max-w-3xl mb-20 sm:mb-24">
+        <div className="max-w-3xl mx-auto text-center mb-20 sm:mb-24">
           <div className="text-[11px] uppercase tracking-[0.18em] text-background/60 mb-6">
             What clients say
           </div>
@@ -469,7 +469,7 @@ function Process() {
   return (
     <section id="process" className="py-24 sm:py-32 md:py-32 bg-secondary/40 border-y border-border">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="mb-16 sm:mb-24 max-w-3xl">
+        <div className="mb-16 sm:mb-24 max-w-3xl mx-auto text-center">
           <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6">
             How it works
           </div>
