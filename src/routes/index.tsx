@@ -81,7 +81,7 @@ function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.08 }}
-          className="text-base text-muted-foreground max-w-sm mb-6 text-pretty leading-relaxed"
+          className="text-[15px] sm:text-base text-muted-foreground max-w-md mb-7 text-pretty leading-relaxed"
         >
           We fully automate the repetitive manual work running inside your business and operate the system for you, end to end. You get the hours back.
         </motion.p>
@@ -118,7 +118,7 @@ function StatsStrip() {
     { v: "1,000+", l: "Hours returned to clients" },
     { v: "<7 days", l: "From kickoff to live" },
     { v: "100%", l: "Managed end-to-end" },
-    { v: "$0", l: "Pay nothing until it's working. Then flat." },
+    { v: "$0", l: "Until it's working" },
   ];
   return (
     <section className="border-y border-border bg-secondary/40">
@@ -586,12 +586,12 @@ function FAQ() {
 
   return (
     <section id="faq" className="py-24 sm:py-32 md:py-32">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 grid md:grid-cols-[1fr_2fr] gap-12 md:gap-24">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 grid md:grid-cols-[2fr_3fr] gap-12 md:gap-20">
         <div>
           <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6">
             FAQ
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.045em] leading-[1.0] text-balance">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.04em] leading-[1.05] text-balance">
             The straight{" "}
             <span className="font-serif italic font-normal text-muted-foreground">answers.</span>
           </h2>
