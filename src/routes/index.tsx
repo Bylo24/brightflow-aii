@@ -81,7 +81,7 @@ function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.08 }}
-          className="text-base text-muted-foreground max-w-sm mb-6 text-pretty leading-relaxed"
+          className="text-[15px] sm:text-base text-muted-foreground max-w-md mb-7 text-pretty leading-relaxed"
         >
           We fully automate the repetitive manual work running inside your business and operate the system for you, end to end. You get the hours back.
         </motion.p>
