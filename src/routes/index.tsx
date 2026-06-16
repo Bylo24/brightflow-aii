@@ -469,7 +469,7 @@ function Process() {
   return (
     <section id="process" className="py-24 sm:py-32 md:py-32 bg-secondary/40 border-y border-border">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="mb-16 sm:mb-24 max-w-3xl">
+        <div className="mb-16 sm:mb-24 max-w-3xl mx-auto text-center">
           <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6">
             How it works
           </div>
