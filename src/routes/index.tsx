@@ -196,7 +196,7 @@ function ValueProp() {
   return (
     <section className="py-24 sm:py-32 md:py-40">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="max-w-3xl mb-20 sm:mb-28">
+        <div className="max-w-3xl mx-auto text-center mb-20 sm:mb-28">
           <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6">
             What you actually get
           </div>
@@ -204,7 +204,7 @@ function ValueProp() {
             We don't sell workflows.{" "}
             <span className="font-serif italic font-normal text-accent">We sell the outcome.</span>
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed text-pretty">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed text-pretty">
             Automation is just the means. What you're really buying is your time back, more capacity for the work that grows the business, and a company that runs without you in the loop.
           </p>
         </div>
