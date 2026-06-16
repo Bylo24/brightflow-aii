@@ -118,7 +118,7 @@ function StatsStrip() {
     { v: "1,000+", l: "Hours returned to clients" },
     { v: "<7 days", l: "From kickoff to live" },
     { v: "100%", l: "Managed end-to-end" },
-    { v: "$0", l: "Pay nothing until it's working. Then flat." },
+    { v: "$0", l: "Until it's working" },
   ];
   return (
     <section className="border-y border-border bg-secondary/40">
