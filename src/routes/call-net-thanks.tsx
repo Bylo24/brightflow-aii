@@ -8,7 +8,7 @@ import { initMetaPixel, trackPixel, CALL_NET_PIXEL_ID } from "@/lib/meta-pixel";
 export const Route = createFileRoute("/call-net-thanks")({
   head: () => ({
     meta: [
-      { title: "You're in — next steps for your Call Net trial" },
+      { title: "You're in - next steps for your Call Net trial" },
       { name: "robots", content: "noindex" },
       { name: "description", content: "Your Call Net 14-day free trial is starting. Here's what happens next." },
     ],
@@ -69,7 +69,7 @@ function CallNetThanksPage() {
           <Step
             icon={<Mail className="h-5 w-5" />}
             title="Check your inbox"
-            body="We'll contact you to set everything up — business name, hours, services, and FAQs — so we can build your AI receptionist."
+            body="We'll contact you to set everything up - business name, hours, services, and FAQs - so we can build your AI receptionist."
           />
           <Step
             icon={<Calendar className="h-5 w-5" />}
@@ -94,7 +94,7 @@ function CallNetThanksPage() {
           <Step
             icon={<PhoneForwarded className="h-5 w-5" />}
             title="We handle the technical setup"
-            body="Our team configures call forwarding on your line — no work needed from you. Your AI receptionist starts catching missed calls immediately."
+            body="Our team configures call forwarding on your line - no work needed from you. Your AI receptionist starts catching missed calls immediately."
           />
         </div>
 

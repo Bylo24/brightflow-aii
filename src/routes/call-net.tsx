@@ -38,13 +38,13 @@ const STRIPE_TRIAL_URL_CANADA = "https://buy.stripe.com/28E14ocTpalifrW63n33W04"
 export const Route = createFileRoute("/call-net")({
   head: () => ({
     meta: [
-      { title: "Call Net — AI receptionist that captures every missed call" },
+      { title: "Call Net - AI receptionist that captures every missed call" },
       {
         name: "description",
         content:
           "Call Net answers your missed calls 24/7, captures the lead's name, number, and need, and texts you instantly. Try free for 14 days.",
       },
-      { property: "og:title", content: "Call Net — Never miss a paying customer" },
+      { property: "og:title", content: "Call Net - Never miss a paying customer" },
       {
         property: "og:description",
         content:
@@ -201,7 +201,7 @@ function CallNetPageInner() {
               Try a live demo
             </h2>
             <p className="max-w-md text-sm text-muted-foreground">
-              Talk to Call Net like a real caller would — ask about pricing, book a job, or leave a message. Hear how it sounds before you sign up.
+              Talk to Call Net like a real caller would - ask about pricing, book a job, or leave a message. Hear how it sounds before you sign up.
             </p>
             {!isActive ? (
               <button
@@ -227,7 +227,7 @@ function CallNetPageInner() {
               {starting || status === "connecting"
                 ? "Connecting to Call Net…"
                 : status === "connected"
-                  ? conversation.isSpeaking ? "Call Net is speaking…" : "Listening — go ahead and talk."
+                  ? conversation.isSpeaking ? "Call Net is speaking…" : "Listening - go ahead and talk."
                   : "You'll be asked to allow microphone access."}
             </p>
 
@@ -265,7 +265,7 @@ function CallNetPageInner() {
         <div className="mt-8 rounded-lg border border-border bg-card p-6 sm:p-8">
           <h3 className="text-xl font-semibold tracking-tight">A missed call isn't a delayed sale. It's a sale handed to your competition.</h3>
           <p className="mt-3 text-sm text-muted-foreground">
-            62% of unanswered callers immediately ring a competitor. At a conservative $12.15 in lost revenue per missed call, missing just 2 calls a day costs the average small business <span className="font-semibold text-foreground">$8,800 a year</span>. In home services and trades, with average job values of $500+, the real number is often <span className="font-semibold text-foreground">over $26,000 — and frequently $100,000+</span> annually.
+            62% of unanswered callers immediately ring a competitor. At a conservative $12.15 in lost revenue per missed call, missing just 2 calls a day costs the average small business <span className="font-semibold text-foreground">$8,800 a year</span>. In home services and trades, with average job values of $500+, the real number is often <span className="font-semibold text-foreground">over $26,000 - and frequently $100,000+</span> annually.
           </p>
           <p className="mt-3 text-sm text-muted-foreground">
             And speed matters. Respond within 5 minutes and you're <span className="font-semibold text-foreground">21× more likely</span> to convert. Wait 30 and 79% of callers are gone.
@@ -280,7 +280,7 @@ function CallNetPageInner() {
             Call Net pays for itself after 8 calls.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-pretty text-muted-foreground">
-            {monthlyLocal}/month. Average missed call costs around $12 in lost revenue. Catch just 8 a month and Call Net has already paid for itself — every call after that is pure upside.
+            {monthlyLocal}/month. Average missed call costs around $12 in lost revenue. Catch just 8 a month and Call Net has already paid for itself - every call after that is pure upside.
           </p>
           <div className="mx-auto mt-8 grid max-w-3xl gap-4 sm:grid-cols-3 text-left">
             <div className="rounded-md border border-border bg-background p-5">
@@ -343,11 +343,11 @@ function CallNetPageInner() {
         <h2 className="text-center text-3xl font-semibold tracking-tight">Why Call Net</h2>
         <ul className="mx-auto mt-8 grid max-w-2xl gap-3">
           {[
-            "Only works when you miss a call — you stay the main point of contact.",
-            "Callers don't get voicemail — they talk to a helpful AI, leave their info, and hang up happy.",
-            "You get a text summary — name, number, reason for calling. You call them back.",
-            "We handle all the setup — you don't need to know anything technical.",
-            "Try free for 14 days — cancel anytime in your dashboard, no contract.",
+            "Only works when you miss a call - you stay the main point of contact.",
+            "Callers don't get voicemail - they talk to a helpful AI, leave their info, and hang up happy.",
+            "You get a text summary - name, number, reason for calling. You call them back.",
+            "We handle all the setup - you don't need to know anything technical.",
+            "Try free for 14 days - cancel anytime in your dashboard, no contract.",
           ].map((b) => (
             <li key={b} className="flex items-start gap-3 rounded-md border border-border bg-card p-4">
               <Check className="mt-0.5 h-5 w-5 flex-none text-foreground" />
@@ -361,14 +361,14 @@ function CallNetPageInner() {
       <section className="mx-auto max-w-3xl px-6 py-12">
         <h2 className="text-center text-3xl font-semibold tracking-tight">Simple pricing</h2>
         <div className="mt-8 rounded-lg border border-border bg-card p-8 text-center">
-          <div className="text-sm font-medium text-muted-foreground">Single plan — all features</div>
+          <div className="text-sm font-medium text-muted-foreground">Single plan - all features</div>
           <div className="mt-2 text-5xl font-semibold tracking-tight">{monthlyLocal}<span className="text-lg text-muted-foreground">/month</span></div>
           <ul className="mx-auto mt-6 max-w-sm space-y-2 text-left text-sm">
             {[
               "AI answers unlimited calls",
               "Instant text summaries",
               "Custom greeting (your brand voice)",
-              "14-day free trial — not charged until day 14",
+              "14-day free trial - not charged until day 14",
             ].map((f) => (
               <li key={f} className="flex items-start gap-2">
                 <Check className="mt-0.5 h-4 w-4 flex-none" /> {f}
@@ -376,7 +376,7 @@ function CallNetPageInner() {
             ))}
           </ul>
           <p className="mt-6 text-sm text-muted-foreground">
-            Or save 17% annually: <span className="font-medium text-foreground">{annualLocal}/year</span> ({formatLocal(970/12, geo)}/month — 2 months free vs. monthly).
+            Or save 17% annually: <span className="font-medium text-foreground">{annualLocal}/year</span> ({formatLocal(970/12, geo)}/month - 2 months free vs. monthly).
           </p>
           <a
             href={stripeUrl} target="_blank" rel="noopener noreferrer" onClick={handleTrialClick}
@@ -385,7 +385,7 @@ function CallNetPageInner() {
             Start my 14-day free trial <ArrowRight className="h-4 w-4" />
           </a>
           <p className="mt-3 text-xs text-muted-foreground">
-            Credit card required. You won't be charged until day 14 — cancel anytime in your dashboard and pay nothing.
+            Credit card required. You won't be charged until day 14 - cancel anytime in your dashboard and pay nothing.
           </p>
           <p className="mt-2 text-xs text-muted-foreground">
             Need a dedicated business number? We'll set one up for around $5–$15/month extra.
@@ -403,7 +403,7 @@ function CallNetPageInner() {
             "I was worried about sounding like a robot to my customers. But Call Net only picks up when I'm on the other line or after hours. My callers still talk to me for the real conversation. I've captured 5 new jobs in 2 weeks."
           </blockquote>
           <figcaption className="mt-4 text-sm font-medium text-muted-foreground">
-            — Dave M., Plumbing Pro (Bristol, UK)
+            - Dave M., Plumbing Pro (Bristol, UK)
           </figcaption>
         </figure>
       </section>
@@ -415,7 +415,7 @@ function CallNetPageInner() {
           {[
             {
               q: "Will Call Net replace my receptionist or annoy my callers?",
-              a: "No. Call Net only answers when you can't — after hours, during lunch, or when you're already on another call. Your callers get a helpful conversation, leave their info, and you call them back. It's still you they close with.",
+              a: "No. Call Net only answers when you can't - after hours, during lunch, or when you're already on another call. Your callers get a helpful conversation, leave their info, and you call them back. It's still you they close with.",
             },
             {
               q: "How fast is setup? Do I need technical skills?",
@@ -439,7 +439,7 @@ function CallNetPageInner() {
             },
             {
               q: "Do my callers know they're talking to AI?",
-              a: "Call Net introduces itself as your virtual assistant. It sounds natural, takes the caller's details, and reassures them you'll call back personally — which you do.",
+              a: "Call Net introduces itself as your virtual assistant. It sounds natural, takes the caller's details, and reassures them you'll call back personally - which you do.",
             },
           ].map((f) => (
             <div key={f.q} className="rounded-md border border-border bg-card p-5">
@@ -472,7 +472,7 @@ function CallNetPageInner() {
 
       <footer className="border-t border-border">
         <div className="mx-auto max-w-6xl px-6 py-8 text-center text-xs text-muted-foreground">
-          Call Net — AI lead capture for small business. © 2026.
+          Call Net - AI lead capture for small business. © 2026.
         </div>
       </footer>
     </div>

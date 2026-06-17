@@ -5,7 +5,7 @@ import { ArrowRight, Check, Plus, Shield, Mail } from "lucide-react";
 import { Wordmark, Footer } from "@/components/SiteChrome";
 import { AuroraBackground } from "@/components/AuroraBackground";
 
-// formsubmit.co target — swap this email for the real inbox.
+// formsubmit.co target - swap this email for the real inbox.
 // First submission to a new address triggers a one-time confirmation email from formsubmit.
 const FORMSUBMIT_EMAIL = "samuel@brightflowagency.com";
 const FORMSUBMIT_ENDPOINT = `https://formsubmit.co/${FORMSUBMIT_EMAIL}`;
@@ -59,13 +59,13 @@ function trackPixelFormSubmit() {
 export const Route = createFileRoute("/bookkeeping/")({
   head: () => ({
     meta: [
-      { title: "Save 10 hours on your month end in 2 weeks — or you don't pay | BrightFlow AI" },
+      { title: "Save 10 hours on your month end in 2 weeks - or you don't pay | BrightFlow AI" },
       {
         name: "description",
         content:
           "Free 2-week pilot for bookkeepers. We automate the document chase. If you don't save 10 hours, you pay nothing. No card required.",
       },
-      { property: "og:title", content: "Save 10 hours on your month end in 2 weeks — or you don't pay" },
+      { property: "og:title", content: "Save 10 hours on your month end in 2 weeks - or you don't pay" },
       {
         property: "og:description",
         content: "Free 2-week pilot. We automate the chase. If you don't save 10 hours, you pay nothing.",
@@ -129,7 +129,7 @@ function Hero() {
             className="text-[36px] sm:text-5xl md:text-6xl leading-[1.04] font-semibold tracking-[-0.04em] text-balance"
           >
             Save 10 hours on your month end in 2 weeks{" "}
-            <span className="font-serif italic font-normal text-accent">— or you don't pay.</span>
+            <span className="font-serif italic font-normal text-accent">- or you don't pay.</span>
           </motion.h1>
 
           <motion.div
@@ -150,16 +150,16 @@ function Hero() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-4 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed"
           >
-            We build the automation that chases your clients for you — live in under a week. If you don't save 10 hours by week 2, you pay nothing.
+            We build the automation that chases your clients for you - live in under a week. If you don't save 10 hours by week 2, you pay nothing.
           </motion.p>
 
           <EmailCapture />
 
           <ul className="mt-7 grid sm:grid-cols-3 gap-4 sm:gap-6 text-left max-w-2xl w-full">
             {[
-              "We build the automation around your tools — email, Drive, QBO, Xero.",
+              "We build the automation around your tools - email, Drive, QBO, Xero.",
               "Live in under a week. Nothing for you to learn.",
-              "You stop chasing — we handle reminders & tracking.",
+              "You stop chasing - we handle reminders & tracking.",
             ].map((t, i) => (
               <li key={i} className="flex gap-3 text-sm text-muted-foreground leading-relaxed">
                 <Check className="size-4 text-accent shrink-0 mt-0.5" strokeWidth={2.5} />
@@ -172,7 +172,7 @@ function Hero() {
             Already helping bookkeepers save 12+ hours a month.
           </div>
           <div className="mt-2 text-xs uppercase tracking-[0.18em] text-accent font-semibold">
-            Free pilot — limited to the first 10 bookkeepers.
+            Free pilot - limited to the first 10 bookkeepers.
           </div>
         </div>
       </div>
@@ -267,7 +267,7 @@ function EmailCapture() {
         <p className="mt-2 text-sm text-red-500 text-left pl-2">{error}</p>
       )}
       <p className="mt-3 text-xs text-muted-foreground">
-        We'll email you the pilot details and a link to book a 10-min call. No spam — ever.
+        We'll email you the pilot details and a link to book a 10-min call. No spam - ever.
       </p>
     </form>
   );
@@ -288,7 +288,7 @@ function Guarantee() {
           <span className="font-serif italic font-normal text-accent">If you don't save 10 hours, you pay nothing.</span>
         </h2>
         <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
-          No contract. No card. No catch. You only pay if you decide to keep the system — and only based on the hours we give back. Otherwise, walk away. Completely up to you.
+          No contract. No card. No catch. You only pay if you decide to keep the system - and only based on the hours we give back. Otherwise, walk away. Completely up to you.
         </p>
       </div>
     </section>
@@ -312,7 +312,7 @@ function FAQ() {
     },
     {
       q: "Do I have to learn new software?",
-      a: "No. We build around your stack — email, Drive, QBO, Xero — and run it for you.",
+      a: "No. We build around your stack - email, Drive, QBO, Xero - and run it for you.",
     },
     {
       q: "What if I want to leave after the trial?",

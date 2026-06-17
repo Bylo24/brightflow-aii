@@ -1,5 +1,5 @@
-// Meta (Facebook) Pixel helper — shared across landing pages.
-// Pixel IDs are public — safe to commit.
+// Meta (Facebook) Pixel helper - shared across landing pages.
+// Pixel IDs are public - safe to commit.
 export const META_PIXEL_ID = "2085592105635483";
 
 declare global {

@@ -49,7 +49,7 @@ function installAndFirePixel() {
 export const Route = createFileRoute("/bookkeeping/thanks")({
   head: () => ({
     meta: [
-      { title: "You're in — pick a time | BrightFlow AI" },
+      { title: "You're in - pick a time | BrightFlow AI" },
       { name: "description", content: "Pick a time below to start your free 2-week pilot." },
       { name: "robots", content: "noindex" },
     ],

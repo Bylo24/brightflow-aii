@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion } from "motion/react";
-import { useState } from "react";
+import { motion, useScroll, useTransform, useSpring, useReducedMotion } from "motion/react";
+import { useRef, useState } from "react";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -12,6 +12,18 @@ import {
 import { Nav, Footer } from "@/components/SiteChrome";
 import { BookCallDialog } from "@/components/BookCallDialog";
 import { AuroraBackground } from "@/components/AuroraBackground";
+
+/* Top-of-page scroll progress indicator */
+function ScrollProgress() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.2 });
+  return (
+    <motion.div
+      style={{ scaleX }}
+      className="fixed top-0 left-0 right-0 h-[2px] bg-accent origin-left z-[60]"
+    />
+  );
+}
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -38,6 +50,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground font-display selection:bg-accent/20">
+      <ScrollProgress />
       <Nav />
       <main>
         <Hero />
@@ -57,16 +70,26 @@ function Index() {
 
 /* ---------------- HERO ---------------- */
 function Hero() {
+  const ref = useRef<HTMLElement>(null);
+  const reduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.2]);
   return (
     <section
+      ref={ref}
       id="top"
       className="relative pt-14 sm:pt-20 pb-20 sm:pb-28 overflow-hidden"
     >
-      <div className="absolute inset-0 -z-10 opacity-70">
+      <motion.div style={reduceMotion ? undefined : { y: bgY }} className="absolute inset-0 -z-10 opacity-70">
         <AuroraBackground />
-      </div>
+      </motion.div>
 
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center">
+      <motion.div
+        style={reduceMotion ? undefined : { y: contentY, opacity: contentOpacity }}
+        className="max-w-3xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center"
+      >
         <motion.h1
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -107,7 +130,7 @@ function Hero() {
             See what we build
           </a>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }
@@ -256,7 +279,7 @@ function Products() {
             </h2>
           </div>
           <p className="text-muted-foreground text-sm sm:text-base max-w-sm leading-relaxed">
-            Productised automations we deploy in days. Each one is a complete, managed system — not a script you have to babysit.
+            Productised automations we deploy in days. Each one is a complete, managed system - not a script you have to babysit.
           </p>
         </div>
 
@@ -320,11 +343,12 @@ function ProductCard({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
+      whileHover={{ y: -6 }}
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       className={`group relative overflow-hidden rounded-lg transition-colors flex flex-col h-full ${
         isDark
           ? "bg-foreground text-background"
-          : "border border-foreground/15 bg-background hover:border-foreground/40 shadow-sm"
+          : "border border-foreground/15 bg-background hover:border-foreground/40 shadow-sm hover:shadow-lg"
       }`}
     >
       <div className="p-12 sm:p-16 flex flex-col h-full">
