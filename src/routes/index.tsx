@@ -50,6 +50,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground font-display selection:bg-accent/20">
+      <ScrollProgress />
       <Nav />
       <main>
         <Hero />
@@ -69,16 +70,26 @@ function Index() {
 
 /* ---------------- HERO ---------------- */
 function Hero() {
+  const ref = useRef<HTMLElement>(null);
+  const reduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.2]);
   return (
     <section
+      ref={ref}
       id="top"
       className="relative pt-14 sm:pt-20 pb-20 sm:pb-28 overflow-hidden"
     >
-      <div className="absolute inset-0 -z-10 opacity-70">
+      <motion.div style={reduceMotion ? undefined : { y: bgY }} className="absolute inset-0 -z-10 opacity-70">
         <AuroraBackground />
-      </div>
+      </motion.div>
 
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center">
+      <motion.div
+        style={reduceMotion ? undefined : { y: contentY, opacity: contentOpacity }}
+        className="max-w-3xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center"
+      >
         <motion.h1
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
