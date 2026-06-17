@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion } from "motion/react";
-import { useState } from "react";
+import { motion, useScroll, useTransform, useSpring, useReducedMotion } from "motion/react";
+import { useRef, useState } from "react";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -12,6 +12,18 @@ import {
 import { Nav, Footer } from "@/components/SiteChrome";
 import { BookCallDialog } from "@/components/BookCallDialog";
 import { AuroraBackground } from "@/components/AuroraBackground";
+
+/* Top-of-page scroll progress indicator */
+function ScrollProgress() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.2 });
+  return (
+    <motion.div
+      style={{ scaleX }}
+      className="fixed top-0 left-0 right-0 h-[2px] bg-accent origin-left z-[60]"
+    />
+  );
+}
 
 export const Route = createFileRoute("/")({
   head: () => ({
