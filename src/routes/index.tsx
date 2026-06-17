@@ -14,7 +14,7 @@ import { BookCallDialog } from "@/components/BookCallDialog";
 import { AuroraBackground } from "@/components/AuroraBackground";
 
 /* Top-of-page scroll progress indicator */
-function ScrollProgress() {
+export function ScrollProgress() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.2 });
   return (
@@ -69,7 +69,7 @@ function Index() {
 }
 
 /* ---------------- HERO ---------------- */
-function Hero() {
+export function Hero() {
   const ref = useRef<HTMLElement>(null);
   const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -136,7 +136,7 @@ function Hero() {
 }
 
 /* ---------------- STATS STRIP ---------------- */
-function StatsStrip() {
+export function StatsStrip() {
   const items = [
     { v: "1,000+", l: "Hours returned to clients" },
     { v: "<7 days", l: "From kickoff to live" },
@@ -169,7 +169,7 @@ function StatsStrip() {
 }
 
 /* ---------------- MARQUEE ---------------- */
-function Marquee() {
+export function Marquee() {
   const items = [
     "BOOKKEEPING FIRMS",
     "TRADES & LOCAL SERVICES",
@@ -197,7 +197,7 @@ function Marquee() {
 }
 
 /* ---------------- VALUE PROP ---------------- */
-function ValueProp() {
+export function ValueProp() {
   const rows = [
     {
       index: "01",
@@ -264,7 +264,7 @@ function ValueProp() {
 }
 
 /* ---------------- PRODUCTS ---------------- */
-function Products() {
+export function Products() {
   return (
     <section id="services" className="bg-secondary/30 border-y border-border py-24 sm:py-32 md:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -392,7 +392,7 @@ function ProductCard({
 }
 
 /* ---------------- TESTIMONIALS ---------------- */
-function Testimonials() {
+export function Testimonials() {
   const quotes = [
     {
       q: "We got our month-end back. Two weeks in, our team stopped chasing receipts entirely. I genuinely don't know how we ran without it.",
@@ -466,7 +466,7 @@ function Testimonials() {
 }
 
 /* ---------------- PROCESS ---------------- */
-function Process() {
+export function Process() {
   const steps = [
     {
       num: "01",
@@ -535,7 +535,7 @@ function Process() {
 }
 
 /* ---------------- FINAL CTA ---------------- */
-function FinalCTA() {
+export function FinalCTA() {
   return (
     <section className="relative bg-foreground text-background py-36 sm:py-44 md:py-48 overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_50%_50%,hsl(168_72%_32%/0.10),transparent_65%)]" />
@@ -580,7 +580,7 @@ function FinalCTA() {
 }
 
 /* ---------------- FAQ ---------------- */
-function FAQ() {
+export function FAQ() {
   const items = [
     {
       q: "Why should I trust you over an in-house hire or another agency?",
