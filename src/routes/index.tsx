@@ -130,7 +130,7 @@ function Hero() {
             See what we build
           </a>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }
