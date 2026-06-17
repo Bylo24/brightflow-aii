@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as V2RouteImport } from './routes/v2'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SecurityRouteImport } from './routes/security'
 import { Route as PrivacyRouteImport } from './routes/privacy'
@@ -19,6 +20,11 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as BookkeepingIndexRouteImport } from './routes/bookkeeping.index'
 import { Route as BookkeepingThanksRouteImport } from './routes/bookkeeping.thanks'
 
+const V2Route = V2RouteImport.update({
+  id: '/v2',
+  path: '/v2',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
@@ -73,6 +79,7 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
   '/terms': typeof TermsRoute
+  '/v2': typeof V2Route
   '/bookkeeping/thanks': typeof BookkeepingThanksRoute
   '/bookkeeping/': typeof BookkeepingIndexRoute
 }
@@ -84,6 +91,7 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
   '/terms': typeof TermsRoute
+  '/v2': typeof V2Route
   '/bookkeeping/thanks': typeof BookkeepingThanksRoute
   '/bookkeeping': typeof BookkeepingIndexRoute
 }
@@ -96,6 +104,7 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
   '/terms': typeof TermsRoute
+  '/v2': typeof V2Route
   '/bookkeeping/thanks': typeof BookkeepingThanksRoute
   '/bookkeeping/': typeof BookkeepingIndexRoute
 }
@@ -109,6 +118,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/security'
     | '/terms'
+    | '/v2'
     | '/bookkeeping/thanks'
     | '/bookkeeping/'
   fileRoutesByTo: FileRoutesByTo
@@ -120,6 +130,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/security'
     | '/terms'
+    | '/v2'
     | '/bookkeeping/thanks'
     | '/bookkeeping'
   id:
@@ -131,6 +142,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/security'
     | '/terms'
+    | '/v2'
     | '/bookkeeping/thanks'
     | '/bookkeeping/'
   fileRoutesById: FileRoutesById
@@ -143,12 +155,20 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   SecurityRoute: typeof SecurityRoute
   TermsRoute: typeof TermsRoute
+  V2Route: typeof V2Route
   BookkeepingThanksRoute: typeof BookkeepingThanksRoute
   BookkeepingIndexRoute: typeof BookkeepingIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/v2': {
+      id: '/v2'
+      path: '/v2'
+      fullPath: '/v2'
+      preLoaderRoute: typeof V2RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terms': {
       id: '/terms'
       path: '/terms'
@@ -223,6 +243,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   SecurityRoute: SecurityRoute,
   TermsRoute: TermsRoute,
+  V2Route: V2Route,
   BookkeepingThanksRoute: BookkeepingThanksRoute,
   BookkeepingIndexRoute: BookkeepingIndexRoute,
 }
