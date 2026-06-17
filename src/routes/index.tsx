@@ -256,7 +256,7 @@ function Products() {
             </h2>
           </div>
           <p className="text-muted-foreground text-sm sm:text-base max-w-sm leading-relaxed">
-            Productised automations we deploy in days. Each one is a complete, managed system — not a script you have to babysit.
+            Productised automations we deploy in days. Each one is a complete, managed system - not a script you have to babysit.
           </p>
         </div>
 
