@@ -16,6 +16,7 @@ import {
   FAQ,
 } from "./index";
 import aboutVideo from "@/assets/about-us.mp4.asset.json";
+import aboutPoster from "@/assets/about-us-poster.jpg.asset.json";
 
 const PASSWORD = "sam14151";
 const STORAGE_KEY = "v2-unlock";
@@ -149,6 +150,7 @@ function AboutVideo() {
           <video
             ref={videoRef}
             src={aboutVideo.url}
+            poster={aboutPoster.url}
             controls={playing}
             playsInline
             preload="metadata"
