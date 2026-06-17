@@ -343,11 +343,12 @@ function ProductCard({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
+      whileHover={{ y: -6 }}
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       className={`group relative overflow-hidden rounded-lg transition-colors flex flex-col h-full ${
         isDark
           ? "bg-foreground text-background"
-          : "border border-foreground/15 bg-background hover:border-foreground/40 shadow-sm"
+          : "border border-foreground/15 bg-background hover:border-foreground/40 shadow-sm hover:shadow-lg"
       }`}
     >
       <div className="p-12 sm:p-16 flex flex-col h-full">
