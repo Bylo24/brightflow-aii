@@ -133,10 +133,10 @@ function AboutVideo() {
             About Us
           </div>
           <h2 className="text-3xl sm:text-5xl font-semibold tracking-tight">
-            You didn't start your business to focus on these low leverage, repetitive admin activities.
+            You didn't start your business to do admin work.
           </h2>
           <p className="mt-4 text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
-            At Brightflow AI, we believe that these tasks can be automated so you can focus on the more important parts within your business, such as acquisition, or simply be able to focus on your life in other areas by not having your time occupied by these low leverage activities. This is where we come in. We look at your workflow and find out exactly what needs to be automated. We don't give you basic tools. We don't change the way you work. We simply eliminate parts of your business that can easily be replaced by AI so you can focus on the more important parts, or focus on your life and free up that time for yourself. Book a free 15 minute workflow audit below and we'll take a look at what can easily be automated and we'll give you next steps about actually automating it.
+            At Brightflow AI, we automate the low-leverage, repetitive tasks eating up your time — so you can focus on growing your business, or simply get your life back. Book a free 15-minute workflow audit and we'll show you exactly what AI can take off your plate.
           </p>
         </div>
 
