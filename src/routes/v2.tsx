@@ -133,7 +133,7 @@ function AboutVideo() {
             About Us
           </div>
           <h2 className="text-3xl sm:text-5xl font-semibold tracking-tight">
-            Meet Brightflow AI.
+            About Brightflow AI
           </h2>
           <p className="mt-4 text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
             A quick look at who we are and how we help businesses automate what matters.
