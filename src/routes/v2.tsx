@@ -133,10 +133,10 @@ function AboutVideo() {
             About Us
           </div>
           <h2 className="text-3xl sm:text-5xl font-semibold tracking-tight">
-            You didn't start your business to do admin work.
+            Meet Brightflow AI.
           </h2>
           <p className="mt-4 text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
-            At Brightflow AI, we automate the low-leverage, repetitive tasks eating up your time — so you can focus on growing your business, or simply get your life back. Book a free 15-minute workflow audit and we'll show you exactly what AI can take off your plate.
+            A quick look at who we are and how we help businesses automate what matters.
           </p>
         </div>
 
