@@ -118,14 +118,14 @@ export function Hero() {
           <BookCallDialog>
             <button
               type="button"
-              className="inline-flex items-center justify-center gap-2 rounded-md bg-foreground px-8 py-4 text-[15px] font-semibold text-background hover:bg-foreground/90 transition-colors shadow-sm"
+              className="group inline-flex items-center justify-center gap-2 rounded-md bg-foreground h-12 px-7 text-[15px] font-semibold text-background hover:bg-foreground/90 active:scale-[0.98] transition-all shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 focus-visible:ring-offset-2"
             >
-              Book a free audit <ArrowRight className="size-4" />
+              Book a free audit <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
             </button>
           </BookCallDialog>
           <a
             href="#services"
-            className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-background px-7 py-4 text-sm font-medium text-foreground hover:bg-secondary transition-colors"
+            className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-background h-12 px-7 text-[15px] font-medium text-foreground hover:bg-secondary hover:border-foreground/30 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 focus-visible:ring-offset-2"
           >
             See what we build
           </a>
@@ -181,16 +181,20 @@ export function Marquee() {
       <div className="text-center text-[11px] uppercase tracking-[0.18em] text-muted-foreground/70 mb-6 sm:mb-8 px-4">
         Trusted by service businesses done running on manual admin
       </div>
-      <div className="flex gap-12 sm:gap-16 whitespace-nowrap animate-marquee w-max">
-        {[...items, ...items, ...items].map((it, i) => (
-          <span
-            key={i}
-            className="text-muted-foreground/40 font-medium uppercase tracking-[0.18em] text-xs flex items-center gap-12 sm:gap-16"
-          >
-            {it}
-            <span className="size-1 rounded-full bg-muted-foreground/30" />
-          </span>
-        ))}
+      <div className="relative">
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 z-10 bg-gradient-to-r from-background to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 z-10 bg-gradient-to-l from-background to-transparent" />
+        <div className="flex gap-12 sm:gap-16 whitespace-nowrap animate-marquee w-max">
+          {[...items, ...items, ...items].map((it, i) => (
+            <span
+              key={i}
+              className="text-muted-foreground/60 font-medium uppercase tracking-[0.18em] text-xs flex items-center gap-12 sm:gap-16"
+            >
+              {it}
+              <span className="size-1 rounded-full bg-muted-foreground/40" />
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -557,7 +561,7 @@ export function FinalCTA() {
           className="text-5xl sm:text-6xl md:text-7xl font-semibold tracking-[-0.045em] leading-[1.0] text-balance text-background mb-12"
         >
           Stop paying for the hours{" "}
-          <span className="font-serif italic font-normal text-background/55">you keep losing.</span>
+          <span className="font-serif italic font-normal text-accent">you keep losing.</span>
         </motion.h2>
         <motion.div
           initial={{ opacity: 0, y: 12 }}
@@ -568,9 +572,9 @@ export function FinalCTA() {
           <BookCallDialog>
             <button
               type="button"
-              className="inline-flex items-center justify-center gap-2 rounded-md bg-background px-8 py-4 text-sm font-medium text-foreground hover:bg-background/90 transition-colors"
+              className="group inline-flex items-center justify-center gap-2 rounded-md bg-background h-12 px-7 text-[15px] font-semibold text-foreground hover:bg-background/90 active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-2 focus-visible:ring-offset-foreground"
             >
-              Book a free audit <ArrowRight className="size-4" />
+              Book a free audit <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
             </button>
           </BookCallDialog>
         </motion.div>
@@ -633,16 +637,16 @@ export function FAQ() {
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-border/40 group/item">
+    <div className="border-b border-border/60 group/item">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center justify-between gap-6 py-9 text-left transition-opacity hover:opacity-70"
+        className="w-full flex items-center justify-between gap-6 py-8 text-left transition-colors focus-visible:outline-none"
       >
-        <span className={`font-medium text-base md:text-lg tracking-tight transition-colors ${open ? "text-foreground" : "text-foreground/85"}`}>
+        <span className={`font-medium text-base md:text-lg tracking-tight transition-colors group-hover/item:text-accent ${open ? "text-foreground" : "text-foreground/85"}`}>
           {q}
         </span>
         <Plus
-          className={`size-4 shrink-0 transition-all duration-300 ${open ? "rotate-45 text-foreground" : "text-muted-foreground"}`}
+          className={`size-4 shrink-0 transition-all duration-300 group-hover/item:text-accent ${open ? "rotate-45 text-foreground" : "text-muted-foreground"}`}
         />
       </button>
       <motion.div

@@ -145,7 +145,7 @@ function AboutVideo() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative mx-auto max-w-4xl rounded-2xl overflow-hidden border border-border bg-black shadow-2xl"
+          className="relative mx-auto max-w-4xl rounded-2xl overflow-hidden border border-border bg-black shadow-[0_30px_80px_-20px_rgba(0,0,0,0.35)]"
         >
           <video
             ref={videoRef}
@@ -163,9 +163,9 @@ function AboutVideo() {
               type="button"
               onClick={play}
               aria-label="Play about us video"
-              className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/40 transition group"
+              className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-black/50 via-black/15 to-black/10 hover:from-black/60 transition-colors group"
             >
-              <span className="h-20 w-20 rounded-full bg-white/95 group-hover:bg-white flex items-center justify-center shadow-xl transition">
+              <span className="h-20 w-20 rounded-full bg-white/95 group-hover:bg-white group-hover:scale-105 flex items-center justify-center shadow-xl transition-all duration-300">
                 <Play className="h-8 w-8 text-black ml-1" fill="currentColor" />
               </span>
             </button>
