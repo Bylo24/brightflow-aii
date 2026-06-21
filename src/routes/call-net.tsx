@@ -180,7 +180,7 @@ function CallNetPageInner() {
         <p className="mt-3 text-xs text-muted-foreground">
           Credit card required. You won't be charged until day 14. Cancel anytime in your dashboard.
         </p>
-        <div className="mx-auto mt-8 flex max-w-xl flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
+        <div className="mx-auto mt-8 flex max-w-xl flex-wrap items-center justify-center gap-x-5 gap-y-2.5 text-xs text-muted-foreground">
           <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5" /> We handle the setup – you just tell us your number</span>
           <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5" /> Cancel anytime</span>
           <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5" /> SSL secured checkout</span>
