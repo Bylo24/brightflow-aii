@@ -143,14 +143,16 @@ function CallNetPageInner() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
-        <Wordmark />
-        <a
-          href={stripeUrl} target="_blank" rel="noopener noreferrer" onClick={handleTrialClick}
-          className="rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background hover:opacity-90"
-        >
-          Start free trial
-        </a>
+      <header className="sticky top-0 z-50 border-b border-border bg-background">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 h-14 sm:h-16">
+          <Wordmark />
+          <a
+            href={stripeUrl} target="_blank" rel="noopener noreferrer" onClick={handleTrialClick}
+            className="rounded-full bg-foreground px-4 sm:px-5 h-9 text-[13px] font-medium text-background hover:bg-foreground/90 transition-colors inline-flex items-center justify-center"
+          >
+            Start free trial
+          </a>
+        </div>
       </header>
 
       {/* Hero */}
@@ -178,7 +180,7 @@ function CallNetPageInner() {
         <p className="mt-3 text-xs text-muted-foreground">
           Credit card required. You won't be charged until day 14. Cancel anytime in your dashboard.
         </p>
-        <div className="mx-auto mt-8 flex max-w-xl flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
+        <div className="mx-auto mt-8 flex max-w-xl flex-wrap items-center justify-center gap-x-5 gap-y-2.5 text-xs text-muted-foreground">
           <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5" /> We handle the setup – you just tell us your number</span>
           <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5" /> Cancel anytime</span>
           <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5" /> SSL secured checkout</span>
@@ -349,7 +351,7 @@ function CallNetPageInner() {
             "We handle all the setup - you don't need to know anything technical.",
             "Try free for 14 days - cancel anytime in your dashboard, no contract.",
           ].map((b) => (
-            <li key={b} className="flex items-start gap-3 rounded-md border border-border bg-card p-4">
+            <li key={b} className="flex items-start gap-3 rounded-md border border-border bg-card p-5">
               <Check className="mt-0.5 h-5 w-5 flex-none text-foreground" />
               <span className="text-sm">{b}</span>
             </li>
