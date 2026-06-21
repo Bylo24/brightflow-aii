@@ -143,14 +143,16 @@ function CallNetPageInner() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
-        <Wordmark />
-        <a
-          href={stripeUrl} target="_blank" rel="noopener noreferrer" onClick={handleTrialClick}
-          className="rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background hover:opacity-90"
-        >
-          Start free trial
-        </a>
+      <header className="sticky top-0 z-50 border-b border-border bg-background">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 h-14 sm:h-16">
+          <Wordmark />
+          <a
+            href={stripeUrl} target="_blank" rel="noopener noreferrer" onClick={handleTrialClick}
+            className="rounded-full bg-foreground px-4 sm:px-5 h-9 text-[13px] font-medium text-background hover:bg-foreground/90 transition-colors inline-flex items-center justify-center"
+          >
+            Start free trial
+          </a>
+        </div>
       </header>
 
       {/* Hero */}

@@ -283,7 +283,7 @@ function Guarantee() {
         <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3.5 py-1.5 text-[11px] uppercase tracking-[0.18em] text-accent mb-5">
           <Shield className="size-3.5" /> 100% risk free
         </div>
-        <h2 className="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.035em] leading-[1.04] text-balance">
           Free for 2 weeks.{" "}
           <span className="font-serif italic font-normal text-accent">If you don't save 10 hours, you pay nothing.</span>
         </h2>
